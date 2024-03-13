@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
 
@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>F1 LOG IN</title>
         <link rel="stylesheet" href="../sass/login.css">
-        <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../../public/favicon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script
@@ -28,26 +28,26 @@
         <div class="container-fluid">
             <div class="row">
                 <header class="col-md col-sm col">
-                    <a href="../index.php"><img src="../img/logoF1.png" alt="logoF1" id="logoHeader" class="img-fluid"></a> 
+                    <a href="../index.php"><img src="../../public/img/logoF1.png" alt="logoF1" id="logoHeader" class="img-fluid"></a>
                     <form id="formCerrarSesion" action="login.php" method="post">
                         <input type="submit" name="cerrarSes" id="cerrarSes" value="Cerrar Sesión">
                     </form>
                 </header>
             </div>
-        
+
             <div class="row">
                 <nav id="navbar" class="col-xl col-md col-sm col">
                     <div id="botones">
                         <button id="iniciar" class="boton" type="button">
-                            <span>Iniciar Sesión</span> 
+                            <span>Iniciar Sesión</span>
                         </button>
                         <button id="crear" class="boton" type="button">
                             Crear Cuenta
-                        </button>    
+                        </button>
                     </div>
                 </nav>
             </div>
-           
+
 
             <main id="main">
                 <form id="formLog" class="oculto" action="login.php" method="post">
@@ -56,9 +56,9 @@
                     <label for="correo">Usuario</label><br>
                     <input type="text" name="correo" id="correo" placeholder="Introduce tu Nombre de Usuario"><br><br>
                     <label for="contrasenya">Contraseña</label><br>
-                    <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave"> 
+                    <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
                     <span toggle="#contrasenya" class="field-icon">
-                        <img src="../img/eye.png" id="ojo" alt="ojo"  srcset="../img/eye.png">
+                        <img src="../../public/img/eye.png" id="ojo" alt="ojo" srcset="../../public/img/eye.png">
                     </span><br><br>
                     <button id="forgetPass">¿Olvidaste tu contraseña?</button><br><br>
                     <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
@@ -66,7 +66,7 @@
                     <button id="sinCuenta"> Registrarte con F1</button><br><br>
                 </form>
             </main>
-        
+
             <div id="main2">
                 <form id="formReg" class="oculto" action="login.php" method="post">
                     <h1>CREAR CUENTA</h1>
@@ -78,7 +78,7 @@
                     <label for="contrasenyaReg">Contraseña</label><br>
                     <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
                     <span toggle="#contrasenyaReg" class="field-icon">
-                        <img src="../img/eye.png" id="ojoReg" alt="ojo" srcset="../img/eye.png">
+                        <img src="../../public/img/eye.png" id="ojoReg" alt="ojo" srcset="../../public/img/eye.png">
                     </span><br><br>
                     <input type="checkbox" name="acepto" id="acepto"> Acepto los términos y condiciones<br><br>
                     <span id="mensajeRegistro"></span>
@@ -89,7 +89,7 @@
             <div class="row">
                 <footer class="col-xl-11 col-md-11 col-sm col">
                     <nav id="navFooter">
-                        <a href="../index.php"><img src="../img/logoF1.png" alt="logoF1" id="logoFooter" srcset="../img/logoF1.png"></a> 
+                        <a href="../index.php"><img src="../../public/img/logoF1.png" alt="logoF1" id="logoFooter" srcset="../../public/img/logoF1.png"></a>
                         <a href="#">Política de Privacidad</a>
                         <a href="#">Suscripción</a>
                         <a href="#">Condiciones de Uso</a>
@@ -114,12 +114,12 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <a href="../index.php"><img src="../img/logoF1Blanco.png" alt="logoF1" id="logoModal" srcset="../img/logoF1Blanco.png"></a> 
+                            <a href="../index.php"><img src="../../public/img/logoF1Blanco.png" alt="logoF1" id="logoModal" srcset="../../public/img/logoF1Blanco.png"></a>
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Soporte de F1</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p>Ponte en contacto con el equipo pulsando el botón</p> 
+                            <p>Ponte en contacto con el equipo pulsando el botón</p>
                             <button type="button" class="btn" >Enviar</button>
 
                         </div>
