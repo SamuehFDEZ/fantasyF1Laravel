@@ -1,0 +1,278 @@
+@charset "UTF-8";
+@font-face {
+  font-family: F1;
+  src: url(../fonts/Formula1-Regular-1.ttf);
+}
+* {
+  font-family: F1;
+}
+
+.row header {
+  background-color: hsl(240, 18%, 10%);
+}
+.row header #logoHeader {
+  width: 200px;
+  height: 50px;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  margin-left: 10px !important;
+}
+.row header #cerrarSes {
+  background-color: hsl(240, 18%, 10%);
+  float: right;
+  margin-top: -70px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+.row header #cerrarSes:hover {
+  background-color: white;
+  color: hsl(240, 18%, 10%);
+}
+
+nav#navbar {
+  background-color: #403c3c;
+  height: 50px;
+}
+nav#navbar #botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+nav#navbar #botones .boton {
+  font-family: F1;
+  bottom: 0;
+  border-style: none;
+  background-color: #403c3c;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+nav#navbar #botones .boton:hover {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid white;
+}
+nav#navbar #botones .boton:focus, nav#navbar #botones .boton:active {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid red;
+}
+nav#navbar #botones .boton.active {
+  border-bottom: 3px solid red; /* Estilo aplicado al botón activo */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+main #formLog {
+  margin-top: 20px;
+  font-weight: bold;
+  width: 50%;
+  height: 150%;
+}
+main #formLog h1 {
+  text-align: left;
+}
+main #formLog input[type=text] {
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+}
+main #formLog input[type=text]::-moz-placeholder {
+  font-size: 15px;
+}
+main #formLog input[type=text]::placeholder {
+  font-size: 15px;
+}
+main #formLog input[type=password] {
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+}
+main #formLog input[type=password]::-moz-placeholder {
+  font-size: 15px;
+}
+main #formLog input[type=password]::placeholder {
+  font-size: 15px;
+}
+main #formLog .field-icon {
+  float: right;
+  margin-top: -37px;
+  margin-right: 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+main #formLog .field-icon #ojo {
+  width: 30px;
+}
+main #formLog #forgetPass {
+  margin-left: 20px;
+  border-style: none;
+  background-color: white;
+  float: right;
+  border-bottom: 2px solid red;
+}
+main #formLog #forgetPass:hover {
+  color: red;
+}
+main #formLog #iniciarSes {
+  background-color: red;
+  border-style: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+main #formLog #iniciarSes:hover {
+  border: 2px solid red;
+  background-color: white;
+  color: black;
+}
+main #formLog #sinCuenta {
+  margin-left: 20px;
+  border-style: none;
+  background-color: white;
+  border-bottom: 2px solid red;
+}
+main #formLog #sinCuenta:hover {
+  color: red;
+}
+
+#main2 {
+  display: flex;
+  justify-content: center;
+}
+#main2 #formReg {
+  margin-top: 20px;
+  font-weight: bold;
+  width: 50%;
+  height: 150%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+#main2 #formReg h1 {
+  text-align: left;
+}
+#main2 #formReg input[type=text] {
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+}
+#main2 #formReg input[type=text]::-moz-placeholder {
+  font-size: 15px;
+}
+#main2 #formReg input[type=text]::placeholder {
+  font-size: 15px;
+}
+#main2 #formReg input[type=password] {
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+}
+#main2 #formReg input[type=password]::-moz-placeholder {
+  font-size: 15px;
+}
+#main2 #formReg input[type=password]::placeholder {
+  font-size: 15px;
+}
+#main2 #formReg .field-icon {
+  float: right;
+  margin-top: -37px;
+  margin-right: 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+#main2 #formReg .field-icon #ojoReg {
+  width: 30px;
+}
+#main2 #formReg input[type=checkbox] {
+  accent-color: red;
+}
+#main2 #formReg #mensajeRegistro {
+  color: red;
+  font-family: F1;
+  font-weight: bold;
+}
+#main2 #formReg #crearCuenta {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+}
+#main2 #formReg #crearCuenta:hover {
+  border: 2px solid red;
+  background-color: white;
+  color: black;
+}
+
+.row footer {
+  position: absolute;
+  border: 10px solid #333333;
+  bottom: 10%;
+  border-top-right-radius: 20px;
+  border-bottom: none;
+  border-left: none;
+  margin-left: 10px;
+  width: 96%;
+  height: 150px;
+}
+.row footer #navFooter #logoFooter {
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 130px;
+  height: 30px;
+  margin-right: 60em;
+}
+.row footer #navFooter a {
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.row footer #parrFooter {
+  font-size: 15px;
+  float: right;
+  margin-right: 10px;
+}
+.row footer #botonApoyo {
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+}
+.row footer #botonApoyo svg {
+  fill: white;
+}
+.row footer .modal-header {
+  background-color: red;
+}
+.row footer .modal-header #logoModal {
+  width: 80px;
+  height: 20px;
+  margin-right: 20px;
+}
+.row footer .modal-body {
+  background-color: hsl(0, 0%, 95%);
+  margin: 5px 5px 5px 5px;
+  border-radius: 10px;
+}
+.row footer .modal-body .btn {
+  background-color: red;
+  color: white;
+}
+
+.oculto {
+  display: none;
+}/*# sourceMappingURL=login.css.map */

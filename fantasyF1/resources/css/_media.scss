@@ -1,0 +1,26 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extralarge: 1200px;
+
+
+@mixin responsive($media){
+    @if $media == $small{
+        @media (min-width: $small) and (max-width: $medium) {
+            @content;
+        }
+        
+    } @else if $media == $medium{
+        @media (min-width: $medium) and (max-width: $large) {
+            @content;
+        }
+    } @else if $media == $large{
+        @media (min-width: $large) and (max-width: $extralarge) {
+            @content;
+        }
+    } @else if $media == $extralarge{
+        @media (min-width: $extralarge) {
+            @content;
+        }
+    } 
+}

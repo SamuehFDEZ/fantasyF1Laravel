@@ -1,0 +1,190 @@
+$headerBgColor: red;
+
+@font-face {
+  font-family: F1;
+  src: url(../fonts/Formula1-Regular-1.ttf);
+}
+
+header {
+  background-color: $headerBgColor;
+  #logoHeader {
+    width: 200px;
+    height: 50px;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+    margin-left: 10px !important;
+  }
+
+  .buttonHeaderUser {
+    margin-top: 35px !important;
+    margin-right: 10px !important;
+    margin-left: 93em !important;
+    width: 100px;
+    height: 50px;
+    background-color: hsl(240, 18%, 10%);
+    border: 1px solid white;
+    border-radius: 5%;
+    color: white;
+    &:hover {
+      border: 1px solid black;
+      background-color: white;
+      color: black;
+    }
+  }
+
+  .buttonHeaderSub {
+    margin-top: 35px !important;
+    margin-right: 5px !important;
+    width: 100px;
+    height: 50px;
+    float: right;
+    background-color: hsl(240, 18%, 10%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5%;
+    &:hover {
+      border: 1px solid black;
+      background-color: white;
+      color: red;
+    }
+  }
+}
+
+main {
+  #panel {
+    font-family: F1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("../img/subscribebg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 40%;
+    height: 50%;
+    z-index: 200;
+    h1 {
+      margin-top: 0;
+      text-align: center;
+      color: white;
+      background: rgba(255, 0, 0, 0.7);
+    }
+    hr {
+      border: 1px solid red;
+    }
+    #botones {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .opcioneSubscribe {
+        color: white;
+        background-color: red;
+        margin: 6em 10px 10px 10px;
+        width: 35%;
+        height: 70px;
+        border: 1px solid white;
+        border-radius: 5px;
+        &:hover {
+          background-color: white;
+          color: red;
+          border: 1px solid black;
+        }
+      }
+    }
+    #quitarSubs {
+      position: fixed;
+      right: 1%;
+      bottom: 1%;
+      color: white;
+      background-color: red;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+  }
+  #banner{
+    width: 100%;
+    background-color: #630e0e;
+    #logoEnBanner{
+      width: 20%;
+      height: 20%;
+      margin-bottom: 35px;
+    }
+    #pilotos{
+        float: right;
+        margin-top: -12px;
+    }
+    #containerNav{
+        font-family: F1;
+        width: 100%;
+        margin-top: -4.8em;
+        margin-left: 20em;
+        text-align: center;
+        ul{
+            li{
+                padding: 10px 10px 10px 10px;
+                &:first-child{
+                    border-top-left-radius: 5px;
+                }
+                &:last-child{
+                    border-top-right-radius: 5px;
+                }
+
+                background-color: white;
+                a{
+                    color: black;
+                    &:hover{
+                        color: red;
+                    }
+
+                }
+            }
+        }
+    }
+  }
+}
+
+.container-fluid {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: hsl(240, 18%, 10%);
+
+  hr {
+    border-top: 3px solid red;
+  }
+  .row {
+    margin-bottom: 30px;
+    #logoFooter1 {
+      #logoFooter2 {
+        width: 90px;
+        height: 20px;
+        bottom: 0;
+      }
+    }
+    #parrFooter {
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+    .col-md {
+      #iconos {
+        display: flex;
+        justify-content: end;
+      }
+    }
+  }
+}
+
+#userIcon {
+  width: 20px;
+  float: left;
+  color: red;
+}
+
+.oculto {
+  display: none;
+}
