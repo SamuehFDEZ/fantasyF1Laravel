@@ -9,36 +9,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1 FANTASY</title>
-    @vite(['resources/sass/app.scss'])
-    <link rel="shortcut icon" href="{{ asset("favicon.png")}}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"
-    ></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"
-    ></script>
-    @vite(['resources/js/app.js'])
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
 <header>
-    <img src="{{asset('img/logoF1Blanco.png')}}" alt="logoF1" id="logoHeader" srcset="{{asset('img/logoF1Blanco.png')}}">
-    <button id="botonUser" class="buttonHeaderUser" type="button">
-        <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
-             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-             xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span id="nomUser"><?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?></span>
-    </button>
-    <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
+    <img src="{{ asset('img/logoF1Blanco.png' )}}" alt="logoF1" id="logoHeader"
+         srcset="{{ asset('img/logoF1Blanco.png') }}">
+        <button id="botonUser" onclick="window.location='{{ URL::route('login') }}'" class="buttonHeaderUser" type="button">
+            <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
+                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span id="nomUser"><?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?></span>
+        </button>
+        <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
 </header>
 <main>
     <div id="panel" class="oculto">
@@ -51,10 +49,12 @@
         <button id="quitarSubs" type="button">X</button>
     </div>
     <div id="banner">
-        <img src="{{asset("img/hp-masthead-filler-web.svg")}}" alt="" srcset="{{asset("img/hp-masthead-filler-web.svg")}}">
-        <img src="{{asset("img/f1-fantasy-white-logo.svg")}}" id="logoEnBanner" alt="logoBanner"
-             srcset="{{asset("img/f1-fantasy-white-logo.svg")}}">
-        <img src="{{asset("img/hp-masthead-thumb-web.png")}}" id="pilotos" alt="" srcset="{{asset("img/hp-masthead-thumb-web.png")}}">
+        <img src=" {{asset("img/hp-masthead-filler-web.svg")}} " alt=""
+             srcset=" {{asset("img/hp-masthead-filler-web.svg")}} ">
+        <img src=" {{asset("img/f1-fantasy-white-logo.svg")}} " id="logoEnBanner" alt="logoBanner"
+             srcset=" {{asset("img/f1-fantasy-white-logo.svg")}} ">
+        <img src=" {{asset("img/hp-masthead-thumb-web.png")}} " id="pilotos" alt=""
+             srcset=" {{asset("img/hp-masthead-thumb-web.png")}} ">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div id="containerNav" class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -63,45 +63,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mi Equipo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Ligas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pilotos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Constructores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Horarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Circuitos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Premios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">¿Como jugar?</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                Idiomas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Español</a></li>
-                                <li><a class="dropdown-item" href="#">Inglés</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    @include('partials/nav')
                 </div>
             </div>
         </nav>

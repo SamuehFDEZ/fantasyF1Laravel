@@ -122,6 +122,10 @@
       <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/psr/cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

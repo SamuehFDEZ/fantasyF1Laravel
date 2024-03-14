@@ -126,6 +126,10 @@
       <path value="$PROJECT_DIR$/fantasyF1/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/fantasyF1/vendor/dflydev/dot-access-data" />
       <path value="$PROJECT_DIR$/fantasyF1/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/fantasyF1/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/fantasyF1/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/fantasyF1/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/fantasyF1/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

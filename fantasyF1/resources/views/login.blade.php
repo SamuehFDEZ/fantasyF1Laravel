@@ -8,8 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>F1 LOG IN</title>
-        <link rel="stylesheet" href="../sass/login.css">
-        <link rel="shortcut icon" href="../../public/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script
@@ -22,14 +21,15 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-        <script src="../js/login.js"></script>
+        @vite(['resources/css/login.scss', 'resources/js/login.js'])
+
     </head>
     <body>
         <div class="container-fluid">
             <div class="row">
                 <header class="col-md col-sm col">
-                    <a href="../index.php"><img src="../../public/img/logoF1.png" alt="logoF1" id="logoHeader" class="img-fluid"></a>
-                    <form id="formCerrarSesion" action="login.php" method="post">
+                    <a href="{{route('index')}}"><img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoHeader" class="img-fluid"></a>
+                    <form id="formCerrarSesion" action="views/login" method="post">
                         <input type="submit" name="cerrarSes" id="cerrarSes" value="Cerrar Sesión">
                     </form>
                 </header>
@@ -50,7 +50,7 @@
 
 
             <main id="main">
-                <form id="formLog" class="oculto" action="login.php" method="post">
+                <form id="formLog" class="oculto" action="views/login" method="post">
                     <h1>INICIAR SESIÓN</h1>
                     <hr>
                     <label for="correo">Usuario</label><br>
@@ -58,7 +58,7 @@
                     <label for="contrasenya">Contraseña</label><br>
                     <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
                     <span toggle="#contrasenya" class="field-icon">
-                        <img src="../../public/img/eye.png" id="ojo" alt="ojo" srcset="../../public/img/eye.png">
+                        <img src="{{asset('img/eye.png')}}" id="ojo" alt="ojo" srcset="{{asset('img/eye.png')}}">
                     </span><br><br>
                     <button id="forgetPass">¿Olvidaste tu contraseña?</button><br><br>
                     <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
@@ -78,7 +78,7 @@
                     <label for="contrasenyaReg">Contraseña</label><br>
                     <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
                     <span toggle="#contrasenyaReg" class="field-icon">
-                        <img src="../../public/img/eye.png" id="ojoReg" alt="ojo" srcset="../../public/img/eye.png">
+                        <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" srcset="{{asset('img/eye.png')}}">
                     </span><br><br>
                     <input type="checkbox" name="acepto" id="acepto"> Acepto los términos y condiciones<br><br>
                     <span id="mensajeRegistro"></span>
@@ -89,7 +89,7 @@
             <div class="row">
                 <footer class="col-xl-11 col-md-11 col-sm col">
                     <nav id="navFooter">
-                        <a href="../index.php"><img src="../../public/img/logoF1.png" alt="logoF1" id="logoFooter" srcset="../../public/img/logoF1.png"></a>
+                        <a href="views/index"><img src="{{asset('img/logoF1.png')}}" alt="logoF1" id="logoFooter" srcset="{{asset('img/logoF1.png')}}"></a>
                         <a href="#">Política de Privacidad</a>
                         <a href="#">Suscripción</a>
                         <a href="#">Condiciones de Uso</a>
@@ -114,7 +114,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <a href="../index.php"><img src="../../public/img/logoF1Blanco.png" alt="logoF1" id="logoModal" srcset="../../public/img/logoF1Blanco.png"></a>
+                            <a href="views/index"><img src="{{asset('img/logoF1Blanco.png')}}" alt="logoF1" id="logoModal" srcset="{{asset('img/logoF1Blanco.png')}}"></a>
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Soporte de F1</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>

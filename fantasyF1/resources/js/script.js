@@ -1,6 +1,6 @@
 window.onload = ()=>{
     botonUser.addEventListener("click", ()=>{
-        location.href = "../php/login.php";
+        location.href = "/login.blade.php";
     });
 
     suscribete.addEventListener("click", suscribirse);
