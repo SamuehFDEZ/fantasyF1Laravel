@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sprints', function (Blueprint $table) {
-            $table->id('sprintID');
+            $table->unsignedInteger('sprintID')->primary();
             $table->date('fecha')->nullable(false);
             $table->string('vueltaRapida', 10)->nullable(false);
             $table->unsignedInteger('ronda')->nullable(false);

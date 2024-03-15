@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('circuitos', function (Blueprint $table) {
-            $table->integer('ronda')->primary(); // Definir 'ronda' como clave primaria y INT
+            $table->unsignedInteger('ronda')->primary(); // Definir 'ronda' como clave primaria y INT
             $table->integer('km')->nullable(false); // Agregar columna 'km' como INT NOT NULL
             $table->date('fecha')->nullable(false); // Agregar columna 'fecha' como DATE NOT NULL
             $table->string('nombre', 200)->nullable(false); // Agregar columna 'nombre' como VARCHAR(200) NOT NULL

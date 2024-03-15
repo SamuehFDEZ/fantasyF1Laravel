@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pilotos', function (Blueprint $table) {
-            $table->increments('num_piloto');
+            $table->unsignedInteger('num_piloto')->primary();
             $table->string('nombre');
             $table->float('valorMercado');
             $table->integer('puntosRealizados');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Foreign key constraints
-            $table->foreign('userID')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('userID')->references('userID')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('nombre_constructor')->references('nombre')->on('constructor')->onDelete('cascade')->onUpdate('cascade');
         });
     }

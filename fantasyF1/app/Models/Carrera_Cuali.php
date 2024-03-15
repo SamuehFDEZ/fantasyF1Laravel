@@ -16,4 +16,10 @@ class Carrera_Cuali extends Model
     {
         return $this->belongsTo(Piloto::class);
     }
+
+    // Una carrera pertenece a muchas cualis
+    public function cuali()
+    {
+        return $this->belongsTo(Cuali::class);
+    }
 }
