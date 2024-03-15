@@ -11,11 +11,22 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('pilotos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('num_piloto');
+            $table->string('nombre');
+            $table->float('valorMercado');
+            $table->integer('puntosRealizados');
+            $table->date('fechaNac');
+            $table->string('nacionalidad');
+            $table->unsignedBigInteger('userID');
+            $table->string('nombre_constructor');
             $table->timestamps();
+
+            // Foreign key constraints
+            $table->foreign('userID')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('nombre_constructor')->references('nombre')->on('constructor')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -39,7 +50,7 @@ ON DELETE CASCADE ON UPDATE CASCADE
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('pilotos');
     }

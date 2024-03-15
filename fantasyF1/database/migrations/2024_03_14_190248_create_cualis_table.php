@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('cualis', function (Blueprint $table) {
             $table->id('cualID');
@@ -38,7 +38,7 @@ ON DELETE CASCADE ON UPDATE CASCADE
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('cualis');
     }
