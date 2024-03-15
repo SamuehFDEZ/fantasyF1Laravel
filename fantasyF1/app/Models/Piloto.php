@@ -38,7 +38,7 @@ class Piloto extends Model
     //Muchos pilotos tienen (corren en) muchos sprints (N:M)
     public function sprint()
     {
-        return $this->hasOne(Sprint::class);
+        return $this->belongsToMany(Sprint::class);
     }
 
 }

@@ -1,7 +1,4 @@
 window.onload = ()=>{
-    botonUser.addEventListener("click", ()=>{
-        location.href = "/login.blade.php";
-    });
 
     suscribete.addEventListener("click", suscribirse);
     quitarSubs.addEventListener("click", quitarPanel);

@@ -18,6 +18,6 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/login', function () {
-    return redirect('/login');
+    return view('login');
 })->name('login');
 

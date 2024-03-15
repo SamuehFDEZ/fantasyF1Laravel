@@ -25,10 +25,9 @@
 
 <body>
 <header>
-    {{ route('login') }}
     <img src="{{ asset('img/logoF1Blanco.png' )}}" alt="logoF1" id="logoHeader"
          srcset="{{ asset('img/logoF1Blanco.png') }}">
-        <button id="botonUser" onclick="window.location='{{ route('/login') }}'" class="buttonHeaderUser" type="button">
+        <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser" type="button">
             <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
                  xmlns="http://www.w3.org/2000/svg">
