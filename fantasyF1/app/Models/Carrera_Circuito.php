@@ -11,6 +11,13 @@ class Carrera_Circuito extends Model
 
     protected $table = "carrera_circuitos"; //tabla fruto de la relacion N:M de circuito y pilotos
 
+    protected $fillable = [
+        'num_piloto',
+        'ronda',
+        'tiempo',
+        'posicion',
+    ];
+
     // Una carrera pertenece a muchos circuitos
     public function circuito()
     {

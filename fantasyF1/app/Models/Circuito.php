@@ -11,6 +11,23 @@ class Circuito extends Model
 
     protected $table = "circuitos";
 
+    protected $fillable = [
+        'ronda',
+        'km',
+        'fecha',
+        'nombre',
+        'num_vueltas',
+        'num_curvas',
+        'autor_RecordCircuito',
+        'tiempo_RecordCircuito',
+        'año_RecordCircuito',
+        'DNF',
+        'DriverOfTheDay',
+        'Adelantamientos',
+        'podiums',
+        'vueltaRapida',
+    ];
+
 
     // Muchos circuitos tienen (son corridos por) muchos pilotos (N:M)
     public function piloto()

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cualis', function (Blueprint $table) {
-            $table->unsignedInteger('cualID')->primary();
+            $table->unsignedBigInteger('cualID')->primary();
             $table->string('weather', 200)->nullable(false);
             $table->date('fecha')->nullable(false);
             $table->string('tiempoVuelta', 200)->nullable(false);

@@ -14,13 +14,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sprints', function (Blueprint $table) {
-            $table->unsignedInteger('sprintID')->primary();
+            $table->id('sprintID');
             $table->date('fecha')->nullable(false);
             $table->string('vueltaRapida', 10)->nullable(false);
-            $table->unsignedInteger('ronda')->nullable(false);
+            $table->unsignedInteger('ronda')->nullable(false); // Cambiar a unsignedBigInteger
             $table->foreign('ronda')->references('ronda')->on('circuitos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
+
     }
 
 /*CREATE TABLE SPRINT(

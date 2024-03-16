@@ -11,6 +11,13 @@ class Usuario extends Model
 
     protected $table = "usuarios";
 
+    protected $fillable = [
+        'nombre',
+        'contrasenya',
+        'email',
+        'remember_token',
+    ];
+
     //Un usuario tiene muchos pilotos (1:N)
     public function piloto()
     {

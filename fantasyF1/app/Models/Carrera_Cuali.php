@@ -11,6 +11,16 @@ class Carrera_Cuali extends Model
 
     protected $table = "carrera_cualis"; //tabla fruto de la relacion N:M de sprints y pilotos
 
+    protected $fillable = [
+        'num_piloto',
+        'cualID',
+        'posicion',
+        'tiempo_q1',
+        'tiempo_q2',
+        'tiempo_q3',
+    ];
+
+
     // Una carrera pertenece a muchos pilotos
     public function pilotos()
     {

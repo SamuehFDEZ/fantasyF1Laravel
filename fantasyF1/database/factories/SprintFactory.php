@@ -2,23 +2,8 @@
 
 namespace Database\Factories;
 
+use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Provider\Base;
-
-class CustomFakerProvider extends Base
-{
-    /**
-     * Genera un valor aleatorio en formato "1:27.215"
-     *
-     * @return string
-     */
-    public function customRandomValue(): string
-    {
-        $minutes = $this->generator->numberBetween(0, 59);
-        $seconds = $this->generator->randomFloat(3, 0, 59.999);
-        return "1:$minutes.$seconds";
-    }
-}
 
 class SprintFactory extends Factory
 {
@@ -29,18 +14,28 @@ class SprintFactory extends Factory
      */
     public function definition(): array
     {
-        // Crear una instancia de Faker y agregar CustomFakerProvider como proveedor
-        $faker = \Faker\Factory::create();
-        $faker->addProvider(new CustomFakerProvider($faker));
-
-        // Obtener un valor aleatorio utilizando CustomFakerProvider
-        $randomValue = $faker->customRandomValue();
-
         return [
-            'sprintID' => $this->faker->numberBetween(1,24),
-            'fecha' => $this->faker->date('d-m-Y'),
-            'vueltaRapida' => $randomValue, // Utilizar el valor aleatorio generado
+            'sprintID' => $this->faker->unique()->numberBetween(1,6),
+            'fecha' => $this->faker->date('Y-m-d'),
+            'vueltaRapida' => $this->tiempoVuelta(), // Utilizar el valor aleatorio generado
             'ronda' => $this->faker->numberBetween(1, 10), // Definir un valor para 'ronda'
         ];
+    }
+    public function tiempoVuelta(): string
+    {
+        $faker = Faker::create();
+
+        // Generar un número aleatorio para los segundos entre 0 y 59
+        $segundos = $faker->numberBetween(0, 59);
+
+        // Generar un número aleatorio para los milisegundos entre 0 y 999
+        $milisegundos = $faker->numberBetween(0, 999);
+
+        // Formatear los números para que tengan siempre dos dígitos
+        //pad_string es para rellenar si se queda vacío
+        //STR_PAD_LEFT para donde se quiera añadir esos 0s
+        $segundos = str_pad($segundos, 2, '0', STR_PAD_LEFT);
+
+        return "1:$segundos.$milisegundos";
     }
 }

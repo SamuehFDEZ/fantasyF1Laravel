@@ -11,6 +11,14 @@ class Cuali extends Model
 
     protected $table = "cualis";
 
+    protected $fillable = [
+        'cualID',
+        'weather',
+        'fecha',
+        'tiempoVuelta',
+        'ronda',
+    ];
+
     //Muchas cualis tienen (son corridas por) muchos pilotos (N:M)
     public function piloto()
     {

@@ -11,6 +11,13 @@ class Sprint extends Model
 
     protected $table = "sprints";
 
+    protected $fillable = [
+        'sprintID',
+        'fecha',
+        'vueltaRapida',
+        'ronda',
+    ];
+
     // Un sprint pertenece a un circuito (1:1)
     public function circuito()
     {

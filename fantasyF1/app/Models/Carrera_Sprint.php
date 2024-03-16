@@ -11,6 +11,13 @@ class Carrera_Sprint extends Model
 
     protected $table = "carrera_sprints"; //tabla fruto de la relacion N:M de sprints y pilotos
 
+    protected $fillable = [
+        'num_piloto',
+        'sprintID',
+        'tiempo',
+        'posicion',
+    ];
+
     public function sprint()
     {
         return $this->belongsTo(Sprint::class);

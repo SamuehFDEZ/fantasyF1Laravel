@@ -14,20 +14,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pilotos', function (Blueprint $table) {
-            $table->unsignedInteger('num_piloto')->primary();
+            $table->unsignedInteger('num_piloto')->index(); // Esto creará un campo 'num_piloto' autoincremental que servirá como clave primaria
             $table->string('nombre');
             $table->float('valorMercado');
             $table->integer('puntosRealizados');
             $table->date('fechaNac');
             $table->string('nacionalidad');
-            $table->unsignedBigInteger('userID');
+            $table->unsignedBigInteger('userID')->default(1); // Usamos unsignedBigInteger ya que 'userID' en 'usuarios' es un big integer
             $table->string('nombre_constructor');
             $table->timestamps();
 
-            // Foreign key constraints
+            // Clave foránea para 'userID'
             $table->foreign('userID')->references('userID')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
+            // Clave foránea para 'nombre_constructor'
             $table->foreign('nombre_constructor')->references('nombre')->on('constructor')->onDelete('cascade')->onUpdate('cascade');
         });
+
     }
 
 /*CREATE TABLE PILOTOS(

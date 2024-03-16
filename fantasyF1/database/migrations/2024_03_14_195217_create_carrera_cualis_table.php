@@ -14,8 +14,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrera_cualis', function (Blueprint $table) {
-            $table->unsignedInteger('num_piloto');
-            $table->unsignedInteger('cualID');
+            $table->unsignedInteger('num_piloto')->index();
+            $table->unsignedBigInteger('cualID')->index();
             $table->unsignedInteger('posicion');
             $table->string('tiempo_q1', 10)->default('');
             $table->string('tiempo_q2', 10)->default('');

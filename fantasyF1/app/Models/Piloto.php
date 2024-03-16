@@ -11,6 +11,16 @@ class Piloto extends Model
 
     protected $table = "pilotos";
 
+    protected $fillable = [
+        'num_piloto',
+        'nombre',
+        'valorMercado',
+        'puntosRealizados',
+        'fechaNac',
+        'nacionalidad',
+        'nombre_constructor',
+    ];
+
 
     //Uno o muchos pilotos pertenecen a un usuario (1:N)
     public function usuario()

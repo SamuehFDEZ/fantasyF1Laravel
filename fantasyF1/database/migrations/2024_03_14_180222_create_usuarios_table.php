@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id('userID'); // Esto crea un campo 'id' autoincremental que servirá como clave primaria
+            $table->id('userID'); // Esto crea un campo 'userID' autoincremental que servirá como clave primaria
             $table->string('nombre', 255)->unique(); // Campo nombre VARCHAR(255) NOT NULL
             $table->string('contrasenya', 255); // Campo contrasenya VARCHAR(255) NOT NULL
             $table->string('email', 255)->unique(); // Campo email VARCHAR(255) NOT NULL y único

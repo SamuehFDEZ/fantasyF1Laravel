@@ -22,13 +22,13 @@ return new class extends Migration
             $table->integer('num_curvas')->nullable(false); // Agregar columna 'num_curvas' como INT NOT NULL
             $table->string('autor_RecordCircuito', 200)->nullable(false); // Agregar columna 'autor_RecordCircuito' como VARCHAR(200) NOT NULL
             $table->string('tiempo_RecordCircuito', 10)->nullable(false); // Agregar columna 'tiempo_RecordCircuito' como VARCHAR(10) NOT NULL
-            $table->date('año_RecordCircuito')->nullable(false); // Agregar columna 'año_RecordCircuito' como DATE NOT NULL
-            $table->string('top10Pilotos', 300)->nullable(false); // Agregar columna 'top10Pilotos' como VARCHAR(300) NOT NULL
+            $table->integer('año_RecordCircuito')->nullable(false); // Agregar columna 'año_RecordCircuito' como DATE NOT NULL
             $table->integer('DNF')->nullable(false); // Agregar columna 'DNF' como INT NULLABLE
             $table->string('DriverOfTheDay', 50)->nullable(false); // Agregar columna 'DriverOfTheDay' como VARCHAR(50) NULLABLE
             $table->integer('Adelantamientos')->nullable(false); // Agregar columna 'Adelantamientos' como INT NULLABLE
             $table->string('podiums', 200)->nullable(false); // Agregar columna 'podiums' como VARCHAR(200) NULLABLE
             $table->string('vueltaRapida', 10)->nullable(false); // Agregar columna 'vueltaRapida' como VARCHAR(10) NOT NULL
+            $table->timestamps(); // Agregar los campos de control de tiempo (created_at, updated_at)
 
         });
     }
