@@ -16,8 +16,6 @@ class ConstructorFactory extends Factory
      */
     public function definition(): array
     {
-        // Lista de países permitidos
-
         return [
             'nombre' => $this->faker->name(),
             'añoCreacion' => $this->faker->numberBetween(1950, 2024),

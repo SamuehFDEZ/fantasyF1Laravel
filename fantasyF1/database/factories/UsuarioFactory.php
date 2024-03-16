@@ -14,13 +14,13 @@ class UsuarioFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'nombre' => $this->faker()->name(),
-            'contrasenya',
-            'email',
-            'remember_token',
+            'nombre' => $this->faker->userName(),
+            'contrasenya' => $this->faker->password(),
+            'email' => $this->faker->safeEmail(),
+            'remember_token' => $this->faker->randomElements(['a', 'b', 'c', 'd', 'e'], 5),
         ];
     }
 }

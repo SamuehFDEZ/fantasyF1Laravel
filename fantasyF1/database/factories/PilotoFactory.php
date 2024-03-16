@@ -14,10 +14,17 @@ class PilotoFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'num_piloto' => $this->faker->numberBetween(1, 99),
+            'nombre' => $this->faker->name(),
+            'valorMercado' => $this->faker->randomFloat(1, 5, 30),
+            'puntosRealizados' => $this->faker->numberBetween(0, 26),
+            'fechaNac' => $this->faker->date('d_m_Y'),
+            'nacionalidad' => $this->faker->country(),
+            'userID' => $this->faker->name(),
+            'nombre_constructor' => $this->faker->name(),
         ];
     }
 }

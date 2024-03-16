@@ -15,6 +15,6 @@ class cualisTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }
