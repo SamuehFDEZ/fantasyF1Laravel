@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Circuito;
 use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,14 +16,16 @@ class CualiFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
+        $rondaCirc = Circuito::pluck('ronda')->unique()->toArray();
+
         return [
-            'cualID' => $this->faker->numberBetween(1,24),
-            'weather' => $this->faker->randomElements(['soleado', 'nublado', 'lluvia', 'lluvia extrema', 'sol y nubes']),
+            'cualID' => $this->faker->unique()->numberBetween(1,24),
+            'weather' => $this->faker->randomElement(['soleado', 'nublado', 'lluvia', 'lluvia extrema', 'sol y nubes']),
             'fecha' => $this->faker->date('Y-m-d'),
             'tiempoVuelta' => $this->tiempoVuelta(),
-            'ronda' => $this->faker->numberBetween(1,24)
+            'ronda' => $this->faker->randomElement($rondaCirc)
         ];
     }
 

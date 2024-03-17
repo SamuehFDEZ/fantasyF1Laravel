@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('tiempoVuelta', 200)->nullable(false);
             $table->unsignedInteger('ronda')->nullable(false);
             $table->foreign('ronda')->references('ronda')->on('circuitos')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

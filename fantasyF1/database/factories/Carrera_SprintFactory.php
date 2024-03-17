@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Piloto;
+use App\Models\Sprint;
 use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,9 +19,13 @@ class Carrera_SprintFactory extends Factory
      */
     public function definition(): array
     {
+        $num_piloto = Piloto::pluck('num_piloto')->unique()->toArray();
+        $sprintID = Sprint::pluck('sprintID')->unique()->toArray();
+
+
         return [
-            'num_piloto' => $this->faker->numberBetween(1, 99),
-            'sprintID' => $this->faker->numberBetween(1, 6),
+            'num_piloto' => $this->faker->unique()->randomElement($num_piloto),
+            'sprintID' => $this->faker->unique()->randomElement($sprintID),
             'tiempo' => $this->tiempoVuelta(),
             'posicion' => $this->faker->numberBetween(1, 20),
         ];

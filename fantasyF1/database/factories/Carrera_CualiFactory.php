@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Cuali;
+use App\Models\Piloto;
 use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,9 +20,13 @@ class Carrera_CualiFactory extends Factory
      */
     public function definition(): array
     {
+        //pluck obtiene los valores de la columna ronda de la tabla de cuali
+        $cuali = Cuali::pluck('ronda')->unique()->toArray();
+        $num_piloto = Piloto::pluck('num_piloto')->unique()->toArray();
+
         return [
-            'num_piloto' => $this->faker->numberBetween(1, 99),
-            'cualID' => $this->faker->numberBetween(1, 24),
+            'num_piloto' => $this->faker->randomElement($num_piloto),
+            'cualID' => $this->faker->randomElement($cuali),
             'posicion' => $this->faker->numberBetween(1, 20),
             'tiempo_q1' => $this->tiempoVuelta(),
             'tiempo_q2' => $this->tiempoVuelta(),

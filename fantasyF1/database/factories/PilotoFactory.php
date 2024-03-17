@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Constructor;
+use App\Models\Piloto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Collection;
 
@@ -21,7 +22,7 @@ class PilotoFactory extends Factory
         $nombresConstructores = Constructor::pluck('nombre')->toArray();
 
         return [
-            'num_piloto' => $this->faker->numberBetween(1, 99),
+            'num_piloto' => $this->faker->unique()->numberBetween(1, 99),
             'nombre' => $this->faker->name(),
             'valorMercado' => $this->faker->randomFloat(1, 5, 30),
             'puntosRealizados' => $this->faker->numberBetween(0, 26),

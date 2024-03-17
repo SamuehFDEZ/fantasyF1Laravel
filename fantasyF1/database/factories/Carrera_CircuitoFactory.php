@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Circuito;
+use App\Models\Piloto;
 use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -10,8 +12,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class Carrera_CircuitoFactory extends Factory
 {
-    private $generator;
-
     /**
      * Define the model's default state.
      *
@@ -19,9 +19,12 @@ class Carrera_CircuitoFactory extends Factory
      */
     public function definition(): array
     {
+        $rondaCirc = Circuito::pluck('ronda')->unique()->toArray();
+        $num_piloto = Piloto::pluck('num_piloto')->unique()->toArray();
+
         return [
-            'num_piloto' => $this->faker->numberBetween(1, 99),
-            'ronda' => $this->faker->numberBetween(1,24),
+            'num_piloto' => $this->faker->randomElement($num_piloto),
+            'ronda' => $this->faker->randomElement($rondaCirc),
             'tiempo' => $this->tiempoVuelta(),
             'posicion' =>$this->faker->numberBetween(1,20)
         ];

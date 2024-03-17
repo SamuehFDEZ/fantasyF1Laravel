@@ -40,12 +40,12 @@ class DatabaseSeeder extends Seeder
            carrera_cualisTableSeeder::class,
            carrera_sprintsTableSeeder::class*/
         ]);
-        Constructor::factory(10)->create();
         Usuario::factory(20)->create();
+        Constructor::factory(10)->create();
         Piloto::factory(20)->create();
         Circuito::factory(24)->create();
-        Sprint::factory(6)->create();
-        Cuali::factory(24)->create();
+        Sprint::factory(1)->create();
+        Cuali::factory(1)->create();
         Carrera_Circuito::factory(24)->create();
         Carrera_Sprint::factory(6)->create();
         Carrera_Cuali::factory(24)->create();

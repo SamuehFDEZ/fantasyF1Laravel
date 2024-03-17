@@ -25,7 +25,7 @@ class CircuitoFactory extends Factory
         ];
 
         return [
-            'ronda' => $this->faker->unique()->numberBetween(1, 24),
+            'ronda' => $this->faker->unique()->numberBetween(25, 100),
             'km' => $this->faker->randomNumber(4, true),
             'fecha' =>$this->faker->date('Y-m-d'),
             'nombre' => $this->faker->name(),
@@ -37,7 +37,7 @@ class CircuitoFactory extends Factory
             'DNF' => $this->faker->numberBetween(1,20),
             'DriverOfTheDay' => $this->faker->name(),
             'Adelantamientos' => $this->faker->numberBetween(0,20),
-            'podiums' => implode(",",$names) /*$names[array_rand($names)]*/,
+            'podiums' => implode(",",$names),
             'vueltaRapida' => $this->tiempoVuelta()
         ];
 

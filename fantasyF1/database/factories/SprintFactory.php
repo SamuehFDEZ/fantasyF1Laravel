@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Circuito;
 use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -14,11 +15,13 @@ class SprintFactory extends Factory
      */
     public function definition(): array
     {
+        $rondaCirc = Circuito::pluck('ronda')->toArray();
+
         return [
-            'sprintID' => $this->faker->unique()->numberBetween(1,6),
+            'sprintID' => $this->faker->unique(true)->numberBetween(1,6),
             'fecha' => $this->faker->date('Y-m-d'),
             'vueltaRapida' => $this->tiempoVuelta(), // Utilizar el valor aleatorio generado
-            'ronda' => $this->faker->numberBetween(1, 10), // Definir un valor para 'ronda'
+            'ronda' => $this->faker->randomElement($rondaCirc), // Definir un valor para 'ronda'
         ];
     }
     public function tiempoVuelta(): string
