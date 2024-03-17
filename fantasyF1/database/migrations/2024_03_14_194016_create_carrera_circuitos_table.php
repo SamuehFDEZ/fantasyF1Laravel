@@ -14,8 +14,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrera_circuitos', function (Blueprint $table) {
-            $table->unsignedInteger('num_piloto')->index();
-            $table->unsignedInteger('ronda')->index();
+            $table->unsignedInteger('num_piloto');
+            $table->unsignedBigInteger('ronda');
             $table->string('tiempo', 10);
             $table->unsignedInteger('posicion');
             $table->primary(['num_piloto', 'ronda']);

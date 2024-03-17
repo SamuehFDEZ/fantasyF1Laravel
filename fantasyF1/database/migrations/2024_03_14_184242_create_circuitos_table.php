@@ -14,22 +14,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('circuitos', function (Blueprint $table) {
-            $table->unsignedInteger('ronda')->primary(); // Definir 'ronda' como clave primaria y INT
-            $table->integer('km')->nullable(false); // Agregar columna 'km' como INT NOT NULL
-            $table->date('fecha')->nullable(false); // Agregar columna 'fecha' como DATE NOT NULL
-            $table->string('nombre', 200)->nullable(false); // Agregar columna 'nombre' como VARCHAR(200) NOT NULL
-            $table->integer('num_vueltas')->nullable(false); // Agregar columna 'num_vueltas' como INT NOT NULL
-            $table->integer('num_curvas')->nullable(false); // Agregar columna 'num_curvas' como INT NOT NULL
-            $table->string('autor_RecordCircuito', 200)->nullable(false); // Agregar columna 'autor_RecordCircuito' como VARCHAR(200) NOT NULL
-            $table->string('tiempo_RecordCircuito', 10)->nullable(false); // Agregar columna 'tiempo_RecordCircuito' como VARCHAR(10) NOT NULL
-            $table->integer('año_RecordCircuito')->nullable(false); // Agregar columna 'año_RecordCircuito' como DATE NOT NULL
-            $table->integer('DNF')->nullable(false); // Agregar columna 'DNF' como INT NULLABLE
-            $table->string('DriverOfTheDay', 50)->nullable(false); // Agregar columna 'DriverOfTheDay' como VARCHAR(50) NULLABLE
-            $table->integer('Adelantamientos')->nullable(false); // Agregar columna 'Adelantamientos' como INT NULLABLE
-            $table->string('podiums', 200)->nullable(false); // Agregar columna 'podiums' como VARCHAR(200) NULLABLE
-            $table->string('vueltaRapida', 10)->nullable(false); // Agregar columna 'vueltaRapida' como VARCHAR(10) NOT NULL
-            $table->timestamps(); // Agregar los campos de control de tiempo (created_at, updated_at)
-
+            $table->unsignedBigInteger('ronda')->primary(); // Utilizar id autoincremental
+            $table->integer('km')->nullable(false);
+            $table->date('fecha')->nullable(false);
+            $table->string('nombre', 200)->nullable(false);
+            $table->integer('num_vueltas')->nullable(false);
+            $table->integer('num_curvas')->nullable(false);
+            $table->string('autor_RecordCircuito', 200)->nullable(false);
+            $table->string('tiempo_RecordCircuito', 10)->nullable(false);
+            $table->integer('año_RecordCircuito')->nullable(false);
+            $table->integer('DNF')->nullable(false);
+            $table->string('DriverOfTheDay', 50)->nullable(false);
+            $table->integer('Adelantamientos')->nullable(false);
+            $table->string('podiums', 200)->nullable(false);
+            $table->string('vueltaRapida', 10)->nullable(false);
+            $table->timestamps();
         });
     }
 

@@ -25,7 +25,7 @@ class CircuitoFactory extends Factory
         ];
 
         return [
-            'ronda' => $this->faker->unique()->numberBetween(25, 100),
+            'ronda' => $this->faker->unique()->randomNumber(2),
             'km' => $this->faker->randomNumber(4, true),
             'fecha' =>$this->faker->date('Y-m-d'),
             'nombre' => $this->faker->name(),

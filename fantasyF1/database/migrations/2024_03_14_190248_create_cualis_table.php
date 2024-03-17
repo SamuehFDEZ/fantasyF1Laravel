@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('weather', 200)->nullable(false);
             $table->date('fecha')->nullable(false);
             $table->string('tiempoVuelta', 200)->nullable(false);
-            $table->unsignedInteger('ronda')->nullable(false);
+            $table->unsignedBigInteger('ronda')->nullable(false);
             $table->foreign('ronda')->references('ronda')->on('circuitos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

@@ -19,12 +19,9 @@ class Carrera_CircuitoFactory extends Factory
      */
     public function definition(): array
     {
-        $rondaCirc = Circuito::pluck('ronda')->unique()->toArray();
-        $num_piloto = Piloto::pluck('num_piloto')->unique()->toArray();
-
         return [
-            'num_piloto' => $this->faker->randomElement($num_piloto),
-            'ronda' => $this->faker->randomElement($rondaCirc),
+            'num_piloto' => $this->faker->unique()->numberBetween(1,100),
+            'ronda' => $this->faker->unique()->numberBetween(1,100),
             'tiempo' => $this->tiempoVuelta(),
             'posicion' =>$this->faker->numberBetween(1,20)
         ];

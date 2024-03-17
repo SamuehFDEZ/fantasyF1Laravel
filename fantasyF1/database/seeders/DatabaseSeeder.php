@@ -44,8 +44,8 @@ class DatabaseSeeder extends Seeder
         Constructor::factory(10)->create();
         Piloto::factory(20)->create();
         Circuito::factory(24)->create();
-        Sprint::factory(1)->create();
-        Cuali::factory(1)->create();
+        Sprint::factory(24)->create();
+        Cuali::factory(24)->create();
         Carrera_Circuito::factory(24)->create();
         Carrera_Sprint::factory(6)->create();
         Carrera_Cuali::factory(24)->create();

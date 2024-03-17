@@ -19,13 +19,10 @@ class Carrera_SprintFactory extends Factory
      */
     public function definition(): array
     {
-        $num_piloto = Piloto::pluck('num_piloto')->unique()->toArray();
-        $sprintID = Sprint::pluck('sprintID')->unique()->toArray();
-
 
         return [
-            'num_piloto' => $this->faker->unique()->randomElement($num_piloto),
-            'sprintID' => $this->faker->unique()->randomElement($sprintID),
+            'num_piloto' => $this->faker->unique()->numberBetween(1,10),
+            'sprintID' => $this->faker->unique()->numberBetween(1,6),
             'tiempo' => $this->tiempoVuelta(),
             'posicion' => $this->faker->numberBetween(1, 20),
         ];
