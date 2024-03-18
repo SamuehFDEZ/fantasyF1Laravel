@@ -30,25 +30,25 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-           /*usuariosTableSeeder::class,
+           usuariosTableSeeder::class,
            constructorTableSeeder::class,
            pilotosTableSeeder::class,
            circuitosTableSeeder::class,
-           sprintsTableSeeder::class,
            cualisTableSeeder::class,
            carrera_circuitosTableSeeder::class,
            carrera_cualisTableSeeder::class,
-           carrera_sprintsTableSeeder::class*/
+            /*sprintsTableSeeder::class,
+            carrera_sprintsTableSeeder::class*/
         ]);
-        Usuario::factory(20)->create();
+        /*Usuario::factory(20)->create();
+        Circuito::factory(24)->create();
         Constructor::factory(10)->create();
         Piloto::factory(20)->create();
-        Circuito::factory(24)->create();
-        Sprint::factory(24)->create();
-        Cuali::factory(24)->create();
+        Sprint::factory(2)->create();*/
+        /*Cuali::factory(24)->create();
         Carrera_Circuito::factory(24)->create();
         Carrera_Sprint::factory(6)->create();
-        Carrera_Cuali::factory(24)->create();
+        Carrera_Cuali::factory(24)->create();*/
 
     }
 }

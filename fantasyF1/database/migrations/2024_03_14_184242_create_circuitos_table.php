@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('circuitos', function (Blueprint $table) {
-            $table->unsignedBigInteger('ronda')->primary(); // Utilizar id autoincremental
+            $table->unsignedInteger('ronda')->primary();
             $table->integer('km')->nullable(false);
             $table->date('fecha')->nullable(false);
             $table->string('nombre', 200)->nullable(false);
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('tiempo_RecordCircuito', 10)->nullable(false);
             $table->integer('año_RecordCircuito')->nullable(false);
             $table->integer('DNF')->nullable(false);
-            $table->string('DriverOfTheDay', 50)->nullable(false);
+            $table->string('DriverOfTheDay', 50)->nullable(false)->default('');
             $table->integer('Adelantamientos')->nullable(false);
             $table->string('podiums', 200)->nullable(false);
             $table->string('vueltaRapida', 10)->nullable(false);

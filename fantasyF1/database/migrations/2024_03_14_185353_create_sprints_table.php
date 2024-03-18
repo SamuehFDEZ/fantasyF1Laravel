@@ -17,11 +17,10 @@ return new class extends Migration
             $table->id('sprintID');
             $table->date('fecha')->nullable(false);
             $table->string('vueltaRapida', 10)->nullable(false);
-            $table->unsignedBigInteger('ronda')->nullable(false);
+            $table->unsignedInteger('ronda')->default(0);
             $table->foreign('ronda')->references('ronda')->on('circuitos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
-
     }
 
 /*CREATE TABLE SPRINT(

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->unsignedInteger('num_piloto')->primary(); // Esto creará un campo 'num_piloto' autoincremental que servirá como clave primaria
             $table->string('nombre');
             $table->float('valorMercado');
-            $table->integer('puntosRealizados');
+            $table->integer('puntosRealizados')->nullable(true);
             $table->date('fechaNac');
             $table->string('nacionalidad');
-            $table->unsignedBigInteger('userID')->default(1); // Usamos unsignedBigInteger ya que 'userID' en 'usuarios' es un big integer
+            $table->unsignedBigInteger('userID')->default(1)->nullable(true); // Usamos unsignedBigInteger ya que 'userID' en 'usuarios' es un big integer
             $table->string('nombre_constructor');
             $table->timestamps();
 

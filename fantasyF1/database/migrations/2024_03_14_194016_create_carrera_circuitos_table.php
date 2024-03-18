@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('carrera_circuitos', function (Blueprint $table) {
             $table->unsignedInteger('num_piloto');
-            $table->unsignedBigInteger('ronda');
+            $table->unsignedInteger('ronda');
             $table->string('tiempo', 10);
             $table->unsignedInteger('posicion');
+            $table->unsignedInteger('vueltas_hechas');
             $table->primary(['num_piloto', 'ronda']);
             $table->foreign('num_piloto')->references('num_piloto')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ronda')->references('ronda')->on('circuitos')->onDelete('cascade')->onUpdate('cascade');
