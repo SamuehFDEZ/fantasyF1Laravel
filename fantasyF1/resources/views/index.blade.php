@@ -87,22 +87,22 @@
 
             </div>
             <div id="cuentaAtrasYelegir" class="col-md-3">
-                    <section>
-                        <h2><span>Bloqueo de Equipo</span></h2>
-                        <div id="contador">
-                            <ul>
-                                <li>00</li>
-                                <span>:</span>
-                                <li>00</li>
-                                <span>:</span>
-                                <li>00</li>
-                                <span>Días</span>
-                                <span>Horas</span>
-                                <span>Minutos</span>
-                            </ul>
-                        </div>
-                    </section>
-                    <button type="button">Escoge tu equipo</button>
+                <section>
+                    <h2><span>Bloqueo de Equipo</span></h2>
+                    <div id="contador">
+                        <ul>
+                            <li>00</li>
+                            <span>:</span>
+                            <li>00</li>
+                            <span>:</span>
+                            <li>00</li>
+                            <span>Días</span>
+                            <span>Horas</span>
+                            <span>Minutos</span>
+                        </ul>
+                    </div>
+                </section>
+                <button type="button">Escoge tu equipo</button>
             </div>
         </div>
     </div>
