@@ -15,6 +15,11 @@ class usuariosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $usuario = new Usuario();
+        /*
+         * 'nombre',
+        'contrasenya',
+        'email',*/
+        $usuario->password = bcrypt('admin');
     }
 }

@@ -126,6 +126,7 @@
       <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/fantasyF1/vendor/laravel/breeze" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
