@@ -50,7 +50,7 @@
 
 
             <main id="main">
-                <form id="formLog" class="oculto" action="{{route("login")}} " method="post">
+                <form id="formLog" class="oculto" action="{{route("login")}} " method="POST">
                     @csrf
                     <h1>INICIAR SESIÓN</h1>
                     <hr>
@@ -69,7 +69,7 @@
             </main>
 
             <div id="main2">
-                <form id="formReg" class="oculto" action="{{route("register")}}" method="post">
+                <form id="formReg" class="oculto" action="{{route("login")}}" method="POST">
                     @csrf
                     <h1>CREAR CUENTA</h1>
                     <hr>

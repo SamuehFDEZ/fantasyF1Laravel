@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Usuario;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -18,10 +19,10 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+ /*   public function create(): View
     {
         return view('auth.register');
-    }
+    }*/
 
     /**
      * Handle an incoming registration request.
@@ -31,15 +32,15 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'nombre' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.Usuario::class],
+            'contrasenya' => ['required', 'confirmed'],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
+        $user = Usuario::create([
+            'nombre' => $request->nombre,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'contrasenya' => Hash::make($request->contrasenya),
         ]);
 
         event(new Registered($user));
