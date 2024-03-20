@@ -145,6 +145,72 @@ main {
         }
     }
   }
+
+    #siguienteGP{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        background-color: #f3f3f5;
+        width: 70%;
+        height: 200px;
+        .row{
+            #melbourne{
+                width: 90%;
+                height: 150px;
+                margin-top: 20px;
+                margin-left: 20px;
+                border-radius: 10px;
+            }
+            #infoPais{
+                margin-top: 20px;
+                height: 150px;
+                section{
+                    border: 2px solid black;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom-right-radius: 5px;
+
+                    h1{
+                        float: left;
+                        #bandera{
+                            width: 40%;
+                            height: 25px;
+                            margin-left: -52px;
+                        }
+                        #pais{
+                            font-family: F1, serif;
+                            font-size: 30px;
+                            font-weight: bold;
+                            margin-left: -40px;
+
+                        }
+                    }
+                    p{
+                        margin-top: 20px;
+                        font-family: F1, serif;
+                        font-size: 15px;
+                    }
+                    #circuito{
+                        margin-left: 150px;
+                        width: 15%;
+                        height: 90px;
+                    }
+                }
+
+
+            }
+            #cuentaAtrasYelegir{
+                section{
+                    h2{
+                        span{
+                            font-size: 10px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }
 
 .container-fluid {

@@ -68,6 +68,46 @@
             </div>
         </nav>
     </div>
+
+    <div id="siguienteGP" class="container">
+        <div class="row">
+            <div class="col-md-3 ">
+                <img src="{{asset("img/Melbourne.jpg")}}" id="melbourne" alt="Melbourne" srcset="{{asset("img/Melbourne.jpg")}}">
+            </div>
+            <div id="infoPais" class="col-md-6">
+                <section>
+                    <h1>
+                        <img src="{{asset("img/Australia.svg")}}" id="bandera" alt="Melbourne" srcset="{{asset("img/Australia.svg")}}">
+                        <span id="pais">AUSTRALIA</span>
+                        <p>FORMULA 1 GRAND PRIX AUSTRALIA 2024</p>
+                    </h1>
+                    <img src="{{asset("img/Melbourne.svg")}}" id="circuito" alt="Melbourne" srcset="{{asset("img/Melbourne.svg")}}">
+
+                </section>
+
+            </div>
+            <div id="cuentaAtrasYelegir" class="col-md-3">
+                    <section>
+                        <h2><span>Bloqueo de Equipo</span></h2>
+                        <div id="contador">
+                            <ul>
+                                <li>00</li>
+                                <span>:</span>
+                                <li>00</li>
+                                <span>:</span>
+                                <li>00</li>
+                                <span>Días</span>
+                                <span>Horas</span>
+                                <span>Minutos</span>
+                            </ul>
+                        </div>
+                    </section>
+                    <button type="button">Escoge tu equipo</button>
+            </div>
+        </div>
+    </div>
+
+
 </main>
 
 <footer class="container-fluid">
