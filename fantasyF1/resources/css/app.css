@@ -187,34 +187,48 @@ main #siguienteGP .row #infoPais section #circuito {
 }
 main #siguienteGP .row #cuentaAtrasYelegir {
   width: 25%;
-  height: 120px;
+  height: 200px;
   border: 1px solid black;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section {
   width: 50%;
   height: 50px;
-  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section h2 {
-  width: 25%;
+  width: 90%;
   height: 30px;
   background-color: #363333;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section h2 span {
   font-size: 12px;
   color: white;
+  text-align: center;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador {
-  background-color: red;
+  background-color: #232222;
+  width: 90%;
+  height: 50px;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
-  color: white;
+  color: black;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador ul span {
+  color: black;
+}
+main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
+  background-color: red;
   color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+}
+main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
+  border: 2px solid red;
+  background-color: white;
+  color: black;
 }
 
 .container-fluid {

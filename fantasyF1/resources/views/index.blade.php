@@ -27,16 +27,16 @@
 <header>
     <img src="{{ asset('img/logoF1Blanco.png' )}}" alt="logoF1" id="logoHeader"
          srcset="{{ asset('img/logoF1Blanco.png') }}">
-        <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser" type="button">
-            <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
-                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-            </svg>
-            <span id="nomUser"><?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?></span>
-        </button>
-        <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
+    <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser" type="button">
+        <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
+             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span id="nomUser"><?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?></span>
+    </button>
+    <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
 </header>
 <main>
     <div id="panel" class="oculto">
@@ -72,16 +72,19 @@
     <div id="siguienteGP" class="container">
         <div class="row">
             <div class="col-md-3 ">
-                <img src="{{asset("img/Melbourne.jpg")}}" id="melbourne" alt="Melbourne" srcset="{{asset("img/Melbourne.jpg")}}">
+                <img src="{{asset("img/Melbourne.jpg")}}" id="melbourne" alt="Melbourne"
+                     srcset="{{asset("img/Melbourne.jpg")}}">
             </div>
             <div id="infoPais" class="col-md-6">
                 <section>
                     <h1>
-                        <img src="{{asset("img/Australia.svg")}}" id="bandera" alt="Melbourne" srcset="{{asset("img/Australia.svg")}}">
+                        <img src="{{asset("img/Australia.svg")}}" id="bandera" alt="Melbourne"
+                             srcset="{{asset("img/Australia.svg")}}">
                         <span id="pais">AUSTRALIA</span>
                         <p>FORMULA 1 GRAND PRIX AUSTRALIA 2024</p>
                     </h1>
-                    <img src="{{asset("img/Melbourne.svg")}}" id="circuito" alt="Melbourne" srcset="{{asset("img/Melbourne.svg")}}">
+                    <img src="{{asset("img/Melbourne.svg")}}" id="circuito" alt="Melbourne"
+                         srcset="{{asset("img/Melbourne.svg")}}">
 
                 </section>
 
@@ -89,7 +92,7 @@
             <div id="cuentaAtrasYelegir" class="col-md-3">
                 <section>
                     <h2><span>Bloqueo de Equipo</span></h2>
-                    <div id="contador">
+                    {{--<div id="contador">
                         <ul>
                             <li>00</li>
                             <span>:</span>
@@ -100,9 +103,9 @@
                             <span>Horas</span>
                             <span>Minutos</span>
                         </ul>
-                    </div>
+                    </div>--}}
                 </section>
-                <button type="button">Escoge tu equipo</button>
+                <button id="escogeEquipo" type="button">Escoge tu equipo</button>
             </div>
         </div>
     </div>

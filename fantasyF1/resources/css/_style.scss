@@ -228,42 +228,58 @@ main {
 
             #cuentaAtrasYelegir {
                 width: 25%;
-                height: 120px;
+                height: 200px;
                 border: 1px solid black;
 
                 section {
                     width: 50%;
                     height: 50px;
-                    background-color: black;
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
 
                     h2 {
-                        width: 25%;
+                        width: 90%;
                         height: 30px;
                         background-color: #363333;
 
                         span {
                             font-size: 12px;
                             color: white;
+                            text-align: center;
                         }
                     }
 
                     #contador {
-                        background-color: red;
+                        background-color: #232222;
+                        width: 90%;
+                        height: 50px;
 
                         ul {
                             li {
-                                color: white;
+                                color: black;
 
                             }
 
                             span {
-                                color: white;
+                                color: black;
 
                             }
                         }
+                    }
+                }
+
+                #escogeEquipo {
+                    background-color: red;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 5px 5px 5px 5px;
+
+                    &:hover {
+                        border: 2px solid red;
+                        background-color: white;
+                        color: black;
                     }
                 }
             }
