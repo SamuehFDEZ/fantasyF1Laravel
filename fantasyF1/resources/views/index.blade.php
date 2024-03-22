@@ -91,19 +91,14 @@
             </div>
             <div id="cuentaAtrasYelegir" class="col-md-3">
                 <section>
-                    <h2><span>Bloqueo de Equipo</span></h2>
-                    {{--<div id="contador">
+                    <h2><span>Bloqueo de Equipo:</span></h2>
+                    <div id="contador">
                         <ul>
-                            <li>00</li>
-                            <span>:</span>
-                            <li>00</li>
-                            <span>:</span>
-                            <li>00</li>
-                            <span>Días</span>
-                            <span>Horas</span>
-                            <span>Minutos</span>
+                            <li>00 <span>Días</span></li>
+                            <li>00 <span>Horas</span></li>
+                            <li>00 <span>Minutos</span></li>
                         </ul>
-                    </div>--}}
+                    </div>
                 </section>
                 <button id="escogeEquipo" type="button">Escoge tu equipo</button>
             </div>

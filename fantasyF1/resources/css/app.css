@@ -188,35 +188,60 @@ main #siguienteGP .row #infoPais section #circuito {
 main #siguienteGP .row #cuentaAtrasYelegir {
   width: 25%;
   height: 200px;
-  border: 1px solid black;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section {
   width: 50%;
-  height: 50px;
+  height: 100px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section h2 {
-  width: 90%;
-  height: 30px;
+  position: relative;
+  width: 4em;
+  height: 60px;
   background-color: #363333;
+  border-radius: 10px;
+  top: 15%;
+  left: 50%;
+  z-index: 2;
+  margin-bottom: 10px;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section h2 span {
   font-size: 12px;
   color: white;
   text-align: center;
+  display: block;
+  margin-top: 12px;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador {
-  background-color: #232222;
-  width: 90%;
-  height: 50px;
+  background-color: #151414;
+  width: 20em;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: rgba(35, 34, 35, 0.96);
+  position: relative;
+  left: 50%;
+}
+main #siguienteGP .row #cuentaAtrasYelegir section #contador ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
-  color: black;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-main #siguienteGP .row #cuentaAtrasYelegir section #contador ul span {
-  color: black;
+main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
   background-color: red;
@@ -224,6 +249,10 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
   border: none;
   border-radius: 5px;
   padding: 5px 5px 5px 5px;
+  bottom: 0;
+  position: relative;
+  top: 30%;
+  width: 100%;
 }
 main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
   border: 2px solid red;
@@ -255,7 +284,7 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
 }
 .container-fluid .row .col-md #iconos {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #userIcon {
