@@ -23,17 +23,18 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+
 /*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
-*/
+Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+
 
 Route::middleware('auth')->group(function () {
-    //Route::post('/login', [RegisteredUserController::class, 'store'])->name('register');
-    //Route::get('/login', 'RegisterController@show')->name('register.show');
     Route::post('/login', [RegisterController::class, 'register'])->name('register');
-    Route::post('/login',[LoginController::class, 'login.perform'])->name('login.perform');
+/*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
+    Route::post('/login',[LoginController::class, 'login'])->name('login');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');*/

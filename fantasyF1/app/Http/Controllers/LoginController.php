@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,13 +15,14 @@ class LoginController extends Controller
      * @param LoginRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
+     * @throws BindingResolutionException
      */
     public function login(LoginRequest $request)
     {
         $credentials = $request->getCredentials();
 
         if(!Auth::validate($credentials)):
-            return redirect()->to('login')
+            return redirect()->route('login')
                 ->withErrors(trans('auth.failed'));
         endif;
 
@@ -28,7 +30,7 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return $this->authenticated($request, $user);
+        return redirect()->route('index'); // Redirige al índice después del inicio de sesión exitoso
     }
 
     /**

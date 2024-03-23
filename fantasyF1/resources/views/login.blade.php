@@ -47,11 +47,11 @@
 
 
     <main id="main">
-        <form id="formLog" class="oculto" action="{{route("login")}} " method="POST">
+        <form id="formLog" class="oculto" action="{{ route('login') }} " method="POST">
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>
-            <label for="email" :value="__('Email')">Usuario</label><br>
+            <label for="correo">Usuario</label><br>
             <input type="text" name="correo" id="correo" placeholder="Introduce tu Nombre de Usuario"><br><br>
             <label for="contrasenya">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
