@@ -31,7 +31,6 @@
             </form>
         </header>
     </div>
-
     <div class="row">
         <nav id="navbar" class="col-xl col-md col-sm col">
             <div id="botones">
@@ -44,48 +43,9 @@
             </div>
         </nav>
     </div>
-
-
-    <main id="main">
-        <form id="formLog" class="oculto" action="{{ route('iniciarSesion') }}" method="POST">
-            @csrf
-            <h1>INICIAR SESIÓN</h1>
-            <hr>
-            <label for="correo">Usuario</label><br>
-            <input type="text" name="correo" id="correo" placeholder="Introduce tu Nombre de Usuario"><br><br>
-            <label for="contrasenya">Contraseña</label><br>
-            <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
-            <span toggle="#contrasenya" class="field-icon">
-                        <img src="{{asset('img/eye.png')}}" id="ojo" alt="ojo" srcset="{{asset('img/eye.png')}}">
-                    </span><br><br>
-            <button id="forgetPass">¿Olvidaste tu contraseña?</button>
-            <br><br>
-            <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
-            <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
-            <button id="sinCuenta"> Registrarte con F1</button>
-            <br><br>
-        </form>
+    <main>
+        <h1>Usuario Registrado</h1>
     </main>
-
-    <div id="main2">
-        <form id="formReg" class="oculto" action="{{ route('registro') }}" method="POST">
-            @csrf
-            <h1>CREAR CUENTA</h1>
-            <hr>
-            <label for="nombre">Nombre</label><br>
-            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu Nombre de Usuario"><br><br>
-            <label for="email">Correo Electrónico</label><br>
-            <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico"><br><br>
-            <label for="contrasenyaReg">Contraseña</label><br>
-            <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
-            <span toggle="#contrasenyaReg" class="field-icon">
-                        <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" srcset="{{asset('img/eye.png')}}">
-                    </span><br><br>
-            <input type="checkbox" name="acepto" id="acepto"> Acepto los términos y condiciones<br><br>
-            <span id="mensajeRegistro"></span>
-            <input type="submit" name="crearCuenta" id="crearCuenta" value="Crear Cuenta"><br><br>
-        </form>
-    </div>
 
     <div class="row">
         <footer class="col-xl-11 col-md-11 col-sm col">
@@ -137,6 +97,8 @@
             </div>
         </footer>
     </div>
+
+
 </div>
 </body>
 </html>

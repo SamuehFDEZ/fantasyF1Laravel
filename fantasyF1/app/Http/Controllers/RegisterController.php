@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
-use App\Models\Usuario;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -17,7 +16,7 @@ class RegisterController extends Controller
             'constrasenya' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-    
+
     /**
      * Handle account registration request
      *
@@ -25,12 +24,28 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function register(RegisterRequest $request)
+/*    public function register(RegisterRequest $request)
     {
-        $user = Usuario::create($request->validated());
+        /*$user = Usuario::create($request->validated());
 
         auth()->login($user);
 
-        return redirect('/')->with('success', "Account successfully registered.");
+        return redirect('registrar')->with('success', "Account successfully registered.");
+
+
+    }*/
+
+    public function register(RegisterRequest $request)
+    {
+        $request->validate([
+            'nombre' => 'required',
+            'email' => 'required|email',
+            'contrasenya' => 'required|min:8',
+        ]);
+
+        $data = $request->all();
+        $check = $this->create($data);
+
+        return redirect("registrar")->withSuccess('Great! You have Successfully loggedin');
     }
 }

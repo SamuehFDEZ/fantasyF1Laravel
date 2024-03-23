@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Usuario;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -28,16 +27,18 @@ class RegisteredUserController extends Controller
             'constrasenya' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        echo $request;
+
         $user = Usuario::create([
             'nombre' => $request->nombre,
             'email' => $request->email,
             'constrasenya' => Hash::make($request->constrasenya),
         ]);
-
         event(new Registered($user));
+
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('registro');
     }
 }

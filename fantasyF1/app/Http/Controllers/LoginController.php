@@ -17,7 +17,7 @@ class LoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws BindingResolutionException
      */
-    public function login(LoginRequest $request)
+    public function iniciarSesion(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
         $credentials = $request->getCredentials();
 

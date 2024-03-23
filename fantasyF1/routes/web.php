@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,21 +23,29 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+Route::get('/registrar', function () {
+    return view('registrar');
+})->name('registrar');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
-Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
-
+Route::post('/login', [RegisteredUserController::class, 'store'])->name('registro');
+Route::post('/login', [LoginController::class, 'iniciarSesion'])->name('iniciarSesion');
 
 Route::middleware('auth')->group(function () {
-    Route::post('/login', [RegisterController::class, 'register'])->name('register');
+    //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
 /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
-    Route::post('/login',[LoginController::class, 'login'])->name('login');
+    Route::post('/login',[LoginController::class, 'iniciarSesion'])->name('iniciarSesion');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');*/
 });
+
+/*Route::controller(RegisteredUserController::class)->group(function (){
+    Route::post('/registrar', 'store')->name('registro');
+
+});*/
 
 require __DIR__.'/auth.php';
