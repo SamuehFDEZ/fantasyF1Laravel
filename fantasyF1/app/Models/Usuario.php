@@ -26,7 +26,7 @@ class Usuario extends Model
      */
     public function setPasswordAttribute($value): string
     {
-        return  $this->attributes['password'] = bcrypt($value);
+        return  $this->attributes['contrasenya'] = bcrypt($value);
 
     }
 

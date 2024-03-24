@@ -17,8 +17,8 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
-    Route::post('/login', [RegisteredUserController::class, 'store'])->name('registro');
-    Route::post('/login', [LoginController::class, 'iniciarSesion'])->name('iniciarSesion');
+    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');
+    Route::post('/login', [LoginController::class, 'acceso'])->name('acceso');
 
 
     Route::post('register', [RegisteredUserController::class, 'store']);
@@ -42,7 +42,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('/login', [RegisteredUserController::class, 'store'])->name('registro');
+    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');
+    Route::post('/login', [LoginController::class, 'acceso'])->name('acceso');
 
 
     Route::get('verify-email', EmailVerificationPromptController::class)

@@ -31,13 +31,24 @@ Route::get('/registrar', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
-Route::post('/login', [RegisteredUserController::class, 'store'])->name('registro');
-Route::post('/login', [LoginController::class, 'iniciarSesion'])->name('iniciarSesion');
+
+Route::middleware('guest')->group(function () {
+    //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
+    /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
+    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');
+    Route::post('/login',[LoginController::class, 'acceso'])->name('acceso');
+    /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');*/
+});
+
 
 Route::middleware('auth')->group(function () {
     //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
 /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
-    Route::post('/login',[LoginController::class, 'iniciarSesion'])->name('iniciarSesion');
+/*    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');*/
+    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');
+    Route::post('/login',[LoginController::class, 'acceso'])->name('acceso');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');*/
