@@ -12,6 +12,11 @@ use Illuminate\Validation\Rules;
 class RegisteredUserController extends Controller
 {
 
+    public function view()
+    {
+        return view('registro');
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -20,7 +25,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'nombre' => ['required', 'string', 'max:255'],
+            'nombre' => ['required', 'string', 'max:255', 'unique:'.Usuario::class],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.Usuario::class],
             'contrasenya' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -36,6 +41,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return to_route('login');
+        return to_route('registro');
     }
 }

@@ -25,7 +25,7 @@ Route::get('/login', function () {
 
 Route::get('/registrar', function () {
     return view('registrar');
-})->name('registrar');
+})->name('registro');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,7 +35,7 @@ Route::get('/registrar', function () {
 Route::middleware('guest')->group(function () {
     //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
     /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
-    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');
+    Route::post('/registrar', [RegisteredUserController::class, 'store'])->name('registro');
     Route::post('/login',[LoginController::class, 'acceso'])->name('acceso');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
     //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
 /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
 /*    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');*/
-    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');
+    Route::post('/registrar', [RegisteredUserController::class, 'store'])->name('registro');
     Route::post('/login',[LoginController::class, 'acceso'])->name('acceso');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

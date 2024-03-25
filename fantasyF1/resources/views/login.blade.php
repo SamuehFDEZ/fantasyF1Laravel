@@ -68,7 +68,7 @@
     </main>
 
     <div id="main2">
-        <form id="formReg" class="oculto" action="{{ route('store') }}" method="POST">
+        <form id="formReg" class="oculto" action="{{ route('registro') }}" method="POST">
             @csrf
             <h1>CREAR CUENTA</h1>
             <hr>
@@ -78,13 +78,10 @@
             <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico"><br><br>
             <label for="contrasenyaReg">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
-            <input type="password" name="confirmed-contrasenya" id="contrasenyaReg" placeholder="Confirma tu clave">
-
             <span toggle="#contrasenyaReg" class="field-icon">
-                        <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" srcset="{{asset('img/eye.png')}}">
-                    </span><br><br>
-            <input type="checkbox" name="acepto" id="acepto"> Acepto los términos y condiciones<br><br>
-            <span id="mensajeRegistro"></span>
+                <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" srcset="{{asset('img/eye.png')}}">
+            </span>
+            <br><br>
             <input type="submit" name="crearCuenta" id="crearCuenta" value="Crear Cuenta"><br><br>
         </form>
     </div>
