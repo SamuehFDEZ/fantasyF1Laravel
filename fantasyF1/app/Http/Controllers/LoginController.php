@@ -17,22 +17,22 @@ class LoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws BindingResolutionException
      */
-    public function acceso(LoginRequest $request): \Illuminate\Http\RedirectResponse
+    public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
         $credentials = $request->getCredentials();
 
-        if(!Auth::validate($credentials)):
+        if(!Auth::validate($credentials)){
             return redirect()->route('login')
                 ->withErrors(trans('auth.failed'));
-        endif;
+        }
+        else{
+            $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+            Auth::login($user);
 
-        Auth::login($user);
-
-        return redirect()->route('index'); // Redirige al índice después del inicio de sesión exitoso
+            return redirect()->route('index'); // Redirige al índice después del inicio de sesión exitoso
+        }
     }
-
     /**
      * Handle response after user authenticated
      *

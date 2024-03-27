@@ -47,7 +47,7 @@
 
 
     <main id="main">
-        <form id="formLog" class="oculto" {{--action="{{ route('acceso') }}"--}} method="POST">
+        <form id="formLog" class="oculto" action="{{ route('login') }}" method="POST">
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>

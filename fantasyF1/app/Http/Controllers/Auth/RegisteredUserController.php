@@ -12,9 +12,9 @@ use Illuminate\Validation\Rules;
 class RegisteredUserController extends Controller
 {
 
-    public function view()
+    public function view(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('registro');
+        return view('registrar');
     }
 
     /**
@@ -41,6 +41,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return to_route('registro');
+        return to_route('registrar');
     }
 }

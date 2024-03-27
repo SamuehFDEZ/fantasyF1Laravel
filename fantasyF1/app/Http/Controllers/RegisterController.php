@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\Usuario;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules;
 
 class RegisterController extends Controller
 {
 
-    protected function validator(array $data, $table)
+    public function view(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('registrar');
+    }
+
+    protected function validator(array $data, $table): \Illuminate\Validation\Validator
     {
         return Validator::make($data, [
             'nombre' => ['required', 'string', 'max:255'],
@@ -24,28 +32,22 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-/*    public function register(RegisterRequest $request)
-    {
-        /*$user = Usuario::create($request->validated());
-
-        auth()->login($user);
-
-        return redirect('registrar')->with('success', "Account successfully registered.");
-
-
-    }*/
-
-    public function register(RegisterRequest $request)
+    public function register(RegisterRequest $request): \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         $request->validate([
-            'nombre' => 'required',
-            'email' => 'required|email',
-            'contrasenya' => 'required|min:8',
+            'nombre' => ['required', 'string', 'max:255', 'unique:'.Usuario::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.Usuario::class],
+            'contrasenya' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $data = $request->all();
-        $check = $this->create($data);
+        $user = Usuario::create([
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'contrasenya' => bcrypt($request->contrasenya),
+        ]);
 
-        return redirect("registrar")->withSuccess('Great! You have Successfully loggedin');
+        Auth::login($user);
+
+        return to_route('login');
     }
 }

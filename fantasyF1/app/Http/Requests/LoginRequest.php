@@ -36,7 +36,7 @@ class LoginRequest extends FormRequest
      * @return array
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    public function getCredentials()
+    public function getCredentials(): array
     {
         // The form field for providing username or password
         // have name of "username", however, in order to support

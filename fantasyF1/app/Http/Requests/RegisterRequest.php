@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Usuario;
 use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterRequest extends FormRequest
@@ -24,8 +25,8 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email:rfc,dns|unique:usuarios,email',
             'nombre' => 'required|unique:usuarios,nombre',
+            'email' => 'required|email:rfc,dns|unique:'.Usuario::class,
             'contrasenya' => 'required|min:8',
         ];
     }
