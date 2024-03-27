@@ -13,7 +13,7 @@ class RegisterController extends Controller
 
     public function view(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('registrar');
+        return view('registro');
     }
 
     protected function validator(array $data, $table): \Illuminate\Validation\Validator

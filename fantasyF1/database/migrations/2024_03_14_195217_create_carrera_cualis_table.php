@@ -48,6 +48,6 @@ ON DELETE CASCADE ON UPDATE CASCADE
      */
     public function down(): void
     {
-        Schema::dropIfExists('carrera__cualis');
+        Schema::dropIfExists('carrera_cualis');
     }
 };

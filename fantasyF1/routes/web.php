@@ -27,6 +27,10 @@ Route::get('/registrar', function () {
     return view('registrar');
 })->name('registro');
 
+Route::get('/comoJugar', function () {
+    return view('comoJugar');
+})->name('comoJugar');
+
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/

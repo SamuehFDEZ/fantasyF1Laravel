@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('constructor', function (Blueprint $table) {
             $table->string('nombre', 200)->primary(); // Definir 'nombre' como clave primaria y VARCHAR(200)
@@ -34,7 +34,7 @@ nacionalidad VARCHAR(50) NOT NULL
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('constructor');
     }

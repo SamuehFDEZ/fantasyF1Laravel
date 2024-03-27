@@ -44,6 +44,6 @@ ON DELETE CASCADE ON UPDATE CASCADE
      */
     public function down(): void
     {
-        Schema::dropIfExists('carrera__sprints');
+        Schema::dropIfExists('carrera_sprints');
     }
 };
