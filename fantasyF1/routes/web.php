@@ -23,7 +23,7 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('/registrar', function () {
+Route::post('/registrar', function () {
     return view('registrar');
 })->name('registro');
 
