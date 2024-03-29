@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rules;
 
 class RegisterController extends Controller
 {
 
-    public function view(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function view()
     {
-        return view('registro');
-    }
-
-    protected function validator(array $data, $table): \Illuminate\Validation\Validator
-    {
-        return Validator::make($data, [
-            'nombre' => ['required', 'string', 'max:255'],
-            'correo' => ['required', 'string', 'email', 'max:255', 'unique:'.$table],
-            'constrasenya' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        return view('registrar');
     }
 
     /**
@@ -30,24 +20,42 @@ class RegisterController extends Controller
      *
      * @param RegisterRequest $request
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function register(RegisterRequest $request): \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
+    public function register(RegisterRequest $request)
     {
-        $request->validate([
-            'nombre' => ['required', 'string', 'max:255', 'unique:'.Usuario::class],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.Usuario::class],
-            'contrasenya' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
         $user = Usuario::create([
-            'nombre' => $request->nombre,
-            'email' => $request->email,
-            'contrasenya' => bcrypt($request->contrasenya),
+            'nombre' => $request->input('nombre'), // Accedemos a los campos del formulario usando input()
+            'email' => $request->input('email'),
+            'contrasenya' => bcrypt($request->input('contrasenya')), // Usamos input() para obtener el valor
         ]);
 
         Auth::login($user);
 
-        return to_route('login');
+        return redirect()->route('login');
+    }
+
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->only('correo', 'contrasenya'); // Ajustamos los nombres de los campos
+
+        if (!Auth::attempt($credentials)) {
+            return redirect()->route('login')->withErrors(trans('auth.failed'));
+        }
+
+        return redirect()->route('index'); // Redirige al índice después del inicio de sesión exitoso
+    }
+
+    /**
+     * Handle response after user authenticated
+     *
+     * @param Request $request
+     * @param Auth $user
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    protected function authenticated($request, $user)
+    {
+        return redirect()->intended();
     }
 }

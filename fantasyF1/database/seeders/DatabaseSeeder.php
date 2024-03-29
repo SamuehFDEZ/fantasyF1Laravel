@@ -3,15 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Carrera_Circuito;
-use App\Models\Carrera_Cuali;
-use App\Models\Carrera_Sprint;
-use App\Models\Circuito;
-use App\Models\Constructor;
-use App\Models\Cuali;
-use App\Models\Piloto;
-use App\Models\Sprint;
-use App\Models\Usuario;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

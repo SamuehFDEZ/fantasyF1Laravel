@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+
 use App\Models\Usuario;
+use Illuminate\Database\Seeder;
 
 class usuariosTableSeeder extends Seeder
 {
@@ -15,11 +15,17 @@ class usuariosTableSeeder extends Seeder
      */
     public function run()
     {
-        $usuario = new Usuario();
-        /*
-         * 'nombre',
-        'contrasenya',
-        'email',*/
-        $usuario->password = bcrypt('admin');
+
+        $usuario = [
+            ['nombre' => 'SamuehFDEZ', 'contrasenya' => '123456789', 'email' => 'samu@gmail.com']
+        ];
+
+        foreach ($usuario as $user) {
+            $usuarios = new Usuario();
+            $usuarios->nombre = $user['nombre'];
+            $usuarios->contrasenya = bcrypt($user['contrasenya']);
+            $usuarios->email = $user['email'];
+            $usuarios->save();
+        }
     }
 }
