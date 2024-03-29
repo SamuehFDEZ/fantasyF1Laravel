@@ -1,14 +1,11 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('guest')->group(function () {
-
     Route::post('/login', [RegisterController::class, 'register']);
-    Route::post('/login', [LoginController::class, 'login'])->name('login');
 
    /* Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
@@ -30,7 +27,6 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/login', [RegisterController::class, 'register']);
-    Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 
  /*   Route::get('verify-email', EmailVerificationPromptController::class)
