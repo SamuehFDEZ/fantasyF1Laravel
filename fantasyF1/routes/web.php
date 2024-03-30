@@ -30,6 +30,10 @@ Route::get('/comoJugar', function () {
     return view('comoJugar');
 })->name('comoJugar');
 
+Route::get('/premios', function () {
+    return view('premios');
+})->name('premios');
+
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/

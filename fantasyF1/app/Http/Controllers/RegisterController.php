@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class RegisterController extends Controller
 {
 
-    public function view()
+    public function view(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('registrar');
     }
@@ -22,15 +22,16 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function register(RegisterRequest $request)
+    public function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $user = Usuario::create([
-            'nombre' => $request->input('nombre'), // Accedemos a los campos del formulario usando input()
-            'email' => $request->input('email'),
-            'contrasenya' => bcrypt($request->input('contrasenya')), // Usamos input() para obtener el valor
-        ]);
+/*        Log::info('Datos recibidos: ' . print_r($request->all(), true));*/
+        $validatedData = $request->validated(); // Obtener los datos validados
 
-        Auth::login($user);
+        Usuario::create([
+            'nombre' => $validatedData['nombre'],
+            'email' => $validatedData['email'],
+            'contrasenya' => bcrypt($validatedData['contrasenya']),
+        ]);
 
         return redirect()->route('login');
     }

@@ -22,7 +22,7 @@
             <a class="nav-link" href="#">Circuitos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Premios</a>
+            <a class="nav-link" href="{{ route('premios') }}">Premios</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('comoJugar') }}">¿Como jugar?</a>
