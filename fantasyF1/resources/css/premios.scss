@@ -9,50 +9,78 @@ $bronce: hsla(30, 61%, 50%, 1);
     width: 80%;
     margin: 10px auto;
 
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
     #premiosPodio {
         display: flex;
         flex-direction: row;
+        margin-bottom: 10px;
 
-        div {
-            width: 100%;
-            height: 300px;
+        .bloquePremio {
+            width: 30%; // ajusta según sea necesario
             background-color: #e8e1e1;
             text-align: center;
             border-radius: 5px;
+            padding: 20px;
 
-            span {
-                top: 5%;
-                font-size: 28px;
-
+            .primerPremio {
+                font-size: 24px;
+                color: $dorado; // aquí asignamos el color dorado
             }
 
-            #primer {
-                color: $dorado;
-
+            .segundoPremio {
+                font-size: 24px;
+                color: $plata; // aquí asignamos el color plata
             }
 
-            #second {
-                color: $plata;
-
+            .tercerPremio {
+                font-size: 24px;
+                color: $bronce; // aquí asignamos el color bronce
             }
 
-            #tercer {
-                color: $bronce;
+            .imgPrimer {
+                width: 65%;
+                height: auto;
+            }
 
+            .imgSec {
+                top: 10%;
+                width: 80%;
+                height: auto;
+            }
+
+            .imgTerc {
+                margin-top: 20px;
+                width: 100%;
+                height: auto;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            #pTercer {
+                position: relative;
+                top: 25%;
             }
 
             &:nth-child(2) {
-                margin-left: 15px;
-                margin-right: 15px;
-
+                margin-left: 10px;
+                margin-right: 10px;
             }
         }
     }
-
 }
 
+
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
 }

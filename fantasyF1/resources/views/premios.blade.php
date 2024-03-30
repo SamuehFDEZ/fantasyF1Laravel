@@ -63,23 +63,31 @@
             </div>
         </nav>
     </div>
-    <div id="premios">
+    <div id="premios" class="container">
         <h2>Premios</h2>
         <p>Los premios son otorgados a aquellos que queden entre los 3 primeros de la liga global.</p>
-        <div id="premiosPodio">
-            <div>
-                <span id="primer">1<sup>er</sup>Premio</span>
+        <div id="premiosPodio" class="row">
+            <div class="bloquePremio col-md">
+                <h3 class="primerPremio">1<sup>er</sup> Premio</h3>
+                <img src="{{asset('img/p5MasF1.webp')}}" class="imgPrimer" alt="primerPremio"
+                     srcset="{{asset('img/p5MasF1.webp')}}">
+                <p>Pack PlayStation 5 + Formula 1 2023 </p>
             </div>
-            <div>
-                <span id="second">2<sup>ndo</sup>Premio </span>
+            <div class="bloquePremio col-md">
+                <h3 class="segundoPremio">2<sup>ndo</sup> Premio</h3>
+                <img src="{{asset('img/f123Juego.avif')}}" class="imgSec" alt="segundoPremio"
+                     srcset="{{asset('img/f123Juego.avif')}}">
+                <p>Formula 1 2023</p>
             </div>
-            <div>
-                <span id="tercer">3<sup>er</sup>Premio</span>
+            <div class="bloquePremio col-md">
+                <h3 class="tercerPremio">3<sup>er</sup> Premio</h3>
+                <img src="{{asset('img/premio3.jpg')}}" class="imgTerc" alt="tercerPremio"
+                     srcset="{{asset('img/premio3.jpg')}}">
+                <p id="pTercer">2 entradas para un gran premio de 2025</p>
             </div>
         </div>
-
-
     </div>
+
 
 </main>
 

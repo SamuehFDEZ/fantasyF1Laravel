@@ -311,37 +311,64 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
   width: 80%;
   margin: 10px auto;
 }
+#premios h2 {
+  margin-bottom: 10px;
+}
+#premios p {
+  margin-bottom: 20px;
+}
 #premios #premiosPodio {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
-#premios #premiosPodio div {
-  width: 100%;
-  height: 300px;
+#premios #premiosPodio .bloquePremio {
+  width: 30%;
   background-color: #e8e1e1;
   text-align: center;
   border-radius: 5px;
+  padding: 20px;
 }
-#premios #premiosPodio div span {
-  top: 5%;
-  font-size: 28px;
-}
-#premios #premiosPodio div #primer {
+#premios #premiosPodio .bloquePremio .primerPremio {
+  font-size: 24px;
   color: hsl(46, 65%, 52%);
 }
-#premios #premiosPodio div #second {
+#premios #premiosPodio .bloquePremio .segundoPremio {
+  font-size: 24px;
   color: hsl(240, 2%, 55%);
 }
-#premios #premiosPodio div #tercer {
+#premios #premiosPodio .bloquePremio .tercerPremio {
+  font-size: 24px;
   color: hsl(30, 61%, 50%);
 }
-#premios #premiosPodio div:nth-child(2) {
-  margin-left: 15px;
-  margin-right: 15px;
+#premios #premiosPodio .bloquePremio .imgPrimer {
+  width: 65%;
+  height: auto;
+}
+#premios #premiosPodio .bloquePremio .imgSec {
+  top: 10%;
+  width: 80%;
+  height: auto;
+}
+#premios #premiosPodio .bloquePremio .imgTerc {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+#premios #premiosPodio .bloquePremio p {
+  font-size: 18px;
+}
+#premios #premiosPodio .bloquePremio #pTercer {
+  position: relative;
+  top: 25%;
+}
+#premios #premiosPodio .bloquePremio:nth-child(2) {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
 }
