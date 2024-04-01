@@ -5,6 +5,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                'resources/css/constructor.scss',
                 'resources/css/premios.scss',
                 'resources/css/comoJugar.scss',
                 'resources/css/app.scss',

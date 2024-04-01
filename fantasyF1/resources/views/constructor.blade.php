@@ -20,7 +20,7 @@
             crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/constructor.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -68,7 +68,37 @@
             </div>
         </nav>
     </div>
-    
+    <div id="constructores" class="container-fluid">
+        <h1>Equipos F1 2024</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="numYPuntos">
+                    <span id="num">1</span>
+                    <span id="puntos">97 <span>PTS</span></span>
+                </div>
+                <div id="infoEquipo">
+                    <div id="barra"></div>
+                    <div id="nombre">Red Bull</div>
+                    <div id="logo">
+                        <img src="{{asset("img/teamLogos/redBull.avif")}}" alt="logo"
+                             srcset="{{asset("img/teamLogos/redBull.avif")}}">
+                    </div>
+                </div>
+                <div id="pilotosEnEq">
+                    <div class="piloto">Max <b>Verstappen</b></div>
+                    <div class="piloto">Sergio <b>Pérez</b></div>
+                </div>
+                <div id="imgCoche">
+                    <img src="{{asset("img/coches/redBull.avif")}}" alt="coche"
+                         srcset="{{asset("img/coches/redBull.avif")}}">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                dadad
+            </div>
+        </div>
+    </div>
 
 </main>
 

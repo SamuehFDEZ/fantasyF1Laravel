@@ -309,15 +309,74 @@ footer .row .col-md #iconos {
   display: none;
 }
 
-main {
-  text-align: left;
-}
-main #explicacion {
-  width: 50%;
-  margin: 10px auto;
-}
-main #explicacion p {
+#constructores {
   font-family: F1, serif;
+  font-weight: bolder;
+  width: 67%;
+  margin: 10px auto;
+  min-height: calc(100vh - 80px); /* Calculamos la altura mínima teniendo en cuenta el tamaño del footer */
+  box-sizing: border-box; /* Ajustamos el box-sizing para que los bordes no afecten al tamaño total */
+}
+#constructores .row .col-md-6 {
+  border: none;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-top-right-radius: 5px;
+}
+#constructores .row .col-md-6 #numYPuntos {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+#constructores .row .col-md-6 #numYPuntos #num {
+  float: left;
+  font-size: 40px;
+  font-weight: bolder;
+}
+#constructores .row .col-md-6 #numYPuntos #puntos {
+  float: right;
+  font-size: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo {
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Centra verticalmente los elementos */
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+#constructores .row .col-md-6 #infoEquipo #barra {
+  background-color: blue;
+  width: 10px; /* Cambiado a un valor absoluto para la barra */
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo #nombre {
+  text-align: left;
+  font-size: 30px;
+  margin-left: 10px; /* Margen añadido para separar el nombre de la barra */
+}
+#constructores .row .col-md-6 #infoEquipo #logo {
+  margin-left: auto; /* Mueve el logo al extremo derecho */
+}
+#constructores .row .col-md-6 #infoEquipo #logo img {
+  float: right;
+  width: 30%;
+  height: auto;
+}
+#constructores .row .col-md-6 #pilotosEnEq {
+  display: flex; /* Usa flexbox */
+  justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+  width: 100%;
+}
+#constructores .row .col-md-6 #pilotosEnEq .piloto {
+  width: 45%; /* Reducido para dejar espacio entre los elementos */
+  text-align: center; /* Centra el texto horizontalmente */
+  border: none;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-bottom-right-radius: 5px;
+  margin-top: 5px;
 }
 
-/*# sourceMappingURL=comoJugar.css.map */
+/*# sourceMappingURL=constructor.css.map */
