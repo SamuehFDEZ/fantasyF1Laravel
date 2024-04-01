@@ -5,14 +5,16 @@ $headerBgColor: red;
     src: url(../fonts/Formula1-Regular-1.ttf);
 }
 
-body{
-    &::-webkit-scrollbar{
+body {
+    &::-webkit-scrollbar {
         width: 15px;
     }
-    &::-webkit-scrollbar-thumb{
+
+    &::-webkit-scrollbar-thumb {
         background: red;
     }
-    &::-webkit-scrollbar-thumb:hover{
+
+    &::-webkit-scrollbar-thumb:hover {
         background: #690404;
     }
 }
@@ -185,7 +187,7 @@ main {
         height: 200px;
 
         .row {
-            #melbourne {
+            #circuitoImg {
                 width: 90%;
                 height: 150px;
                 margin-top: 20px;
@@ -327,6 +329,7 @@ main {
 }
 
 .container-fluid {
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 80px;

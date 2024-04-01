@@ -68,38 +68,7 @@
             </div>
         </nav>
     </div>
-
-    <div id="siguienteGP" class="container">
-        <div class="row">
-            <div class="col-md-3 ">
-                <img src="{{asset("img/circuitos/Suzuka.jpg")}}" id="circuitoImg" alt="circuitoImg"
-                     srcset="{{asset("img/circuitos/Suzuka.jpg")}}">
-            </div>
-            <div id="infoPais" class="col-md-6">
-                <section>
-                    <h1>
-                        <img src="{{asset("img/banderas/Japan.svg")}}" id="bandera" alt="bandera"
-                             srcset="{{asset("img/banderas/Japan.svg")}}">
-                        <span id="pais">JAPÓN</span>
-                        <p>FORMULA 1 GRAND PRIX JAPÓN 2024</p>
-                    </h1>
-                    <img src="{{asset("img/circuitos_shape/Suzuka.svg")}}" id="circuito" alt="formaCircuito"
-                         srcset="{{asset("img/circuitos_shape/Suzuka.svg")}}">
-
-                </section>
-
-            </div>
-            <div id="cuentaAtrasYelegir" class="col-md-3">
-                <section>
-                    <h2><span>Bloqueo de Equipo:</span></h2>
-                    <div id="contador">
-
-                    </div>
-                </section>
-                <button id="escogeEquipo" type="button">Escoge tu equipo</button>
-            </div>
-        </div>
-    </div>
+    
 
 </main>
 

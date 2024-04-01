@@ -13,7 +13,7 @@
             <a class="nav-link" href="#">Pilotos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Constructores</a>
+            <a class="nav-link" href="{{ route('constructor') }}">Constructores</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Horarios</a>

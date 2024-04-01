@@ -34,6 +34,10 @@ Route::get('/premios', function () {
     return view('premios');
 })->name('premios');
 
+Route::get('/constructor', function () {
+    return view('constructor');
+})->name('constructor');
+
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
