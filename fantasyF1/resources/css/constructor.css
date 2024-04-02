@@ -314,7 +314,7 @@ footer .row .col-md #iconos {
   font-weight: bolder;
   width: 67%;
   margin: 10px auto;
-  min-height: calc(100vh - 80px); /* Calculamos la altura mínima teniendo en cuenta el tamaño del footer */
+  height: calc(100vh - 80px); /* Calculamos la altura mínima teniendo en cuenta el tamaño del footer */
   box-sizing: border-box; /* Ajustamos el box-sizing para que los bordes no afecten al tamaño total */
 }
 #constructores .row .col-md-6 {
@@ -322,6 +322,8 @@ footer .row .col-md #iconos {
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-top-right-radius: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 #constructores .row .col-md-6 #numYPuntos {
   width: 100%;
@@ -371,12 +373,16 @@ footer .row .col-md #iconos {
 }
 #constructores .row .col-md-6 #pilotosEnEq .piloto {
   width: 45%; /* Reducido para dejar espacio entre los elementos */
-  text-align: center; /* Centra el texto horizontalmente */
+  text-align: left; /* Centra el texto horizontalmente */
   border: none;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   border-bottom-right-radius: 5px;
   margin-top: 5px;
+}
+#constructores .row .col-md-6 #imgCoche {
+  display: flex;
+  align-items: center;
 }
 
 /*# sourceMappingURL=constructor.css.map */
