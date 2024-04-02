@@ -212,7 +212,6 @@
                  srcset="{{asset("img/coches/stake.avif")}}">
         </div>
     </div>
-
     <div class="col-md-6">
         <div id="numYPuntos">
             <span id="num">10</span>
