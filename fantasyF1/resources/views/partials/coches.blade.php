@@ -13,8 +13,18 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Max <b>Verstappen</b></div>
-            <div class="piloto">Sergio <b>Pérez</b></div>
+            <div class="piloto">
+                <span>Max <b>Verstappen</b></span>
+                <img src="{{asset("img/pilotos/redBull/verstappen.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/redBull/verstappen.avif")}}">
+            </div>
+
+            <div class="piloto">
+                <span>Sergio <b>Pérez</b></span>
+                <img src="{{asset("img/pilotos/redBull/verstappen.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/redBull/perez.avif")}}">
+            </div>
+
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/redBull.avif")}}" alt="coche"
@@ -35,8 +45,17 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Charles <b>Leclerc</b></div>
-            <div class="piloto">Carlos <b>Sainz</b></div>
+            <div class="piloto">
+                <span>Charles <b>Leclerc</b></span>
+                <img src="{{asset("img/pilotos/ferrari/leclerc.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/ferrari/leclerc.avif")}}">
+            </div>
+
+            <div class="piloto">
+                <span>Carlos <b>Sainz</b></span>
+                <img src="{{asset("img/pilotos/ferrari/sainz.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/ferrari/sainz.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/ferrari.avif")}}" alt="coche"
@@ -60,8 +79,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Lando <b>Norris</b></div>
-            <div class="piloto">Oscar <b>Piastri</b></div>
+            <div class="piloto">
+                <span>Lando <b>Norris</b></span>
+                <img src="{{asset("img/pilotos/mclaren/norris.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/mclaren/norris.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>Oscar <b>Piastri</b></span>
+                <img src="{{asset("img/pilotos/mclaren/piastri.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/mclaren/piastri.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/mclaren.avif")}}" alt="coche"
@@ -83,8 +110,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Lewis <b>Hamilton</b></div>
-            <div class="piloto">George <b>Russell</b></div>
+            <div class="piloto">
+                <span>Lewis <b>Hamilton</b></span>
+                <img src="{{asset("img/pilotos/mercedes/hamilton.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/mercedes/hamilton.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>George <b>Russell</b></span>
+                <img src="{{asset("img/pilotos/mercedes/russell.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/mercedes/russell.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/mercedes.avif")}}" alt="coche"
@@ -108,8 +143,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Fernando <b>Alonso</b></div>
-            <div class="piloto">Lance <b>Stroll</b></div>
+            <div class="piloto">
+                <span>Fernando <b>Alonso</b></span>
+                <img src="{{asset("img/pilotos/astonMartin/alonso.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/astonMartin/alonso.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>Lance <b>Stroll</b></span>
+                <img src="{{asset("img/pilotos/astonMartin/stroll.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/astonMartin/stroll.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/astonMartin.avif")}}" alt="coche"
@@ -131,8 +174,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Daniel <b>Ricciardo</b></div>
-            <div class="piloto">Yuki <b>Tsunoda</b></div>
+            <div class="piloto">
+                <span>Daniel <b>Ricciardo</b></span>
+                <img src="{{asset("img/pilotos/visaRB/ricciardo.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/visaRB/ricciardo.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>Yuki <b>Tsunoda</b></span>
+                <img src="{{asset("img/pilotos/visaRB/tsunoda.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/visaRB/tsunoda.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/visaRB.avif")}}" alt="coche"
@@ -156,8 +207,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Nico <b>Hulkenberg</b></div>
-            <div class="piloto">Kevin <b>Magnussen</b></div>
+            <div class="piloto">
+                <span>Nico <b>Hulkenberg</b></span>
+                <img src="{{asset("img/pilotos/hass/hulkenberg.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/hass/hulkenberg.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>Kevin <b>Magnussen</b></span>
+                <img src="{{asset("img/pilotos/hass/magnussen.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/hass/magnussen.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/hass.avif")}}" alt="coche"
@@ -179,8 +238,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Alex <b>Albon</b></div>
-            <div class="piloto">Logan <b>Sargeant</b></div>
+            <div class="piloto">
+                <span>Alex <b>Albon</b></span>
+                <img src="{{asset("img/pilotos/williams/albon.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/williams/albon.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>Logan <b>Sargeant</b></span>
+                <img src="{{asset("img/pilotos/williams/sargeant.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/williams/sargeant.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/williams.avif")}}" alt="coche"
@@ -204,8 +271,16 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Zhou <b>Guanyu</b></div>
-            <div class="piloto">Valteri <b>Bottas</b></div>
+            <div class="piloto">
+                <span>Zhou <b>Guanyu</b> </span>
+                <img src="{{asset("img/pilotos/stake/guanyu.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/stake/guanyu.avif")}}">
+            </div>
+            <div class="piloto">
+                <span>Valteri <b>Bottas</b></span>
+                <img src="{{asset("img/pilotos/stake/bottas.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/stake/bottas.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/stake.avif")}}" alt="coche"
@@ -226,8 +301,17 @@
             </div>
         </div>
         <div id="pilotosEnEq">
-            <div class="piloto">Pierre <b>Gasly</b></div>
-            <div class="piloto">Esteban <b>Ocon</b></div>
+            <div class="piloto">
+                <span>Pierre <b>Gasly</b></span>
+                <img src="{{asset("img/pilotos/alpine/gasly.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/alpine/gasly.avif")}}">
+            </div>
+            <div class="piloto">
+                
+                <span>Esteban <b>Ocon</b></span>
+                <img src="{{asset("img/pilotos/alpine/ocon.avif")}}" alt="piloto"
+                     srcset="{{asset("img/pilotos/alpine/ocon.avif")}}">
+            </div>
         </div>
         <div id="imgCoche">
             <img src="{{asset("img/coches/alpine.avif")}}" alt="coche"

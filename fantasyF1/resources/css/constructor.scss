@@ -19,8 +19,12 @@ $colores: (
     font-weight: bolder;
     width: 67%;
     margin: 10px auto;
-    height: 100em;
+    height: 111em;
     box-sizing: border-box; /* Ajustamos el box-sizing para que los bordes no afecten al tamaño total */
+    h1 {
+        margin-bottom: 40px;
+    }
+
     .row {
         .col-md-6 {
             border: none;
@@ -29,6 +33,19 @@ $colores: (
             border-top-right-radius: 5px;
             padding-right: 10px;
             padding-left: 10px;
+            transition: border-top-width 0.3s, border-right-width 0.3s, transform 0.3s; //para hacerlo fluido
+
+            &:hover {
+               /* border-top: 2px solid #3671C6;
+                border-right: 2px solid #3671C6;*/
+                transform: translate(0px, -20px); /* Solo se aplica al pseudo-elemento */
+                @for $i from 1 through length($colores) {
+                    &:nth-child(#{$i}) {
+                        border-top-color: nth($colores, $i);
+                        border-right-color: nth($colores, $i);
+                    }
+                }
+            }
 
             #numYPuntos {
                 width: 100%;
@@ -92,8 +109,16 @@ $colores: (
                     border-right: 1px solid black;
                     border-bottom: 1px solid black;
                     border-bottom-right-radius: 5px;
-
                     margin-top: 5px;
+
+                    span {
+                        margin-top: 20px;
+                    }
+
+                    img {
+                        width: 20%;
+                        float: right;
+                    }
                 }
             }
 

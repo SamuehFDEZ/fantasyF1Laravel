@@ -314,8 +314,11 @@ footer .row .col-md #iconos {
   font-weight: bolder;
   width: 67%;
   margin: 10px auto;
-  height: 100em;
+  height: 111em;
   box-sizing: border-box; /* Ajustamos el box-sizing para que los bordes no afecten al tamaño total */
+}
+#constructores h1 {
+  margin-bottom: 40px;
 }
 #constructores .row .col-md-6 {
   border: none;
@@ -324,6 +327,52 @@ footer .row .col-md #iconos {
   border-top-right-radius: 5px;
   padding-right: 10px;
   padding-left: 10px;
+  transition: border-top-width 0.3s, border-right-width 0.3s, transform 0.3s;
+}
+#constructores .row .col-md-6:hover {
+  /* border-top: 2px solid #3671C6;
+   border-right: 2px solid #3671C6;*/
+  transform: translate(0px, -20px); /* Solo se aplica al pseudo-elemento */
+}
+#constructores .row .col-md-6:hover:nth-child(1) {
+  border-top-color: 1 #3671C6;
+  border-right-color: 1 #3671C6;
+}
+#constructores .row .col-md-6:hover:nth-child(2) {
+  border-top-color: 2 #E80020;
+  border-right-color: 2 #E80020;
+}
+#constructores .row .col-md-6:hover:nth-child(3) {
+  border-top-color: 3 #FF8000;
+  border-right-color: 3 #FF8000;
+}
+#constructores .row .col-md-6:hover:nth-child(4) {
+  border-top-color: 4 #27F4D2;
+  border-right-color: 4 #27F4D2;
+}
+#constructores .row .col-md-6:hover:nth-child(5) {
+  border-top-color: 5 #229971;
+  border-right-color: 5 #229971;
+}
+#constructores .row .col-md-6:hover:nth-child(6) {
+  border-top-color: 6 #6692FF;
+  border-right-color: 6 #6692FF;
+}
+#constructores .row .col-md-6:hover:nth-child(7) {
+  border-top-color: 7 #B6BABD;
+  border-right-color: 7 #B6BABD;
+}
+#constructores .row .col-md-6:hover:nth-child(8) {
+  border-top-color: 8 #64C4FF;
+  border-right-color: 8 #64C4FF;
+}
+#constructores .row .col-md-6:hover:nth-child(9) {
+  border-top-color: 9 #52e252;
+  border-right-color: 9 #52e252;
+}
+#constructores .row .col-md-6:hover:nth-child(10) {
+  border-top-color: 10 #0093CC;
+  border-right-color: 10 #0093CC;
 }
 #constructores .row .col-md-6 #numYPuntos {
   width: 100%;
@@ -423,6 +472,13 @@ footer .row .col-md #iconos {
   border-bottom: 1px solid black;
   border-bottom-right-radius: 5px;
   margin-top: 5px;
+}
+#constructores .row .col-md-6 #pilotosEnEq .piloto span {
+  margin-top: 20px;
+}
+#constructores .row .col-md-6 #pilotosEnEq .piloto img {
+  width: 20%;
+  float: right;
 }
 #constructores .row .col-md-6 #imgCoche {
   display: flex;
