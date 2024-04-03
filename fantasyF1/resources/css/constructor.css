@@ -346,11 +346,55 @@ footer .row .col-md #iconos {
   width: 100%;
   height: 60px;
   border: none;
-  border-bottom: 1px solid gray;
 }
-#constructores .row .col-md-6 #infoEquipo #barra {
-  background-color: blue;
-  width: 10px; /* Cambiado a un valor absoluto para la barra */
+#constructores .row .col-md-6 #infoEquipo .barra-1 {
+  background-color: #3671C6;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-2 {
+  background-color: #E80020;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-3 {
+  background-color: #FF8000;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-4 {
+  background-color: #27F4D2;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-5 {
+  background-color: #229971;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-6 {
+  background-color: #6692FF;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-7 {
+  background-color: #B6BABD;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-8 {
+  background-color: #64C4FF;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-9 {
+  background-color: #52e252;
+  width: 5px;
+  height: 30px;
+}
+#constructores .row .col-md-6 #infoEquipo .barra-10 {
+  background-color: #0093CC;
+  width: 5px;
   height: 30px;
 }
 #constructores .row .col-md-6 #infoEquipo #nombre {

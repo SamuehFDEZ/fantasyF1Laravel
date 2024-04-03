@@ -5,7 +5,7 @@
             <span id="puntos">97 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-1"></div>
             <div id="nombre">Red Bull</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/redBull.avif")}}" alt="logo"
@@ -27,7 +27,7 @@
             <span id="puntos">93 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-2"></div>
             <div id="nombre">Ferrari</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/ferrari.avif")}}" alt="logo"
@@ -52,7 +52,7 @@
             <span id="puntos">55 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-3"></div>
             <div id="nombre">Mclaren</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/mclaren.avif")}}" alt="logo"
@@ -75,7 +75,7 @@
             <span id="puntos">26 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-4"></div>
             <div id="nombre">Mercedes</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/mercedes.avif")}}" alt="logo"
@@ -100,7 +100,7 @@
             <span id="puntos">25 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-5"></div>
             <div id="nombre">Aston Martin</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/astonMartin.avif")}}" alt="logo"
@@ -123,7 +123,7 @@
             <span id="puntos">6 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-6"></div>
             <div id="nombre">Visa RB</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/visaRB.avif")}}" alt="logo"
@@ -148,7 +148,7 @@
             <span id="puntos">4 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-7"></div>
             <div id="nombre">Hass</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/hass.avif")}}" alt="logo"
@@ -171,7 +171,7 @@
             <span id="puntos">0 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-8"></div>
             <div id="nombre">Williams</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/williams.avif")}}" alt="logo"
@@ -196,7 +196,7 @@
             <span id="puntos">0 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-9"></div>
             <div id="nombre">Sauber</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/stake.avif")}}" alt="logo"
@@ -218,7 +218,7 @@
             <span id="puntos">0 <span>PTS</span></span>
         </div>
         <div id="infoEquipo">
-            <div id="barra"></div>
+            <div class="barra-10"></div>
             <div id="nombre">Alpine</div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/alpine.avif")}}" alt="logo"

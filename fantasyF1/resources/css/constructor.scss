@@ -1,5 +1,18 @@
 @import 'app';
 
+$colores: (
+    1: #3671C6, // Red Bull
+    2: #E80020, // Ferrari
+    3: #FF8000, // McLaren
+    4: #27F4D2, // Mercedes
+    5: #229971, // Aston Martin
+    6: #6692FF, // Visa RB
+    7: #B6BABD, // Haas
+    8: #64C4FF, // Williams
+    9: #52e252, // Sauber
+    10: #0093CC // Alpine
+);
+
 
 #constructores {
     font-family: F1, serif;
@@ -22,6 +35,7 @@
                 height: 60px;
                 border: none;
                 border-bottom: 1px solid gray;
+
                 #num {
                     float: left;
                     font-size: 40px;
@@ -41,12 +55,13 @@
                 width: 100%;
                 height: 60px;
                 border: none;
-                border-bottom: 1px solid gray;
 
-                #barra {
-                    background-color: blue;
-                    width: 10px; /* Cambiado a un valor absoluto para la barra */
-                    height: 30px;
+                @each $num, $color in $colores {
+                    .barra-#{$num} {
+                        background-color: $color;
+                        width: 5px;
+                        height: 30px;
+                    }
                 }
 
                 #nombre {

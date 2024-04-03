@@ -20,7 +20,7 @@
             crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-    @vite(['resources/css/constructor.scss', 'resources/js/app.js'])
+    @vite(['resources/css/constructor.scss', 'resources/js/constructor.js'])
 </head>
 
 <body>

@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/css/login.scss',
                 'resources/css/login.css',
                 'resources/js/login.js',
+                'resources/js/constructor.js',
             ],
             refresh: true,
         }),
