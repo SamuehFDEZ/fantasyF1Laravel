@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 /*    Route::get("/login", [AuthController::class, 'login'])->name('login');
     Route::post("/login", [AuthController::class, 'login'])->name('login');*/
 });
+
+Route::post("/constructor", [ApiController::class, 'constructores'])->name('constructores');
+Route::post("/constructor/{nombre}", [ApiController::class, 'constructoresPorNombre'])->name('constructoresPorNombre');
+
+Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
+Route::post("/piloto", [ApiController::class, 'pilotos'])->name('pilotos');
