@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Usuario;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
@@ -38,7 +39,7 @@ class RegisterController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $credentials = $request->only('correo', 'contrasenya'); // Ajustamos los nombres de los campos
+        $credentials = $request->only('nombre', 'contrasenya'); // Ajustamos los nombres de los campos
 
         if (!Auth::attempt($credentials)) {
             return redirect()->route('login')->withErrors(trans('auth.failed'));

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Usuario extends Model
 {
@@ -15,7 +16,6 @@ class Usuario extends Model
         'nombre',
         'contrasenya',
         'email',
-        'remember_token',
     ];
 
     /**
@@ -31,7 +31,7 @@ class Usuario extends Model
     }
 
     //Un usuario tiene muchos pilotos (1:N)
-    public function piloto()
+    public function piloto(): HasMany
     {
         return $this->hasMany(Piloto::class);
     }

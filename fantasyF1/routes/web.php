@@ -22,9 +22,9 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::post('/registrar', function () {
+/*Route::post('/registrar', function () {
     return view('registrar');
-})->name('registro');
+})->name('registro');*/
 
 Route::get('/comoJugar', function () {
     return view('comoJugar');
@@ -42,11 +42,14 @@ Route::get('/constructor', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
+Route::post('/registrar', [RegisterController::class, 'register'])->name('registro');
+Route::post('/login', [RegisterController::class, 'login'])->name('login');
 
 Route::middleware('guest')->group(function () {
     //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
     /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
-    Route::post('/login', [RegisterController::class, 'register'])->name('registro');
+
+
     //Route::post('/login',[RegisterController::class, 'login'])->name('login');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -58,7 +61,7 @@ Route::middleware('auth')->group(function () {
     //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
 /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
 /*    Route::post('/login', [RegisteredUserController::class, 'store'])->name('store');*/
-    Route::post('/login', [RegisterController::class, 'register'])->name('registro');
+    //Route::post('/login', [RegisterController::class, 'register'])->name('registro');
     //Route::post('/login',[RegisterController::class, 'login'])->name('login');
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

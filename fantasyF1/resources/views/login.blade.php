@@ -51,8 +51,8 @@
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>
-            <label for="correo">Usuario</label><br>
-            <input type="text" name="correo" id="correo" placeholder="Introduce tu Nombre de Usuario"><br><br>
+            <label for="nombre">Usuario</label><br>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu Nombre de Usuario"><br><br>
             <label for="contrasenya">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
             <span toggle="#contrasenya" class="field-icon">
