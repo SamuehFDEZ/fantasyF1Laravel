@@ -1,5 +1,5 @@
 <div class="row m-3">
-    <div class="col-md-6">
+    <div class="col-md-6 coche-1">
         <div id="numYPuntos">
             <span id="num">1</span>
             <span id="puntos">97 <span>PTS</span></span>
@@ -31,7 +31,7 @@
                  srcset="{{asset("img/coches/redBull.avif")}}">
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 coche-2">
         <div id="numYPuntos">
             <span id="num">2</span>
             <span id="puntos">93 <span>PTS</span></span>
@@ -65,7 +65,7 @@
 </div>
 
 <div class="row m-3">
-    <div class="col-md-6">
+    <div class="col-md-6 coche-3">
         <div id="numYPuntos">
             <span id="num">3</span>
             <span id="puntos">55 <span>PTS</span></span>
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 coche-4">
         <div id="numYPuntos">
             <span id="num">4</span>
             <span id="puntos">26 <span>PTS</span></span>
@@ -129,7 +129,7 @@
 </div>
 
 <div class="row m-3">
-    <div class="col-md-6">
+    <div class="col-md-6 coche-5">
         <div id="numYPuntos">
             <span id="num">5</span>
             <span id="puntos">25 <span>PTS</span></span>
@@ -160,7 +160,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 coche-6">
         <div id="numYPuntos">
             <span id="num">6</span>
             <span id="puntos">6 <span>PTS</span></span>
@@ -193,7 +193,7 @@
 </div>
 
 <div class="row m-3">
-    <div class="col-md-6">
+    <div class="col-md-6 coche-7">
         <div id="numYPuntos">
             <span id="num">7</span>
             <span id="puntos">4 <span>PTS</span></span>
@@ -224,7 +224,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 coche-8">
         <div id="numYPuntos">
             <span id="num">8</span>
             <span id="puntos">0 <span>PTS</span></span>
@@ -257,7 +257,7 @@
 </div>
 
 <div class="row m-3">
-    <div class="col-md-6">
+    <div class="col-md-6 coche-9">
         <div id="numYPuntos">
             <span id="num">9</span>
             <span id="puntos">0 <span>PTS</span></span>
@@ -287,7 +287,7 @@
                  srcset="{{asset("img/coches/stake.avif")}}">
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 coche-10">
         <div id="numYPuntos">
             <span id="num">10</span>
             <span id="puntos">0 <span>PTS</span></span>
@@ -307,7 +307,7 @@
                      srcset="{{asset("img/pilotos/alpine/gasly.avif")}}">
             </div>
             <div class="piloto">
-                
+
                 <span>Esteban <b>Ocon</b></span>
                 <img src="{{asset("img/pilotos/alpine/ocon.avif")}}" alt="piloto"
                      srcset="{{asset("img/pilotos/alpine/ocon.avif")}}">

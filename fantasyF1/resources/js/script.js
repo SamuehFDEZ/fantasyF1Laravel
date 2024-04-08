@@ -5,7 +5,7 @@ window.onload = () => {
 }
 
 // Establecer la fecha del evento
-const fechaEvento = new Date('2024-04-06T08:00:00');
+const fechaEvento = new Date('2024-04-20T05:00:00');
 
 function actualizarContador() {
     const ahora = new Date();

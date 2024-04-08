@@ -36,15 +36,9 @@ $colores: (
             transition: border-top-width 0.3s, border-right-width 0.3s, transform 0.3s; //para hacerlo fluido
 
             &:hover {
-               /* border-top: 2px solid #3671C6;
-                border-right: 2px solid #3671C6;*/
                 transform: translate(0px, -20px); /* Solo se aplica al pseudo-elemento */
-                @for $i from 1 through length($colores) {
-                    &:nth-child(#{$i}) {
-                        border-top-color: nth($colores, $i);
-                        border-right-color: nth($colores, $i);
-                    }
-                }
+                border-width: 2px; // Ajustar el ancho del borde al realizar un hover
+
             }
 
             #numYPuntos {
@@ -125,6 +119,12 @@ $colores: (
             #imgCoche {
                 display: flex;
                 align-items: center;
+            }
+        }
+        @each $num, $color in $colores {
+            .coche-#{$num}:hover {
+                border-top-color: $color;
+                border-right-color: $color;
             }
         }
     }
