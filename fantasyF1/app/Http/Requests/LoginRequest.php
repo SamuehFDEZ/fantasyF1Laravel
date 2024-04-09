@@ -26,7 +26,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'constrasenya' => 'required'
+            'contrasenya' => 'required'
         ];
     }
 
@@ -47,11 +47,11 @@ class LoginRequest extends FormRequest
         if ($this->isEmail($username)) {
             return [
                 'nombre' => $username,
-                'constrasenya' => $this->get('constrasenya')
+                'contrasenya' => $this->get('contrasenya')
             ];
         }
 
-        return $this->only('nombre', 'constrasenya');
+        return $this->only('nombre', 'contrasenya');
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,13 +19,13 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/login', function () {
+/*Route::get('/login', function () {
     return view('login');
 })->name('login');
 
 Route::post('/registrar', function () {
     return view('registrar');
-})->name('registro');
+})->name('registro');*/
 
 Route::get('/comoJugar', function () {
     return view('comoJugar');
@@ -42,10 +43,15 @@ Route::get('/constructor', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
+Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
+Route::post('/registrar', [RegisterController::class, 'register']);
 
 
 Route::middleware('guest')->group(function () {
-    Route::post('/registrar', [RegisterController::class, 'register'])->name('registro');
+    //Route::post('/registrar', [RegisterController::class, 'register'])->name('registro');
     //Route::post('/login', [RegisterController::class, 'login'])->name('login');
     //Route::post('/login', [RegisteredUserController::class, 'store'])->name('registrar');
     /*    Route::post('/register', [RegisterController::class, 'register'])->name('register');*/
