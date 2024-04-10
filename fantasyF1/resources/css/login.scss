@@ -8,24 +8,26 @@ $navBgColor: #403c3c;
     src: url(../fonts/Formula1-Regular-1.ttf);
 }
 
-*{
+* {
     font-family: F1;
 }
 
-.row{
-    header{
+.row {
+    header {
         background-color: $headerBgColor;
-        @include responsive($small){
-            
+        @include responsive($small) {
+
         }
-        #logoHeader{
+
+        #logoHeader {
             width: 200px;
             height: 50px;
             margin-top: 20px !important;
             margin-bottom: 30px !important;
             margin-left: 10px !important;
         }
-        #cerrarSes{
+
+        #cerrarSes {
             background-color: $headerBgColor;
             float: right;
             margin-top: -70px;
@@ -34,7 +36,8 @@ $navBgColor: #403c3c;
             border: 1px solid #808080;
             color: white;
             padding: 10px 10px 10px 10px;
-            &:hover{
+
+            &:hover {
                 background-color: white;
                 color: hsl(240, 18%, 10%);
             }
@@ -42,16 +45,16 @@ $navBgColor: #403c3c;
     }
 }
 
-        
-    
 
-nav#navbar{
+nav#navbar {
     background-color: $navBgColor;
     height: 50px;
-    #botones{
+
+    #botones {
         display: flex;
         flex-direction: row;
         justify-content: center;
+
         .boton {
             font-family: F1;
             bottom: 0;
@@ -61,12 +64,14 @@ nav#navbar{
             margin-top: 10px;
             margin-left: 10px;
             margin-right: 10px;
-            &:hover{
+
+            &:hover {
                 border-top: none;
                 border-left: none;
                 border-right: none;
                 border-bottom: 3px solid white;
             }
+
             &:focus,
             &:active {
                 border-top: none;
@@ -74,6 +79,7 @@ nav#navbar{
                 border-right: none;
                 border-bottom: 3px solid red;
             }
+
             &.active {
                 border-bottom: 3px solid red; /* Estilo aplicado al botón activo */
             }
@@ -81,33 +87,40 @@ nav#navbar{
     }
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
-    #formLog{
+
+    #formLog {
         margin-top: 20px;
         font-weight: bold;
         width: 50%;
         height: 150%;
-        h1{
+
+        h1 {
             text-align: left;
         }
-        input[type=text]{
+
+        input[type=text] {
             width: 100%;
             border-radius: 5px;
             height: 50px;
-            &::placeholder{
+
+            &::placeholder {
                 font-size: 15px;
             }
         }
-        input[type=password]{
+
+        input[type=password] {
             width: 100%;
             border-radius: 5px;
             height: 50px;
-            &::placeholder{
+
+            &::placeholder {
                 font-size: 15px;
             }
         }
+
         .field-icon {
             float: right;
             margin-top: -37px;
@@ -115,23 +128,25 @@ main{
             position: relative;
             z-index: 2;
             cursor: pointer;
-            #ojo{
+
+            #ojo {
                 width: 30px;
 
             }
         }
-        
+
         #forgetPass {
             margin-left: 20px;
             border-style: none;
             background-color: white;
             float: right;
             border-bottom: 2px solid red; // Establece solo el borde inferior y su color
-            &:hover{
+            &:hover {
                 color: red;
             }
         }
-        #iniciarSes{
+
+        #iniciarSes {
             background-color: red;
             border-style: none;
             color: white;
@@ -139,29 +154,33 @@ main{
             padding: 5px;
             padding-left: 10px;
             padding-right: 10px;
-            &:hover{
+
+            &:hover {
                 border: 2px solid red;
                 background-color: white;
                 color: black;
             }
         }
-        #sinCuenta{
+
+        #sinCuenta {
             margin-left: 20px;
             border-style: none;
             background-color: white;
-            border-bottom: 2px solid red; 
-            &:hover{
+            border-bottom: 2px solid red;
+
+            &:hover {
                 color: red;
             }
         }
-        
+
     }
 }
 
-#main2{
+#main2 {
     display: flex;
     justify-content: center;
-    #formReg{
+
+    #formReg {
         margin-top: 20px;
         font-weight: bold;
         width: 50%;
@@ -169,25 +188,31 @@ main{
         border: 1px solid black;
         border-radius: 10px;
         padding: 10px 10px 10px 10px;
-        h1{
+
+        h1 {
             text-align: left;
         }
-        input[type=text]{
+
+        input[type=text] {
             width: 100%;
             border-radius: 5px;
             height: 50px;
-            &::placeholder{
+
+            &::placeholder {
                 font-size: 15px;
             }
         }
-        input[type=password]{
+
+        input[type=password] {
             width: 100%;
             border-radius: 5px;
             height: 50px;
-            &::placeholder{
+
+            &::placeholder {
                 font-size: 15px;
             }
         }
+
         .field-icon {
             float: right;
             margin-top: -37px;
@@ -195,26 +220,24 @@ main{
             position: relative;
             z-index: 2;
             cursor: pointer;
-            #ojoReg{
+
+            #ojoReg {
                 width: 30px;
             }
         }
-        
+
         input[type=checkbox] {
             accent-color: red;
         }
-        #mensajeRegistro{
-            color: red;
-            font-family: F1;
-            font-weight: bold;
-        }
-        #crearCuenta{
+
+        #crearCuentaReg {
             background-color: red;
             color: white;
             border: none;
             border-radius: 5px;
             padding: 5px 5px 5px 5px;
-            &:hover{
+
+            &:hover {
                 border: 2px solid red;
                 background-color: white;
                 color: black;
@@ -224,60 +247,69 @@ main{
 }
 
 
-.row{
-    footer{
+.row {
+    footer {
         position: absolute;
         border: 10px solid #333333;
         bottom: 10%;
-        border-top-right-radius: 20px; 
-        border-bottom: none; 
-        border-left: none;   
+        border-top-right-radius: 20px;
+        border-bottom: none;
+        border-left: none;
         margin-left: 10px;
         width: 96%;
         height: 150px;
-        #navFooter{
-            #logoFooter{
+
+        #navFooter {
+            #logoFooter {
                 margin-top: 30px;
                 margin-left: 20px;
                 width: 130px;
                 height: 30px;
                 margin-right: 60em;
             }
-            a{
+
+            a {
                 text-decoration: none;
                 color: black;
                 font-size: 13px;
                 margin-left: 8px;
                 margin-right: 8px;
             }
-            
+
         }
-        #parrFooter{
+
+        #parrFooter {
             font-size: 15px;
             float: right;
             margin-right: 10px;
         }
-        #botonApoyo{
+
+        #botonApoyo {
             background-color: red;
             color: white;
             border-radius: 25px;
-            svg{
+
+            svg {
                 fill: white;
             }
         }
-        .modal-header{
+
+        .modal-header {
             background-color: red;
-            #logoModal{
+
+            #logoModal {
                 width: 80px;
                 height: 20px;
                 margin-right: 20px;
             }
         }
-        .modal-body{
+
+        .modal-body {
             background-color: hsl(0, 0%, 95%);
             margin: 5px 5px 5px 5px;
             border-radius: 10px;
-            .btn{
+
+            .btn {
                 background-color: red;
                 color: white;
             }
@@ -286,10 +318,7 @@ main{
 }
 
 
-
-
-
-.oculto{
+.oculto {
     display: none;
 }
 

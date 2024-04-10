@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -27,7 +26,7 @@ class RegisterController extends Controller
     {
 /*        Log::info('Datos recibidos: ' . print_r($request->all(), true));*/
         $validatedData = $request->validated(); // Obtener los datos validados
-
+        
         Usuario::create([
             'nombre' => $validatedData['nombre'],
             'email' => $validatedData['email'],
@@ -35,17 +34,6 @@ class RegisterController extends Controller
         ]);
 
         return redirect()->route('login');
-    }
-
-    public function login(LoginRequest $request)
-    {
-        $credentials = $request->only('nombre', 'contrasenya'); // Ajustamos los nombres de los campos
-
-        if (!Auth::attempt($credentials)) {
-            return redirect()->route('login')->withErrors(trans('auth.failed'));
-        }
-
-        return redirect()->route('index'); // Redirige al índice después del inicio de sesión exitoso
     }
 
     /**

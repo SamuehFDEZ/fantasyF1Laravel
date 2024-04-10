@@ -85,9 +85,6 @@ main #formLog input[type=text] {
   border-radius: 5px;
   height: 50px;
 }
-main #formLog input[type=text]::-moz-placeholder {
-  font-size: 15px;
-}
 main #formLog input[type=text]::placeholder {
   font-size: 15px;
 }
@@ -95,9 +92,6 @@ main #formLog input[type=password] {
   width: 100%;
   border-radius: 5px;
   height: 50px;
-}
-main #formLog input[type=password]::-moz-placeholder {
-  font-size: 15px;
 }
 main #formLog input[type=password]::placeholder {
   font-size: 15px;
@@ -168,9 +162,6 @@ main #formLog #sinCuenta:hover {
   border-radius: 5px;
   height: 50px;
 }
-#main2 #formReg input[type=text]::-moz-placeholder {
-  font-size: 15px;
-}
 #main2 #formReg input[type=text]::placeholder {
   font-size: 15px;
 }
@@ -178,9 +169,6 @@ main #formLog #sinCuenta:hover {
   width: 100%;
   border-radius: 5px;
   height: 50px;
-}
-#main2 #formReg input[type=password]::-moz-placeholder {
-  font-size: 15px;
 }
 #main2 #formReg input[type=password]::placeholder {
   font-size: 15px;
@@ -199,19 +187,14 @@ main #formLog #sinCuenta:hover {
 #main2 #formReg input[type=checkbox] {
   accent-color: red;
 }
-#main2 #formReg #mensajeRegistro {
-  color: red;
-  font-family: F1;
-  font-weight: bold;
-}
-#main2 #formReg #crearCuenta {
+#main2 #formReg #crearCuentaReg {
   background-color: red;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 5px 5px 5px 5px;
 }
-#main2 #formReg #crearCuenta:hover {
+#main2 #formReg #crearCuentaReg:hover {
   border: 2px solid red;
   background-color: white;
   color: black;
@@ -275,4 +258,6 @@ main #formLog #sinCuenta:hover {
 
 .oculto {
   display: none;
-}/*# sourceMappingURL=login.css.map */
+}
+
+/*# sourceMappingURL=login.css.map */

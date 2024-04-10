@@ -52,9 +52,9 @@
             <h1>INICIAR SESIÓN</h1>
             <hr>
             <label for="nombre">Usuario</label><br>
-            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu Nombre de Usuario"><br><br>
+            <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"><br><br>
             <label for="contrasenya">Contraseña</label><br>
-            <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
+            <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave">
             <span toggle="#contrasenya" class="field-icon">
                         <img src="{{asset('img/eye.png')}}" id="ojo" alt="ojo" srcset="{{asset('img/eye.png')}}">
                     </span><br><br>
@@ -72,19 +72,23 @@
             @csrf
             <h1>CREAR CUENTA</h1>
             <hr>
-            <label for="nombre">Nombre</label><br>
-            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu Nombre de Usuario"><br><br>
+            <label for="nombreReg">Nombre</label><br>
+            <input type="text" name="nombre" id="nombreReg" placeholder="Introduce tu Nombre de Usuario"><br><br>
             <label for="email">Correo Electrónico</label><br>
             <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico"><br><br>
             <label for="contrasenyaReg">Contraseña</label><br>
-            <input type="password" name="contrasenya" id="contrasenya" placeholder="Introduce tu Clave">
+            <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
             <span toggle="#contrasenyaReg" class="field-icon">
                 <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" srcset="{{asset('img/eye.png')}}">
             </span>
             <br><br>
-            <input type="submit" name="crearCuenta" id="crearCuenta" value="Crear Cuenta"><br><br>
+            @if ($errors->any())
+                <p class="alert alert-danger">El nombre de usuario ya existe</p>
+            @endif
+            <input type="submit" name="crearCuenta" id="crearCuentaReg" value="Crear Cuenta"><br><br>
         </form>
     </div>
+
 
     <div class="row">
         <footer class="col-xl-11 col-md-11 col-sm col">
