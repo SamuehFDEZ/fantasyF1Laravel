@@ -26,14 +26,14 @@ class RegisterController extends Controller
     {
 /*        Log::info('Datos recibidos: ' . print_r($request->all(), true));*/
         $validatedData = $request->validated(); // Obtener los datos validados
-        
+
         Usuario::create([
             'nombre' => $validatedData['nombre'],
             'email' => $validatedData['email'],
             'contrasenya' => bcrypt($validatedData['contrasenya']),
         ]);
 
-        return redirect()->route('login');
+        return redirect()->route('registro');
     }
 
     /**

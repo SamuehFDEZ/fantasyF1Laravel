@@ -35,10 +35,10 @@
     <div class="row">
         <nav id="navbar" class="col-xl col-md col-sm col">
             <div id="botones">
-                <button id="iniciar" class="boton" type="button">
+                <button id="iniciar" onclick="window.location='{{route('login')}}'" class="boton" type="button">
                     <span>Iniciar Sesión</span>
                 </button>
-                <button id="crear" class="boton" type="button">
+                <button id="crear" onclick="window.location='{{route('registro')}}'" class="boton" type="button">
                     Crear Cuenta
                 </button>
             </div>
@@ -47,7 +47,7 @@
 
 
     <main id="main">
-        <form id="formLog" class="oculto" action="{{ route('login') }}" method="POST">
+        <form id="formLog" action="{{ route('login') }}" method="POST">
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>
@@ -55,8 +55,8 @@
             <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"><br><br>
             <label for="contrasenya">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave">
-            <span toggle="#contrasenya" class="field-icon">
-                        <img src="{{asset('img/eye.png')}}" id="ojo" alt="ojo" srcset="{{asset('img/eye.png')}}">
+            <span toggle="#contrasenyaLog" class="field-icon">
+                        <img src="{{asset('img/eye.png')}}" id="ojoLog" alt="ojo" srcset="{{asset('img/eye.png')}}">
                     </span><br><br>
             <button id="forgetPass">¿Olvidaste tu contraseña?</button>
             <br><br>
@@ -66,28 +66,6 @@
             <br><br>
         </form>
     </main>
-
-    <div id="main2">
-        <form id="formReg" class="oculto" action="{{route('registro')}}" method="POST">
-            @csrf
-            <h1>CREAR CUENTA</h1>
-            <hr>
-            <label for="nombreReg">Nombre</label><br>
-            <input type="text" name="nombre" id="nombreReg" placeholder="Introduce tu Nombre de Usuario"><br><br>
-            <label for="email">Correo Electrónico</label><br>
-            <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico"><br><br>
-            <label for="contrasenyaReg">Contraseña</label><br>
-            <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
-            <span toggle="#contrasenyaReg" class="field-icon">
-                <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" srcset="{{asset('img/eye.png')}}">
-            </span>
-            <br><br>
-            @if ($errors->any())
-                <p class="alert alert-danger">El nombre de usuario ya existe</p>
-            @endif
-            <input type="submit" name="crearCuenta" id="crearCuentaReg" value="Crear Cuenta"><br><br>
-        </form>
-    </div>
 
 
     <div class="row">

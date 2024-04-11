@@ -16,6 +16,7 @@ class Usuario extends Model
         'nombre',
         'contrasenya',
         'email',
+        'remember_token'
     ];
 
     /**

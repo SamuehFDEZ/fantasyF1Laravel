@@ -17,7 +17,7 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"
     ></script>
-    @vite(['resources/css/login.scss', 'resources/js/login.js'])
+    @vite(['resources/css/registrar.scss', 'resources/js/login.js'])
 
 </head>
 <body>
@@ -34,17 +34,36 @@
     <div class="row">
         <nav id="navbar" class="col-xl col-md col-sm col">
             <div id="botones">
-                <button id="iniciar" class="boton" type="button">
+                <button id="iniciar" onclick="window.location='{{route('login')}}'" class="boton" type="button">
                     <span>Iniciar Sesión</span>
                 </button>
-                <button id="crear" class="boton" type="button">
+                <button id="crear" onclick="window.location='{{route('registro')}}'" class="boton" type="button">
                     Crear Cuenta
                 </button>
             </div>
         </nav>
     </div>
     <main>
-        <h1>Usuario Registrado</h1>
+        <form id="formReg" action="{{route('registro')}}" method="POST">
+            @csrf
+            <h1>CREAR CUENTA</h1>
+            <hr>
+            <label for="nombreReg">Nombre</label><br>
+            <input type="text" name="nombre" id="nombreReg" placeholder="Introduce tu Nombre de Usuario"><br><br>
+            <label for="email">Correo Electrónico</label><br>
+            <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico"><br><br>
+            <label for="contrasenyaReg">Contraseña</label><br>
+            <input type="password" name="contrasenya" id="contrasenyaReg" placeholder="Introduce tu Clave">
+            <span toggle="#contrasenyaReg" class="field-icon">
+                <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo"
+                     srcset="{{asset('img/eye.png')}}">
+            </span>
+            <br><br>
+            @if ($errors->any())
+                <p class="alert alert-danger">El nombre de usuario ya existe</p>
+            @endif
+            <input type="submit" name="crearCuenta" id="crearCuentaReg" value="Crear Cuenta"><br><br>
+        </form>
     </main>
 
     <div class="row">

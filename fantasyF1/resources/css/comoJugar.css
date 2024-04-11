@@ -315,6 +315,7 @@ main {
 main #explicacion {
   width: 50%;
   margin: 10px auto;
+  height: 60em;
 }
 main #explicacion p {
   font-family: F1, serif;

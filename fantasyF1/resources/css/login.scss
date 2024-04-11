@@ -129,7 +129,7 @@ main {
             z-index: 2;
             cursor: pointer;
 
-            #ojo {
+            #ojoLog {
                 width: 30px;
 
             }
@@ -173,76 +173,6 @@ main {
             }
         }
 
-    }
-}
-
-#main2 {
-    display: flex;
-    justify-content: center;
-
-    #formReg {
-        margin-top: 20px;
-        font-weight: bold;
-        width: 50%;
-        height: 150%;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 10px 10px 10px 10px;
-
-        h1 {
-            text-align: left;
-        }
-
-        input[type=text] {
-            width: 100%;
-            border-radius: 5px;
-            height: 50px;
-
-            &::placeholder {
-                font-size: 15px;
-            }
-        }
-
-        input[type=password] {
-            width: 100%;
-            border-radius: 5px;
-            height: 50px;
-
-            &::placeholder {
-                font-size: 15px;
-            }
-        }
-
-        .field-icon {
-            float: right;
-            margin-top: -37px;
-            margin-right: 20px;
-            position: relative;
-            z-index: 2;
-            cursor: pointer;
-
-            #ojoReg {
-                width: 30px;
-            }
-        }
-
-        input[type=checkbox] {
-            accent-color: red;
-        }
-
-        #crearCuentaReg {
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 5px 5px 5px;
-
-            &:hover {
-                border: 2px solid red;
-                background-color: white;
-                color: black;
-            }
-        }
     }
 }
 

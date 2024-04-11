@@ -117,13 +117,6 @@
             selecciones durante las carreras reales y celebra tus éxitos a medida que acumulas puntos y te acercas a la
             cima de la clasificación.
         </p>
-        <p>
-
-            En resumen, jugar a F1 Fantasy es una emocionante experiencia que te permite sumergirte en el mundo del
-            automovilismo y competir contra otros aficionados mientras sigues las carreras reales de Fórmula 1. Con una
-            cuidadosa planificación, estrategia y seguimiento, puedes disfrutar de una temporada emocionante y
-            emocionante llena de acción y competencia. ¡Que empiece la carrera!
-        </p>
     </div>
 
 </main>
