@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('constructor', function (Blueprint $table) {
             $table->string('nombre', 200)->primary(); // Definir 'nombre' como clave primaria y VARCHAR(200)
-            $table->integer('añoCreacion')->nullable(false); // Agregar columna 'añoCreacion' como INT NOT NULL
+            $table->unsignedInteger('añoCreacion')->nullable(false); // Agregar columna 'añoCreacion' como INT NOT NULL
             $table->string('valorMercado', 50)->nullable(false); // Agregar columna 'valorMercado' como VARCHAR(50) NOT NULL
             $table->string('nacionalidad', 255)->nullable(false); // Agregar columna 'nacionalidad' como VARCHAR(50) NOT NULL
+            $table->unsignedInteger('puntosRealizados')->nullable(false);
             $table->timestamps(); // Agregar los campos de control de tiempo (created_at, updated_at)
         });
     }

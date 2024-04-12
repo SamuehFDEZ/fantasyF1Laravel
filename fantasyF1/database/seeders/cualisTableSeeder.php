@@ -12,11 +12,14 @@ class cualisTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $cualis = [
-            ['cualID' => 1, 'weather' => 'soleado', 'fecha'=> '2024-3-1', 'ronda'=> 1,],
-            ['cualID' => 2, 'weather' => 'soleado', 'fecha'=> '2024-3-8', 'ronda'=> 2,]
+            ['cualID' => 1, 'weather' => 'soleado', 'fecha'=> '2024-3-1', 'ronda'=> 1],
+            ['cualID' => 2, 'weather' => 'soleado', 'fecha'=> '2024-3-8', 'ronda'=> 2],
+            ['cualID' => 3, 'weather' => 'soleado', 'fecha'=> '2024-3-22', 'ronda'=> 3],
+            ['cualID' => 4, 'weather' => 'soleado', 'fecha'=> '2024-3-22', 'ronda'=> 4]
+
         ];
 
         foreach ($cualis as $cuali) {
