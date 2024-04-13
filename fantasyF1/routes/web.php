@@ -19,14 +19,6 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-/*Route::get('/login', function () {
-    return view('login');
-})->name('login');
-
-Route::post('/registrar', function () {
-    return view('registrar');
-})->name('registro');*/
-
 Route::get('/comoJugar', function () {
     return view('comoJugar');
 })->name('comoJugar');
@@ -45,6 +37,8 @@ Route::get('/constructor', function () {
 
 Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'logout']);
+
 
 Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
 Route::post('/registrar', [RegisterController::class, 'register']);

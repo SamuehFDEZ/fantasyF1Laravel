@@ -26,7 +26,7 @@
         <header class="col-md col-sm col">
             <a href="{{route('index')}}"><img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoHeader"
                                               class="img-fluid"></a>
-            <form id="formCerrarSesion" action="views/login" method="post">
+            <form id="formCerrarSesion" action="{{ route('login') }}" method="POST">
                 <input type="submit" name="cerrarSes" id="cerrarSes" value="Cerrar Sesión">
             </form>
         </header>
@@ -62,8 +62,13 @@
             <br><br>
             <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
             <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
-            <button id="sinCuenta"> Registrarte con F1</button>
+            <button id="sinCuenta" type="button" onclick="window.location='{{ route('registro') }}'">Registrarte con
+                F1
+            </button>
             <br><br>
+            @if ($errors->any())
+                <p class="alert alert-danger">Login incorrecto</p>
+            @endif
         </form>
     </main>
 

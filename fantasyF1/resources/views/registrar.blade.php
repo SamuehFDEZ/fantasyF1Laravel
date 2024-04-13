@@ -59,8 +59,10 @@
                      srcset="{{asset('img/eye.png')}}">
             </span>
             <br><br>
-            @if ($errors->any())
+            @if ($errors->any() && isset($_POST["crearCuenta"]))
                 <p class="alert alert-danger">El nombre de usuario ya existe</p>
+            @elseif(!$errors->any() && isset($_POST["crearCuenta"]))
+                <p class="text-success">Usuario Registrado</p>
             @endif
             <input type="submit" name="crearCuenta" id="crearCuentaReg" value="Crear Cuenta"><br><br>
         </form>
