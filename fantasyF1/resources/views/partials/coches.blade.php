@@ -6,7 +6,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-1"></div>
-            <div id="nombre">Red Bull</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/redBull.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/redBull.avif")}}">
@@ -38,7 +38,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-2"></div>
-            <div id="nombre">Ferrari</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/ferrari.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/ferrari.avif")}}">
@@ -72,7 +72,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-3"></div>
-            <div id="nombre">Mclaren</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/mclaren.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/mclaren.avif")}}">
@@ -103,7 +103,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-4"></div>
-            <div id="nombre">Mercedes</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/mercedes.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/mercedes.avif")}}">
@@ -136,7 +136,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-5"></div>
-            <div id="nombre">Aston Martin</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/astonMartin.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/astonMartin.avif")}}">
@@ -167,7 +167,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-6"></div>
-            <div id="nombre">Visa RB</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/visaRB.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/visaRB.avif")}}">
@@ -200,7 +200,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-7"></div>
-            <div id="nombre">Hass</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/hass.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/hass.avif")}}">
@@ -231,7 +231,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-8"></div>
-            <div id="nombre">Williams</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/williams.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/williams.avif")}}">
@@ -264,7 +264,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-9"></div>
-            <div id="nombre">Sauber</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/stake.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/stake.avif")}}">
@@ -294,7 +294,7 @@
         </div>
         <div id="infoEquipo">
             <div class="barra-10"></div>
-            <div id="nombre">Alpine</div>
+            <div class="nombre"></div>
             <div id="logo">
                 <img src="{{asset("img/teamLogos/alpine.avif")}}" alt="logo"
                      srcset="{{asset("img/teamLogos/alpine.avif")}}">

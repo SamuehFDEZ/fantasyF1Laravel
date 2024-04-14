@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -13,6 +14,7 @@ class LoginController extends Controller
     {
         return view('login');
     }
+
     /**
      * Handle account login request
      *
@@ -20,6 +22,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      * @throws BindingResolutionException
+     * @throws ValidationException
      */
     public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
@@ -41,15 +44,17 @@ class LoginController extends Controller
             'contrasenya' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('index');
+        if (!Auth::attempt($credentials)) {
+            throw ValidationException::withMessages([
+                'nombre' => 'NOPE'
+            ]);
         }
+        $request->session()->regenerate();
+        return to_route('index');
 
-        return back()->withErrors([
+       /* return back()->withErrors([
             'nombre' => 'The provided credentials do not match our records.',
-        ])->onlyInput('nombre');
+        ])->onlyInput('nombre');*/
     }
 
     /**

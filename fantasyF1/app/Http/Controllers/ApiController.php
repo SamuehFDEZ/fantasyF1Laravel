@@ -11,7 +11,7 @@ class ApiController extends Controller
 {
     public function constructores(): JsonResponse
     {
-        $constructor = Constructor::all();
+        $constructor = Constructor::all()->sortByDesc('puntosRealizados');
 
         return response()->json($constructor);
     }

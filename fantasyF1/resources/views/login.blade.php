@@ -51,9 +51,9 @@
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>
-            <label for="nombre">Usuario</label><br>
+            <label for="nombreLog">Usuario</label><br>
             <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"><br><br>
-            <label for="contrasenya">Contraseña</label><br>
+            <label for="contrasenyaLog">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave">
             <span toggle="#contrasenyaLog" class="field-icon">
                         <img src="{{asset('img/eye.png')}}" id="ojoLog" alt="ojo" srcset="{{asset('img/eye.png')}}">

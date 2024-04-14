@@ -61,6 +61,9 @@
             <br><br>
             @if ($errors->any() && isset($_POST["crearCuenta"]))
                 <p class="alert alert-danger">El nombre de usuario ya existe</p>
+                @if(strlen($_POST["contrasenya"]) < 8)
+                    <p class="alert alert-danger">La contraseña tiene que tener más de 8 caracteres</p>
+                @endif
             @elseif(!$errors->any() && isset($_POST["crearCuenta"]))
                 <p class="text-success">Usuario Registrado</p>
             @endif
