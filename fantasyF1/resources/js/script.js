@@ -1,5 +1,4 @@
 window.onload = () => {
-
     suscribete.addEventListener("click", suscribirse);
     quitarSubs.addEventListener("click", quitarPanel);
 }
