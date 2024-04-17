@@ -59,17 +59,13 @@
                      srcset="{{asset('img/eye.png')}}">
             </span>
             <br><br>
-            @if(empty($_POST["nombre"]) || empty($_POST["email"]) || empty($_POST["contrasenya"]))
-                <p class="alert alert-danger">Los campos no pueden estar vacíos</p>
-                @if(isset($_POST["contrasenya"]) && strlen($_POST["contrasenya"]) < 8)
-                    <p class="alert alert-danger">La contraseña tiene que tener más de 8 caracteres</p>
-                @endif
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    <p class="text-danger">{{ $error }}</p>
+                @endforeach
             @endif
-            @if ($errors->any() && isset($_POST["crearCuenta"]))
-                <p class="alert alert-danger">El nombre de usuario ya existe</p>
-            @endif
-            @if(!$errors->any() && isset($_POST["crearCuenta"]))
-                <p class="text-success">Usuario Registrado</p>
+            @if(session('mensaje'))
+                <p class="text-success">{{ session('mensaje') }}</p>
             @endif
             <input type="submit" name="crearCuenta" id="crearCuentaReg" value="Crear Cuenta"><br><br>
         </form>

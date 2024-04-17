@@ -33,7 +33,7 @@ class RegisterController extends Controller
             'contrasenya' => bcrypt($validatedData['contrasenya']),
         ]);
 
-        return redirect()->route('registro');
+        return back()->with('mensaje', 'Usuario creado correctamente');
     }
 
     /**

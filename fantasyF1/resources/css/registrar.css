@@ -144,7 +144,7 @@ main #formLog #sinCuenta:hover {
 .row footer {
   position: absolute;
   border: 10px solid #333333;
-  bottom: 10%;
+  bottom: 45px;
   border-top-right-radius: 20px;
   border-bottom: none;
   border-left: none;

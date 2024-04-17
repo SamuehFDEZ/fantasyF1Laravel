@@ -43,8 +43,8 @@ return [
     'different' => 'The :attribute and :other must be different.',
     'digits' => 'The :attribute must be :digits digits.',
     'digits_between' => 'The :attribute must be between :min and :max digits.',
-    'dimensions' => 'The :attribute hass invalid image dimensions.',
-    'distinct' => 'The :attribute field hass a duplicate value.',
+    'dimensions' => 'The :attribute has invalid image dimensions.',
+    'distinct' => 'The :attribute field has a duplicate value.',
     'doesnt_end_with' => 'The :attribute may not end with one of the following: :values.',
     'doesnt_start_with' => 'The :attribute may not start with one of the following: :values.',
     'email' => 'The :attribute must be a valid email address.',
@@ -117,7 +117,7 @@ return [
         'mixed' => 'The :attribute must contain at least one uppercase and one lowercase letter.',
         'numbers' => 'The :attribute must contain at least one number.',
         'symbols' => 'The :attribute must contain at least one symbol.',
-        'uncompromised' => 'The given :attribute hass appeared in a data leak. Please choose a different :attribute.',
+        'uncompromised' => 'The given :attribute has appeared in a data leak. Please choose a different :attribute.',
     ],
     'present' => 'The :attribute field must be present.',
     'prohibited' => 'The :attribute field is prohibited.',
@@ -144,7 +144,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid timezone.',
-    'unique' => 'The :attribute hass already been taken.',
+    'unique' => 'The :attribute has already been taken.',
     'uploaded' => 'The :attribute failed to upload.',
     'uppercase' => 'The :attribute must be uppercase.',
     'url' => 'The :attribute must be a valid URL.',
@@ -163,8 +163,20 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nombre' => [
+            'required' => 'El nombre es requerido',
+            'unique' => 'El nombre ya existe',
+        ],
+        'email' => [
+            'required' => 'El email es requerido',
+            'email' => 'Dirección de email incorrecta',
+            'unique' => 'El email ya existe',
+        ],
+        'contrasenya' => [
+            'required' => 'La contraseña es requerida',
+            'min' => [
+                'string' => 'La contraseña tiene que tener al menos :min caracteres',
+            ],
         ],
     ],
 
