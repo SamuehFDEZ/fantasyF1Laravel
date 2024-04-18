@@ -12,7 +12,7 @@ class LoginRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -22,11 +22,11 @@ class LoginRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'nombre' => 'required',
-            'contrasenya' => 'required'
+            'nombre' => 'required|unique:usuarios,nombre',
+            'contrasenya' => 'required|min:8'
         ];
     }
 

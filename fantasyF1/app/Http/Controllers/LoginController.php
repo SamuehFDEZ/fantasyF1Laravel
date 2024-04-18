@@ -24,38 +24,36 @@ class LoginController extends Controller
      * @throws BindingResolutionException
      * @throws ValidationException
      */
-    public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
+    public function iniciar(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
-  /*      $credentials = $request->getCredentials();
-
-        if(!Auth::validate($credentials)){
-            return redirect()->route('login');
-        }
-        else{
-            $user = Auth::getProvider()->retrieveByCredentials($credentials);
-
-            Auth::login($user);
-
-            return redirect()->route('index'); // Redirige al índice después del inicio de sesión exitoso
-        }*/
-
         $credentials = $request->validate([
-            'nombre' => ['required', 'nombre'],
-            'contrasenya' => ['required'],
+            'nombre' => ['required', 'string'],
+            'contrasenya' => ['required', 'string'],
         ]);
 
-        if (!Auth::attempt($credentials)) {
+        if (!Auth::attempt($credentials, $request->boolean('remember'))) {
             throw ValidationException::withMessages([
-                'nombre' => 'NOPE'
+                'nombre' => 'Credenciales incorrectas'
             ]);
         }
-        $request->session()->regenerate();
-        return to_route('index');
 
-       /* return back()->withErrors([
-            'nombre' => 'The provided credentials do not match our records.',
-        ])->onlyInput('nombre');*/
+        // Si el inicio de sesión es exitoso, redirige a una ruta específica
+        return redirect()->route('index');
     }
+        //$credentials = $request->getCredentials();
+
+
+        /*if(!Auth::validate($credentials)):
+            return redirect()->to('login')
+                ->with('mensaje','Error');
+        endif;
+
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+        Auth::login($user);
+
+        return $this->authenticated($request, $user);*/
+
 
     /**
      * Log the user out of the application.
@@ -71,7 +69,7 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return to_route('index');
+        return redirect()->route('index');
     }
 
 
@@ -83,7 +81,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    protected function authenticated(Request $request, $user)
+    protected function authenticated(Request $request, $user): \Illuminate\Http\RedirectResponse
     {
         return redirect()->intended();
     }

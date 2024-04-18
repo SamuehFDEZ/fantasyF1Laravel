@@ -36,8 +36,8 @@ Route::get('/constructor', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/login', [LoginController::class, 'logout']);
+Route::post('/login', [LoginController::class, 'iniciar']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');

@@ -26,8 +26,8 @@ header #logoHeader {
 }
 header .buttonHeaderUser {
   margin-top: 35px !important;
-  margin-left: 92em !important;
-  width: 100px;
+  margin-left: 90em !important;
+  width: 140px;
   height: 50px;
   background-color: hsl(240, 18%, 10%);
   border: 1px solid white;
