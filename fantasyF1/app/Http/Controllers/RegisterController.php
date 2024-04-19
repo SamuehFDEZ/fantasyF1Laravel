@@ -6,6 +6,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -24,13 +25,13 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
     {
-/*        Log::info('Datos recibidos: ' . print_r($request->all(), true));*/
         $validatedData = $request->validated(); // Obtener los datos validados
 
         Usuario::create([
             'nombre' => $validatedData['nombre'],
             'email' => $validatedData['email'],
             'contrasenya' => bcrypt($validatedData['contrasenya']),
+            'remember_token' => Str::random(60), // Generar el remember_token aquí
         ]);
 
         return back()->with('mensaje', 'Usuario creado correctamente');

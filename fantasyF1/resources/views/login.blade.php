@@ -62,14 +62,24 @@
             <button id="forgetPass">¿Olvidaste tu contraseña?</button>
             <br><br>
             <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
-            {{--@if($errors->any())
-                @foreach($errors->all() as $error)
-                    <p class="text-danger">{{ $error }}</p>
+            @if($errors->any())
+                {{-- @error('nombreLog')
+                 <p class="text-danger">{{ $message }}</p>
+                 @enderror--}}
+                @foreach($errors->get('nombre') as $message)
+                    <p class="text-danger">{{ $message }}</p>
                 @endforeach
+                @foreach($errors->get('contrasenya') as $message)
+                    <p class="text-danger">{{ $message }}</p>
+                @endforeach
+
+                {{--@error('contrasenya')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror--}}
             @endif
             @if(session('mensaje'))
                 <p class="text-success">{{ session('mensaje') }}</p>
-            @endif--}}
+            @endif
             <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
             <button id="sinCuenta" type="button" onclick="window.location='{{ route('registro') }}'">Registrarte con
                 F1

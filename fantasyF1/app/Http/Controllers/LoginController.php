@@ -24,14 +24,15 @@ class LoginController extends Controller
      * @throws BindingResolutionException
      * @throws ValidationException
      */
-    public function iniciar(LoginRequest $request): \Illuminate\Http\RedirectResponse
+    public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $credentials = $request->validate([
+        $request->validate([
             'nombre' => ['required', 'string'],
             'contrasenya' => ['required', 'string'],
         ]);
 
-        if (!Auth::attempt($credentials, $request->boolean('remember'))) {
+        // Verificar la autenticación
+        if (!Auth::attempt($request->only('nombre', 'contrasenya'))) {
             throw ValidationException::withMessages([
                 'nombre' => 'Credenciales incorrectas'
             ]);
@@ -39,6 +40,7 @@ class LoginController extends Controller
 
         // Si el inicio de sesión es exitoso, redirige a una ruta específica
         return redirect()->route('index');
+
     }
         //$credentials = $request->getCredentials();
 
