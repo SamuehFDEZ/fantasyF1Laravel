@@ -165,7 +165,7 @@ return [
     'custom' => [
         'nombre' => [
             'required' => 'El nombre es requerido',
-            'unique' => 'El nombre ya existe',
+            'unique' => 'El nombre ya existe'
         ],
         'email' => [
             'required' => 'El email es requerido',

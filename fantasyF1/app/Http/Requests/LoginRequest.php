@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
@@ -36,7 +35,7 @@ class LoginRequest extends FormRequest
      * @return array
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    public function getCredentials(): array
+   /* public function getCredentials(): array
     {
         // The form field for providing username or password
         // have name of "username", however, in order to support
@@ -52,7 +51,7 @@ class LoginRequest extends FormRequest
         }
 
         return $this->only('nombre', 'contrasenya');
-    }
+    }*/
 
     /**
      * Validate if provided parameter is valid email.
@@ -61,7 +60,7 @@ class LoginRequest extends FormRequest
      * @return bool
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    private function isEmail($param): bool
+    /*private function isEmail($param): bool
     {
         $factory = $this->container->make(ValidationFactory::class);
 
@@ -69,5 +68,5 @@ class LoginRequest extends FormRequest
             ['nombre' => $param],
             ['nombre' => 'email']
         )->fails();
-    }
+    }*/
 }

@@ -53,9 +53,11 @@
             <h1>INICIAR SESIÓN</h1>
             <hr>
             <label for="nombreLog">Usuario</label><br>
-            <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"><br><br>
+            <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"
+                   class="@error('nombre') is-invalid @enderror" value="{{ old('nombre') }}"><br><br>
             <label for="contrasenyaLog">Contraseña</label><br>
-            <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave">
+            <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave"
+                   class="@error('contrasenya') is-invalid @enderror" value="{{ old('contrasenya') }}">
             <span toggle="#contrasenyaLog" class="field-icon">
                         <img src="{{asset('img/eye.png')}}" id="ojoLog" alt="ojo" srcset="{{asset('img/eye.png')}}">
                     </span><br><br>
@@ -63,23 +65,22 @@
             <br><br>
             <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
             @if($errors->any())
-                {{-- @error('nombreLog')
-                 <p class="text-danger">{{ $message }}</p>
-                 @enderror--}}
-                @foreach($errors->get('nombre') as $message)
-                    <p class="text-danger">{{ $message }}</p>
-                @endforeach
-                @foreach($errors->get('contrasenya') as $message)
-                    <p class="text-danger">{{ $message }}</p>
-                @endforeach
-
-                {{--@error('contrasenya')
+                @error('nombre')
                 <p class="text-danger">{{ $message }}</p>
-                @enderror--}}
+                @enderror
+                @error('contrasenya')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+                {{-- @foreach($errors->get('nombre') as $message)
+                     <p class="text-danger">{{ $message }}</p>
+                 @endforeach
+                 @foreach($errors->get('contrasenya') as $message)
+                     <p class="text-danger">{{ $message }}</p>
+                 @endforeach--}}
             @endif
-            @if(session('mensaje'))
-                <p class="text-success">{{ session('mensaje') }}</p>
-            @endif
+            {{-- @if(session('mensaje'))
+                 <p class="text-success">{{ session('mensaje') }}</p>
+             @endif--}}
             <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
             <button id="sinCuenta" type="button" onclick="window.location='{{ route('registro') }}'">Registrarte con
                 F1
