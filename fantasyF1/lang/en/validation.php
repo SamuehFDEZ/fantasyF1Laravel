@@ -167,6 +167,9 @@ return [
             'required' => 'El nombre es requerido',
             'unique' => 'El nombre ya existe'
         ],
+        'nombreLog' => [
+            'required' => 'El nombre es requerido',
+        ],
         'email' => [
             'required' => 'El email es requerido',
             'email' => 'Dirección de email incorrecta',

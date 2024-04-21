@@ -53,8 +53,8 @@
             <h1>INICIAR SESIÓN</h1>
             <hr>
             <label for="nombreLog">Usuario</label><br>
-            <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"
-                   class="@error('nombre') is-invalid @enderror" value="{{ old('nombre') }}"><br><br>
+            <input type="text" name="nombreLog" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"
+                   class="@error('nombreLog') is-invalid @enderror" value="{{ old('nombreLog') }}"><br><br>
             <label for="contrasenyaLog">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave"
                    class="@error('contrasenya') is-invalid @enderror" value="{{ old('contrasenya') }}">
@@ -65,7 +65,7 @@
             <br><br>
             <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
             @if($errors->any())
-                @error('nombre')
+                @error('nombreLog')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
                 @error('contrasenya')

@@ -24,24 +24,20 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
-
         $request->validate([
-            'nombre' => ['required', 'string'],
+            'nombreLog' => ['required', 'string'],
             'contrasenya' => ['required', 'string'],
         ]);
 
         // Verificar manualmente la autenticación
-        $credentials = $request->only('nombre', 'contrasenya');
+        $credentials = $request->only('nombreLog', 'contrasenya');
         if (!Auth::attempt($credentials)) {
             throw ValidationException::withMessages([
                 'loginError' => 'Credenciales incorrectas'
             ]);
         }
 
-
-        // Si el inicio de sesión es exitoso, redirige a una ruta específica
         return redirect()->route('index');
-
 
 
         /*$request->validate([

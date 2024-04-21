@@ -10,6 +10,11 @@ async function obtenerConstructores() {
     });
 
     async function nombresConstructores(info) {
+        cargarNombres(info);
+    }
+
+
+    function cargarNombres(info) {
         const nombres = document.querySelectorAll('.nombre');
         nombres[0].innerText = info[6]['nombre']
         nombres[1].innerText = info[2]['nombre']

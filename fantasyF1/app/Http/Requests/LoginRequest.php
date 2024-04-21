@@ -24,7 +24,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required',
+            'nombreLog' => 'required',
             'contrasenya' => 'required|min:8'
         ];
     }
