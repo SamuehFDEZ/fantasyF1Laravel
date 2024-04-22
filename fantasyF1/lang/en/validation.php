@@ -165,10 +165,9 @@ return [
     'custom' => [
         'nombre' => [
             'required' => 'El nombre es requerido',
-            'unique' => 'El nombre ya existe'
-        ],
-        'nombreLog' => [
-            'required' => 'El nombre es requerido',
+            'unique' => 'El nombre ya existe',
+            'max' => 'El nombre no debe exceder los :max caracteres',
+
         ],
         'email' => [
             'required' => 'El email es requerido',

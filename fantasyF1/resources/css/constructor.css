@@ -181,7 +181,7 @@ main #siguienteGP .row #infoPais section h1 #bandera {
 }
 main #siguienteGP .row #infoPais section h1 #pais {
   font-family: F1, serif;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
   margin-left: -40px;
 }

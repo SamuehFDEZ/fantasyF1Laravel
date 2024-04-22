@@ -52,9 +52,9 @@
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>
-            <label for="nombreLog">Usuario</label><br>
-            <input type="text" name="nombreLog" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"
-                   class="@error('nombreLog') is-invalid @enderror" value="{{ old('nombreLog') }}"><br><br>
+            <label for="nombre">Usuario</label><br>
+            <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"
+                   class="@error('nombre') is-invalid @enderror" value="{{ old('nombre') }}"><br><br>
             <label for="contrasenyaLog">Contraseña</label><br>
             <input type="password" name="contrasenya" id="contrasenyaLog" placeholder="Introduce tu Clave"
                    class="@error('contrasenya') is-invalid @enderror" value="{{ old('contrasenya') }}">
@@ -65,22 +65,13 @@
             <br><br>
             <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
             @if($errors->any())
-                @error('nombreLog')
+                @error('nombre')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
                 @error('contrasenya')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
-                {{-- @foreach($errors->get('nombre') as $message)
-                     <p class="text-danger">{{ $message }}</p>
-                 @endforeach
-                 @foreach($errors->get('contrasenya') as $message)
-                     <p class="text-danger">{{ $message }}</p>
-                 @endforeach--}}
             @endif
-            {{-- @if(session('mensaje'))
-                 <p class="text-success">{{ session('mensaje') }}</p>
-             @endif--}}
             <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
             <button id="sinCuenta" type="button" onclick="window.location='{{ route('registro') }}'">Registrarte con
                 F1

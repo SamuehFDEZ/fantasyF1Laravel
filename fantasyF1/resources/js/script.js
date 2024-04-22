@@ -1,10 +1,12 @@
 window.onload = () => {
     suscribete.addEventListener("click", suscribirse);
     quitarSubs.addEventListener("click", quitarPanel);
+    // Actualizar el contador cada segundo
+    actualizarContador();
 }
 
 // Establecer la fecha del evento
-const fechaEvento = new Date('2024-04-20T05:00:00');
+const fechaEvento = new Date('2024-05-04T18:00:00');
 
 function actualizarContador() {
     const ahora = new Date();
@@ -13,6 +15,9 @@ function actualizarContador() {
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+    const actualizacion = setInterval(actualizarContador, 1000);
+
 
     document.getElementById('contador').innerHTML = `
         <ul>
@@ -27,10 +32,6 @@ function actualizarContador() {
         clearInterval(actualizacion);
     }
 }
-
-// Actualizar el contador cada segundo
-actualizarContador();
-const actualizacion = setInterval(actualizarContador, 1000);
 
 
 function suscribirse() {

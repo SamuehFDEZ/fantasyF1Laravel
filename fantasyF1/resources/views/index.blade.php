@@ -73,19 +73,19 @@
     <div id="siguienteGP" class="container">
         <div class="row">
             <div class="col-md-3 ">
-                <img src="{{asset("img/circuitos/Shanghai.jpg")}}" id="circuitoImg" alt="circuitoImg"
-                     srcset="{{asset("img/circuitos/Shanghai.jpg")}}">
+                <img src="{{asset("img/circuitos/Miami.jpg")}}" id="circuitoImg" alt="circuitoImg"
+                     srcset="{{asset("img/circuitos/Miami.jpg")}}">
             </div>
             <div id="infoPais" class="col-md-6">
                 <section>
                     <h1>
-                        <img src="{{asset("img/banderas/China.svg")}}" id="bandera" alt="bandera"
-                             srcset="{{asset("img/banderas/China.svg")}}">
-                        <span id="pais">CHINA</span>
-                        <p>FORMULA 1 GRAND PRIX CHINA 2024</p>
+                        <img src="{{asset("img/banderas/UnitedStates.svg")}}" id="bandera" alt="bandera"
+                             srcset="{{asset("img/banderas/UnitedStates.svg")}}">
+                        <span id="pais">ESTADOS UNIDOS</span>
+                        <p>FORMULA 1 GRAND PRIX MIAMI 2024</p>
                     </h1>
-                    <img src="{{asset("img/circuitos_shape/Shanghai.svg")}}" id="circuito" alt="formaCircuito"
-                         srcset="{{asset("img/circuitos_shape/Shanghai.svg")}}">
+                    <img src="{{asset("img/circuitos_shape/Miami.svg")}}" id="circuito" alt="formaCircuito"
+                         srcset="{{asset("img/circuitos_shape/Miami.svg")}}">
                 </section>
 
             </div>

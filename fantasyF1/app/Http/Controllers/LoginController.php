@@ -25,51 +25,24 @@ class LoginController extends Controller
     public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
     {
         $request->validate([
-            'nombreLog' => ['required', 'string'],
-            'contrasenya' => ['required', 'string'],
+            'nombre' => ['required'],
+            'contrasenya' => ['required'],
         ]);
 
-        // Verificar manualmente la autenticación
-        $credentials = $request->only('nombreLog', 'contrasenya');
-        if (!Auth::attempt($credentials)) {
+        // No necesitas verificar manualmente la autenticación
+        // Laravel lo hace automáticamente con Auth::attempt()
+
+        // Intenta autenticar al usuario
+        if (!Auth::attempt($request->only('nombre', 'contrasenya'))) {
+            // Si la autenticación falla, redirecciona con un mensaje de error
             throw ValidationException::withMessages([
                 'loginError' => 'Credenciales incorrectas'
             ]);
         }
 
+        // Si la autenticación tiene éxito, redirecciona al usuario
         return redirect()->route('index');
-
-
-        /*$request->validate([
-            'nombre' => ['required', 'string'],
-            'contrasenya' => ['required', 'string'],
-        ]);
-
-        // Verificar la autenticación
-        if (!Auth::attempt($request->only('nombre', 'contrasenya'))) {
-            throw ValidationException::withMessages([
-                'nombre' => 'Credenciales incorrectas'
-            ]);
-        }
-
-        // Si el inicio de sesión es exitoso, redirige a una ruta específica
-        return redirect()->route('index');*/
-
     }
-        //$credentials = $request->getCredentials();
-
-
-        /*if(!Auth::validate($credentials)):
-            return redirect()->to('login')
-                ->with('mensaje','Error');
-        endif;
-
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
-
-        Auth::login($user);
-
-        return $this->authenticated($request, $user);*/
-
 
     /**
      * Log the user out of the application.
