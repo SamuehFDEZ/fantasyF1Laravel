@@ -117,10 +117,13 @@ $colores: (
             }
 
             #imgCoche {
+                position: relative;
                 display: flex;
                 align-items: center;
+                left: 15%;
             }
         }
+
         @each $num, $color in $colores {
             .coche-#{$num}:hover {
                 border-top-color: $color;

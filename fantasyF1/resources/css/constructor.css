@@ -440,8 +440,10 @@ footer .row .col-md #iconos {
   float: right;
 }
 #constructores .row .col-md-6 #imgCoche {
+  position: relative;
   display: flex;
   align-items: center;
+  left: 15%;
 }
 #constructores .row .coche-1:hover {
   border-top-color: #3671C6;

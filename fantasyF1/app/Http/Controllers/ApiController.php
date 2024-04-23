@@ -23,6 +23,14 @@ class ApiController extends Controller
         return response()->json($constructores);
     }
 
+    public function constructoresPorPuntos(): JsonResponse
+    {
+        // pluck() para solo quedarme con los puntos
+        $constructores = Constructor::all()->sortByDesc('puntosRealizados')->pluck('puntosRealizados')->values();
+
+        return response()->json($constructores);
+    }
+
 
     public function pilotosGroupByTeam(Request $request, $equipo): JsonResponse
     {
