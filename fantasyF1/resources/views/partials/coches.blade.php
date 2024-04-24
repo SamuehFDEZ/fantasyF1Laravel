@@ -2,7 +2,7 @@
     <div class="col-md-6 coche-1">
         <div id="numYPuntos">
             <span id="num">1</span>
-            <span id="puntos">97 <span>PTS</span></span>
+            <span id="puntos"></span>
         </div>
         <div id="infoEquipo">
             <div class="barra-1"></div>

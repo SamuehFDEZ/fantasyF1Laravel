@@ -12,7 +12,7 @@ async function obtenerConstructores() {
     let url2 = 'http://127.0.0.1:8000/api/constructor/puntos';
 
     await fetch(url2).then(data => data.json()).then(async info => {
-        console.table(info);
+        await cargarPuntos(info);
     });
 }
 
@@ -31,5 +31,13 @@ function cargarNombres(info) {
 }
 
 function cargarPuntos(info) {
-
+    // Obtener todos los elementos con el id "puntos"
+    const puntosSpans = document.querySelectorAll("#puntos");
+    // Iterar sobre los datos obtenidos
+    info.forEach((equipo, index) => {
+        // Obtener el span de puntos correspondiente al índice actual
+        const puntosSpan = puntosSpans[index];
+        console.log(puntosSpans[index]);
+        puntosSpan.textContent = `${equipo} PTS`;
+    });
 }
