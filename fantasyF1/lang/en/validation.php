@@ -167,7 +167,7 @@ return [
             'required' => 'El nombre es requerido',
             'unique' => 'El nombre ya existe',
             'max' => 'El nombre no debe exceder los :max caracteres',
-
+            'exists' => 'El nombre no existe'
         ],
         'email' => [
             'required' => 'El email es requerido',

@@ -52,7 +52,7 @@
             @csrf
             <h1>INICIAR SESIÓN</h1>
             <hr>
-            <label for="nombre">Usuario</label><br>
+            <label for="nombreLog">Usuario</label><br>
             <input type="text" name="nombre" id="nombreLog" placeholder="Introduce tu Nombre de Usuario"
                    class="@error('nombre') is-invalid @enderror" value="{{ old('nombre') }}"><br><br>
             <label for="contrasenyaLog">Contraseña</label><br>
@@ -65,13 +65,18 @@
             <br><br>
             <input type="submit" name="iniciarSes" id="iniciarSes" value="INCIAR SESIÓN"><br><br>
             @if($errors->any())
-                @error('nombre')
-                <p class="text-danger">{{ $message }}</p>
-                @enderror
-                @error('contrasenya')
-                <p class="text-danger">{{ $message }}</p>
-                @enderror
+                @foreach($errors->all() as $error)
+                    <p class="text-danger">{{ $error }}</p>
+                @endforeach
             @endif
+            {{--            @if($errors->any())--}}
+            {{--                @error('nombre')--}}
+            {{--                <p class="text-danger">{{ $message }}</p>--}}
+            {{--                @enderror--}}
+            {{--                @error('contrasenya')--}}
+            {{--                <p class="text-danger">{{ $message }}</p>--}}
+            {{--                @enderror--}}
+            {{--            @endif--}}
             <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
             <button id="sinCuenta" type="button" onclick="window.location='{{ route('registro') }}'">Registrarte con
                 F1

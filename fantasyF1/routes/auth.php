@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('guest')->group(function () {
-    Route::post('/login', [RegisterController::class, 'register']);
     //Route::post('/login', [RegisterController::class, 'login']);
 
    /* Route::get('login', [AuthenticatedSessionController::class, 'create'])

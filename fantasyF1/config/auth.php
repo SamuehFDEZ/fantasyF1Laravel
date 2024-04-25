@@ -64,6 +64,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Usuario::class,
             'table' => 'usuarios',
+            'hash' => true, // Agrega esta línea para habilitar el hash automático de contraseñas
         ],
     ],
 

@@ -15,11 +15,33 @@ class Usuario extends Model
 
     protected $table = "usuarios";
 
-    protected $fillable = [
+   /* protected $fillable = [
         'nombre',
         'contrasenya',
         'email',
         'remember_token'
+    ];*/
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nombre',
+        'email',
+        'contrasenya',
+        'remember_token'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'contrasenya',
+        'remember_token',
     ];
 
     //Un usuario tiene muchos pilotos (1:N)

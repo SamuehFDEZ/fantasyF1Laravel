@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
@@ -29,11 +31,20 @@ class LoginController extends Controller
             'contrasenya' => ['required'],
         ]);
 
-        // No necesitas verificar manualmente la autenticación
-        // Laravel lo hace automáticamente con Auth::attempt()
+        $credentials = $request->only('nombre', 'contrasenya');
 
-        // Intenta autenticar al usuario
-        if (!Auth::attempt($request->only('nombre', 'contrasenya'))) {
+        // Verificar si el usuario existe en la base de datos
+        $usuario = Usuario::where('nombre', $credentials['nombre'])->first();
+
+        if (!$usuario) {
+            // Si el usuario no existe, redirecciona con un mensaje de error
+            throw ValidationException::withMessages([
+                'loginError' => 'El usuario no existe'
+            ]);
+        }
+
+        // Verificar si la contraseña proporcionada coincide con el hash almacenado
+        if (!Hash::check($credentials['contrasenya'], $usuario->contrasenya)) {
             // Si la autenticación falla, redirecciona con un mensaje de error
             throw ValidationException::withMessages([
                 'loginError' => 'Credenciales incorrectas'
