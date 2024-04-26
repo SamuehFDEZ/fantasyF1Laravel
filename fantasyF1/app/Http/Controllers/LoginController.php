@@ -50,6 +50,7 @@ class LoginController extends Controller
                 'loginError' => 'Credenciales incorrectas'
             ]);
         }
+        session(['nombreDeUsuario' => $usuario->nombre]);
 
         // Si la autenticación tiene éxito, redirecciona al usuario
         return redirect()->route('index');

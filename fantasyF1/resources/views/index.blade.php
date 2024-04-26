@@ -35,7 +35,7 @@
             <circle cx="12" cy="7" r="4"/>
         </svg>
         <span
-            id="nomUser"> {{ Auth::check() ? Auth::user()->nombre : 'Iniciar Sesión' }} {{-- <?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?> --}}</span>
+            id="nomUser"> {{ session('nombreDeUsuario') ? session('nombreDeUsuario') : 'Iniciar Sesión' }} {{-- <?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?> --}}</span>
     </button>
     <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
 </header>
