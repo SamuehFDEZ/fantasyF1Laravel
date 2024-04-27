@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
            cualisTableSeeder::class,
            carrera_circuitosTableSeeder::class,
            carrera_cualisTableSeeder::class,
-            /*sprintsTableSeeder::class,
-            carrera_sprintsTableSeeder::class*/
+           sprintsTableSeeder::class,
+           carrera_sprintsTableSeeder::class
         ]);
         /*Usuario::factory(20)->create();
         Circuito::factory(24)->create();

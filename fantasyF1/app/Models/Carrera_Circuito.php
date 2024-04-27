@@ -16,15 +16,16 @@ class Carrera_Circuito extends Model
         'ronda',
         'tiempo',
         'posicion',
+        'vueltas_hechas'
     ];
 
     // Una carrera pertenece a muchos circuitos
-    public function circuito()
+    public function circuito(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Circuito::class);
     }
     // Una carrera pertenece a muchos pilotos
-    public function pilotos()
+    public function pilotos(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Piloto::class);
     }

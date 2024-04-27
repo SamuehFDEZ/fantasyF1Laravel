@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('sprintID')->index();
             $table->string('tiempo', 10);
             $table->unsignedInteger('posicion');
+            $table->unsignedInteger('vueltas_hechas');
             $table->primary(['num_piloto', 'sprintID']);
             $table->foreign('num_piloto')->references('num_piloto')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('sprintID')->references('sprintID')->on('sprints')->onDelete('cascade')->onUpdate('cascade');

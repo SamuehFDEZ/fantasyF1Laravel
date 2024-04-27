@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('sprintID');
             $table->date('fecha')->nullable(false);
             $table->string('vueltaRapida', 10)->nullable(false);
-            $table->unsignedInteger('ronda')->default(0);
+            $table->unsignedInteger('ronda')->default(null);
             $table->foreign('ronda')->references('ronda')->on('circuitos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

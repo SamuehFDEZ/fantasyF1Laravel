@@ -14,8 +14,10 @@ class Carrera_Sprint extends Model
     protected $fillable = [
         'num_piloto',
         'sprintID',
+        'ronda',
         'tiempo',
         'posicion',
+        'vueltas_hechas'
     ];
 
     public function sprint()

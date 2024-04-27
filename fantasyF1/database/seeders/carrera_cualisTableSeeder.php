@@ -98,6 +98,28 @@ class carrera_cualisTableSeeder extends Seeder
             ['num_piloto' => 20, 'cualID' => 4, 'tiempo_q1' => '1:30.131', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 18],
             ['num_piloto' => 2, 'cualID' => 4, 'tiempo_q1' => '1:30.139', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 19],
             ['num_piloto' => 24, 'cualID' => 4, 'tiempo_q1' => '1:30.143', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 20],
+
+            //cuali china
+            ['num_piloto' => 1, 'cualID' => 5, 'tiempo_q1' => '1:34.742', 'tiempo_q2' => '1:33.794', 'tiempo_q3' => '1:33.660', 'posicion' => 1],
+            ['num_piloto' => 11, 'cualID' => 5, 'tiempo_q1' => '1:35.457', 'tiempo_q2' => '1:34.026', 'tiempo_q3' => '1:33.982', 'posicion' => 2],
+            ['num_piloto' => 14, 'cualID' => 5, 'tiempo_q1' => '1:35.116', 'tiempo_q2' => '1:34.652', 'tiempo_q3' => '1:34.148', 'posicion' => 3],
+            ['num_piloto' => 4, 'cualID' => 5, 'tiempo_q1' => '1:34.842', 'tiempo_q2' => '1:34.460', 'tiempo_q3' => '1:34.165', 'posicion' => 4],
+            ['num_piloto' => 81, 'cualID' => 5, 'tiempo_q1' => '1:35.014', 'tiempo_q2' => '1:34.659', 'tiempo_q3' => '1:34.273', 'posicion' => 5],
+            ['num_piloto' => 16, 'cualID' => 5, 'tiempo_q1' => '1:34.797', 'tiempo_q2' => '1:34.399', 'tiempo_q3' => '1:34.289', 'posicion' => 6],
+            ['num_piloto' => 55, 'cualID' => 5, 'tiempo_q1' => '1:34.970', 'tiempo_q2' => '1:34.368', 'tiempo_q3' => '1:34.297', 'posicion' => 7],
+            ['num_piloto' => 63, 'cualID' => 5, 'tiempo_q1' => '1:35.084', 'tiempo_q2' => '1:34.609', 'tiempo_q3' => '1:34.433', 'posicion' => 8],
+            ['num_piloto' => 27, 'cualID' => 5, 'tiempo_q1' => '1:35.068', 'tiempo_q2' => '1:34.667', 'tiempo_q3' => '1:34.604', 'posicion' => 9],
+            ['num_piloto' => 77, 'cualID' => 5, 'tiempo_q1' => '1:35.169', 'tiempo_q2' => '1:34.769', 'tiempo_q3' => '1:34.665', 'posicion' => 10],
+            ['num_piloto' => 18, 'cualID' => 5, 'tiempo_q1' => '1:35.334', 'tiempo_q2' => '1:34.838', 'tiempo_q3' => '', 'posicion' => 11],
+            ['num_piloto' => 3, 'cualID' => 5, 'tiempo_q1' => '1:35.443', 'tiempo_q2' => '1:34.934', 'tiempo_q3' => '', 'posicion' => 12],
+            ['num_piloto' => 31, 'cualID' => 5, 'tiempo_q1' => '1:35.356', 'tiempo_q2' => '1:35.223', 'tiempo_q3' => '', 'posicion' => 13],
+            ['num_piloto' => 23, 'cualID' => 5, 'tiempo_q1' => '1:35.384', 'tiempo_q2' => '1:35.241', 'tiempo_q3' => '', 'posicion' => 14],
+            ['num_piloto' => 10, 'cualID' => 5, 'tiempo_q1' => '1:35.287', 'tiempo_q2' => '1:35.463', 'tiempo_q3' => '', 'posicion' => 15],
+            ['num_piloto' => 24, 'cualID' => 5, 'tiempo_q1' => '1:35.505', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 16],
+            ['num_piloto' => 20, 'cualID' => 5, 'tiempo_q1' => '1:35.516', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 17],
+            ['num_piloto' => 44, 'cualID' => 5, 'tiempo_q1' => '1:35.573', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 18],
+            ['num_piloto' => 22, 'cualID' => 5, 'tiempo_q1' => '1:35.746', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 19],
+            ['num_piloto' => 2, 'cualID' => 5, 'tiempo_q1' => '1:36.358', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 20],
         ];
 
         foreach ($carreraCualis as $carreraCuali) {
