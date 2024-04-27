@@ -31,6 +31,18 @@ class ApiController extends Controller
         return response()->json($constructores);
     }
 
+    public function constructoresCoches(): JsonResponse
+    {
+        // pluck() para solo quedarme con los coches
+        // doble orderByDesc para corregir orden de imgs
+        $constructores = Constructor::orderByDesc('puntosRealizados')
+            ->orderByDesc('nombre')
+            ->pluck('coche') // pluck() para solo quedarte con los coches
+            ->values();
+
+        return response()->json($constructores);
+    }
+
 
     public function pilotosGroupByTeam(Request $request, $equipo): JsonResponse
     {

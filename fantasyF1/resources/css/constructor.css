@@ -439,7 +439,7 @@ footer .row .col-md #iconos {
   width: 20%;
   float: right;
 }
-#constructores .row .col-md-6 #imgCoche {
+#constructores .row .col-md-6 .imgCoche {
   position: relative;
   display: flex;
   align-items: center;

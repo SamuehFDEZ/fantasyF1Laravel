@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("/constructor", [ApiController::class, 'constructores'])->name('constructores');
 Route::post("/constructor/{nombre}", [ApiController::class, 'constructoresPorNombre'])->name('constructoresPorNombre');
 Route::get("/constructor/puntos", [ApiController::class, 'constructoresPorPuntos'])->name('constructoresPorPuntos');
+Route::get("/constructor/coches", [ApiController::class, 'constructoresCoches'])->name('constructoresCoches');
 
 
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');

@@ -6,6 +6,7 @@ async function obtenerConstructores() {
     let url = 'http://127.0.0.1:8000/api/constructor';
 
     await fetch(url).then(data => data.json()).then(async info => {
+        //console.table(info[0]['coche']);
         await cargarNombres(info);
     });
 
@@ -13,6 +14,31 @@ async function obtenerConstructores() {
 
     await fetch(url2).then(data => data.json()).then(async info => {
         await cargarPuntos(info);
+    });
+
+    let url3 = 'http://127.0.0.1:8000/api/constructor/coches';
+
+    await fetch(url3).then(data => data.json()).then(async info => {
+        await cargarImgs(info);
+
+    });
+}
+
+function cargarImgs(info) {
+    const imgContainers = document.querySelectorAll('.imgCoche'); // Asumiendo que tus divs tienen la clase 'imgCoche'
+
+    info.forEach((url, index) => {
+        // Crea un nuevo elemento de imagen
+        let img = document.createElement('img');
+        img.src = url; // Asigna la URL de la imagen al src del elemento de imagen
+
+        // Encuentra el div correspondiente utilizando su índice
+        let imgContainer = imgContainers[index];
+
+        // Si se encontró el div, agrega la imagen
+        if (imgContainer) {
+            imgContainer.appendChild(img);
+        }
     });
 }
 
@@ -37,7 +63,6 @@ function cargarPuntos(info) {
     info.forEach((equipo, index) => {
         // Obtener el span de puntos correspondiente al índice actual
         const puntosSpan = puntosSpans[index];
-        console.log(puntosSpans[index]);
         puntosSpan.textContent = `${equipo} PTS`;
     });
 }

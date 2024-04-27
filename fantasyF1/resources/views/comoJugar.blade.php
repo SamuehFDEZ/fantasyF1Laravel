@@ -29,7 +29,7 @@
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
             <circle cx="12" cy="7" r="4"/>
         </svg>
-        <span id="nomUser"><?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?></span>
+        <span id="nomUser">{{ session('nombreDeUsuario') ? session('nombreDeUsuario') : 'Iniciar Sesión' }}</span>
     </button>
     <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
 </header>

@@ -26,10 +26,7 @@
             </div>
 
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/redBull.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/redBull.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
     <div class="col-md-6 coche-2">
         <div id="numYPuntos">
@@ -57,10 +54,7 @@
                      srcset="{{asset("img/pilotos/ferrari/sainz.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/ferrari.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/ferrari.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 </div>
 
@@ -90,10 +84,7 @@
                      srcset="{{asset("img/pilotos/mclaren/piastri.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/mclaren.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/mclaren.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 
     <div class="col-md-6 coche-4">
@@ -121,10 +112,7 @@
                      srcset="{{asset("img/pilotos/mercedes/russell.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/mercedes.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/mercedes.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 </div>
 
@@ -154,10 +142,7 @@
                      srcset="{{asset("img/pilotos/astonMartin/stroll.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/astonMartin.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/astonMartin.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 
     <div class="col-md-6 coche-6">
@@ -185,10 +170,7 @@
                      srcset="{{asset("img/pilotos/visaRB/tsunoda.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/visaRB.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/visaRB.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 </div>
 
@@ -218,10 +200,7 @@
                      srcset="{{asset("img/pilotos/hass/magnussen.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/hass.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/hass.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 
     <div class="col-md-6 coche-8">
@@ -249,10 +228,7 @@
                      srcset="{{asset("img/pilotos/williams/sargeant.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/williams.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/williams.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 </div>
 
@@ -282,10 +258,7 @@
                      srcset="{{asset("img/pilotos/stake/bottas.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/stake.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/stake.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
     <div class="col-md-6 coche-10">
         <div id="numYPuntos">
@@ -313,9 +286,6 @@
                      srcset="{{asset("img/pilotos/alpine/ocon.avif")}}">
             </div>
         </div>
-        <div id="imgCoche">
-            <img src="{{asset("img/coches/alpine.avif")}}" alt="coche"
-                 srcset="{{asset("img/coches/alpine.avif")}}">
-        </div>
+        <div class="imgCoche"></div>
     </div>
 </div>
