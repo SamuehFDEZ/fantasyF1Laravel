@@ -14,6 +14,10 @@ body::-webkit-scrollbar-thumb {
   background: red;
 }
 
+.desenfoque {
+  filter: blur(2px); /* Ajusta el valor de desenfoque según tus preferencias */
+}
+
 header {
   background-color: red;
 }
@@ -190,10 +194,15 @@ main #siguienteGP .row #infoPais section p {
   font-family: F1, serif;
   font-size: 15px;
 }
-main #siguienteGP .row #infoPais section #circuito {
-  margin-left: 150px;
-  width: 15%;
+main #siguienteGP .row #infoPais section button {
+  background-color: rgb(243, 243, 245);
+  border: none;
+}
+main #siguienteGP .row #infoPais section button #circuito {
+  margin-left: 200px;
+  width: 33%;
   height: 90px;
+  cursor: pointer;
 }
 main #siguienteGP .row #cuentaAtrasYelegir {
   width: 25%;

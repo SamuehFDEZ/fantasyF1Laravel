@@ -1,9 +1,4 @@
-<?php
-
-?>
-
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -22,12 +17,12 @@
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
-
 <body>
 <header>
     <img src="{{ asset('img/logoF1Blanco.png' )}}" alt="logoF1" id="logoHeader"
          srcset="{{ asset('img/logoF1Blanco.png') }}">
-    <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser" type="button">
+    <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser"
+            type="button">
         <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
              xmlns="http://www.w3.org/2000/svg">
@@ -84,9 +79,34 @@
                         <span id="pais">ESTADOS UNIDOS</span>
                         <p>FORMULA 1 GRAND PRIX MIAMI 2024</p>
                     </h1>
-                    <img src="{{asset("img/circuitos_shape/Miami.svg")}}" id="circuito" alt="formaCircuito"
-                         srcset="{{asset("img/circuitos_shape/Miami.svg")}}">
+                    <!-- Scrollable modal -->
+                    <button type="button" id="botonModal" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                        <img src="{{asset("img/circuitos_shape/Miami.svg")}}" id="circuito" alt="formaCircuito"
+                             srcset="{{asset("img/circuitos_shape/Miami.svg")}}">
+                    </button>
                 </section>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mensaje importante</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Cerramos a las 21h
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="blurry-background"></div>
 
             </div>
             <div id="cuentaAtrasYelegir" class="col-md-3">

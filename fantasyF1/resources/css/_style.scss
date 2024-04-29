@@ -18,6 +18,9 @@ body {
         background: red;
     }
 }
+.desenfoque {
+    filter: blur(2px); /* Ajusta el valor de desenfoque según tus preferencias */
+}
 
 header {
     background-color: $headerBgColor;
@@ -229,15 +232,21 @@ main {
                         font-size: 15px;
                     }
 
-                    #circuito {
-                        margin-left: 150px;
-                        width: 15%;
-                        height: 90px;
+                    button {
+                        background-color: rgb(243, 243, 245);
+                        border: none;
+
+                        #circuito {
+                            margin-left: 200px;
+                            width: 33%;
+                            height: 90px;
+                            cursor: pointer;
+                        }
                     }
                 }
-
-
             }
+
+
 
             #cuentaAtrasYelegir {
                 width: 25%;
