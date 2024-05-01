@@ -20,7 +20,7 @@ class Circuito extends Model
         'num_curvas',
         'autor_RecordCircuito',
         'tiempo_RecordCircuito',
-        'año_RecordCircuito',
+        'anyo_RecordCircuito',
         'DNF',
         'DriverOfTheDay',
         'Adelantamientos',

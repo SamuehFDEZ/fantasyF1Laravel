@@ -257,10 +257,37 @@ main {
                         }
 
                         .modal-body {
-                            height: 650px;
+                            height: 750px;
 
                             img {
                                 width: 100%;
+                            }
+
+                            #datosCircuito {
+                                background-color: #d7d6d6;
+                                border-radius: 5px;
+                                height: 350px;
+
+                                ul {
+                                    list-style: none;
+                                    margin-left: -20px;
+
+                                    li {
+                                        margin-top: 15px;
+                                        margin-bottom: 10px;
+
+                                        span {
+                                            float: right;
+                                            margin-right: 10px;
+
+                                        }
+                                    }
+
+                                    hr {
+                                        margin-top: -5px;
+                                        margin-bottom: -5px;
+                                    }
+                                }
                             }
                         }
                     }

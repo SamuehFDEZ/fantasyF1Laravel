@@ -209,10 +209,31 @@ main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header spa
   font-weight: bold;
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body {
-  height: 650px;
+  height: 750px;
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body img {
   width: 100%;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito {
+  background-color: #d7d6d6;
+  border-radius: 5px;
+  height: 350px;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul {
+  list-style: none;
+  margin-left: -20px;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul li {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul li span {
+  float: right;
+  margin-right: 10px;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul hr {
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 main #siguienteGP .row #cuentaAtrasYelegir {
   width: 25%;

@@ -23,7 +23,7 @@ class ApiController extends Controller
                 'num_curvas' => $circuito->num_curvas,
                 'autor_RecordCircuito' => $circuito->autor_RecordCircuito,
                 'tiempo_RecordCircuito' => $circuito->tiempo_RecordCircuito,
-                'año_RecordCircuito' => $circuito->año_RecordCircuito,
+                'anyo_RecordCircuito' => $circuito->anyo_RecordCircuito,
             ];
         });
 
@@ -42,7 +42,7 @@ class ApiController extends Controller
                 'num_curvas' => $circuito->num_curvas,
                 'autor_RecordCircuito' => $circuito->autor_RecordCircuito,
                 'tiempo_RecordCircuito' => $circuito->tiempo_RecordCircuito,
-                'año_RecordCircuito' => $circuito->año_RecordCircuito,
+                'anyo_RecordCircuito' => $circuito->anyo_RecordCircuito,
             ];
         });
 

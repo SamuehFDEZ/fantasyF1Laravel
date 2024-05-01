@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('num_curvas')->nullable(false);
             $table->string('autor_RecordCircuito', 200)->nullable(false);
             $table->string('tiempo_RecordCircuito', 10)->nullable(false);
-            $table->integer('año_RecordCircuito')->nullable(false);
+            $table->integer('anyo_RecordCircuito')->nullable(false);
             $table->integer('DNF')->nullable(true);
             $table->string('DriverOfTheDay', 50)->nullable(true)->default('');
             $table->integer('Adelantamientos')->nullable(true);

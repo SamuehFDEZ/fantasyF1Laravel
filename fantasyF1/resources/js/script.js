@@ -10,14 +10,34 @@ async function datosCircuito() {
     let url = `http://127.0.0.1:8000/api/circuitos/${6}`;
 
     await fetch(url).then(data => data.json()).then(async info => {
-        console.table(info);
-        //await cargarDatosCircuito(info);
+        await cargarDatosCircuito(info);
     });
 
 }
 
 function cargarDatosCircuito(info) {
-    
+    document.getElementById("datosCircuito").innerHTML = `
+        <ul>
+            <li>Ronda<span>${info[0]['ronda']}</span></li>
+            <hr>
+            <li>Longitud<span>${info[0]['km']}</span></li>
+            <hr>
+            <li>Fecha<span>${info[0]['fecha']}</span></li>
+            <hr>
+            <li>Nombre<span>${info[0]['nombre']}</span></li>
+            <hr>
+            <li>Nº Vueltas<span>${info[0]['num_vueltas']}</span></li>
+            <hr>
+            <li>Nº Curvas<span>${info[0]['num_curvas']}</span></li>
+            <hr>
+            <li>Record del circuito<span>${info[0]['autor_RecordCircuito']}</span></li>
+            <hr>
+            <li>Tiempo del circuito<span>${info[0]['tiempo_RecordCircuito']}</span></li>
+            <hr>
+            <li>Año del record<span>${info[0]['anyo_RecordCircuito']}</span></li>
+        </ul>
+    `;
+    console.table(info);
 }
 
 // Establecer la fecha del evento
