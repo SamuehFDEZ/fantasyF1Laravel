@@ -18,9 +18,6 @@ body {
         background: red;
     }
 }
-.desenfoque {
-    filter: blur(2px); /* Ajusta el valor de desenfoque según tus preferencias */
-}
 
 header {
     background-color: $headerBgColor;
@@ -244,8 +241,31 @@ main {
                         }
                     }
                 }
-            }
 
+                #staticBackdrop {
+                    .modal-dialog {
+                        .modal-header {
+                            img {
+                                width: 15%;
+                            }
+
+                            span {
+                                font-family: F1, serif;
+                                font-size: 25px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .modal-body {
+                            height: 650px;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
 
 
             #cuentaAtrasYelegir {

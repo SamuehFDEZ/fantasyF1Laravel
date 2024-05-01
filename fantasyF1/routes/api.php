@@ -24,6 +24,8 @@ Route::get("/constructor", [ApiController::class, 'constructores'])->name('const
 Route::post("/constructor/{nombre}", [ApiController::class, 'constructoresPorNombre'])->name('constructoresPorNombre');
 Route::get("/constructor/puntos", [ApiController::class, 'constructoresPorPuntos'])->name('constructoresPorPuntos');
 Route::get("/constructor/coches", [ApiController::class, 'constructoresCoches'])->name('constructoresCoches');
+Route::get("/circuitos", [ApiController::class, 'circuitos'])->name('circuitos');
+Route::get("/circuitos/{ronda}", [ApiController::class, 'circuitosPorRonda'])->name('circuitosPorRonda');
 
 
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');

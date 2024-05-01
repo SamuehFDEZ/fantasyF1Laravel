@@ -14,10 +14,6 @@ body::-webkit-scrollbar-thumb {
   background: red;
 }
 
-.desenfoque {
-  filter: blur(2px); /* Ajusta el valor de desenfoque según tus preferencias */
-}
-
 header {
   background-color: red;
 }
@@ -203,6 +199,20 @@ main #siguienteGP .row #infoPais section button #circuito {
   width: 33%;
   height: 90px;
   cursor: pointer;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header img {
+  width: 15%;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header span {
+  font-family: F1, serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body {
+  height: 650px;
+}
+main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body img {
+  width: 100%;
 }
 main #siguienteGP .row #cuentaAtrasYelegir {
   width: 25%;

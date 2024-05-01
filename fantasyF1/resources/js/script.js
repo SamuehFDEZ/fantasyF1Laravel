@@ -1,8 +1,23 @@
-window.onload = () => {
+window.onload = async () => {
     suscribete.addEventListener("click", suscribirse);
     quitarSubs.addEventListener("click", quitarPanel);
     // Actualizar el contador cada segundo
     actualizarContador();
+    await datosCircuito();
+}
+
+async function datosCircuito() {
+    let url = `http://127.0.0.1:8000/api/circuitos/${6}`;
+
+    await fetch(url).then(data => data.json()).then(async info => {
+        console.table(info);
+        //await cargarDatosCircuito(info);
+    });
+
+}
+
+function cargarDatosCircuito(info) {
+    
 }
 
 // Establecer la fecha del evento

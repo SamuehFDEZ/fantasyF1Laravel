@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Circuito;
 use App\Models\Constructor;
 use App\Models\Piloto;
 use Illuminate\Http\JsonResponse;
@@ -9,6 +10,45 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
+
+    public function circuitos(): JsonResponse
+    {
+        $constructor = Circuito::all()->map(function ($circuito) {
+            return [
+                'ronda' => $circuito->ronda,
+                'km' => $circuito->km,
+                'fecha' => $circuito->fecha,
+                'nombre' => $circuito->nombre,
+                'num_vueltas' => $circuito->num_vueltas,
+                'num_curvas' => $circuito->num_curvas,
+                'autor_RecordCircuito' => $circuito->autor_RecordCircuito,
+                'tiempo_RecordCircuito' => $circuito->tiempo_RecordCircuito,
+                'año_RecordCircuito' => $circuito->año_RecordCircuito,
+            ];
+        });
+
+        return response()->json($constructor);
+    }
+
+    public function circuitosPorRonda(Request $request, $ronda): JsonResponse
+    {
+        $constructor = Circuito::where('ronda', $ronda)->get()->map(function ($circuito) {
+            return [
+                'ronda' => $circuito->ronda,
+                'km' => $circuito->km,
+                'fecha' => $circuito->fecha,
+                'nombre' => $circuito->nombre,
+                'num_vueltas' => $circuito->num_vueltas,
+                'num_curvas' => $circuito->num_curvas,
+                'autor_RecordCircuito' => $circuito->autor_RecordCircuito,
+                'tiempo_RecordCircuito' => $circuito->tiempo_RecordCircuito,
+                'año_RecordCircuito' => $circuito->año_RecordCircuito,
+            ];
+        });
+
+        return response()->json($constructor);
+    }
+
     public function constructores(): JsonResponse
     {
         $constructor = Constructor::all()->sortByDesc('puntosRealizados');

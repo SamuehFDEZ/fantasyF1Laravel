@@ -23,11 +23,11 @@ return new class extends Migration
             $table->string('autor_RecordCircuito', 200)->nullable(false);
             $table->string('tiempo_RecordCircuito', 10)->nullable(false);
             $table->integer('año_RecordCircuito')->nullable(false);
-            $table->integer('DNF')->nullable(false);
-            $table->string('DriverOfTheDay', 50)->nullable(false)->default('');
-            $table->integer('Adelantamientos')->nullable(false);
-            $table->string('podiums', 200)->nullable(false);
-            $table->string('vueltaRapida', 10)->nullable(false);
+            $table->integer('DNF')->nullable(true);
+            $table->string('DriverOfTheDay', 50)->nullable(true)->default('');
+            $table->integer('Adelantamientos')->nullable(true);
+            $table->string('podiums', 200)->nullable(true);
+            $table->string('vueltaRapida', 10)->nullable(true);
             $table->timestamps();
         });
     }

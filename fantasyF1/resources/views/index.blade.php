@@ -93,15 +93,20 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Mensaje importante</h1>
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                    <img src="{{asset("img/banderas/UnitedStates.svg")}}" id="bandera" alt="bandera"
+                                         srcset="{{asset("img/banderas/UnitedStates.svg")}}">
+                                    <span id="pais">ESTADOS UNIDOS</span></h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Cerramos a las 21h
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
+                                <h3>Circuito</h3>
+                                <hr>
+                                <img src="{{asset('img/circuitos_shape/Miami_masInfo.png')}}" alt="circuitoMasInfo"
+                                     srcset="{{asset('img/circuitos_shape/Miami_masInfo.png')}}">
+                                <hr>
+                                <div id="datosCircuito"></div>
                             </div>
                         </div>
                     </div>
