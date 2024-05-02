@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+
+Route::get('/mi-equipo', function () {
+    return view('mi-equipo');
+})->name('mi-equipo');
+
 Route::get('/comoJugar', function () {
     return view('comoJugar');
 })->name('comoJugar');

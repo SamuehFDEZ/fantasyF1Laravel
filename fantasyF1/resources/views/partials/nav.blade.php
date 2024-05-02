@@ -4,7 +4,7 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Mi Equipo</a>
+            <a class="nav-link" href="{{ route('mi-equipo') }}">Mi Equipo</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Ligas</a>

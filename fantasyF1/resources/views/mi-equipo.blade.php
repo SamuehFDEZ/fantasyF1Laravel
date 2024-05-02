@@ -65,69 +65,6 @@
         </nav>
     </div>
 
-    <div id="siguienteGP" class="container">
-        <div class="row">
-            <div class="col-md-3 ">
-                <img src="{{asset("img/circuitos/Miami.jpg")}}" id="circuitoImg" alt="circuitoImg"
-                     srcset="{{asset("img/circuitos/Miami.jpg")}}">
-            </div>
-            <div id="infoPais" class="col-md-6">
-                <section>
-                    <h1>
-                        <img src="{{asset("img/banderas/UnitedStates.svg")}}" id="bandera" alt="bandera"
-                             srcset="{{asset("img/banderas/UnitedStates.svg")}}">
-                        <span id="pais">ESTADOS UNIDOS</span>
-                        <p>FORMULA 1 GRAND PRIX MIAMI 2024</p>
-                    </h1>
-                    <!-- Scrollable modal -->
-                    <button type="button" id="botonModal" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                        <img src="{{asset("img/circuitos_shape/Miami.svg")}}" id="circuito" alt="formaCircuito"
-                             srcset="{{asset("img/circuitos_shape/Miami.svg")}}">
-                    </button>
-                </section>
-
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                                    <img src="{{asset("img/banderas/UnitedStates.svg")}}" id="bandera" alt="bandera"
-                                         srcset="{{asset("img/banderas/UnitedStates.svg")}}">
-                                    <span id="pais">ESTADOS UNIDOS</span></h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <h3>Circuito</h3>
-                                <hr>
-                                <img src="{{asset('img/circuitos_shape/Miami_masInfo.png')}}" alt="circuitoMasInfo"
-                                     srcset="{{asset('img/circuitos_shape/Miami_masInfo.png')}}">
-                                <hr>
-                                <div id="datosCircuito"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="blurry-background"></div>
-
-            </div>
-            <div id="cuentaAtrasYelegir" class="col-md-3">
-                <section>
-                    <h2><span>Bloqueo de Equipo:</span></h2>
-                    <div id="contador">
-
-                    </div>
-                </section>
-                <button id="escogeEquipo" type="button" onclick="window.location='{{ route('mi-equipo') }}'">Escoge tu
-                    equipo
-                </button>
-            </div>
-        </div>
-    </div>
-
 </main>
 
 <footer class="container-fluid">
