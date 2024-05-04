@@ -15,7 +15,7 @@
             crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/miEquipo.scss', 'resources/js/miEquipo.js'])
 </head>
 <body>
 <header>
@@ -30,10 +30,40 @@
             <circle cx="12" cy="7" r="4"/>
         </svg>
         <span
-            id="nomUser"> {{ session('nombreDeUsuario') ? session('nombreDeUsuario') : 'Iniciar Sesión' }} {{-- <?php session_start();  echo $_SESSION["user"] ?? "Sign In"; ?> --}}</span>
+            id="nomUser"> {{ session('nombreDeUsuario') ? session('nombreDeUsuario') : 'Iniciar Sesión' }}</span>
     </button>
     <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
 </header>
+
+@if(empty(session('nombreDeUsuario')))
+    <script type="text/javascript">
+        window.onload = () => {
+            const myModal = new bootstrap.Modal('#loginModal');
+            myModal.show();
+        }
+    </script>
+@endif
+<div class="modal show" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        aria-label="Close">Cancelar
+                </button>
+                <button type="button" class="btn btn-success" onclick="window.location='{{ route('login') }}'">Iniciar
+                    Sesión
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <main>
     <div id="panel" class="oculto">
         <h1>SUSCRIBETE</h1>

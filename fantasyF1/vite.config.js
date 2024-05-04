@@ -5,6 +5,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                'resources/css/miEquipo.scss',
                 'resources/css/constructor.scss',
                 'resources/css/premios.scss',
                 'resources/css/comoJugar.scss',
@@ -15,6 +16,7 @@ export default defineConfig({
                 'resources/css/login.css',
                 'resources/js/login.js',
                 'resources/js/constructor.js',
+                'resources/js/miEquipo.js'
             ],
             refresh: true,
         }),
