@@ -97,14 +97,22 @@
     </div>
 
     <div id="eleccionDeEquipo" class="row">
-        <div id="equipo" class="col-md-6 col-sm col">
-            <p>hola</p>
+        <div id="equipo" class="col-md col-sm col">
+            <div id="costesYContinuar">
+                <section>
+                    <h4>Límite de coste</h4>
+                    <label for="cartera">0.0M$</label>
+                    <progress id="cartera" value="60" max="100"></progress>
+                </section>
+                <section>
+                    <button type="button">Continuar</button>
+                </section>
+            </div>
         </div>
         <div id="eleccion" class="col-md col-sm col">
             <p>pa ti mi cola</p>
         </div>
     </div>
-
 
 </main>
 
