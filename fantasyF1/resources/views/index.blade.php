@@ -111,8 +111,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="blurry-background"></div>
-
             </div>
             <div id="cuentaAtrasYelegir" class="col-md-3">
                 <section>

@@ -1,6 +1,50 @@
 @import 'app';
 
 
-.oculto{
-    display: none;
+.modal-header {
+    h4 {
+        font-family: F1, serif;
+    }
+}
+
+#cancelar {
+    font-family: F1, serif;
+    background-color: #4a5568;
+    color: white;
+
+    &:hover {
+        color: black;
+        background-color: white;
+        border: 2px solid #4a5568;
+    }
+}
+
+#modalInicSes {
+    font-family: F1, serif;
+    background-color: red;
+    color: white;
+
+    &:hover {
+        color: black;
+        background-color: white;
+        border: 2px solid red;
+    }
+}
+
+#eleccionDeEquipo {
+    #equipo {
+        border: 1px solid black;
+        height: 500px;
+        margin-left: 20px;
+        margin-right: 10px;
+
+    }
+
+    #eleccion {
+        border: 1px solid red;
+        height: 500px;
+        margin-right: 20px;
+        margin-left: 10px;
+
+    }
 }

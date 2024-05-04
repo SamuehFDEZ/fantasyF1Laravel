@@ -45,18 +45,19 @@
 @endif
 <div class="modal show" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                <h4 class="modal-title" id="loginModalLabel">Es necesario iniciar sesión para jugar</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                <button type="button" id="cancelar" class="btn" data-bs-dismiss="modal"
                         aria-label="Close">Cancelar
                 </button>
-                <button type="button" class="btn btn-success" onclick="window.location='{{ route('login') }}'">Iniciar
+                <button type="button" id="modalInicSes" class="btn"
+                        onclick="window.location='{{ route('login') }}'">Iniciar
                     Sesión
                 </button>
             </div>
@@ -94,6 +95,16 @@
             </div>
         </nav>
     </div>
+
+    <div id="eleccionDeEquipo" class="row">
+        <div id="equipo" class="col-md-6 col-sm col">
+            <p>hola</p>
+        </div>
+        <div id="eleccion" class="col-md col-sm col">
+            <p>pa ti mi cola</p>
+        </div>
+    </div>
+
 
 </main>
 
