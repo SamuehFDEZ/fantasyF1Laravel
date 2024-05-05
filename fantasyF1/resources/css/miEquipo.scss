@@ -41,21 +41,42 @@
         #costesYContinuar {
             font-family: F1, serif;
 
-            progress[value] {
-                background-color: red; /* color de fondo de la barra */
-                border-radius: 10px;
-                height: 10px;
+            section {
+                progress[value] {
+                    background-color: red; /* color de fondo de la barra */
+                    border-radius: 10px;
+                    height: 10px;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                    background-color: #d9d9d9; /* color de fondo de la barra no completada */
+                    border-radius: 10px;
+                }
+
+                progress[value]::-webkit-progress-value {
+                    background-color: red;
+                    border-radius: 10px;
+                }
+
+                button {
+                    position: relative;
+                    float: right;
+                    background-color: red;
+                    color: white;
+                    border: none;
+                    width: 12%;
+                    border-radius: 5px;
+                    bottom: 20px;
+
+                    &:hover {
+                        color: black;
+                        background-color: white;
+                        border: 2px solid red;
+                    }
+                }
             }
 
-            progress[value]::-webkit-progress-bar {
-                background-color: #d9d9d9; /* color de fondo de la barra no completada */
-                border-radius: 10px;
-            }
 
-            progress[value]::-webkit-progress-value {
-                background-color: red;
-                border-radius: 10px;
-            }
         }
     }
 

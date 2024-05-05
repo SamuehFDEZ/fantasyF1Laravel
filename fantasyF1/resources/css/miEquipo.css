@@ -384,18 +384,33 @@ footer .row .col-md #iconos {
 #eleccionDeEquipo #equipo #costesYContinuar {
   font-family: F1, serif;
 }
-#eleccionDeEquipo #equipo #costesYContinuar progress[value] {
+#eleccionDeEquipo #equipo #costesYContinuar section progress[value] {
   background-color: red; /* color de fondo de la barra */
   border-radius: 10px;
   height: 10px;
 }
-#eleccionDeEquipo #equipo #costesYContinuar progress[value]::-webkit-progress-bar {
+#eleccionDeEquipo #equipo #costesYContinuar section progress[value]::-webkit-progress-bar {
   background-color: #d9d9d9; /* color de fondo de la barra no completada */
   border-radius: 10px;
 }
-#eleccionDeEquipo #equipo #costesYContinuar progress[value]::-webkit-progress-value {
+#eleccionDeEquipo #equipo #costesYContinuar section progress[value]::-webkit-progress-value {
   background-color: red;
   border-radius: 10px;
+}
+#eleccionDeEquipo #equipo #costesYContinuar section button {
+  position: relative;
+  float: right;
+  background-color: red;
+  color: white;
+  border: none;
+  width: 12%;
+  border-radius: 5px;
+  bottom: 20px;
+}
+#eleccionDeEquipo #equipo #costesYContinuar section button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid red;
 }
 #eleccionDeEquipo #eleccion {
   border: 1px solid red;

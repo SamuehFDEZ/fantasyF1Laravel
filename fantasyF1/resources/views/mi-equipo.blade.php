@@ -101,12 +101,11 @@
             <div id="costesYContinuar">
                 <section>
                     <h4>Límite de coste</h4>
-                    <label for="cartera">0.0M$</label>
-                    <progress id="cartera" value="60" max="100"></progress>
-                </section>
-                <section>
+                    <label for="cartera">100.0M$</label>
+                    <progress id="cartera" value="0" max="100"></progress>
                     <button type="button">Continuar</button>
                 </section>
+
             </div>
         </div>
         <div id="eleccion" class="col-md col-sm col">
