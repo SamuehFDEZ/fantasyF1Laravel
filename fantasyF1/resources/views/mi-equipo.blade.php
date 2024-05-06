@@ -105,7 +105,66 @@
                     <progress id="cartera" value="0" max="100"></progress>
                     <button type="button">Continuar</button>
                 </section>
-
+                <hr>
+                <section class="row">
+                    <div class="piloto col-md col-sm col text-center">
+                        <div class="campoPiloto">
+                            <p id="mas">&plus;</p>
+                            <p class="anyadirPiloto">Añadir piloto</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm col text-center">
+                        <div class="piloto col-md col-sm col text-center">
+                            <div class="campoPiloto">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">Añadir piloto</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm col text-center">
+                        <div class="piloto col-md col-sm col text-center">
+                            <div class="campoPiloto">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">Añadir piloto</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm col text-center">
+                        <div class="piloto col-md col-sm col text-center">
+                            <div class="campoPiloto">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">Añadir piloto</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md col-sm col text-center">
+                        <div class="piloto col-md col-sm col text-center">
+                            <div class="campoPiloto">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">Añadir piloto</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="row align-items-center justify-content-center">
+                    <div class="col-md-6 col-sm col text-center">
+                        <div class="piloto col-md col-sm col text-center">
+                            <div class="campoPiloto">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">Añadir Constructor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm col text-center">
+                        <div class="piloto col-md col-sm col text-center">
+                            <div class="campoPiloto">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">Añadir Constructor</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
         <div id="eleccion" class="col-md col-sm col">

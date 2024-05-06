@@ -68,22 +68,22 @@
     <div id="siguienteGP" class="container">
         <div class="row">
             <div class="col-md-3 ">
-                <img src="{{asset("img/circuitos/Miami.jpg")}}" id="circuitoImg" alt="circuitoImg"
-                     srcset="{{asset("img/circuitos/Miami.jpg")}}">
+                <img src="{{asset("img/circuitos/Imola.jpg")}}" id="circuitoImg" alt="circuitoImg"
+                     srcset="{{asset("img/circuitos/Imola.jpg")}}">
             </div>
             <div id="infoPais" class="col-md-6">
                 <section>
                     <h1>
-                        <img src="{{asset("img/banderas/UnitedStates.svg")}}" id="bandera" alt="bandera"
-                             srcset="{{asset("img/banderas/UnitedStates.svg")}}">
-                        <span id="pais">ESTADOS UNIDOS</span>
-                        <p>FORMULA 1 GRAND PRIX MIAMI 2024</p>
+                        <img src="{{asset("img/banderas/Italy.svg")}}" id="bandera" alt="bandera"
+                             srcset="{{asset("img/banderas/Italy.svg")}}">
+                        <span id="pais">ITALIA</span>
+                        <p>FORMULA 1 GRAND PRIX IMOLA 2024</p>
                     </h1>
                     <!-- Scrollable modal -->
                     <button type="button" id="botonModal" data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">
-                        <img src="{{asset("img/circuitos_shape/Miami.svg")}}" id="circuito" alt="formaCircuito"
-                             srcset="{{asset("img/circuitos_shape/Miami.svg")}}">
+                        <img src="{{asset("img/circuitos_shape/Imola.svg")}}" id="circuito" alt="formaCircuito"
+                             srcset="{{asset("img/circuitos_shape/Imola.svg")}}">
                     </button>
                 </section>
 
@@ -94,17 +94,17 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                                    <img src="{{asset("img/banderas/UnitedStates.svg")}}" id="bandera" alt="bandera"
-                                         srcset="{{asset("img/banderas/UnitedStates.svg")}}">
-                                    <span id="pais">ESTADOS UNIDOS</span></h1>
+                                    <img src="{{asset("img/banderas/Italy.svg")}}" id="bandera" alt="bandera"
+                                         srcset="{{asset("img/banderas/Italy.svg")}}">
+                                    <span id="pais">ITALIA</span></h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <h3>Circuito</h3>
                                 <hr>
-                                <img src="{{asset('img/circuitos_shape/Miami_masInfo.png')}}" alt="circuitoMasInfo"
-                                     srcset="{{asset('img/circuitos_shape/Miami_masInfo.png')}}">
+                                <img src="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}" alt="circuitoMasInfo"
+                                     srcset="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}">
                                 <hr>
                                 <div id="datosCircuito"></div>
                             </div>

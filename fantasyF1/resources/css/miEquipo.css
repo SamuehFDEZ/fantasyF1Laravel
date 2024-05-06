@@ -412,6 +412,34 @@ footer .row .col-md #iconos {
   background-color: white;
   border: 2px solid red;
 }
+#eleccionDeEquipo #costesYContinuar section.row .piloto {
+  height: 100px;
+}
+#eleccionDeEquipo #costesYContinuar section.row .piloto .campoPiloto #mas {
+  width: 15%;
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  margin-top: 10px;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+  left: 42%;
+}
+#eleccionDeEquipo #costesYContinuar section.row .piloto .campoPiloto #mas:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid red;
+}
+#eleccionDeEquipo #costesYContinuar section.row .piloto .campoPiloto .anyadirPiloto {
+  text-decoration-line: underline;
+  text-decoration-color: red; /* Cambia el color del subrayado a azul */
+  /* Aplica  al texto */
+  text-decoration-thickness: 3px;
+  font-weight: bold;
+}
 #eleccionDeEquipo #eleccion {
   border: 1px solid red;
   height: 500px;
