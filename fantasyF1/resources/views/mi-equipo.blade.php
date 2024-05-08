@@ -37,10 +37,10 @@
 
 @if(empty(session('nombreDeUsuario')))
     <script type="text/javascript">
-        window.onload = () => {
-            const myModal = new bootstrap.Modal('#loginModal');
+        document.addEventListener('DOMContentLoaded', () => {
+            const myModal = bootstrap.Modal.getOrCreateInstance('#loginModal');
             myModal.show();
-        }
+        });
     </script>
 @endif
 <div class="modal show" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
@@ -96,8 +96,8 @@
         </nav>
     </div>
 
-    <div id="eleccionDeEquipo" class="row">
-        <div id="equipo" class="col-md col-sm col">
+    <div id="eleccionDeEquipo" class="row-xl row-md row-sm row">
+        <div id="equipo" class="col-xl-6 col-md col-sm col">
             <div id="costesYContinuar">
                 <section>
                     <h4>Límite de coste</h4>
@@ -167,7 +167,7 @@
                 </section>
             </div>
         </div>
-        <div id="eleccion" class="col-md col-sm col">
+        <div id="eleccion" class="col-xl col-md col-sm col">
             <p>pa ti mi cola</p>
         </div>
     </div>

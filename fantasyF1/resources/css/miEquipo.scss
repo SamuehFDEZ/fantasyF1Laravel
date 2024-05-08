@@ -43,7 +43,7 @@
 
             section {
                 progress[value] {
-                    background-color: red; /* color de fondo de la barra */
+                    background-color: #8fe70b; /* color de fondo de la barra */
                     border-radius: 10px;
                     height: 10px;
                 }
@@ -54,7 +54,7 @@
                 }
 
                 progress[value]::-webkit-progress-value {
-                    background-color: red;
+                    background-color: #8fe70b;
                     border-radius: 10px;
                 }
 
@@ -92,7 +92,6 @@
                         background-color: red;
                         color: white;
                         margin-top: 10px;
-                        align-items: center;
                         border-radius: 5px;
                         font-size: 25px;
                         cursor: pointer;
@@ -122,8 +121,8 @@
     #eleccion {
         border: 1px solid red;
         height: 500px;
-        margin-right: 20px;
-        margin-left: 10px;
+        margin-right: 15px;
+        margin-left: 15px;
 
     }
 }
