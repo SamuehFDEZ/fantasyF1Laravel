@@ -32,8 +32,9 @@
 }
 
 #eleccionDeEquipo {
+    // sin este margin sobra un pixel a la derecha
+    margin-right: 0;
     #equipo {
-        border: 1px solid black;
         height: 500px;
         margin-left: 20px;
         margin-right: 10px;

@@ -101,7 +101,7 @@
             <div id="costesYContinuar">
                 <section>
                     <h4>Límite de coste</h4>
-                    <label for="cartera">100.0M$</label>
+                    <label for="cartera">50.0M$</label>
                     <progress id="cartera" value="0" max="100"></progress>
                     <button type="button">Continuar</button>
                 </section>

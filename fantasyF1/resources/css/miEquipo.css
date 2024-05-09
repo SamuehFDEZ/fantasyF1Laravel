@@ -375,8 +375,10 @@ footer .row .col-md #iconos {
   border: 2px solid red;
 }
 
+#eleccionDeEquipo {
+  margin-right: 0;
+}
 #eleccionDeEquipo #equipo {
-  border: 1px solid black;
   height: 500px;
   margin-left: 20px;
   margin-right: 10px;
