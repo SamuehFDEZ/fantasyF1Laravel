@@ -168,7 +168,16 @@
             </div>
         </div>
         <div id="eleccion" class="col-xl col-md col-sm col">
-            <p>pa ti mi cola</p>
+            <div id="cabeceraDePilotos">
+                <ul>
+                    <li>
+                        <a id="drivers">Pilotos</a>
+                    </li>
+                    <li>
+                        <a id="constructors">Constructores</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
