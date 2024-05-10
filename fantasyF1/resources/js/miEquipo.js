@@ -11,4 +11,24 @@ window.onload = () => {
     // Por ejemplo, puedes aumentar o disminuir el valor del progress en una cantidad fija
     // progress.value += 10; // Aumenta en 10
     // progress.value -= 10; // Disminuye en 10
+    addClassActive();
+}
+
+
+function addClassActive() {
+    const anchors = document.querySelectorAll("#cabeceraDePilotos a");
+
+    anchors.forEach(function (anchor) {
+        anchor.addEventListener("click", () => {
+            // Agregar clase "activo" al enlace clicado
+            anchor.classList.add("activo");
+
+            // Remover clase "activo" de los otros enlaces
+            anchors.forEach(function (otherAnchor) {
+                if (otherAnchor !== anchor) {
+                    otherAnchor.classList.remove("activo");
+                }
+            });
+        });
+    });
 }

@@ -16,9 +16,6 @@
             <a class="nav-link" href="{{ route('constructor') }}">Constructores</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Horarios</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="#">Circuitos</a>
         </li>
         <li class="nav-item">
