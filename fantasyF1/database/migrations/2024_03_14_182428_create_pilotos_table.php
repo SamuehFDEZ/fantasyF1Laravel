@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('nacionalidad');
             $table->unsignedBigInteger('userID')->default(1)->nullable(true); // Usamos unsignedBigInteger ya que 'userID' en 'usuarios' es un big integer
             $table->string('nombre_constructor');
+            $table->text('imgPiloto')->nullable(false); // Agregar columna 'nacionalidad' como VARCHAR(50) NOT NULL
+
             $table->timestamps();
 
             // Clave foránea para 'userID'

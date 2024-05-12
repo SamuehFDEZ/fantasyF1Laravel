@@ -19,6 +19,7 @@ class Piloto extends Model
         'fechaNac',
         'nacionalidad',
         'nombre_constructor',
+        'imgPiloto',
     ];
 
 

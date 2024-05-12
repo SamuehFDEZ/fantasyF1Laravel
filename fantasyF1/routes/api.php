@@ -30,3 +30,5 @@ Route::get("/circuitos/{ronda}", [ApiController::class, 'circuitosPorRonda'])->n
 
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
 Route::post("/piloto", [ApiController::class, 'pilotos'])->name('pilotos');
+Route::post("/piloto/info", [ApiController::class, 'imgPilotos'])->name('imgPilotos');
+

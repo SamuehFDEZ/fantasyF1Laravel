@@ -185,8 +185,191 @@
                         d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
                 </svg>
                 <hr>
-                <div id="cuerpoDePilotos">
+            </div>
+            <div id="cuerpoDePilotos">
+                <div id="ordenarPor">Ordenar Por:</div>
+                <div id="listaDePilotos">
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/redBull/verstappen.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/redBull/verstappen.avif')}}">
+                                MAX <b>VERSTAPPEN</b>
+                                <button class="pilotoElegir">+</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/redBull/perez.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/redBull/perez.avif')}}">
+                                SERGIO <b>PEREZ</b>
+                                <button class="pilotoElegir">+</button>
 
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/mclaren/norris.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/mclaren/norris.avif')}}">
+                                LANDO <b>NORRIS</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/mclaren/piastri.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/mclaren/piastri.avif')}}">
+                                OSCAR <b>PIASTRI</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/ferrari/leclerc.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/ferrari/leclerc.avif')}}">
+                                CHARLES <b>LECLERC</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/ferrari/sainz.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/ferrari/sainz.avif')}}">
+                                CARLOS <b>SAINZ</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/mercedes/hamilton.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/mercedes/hamilton.avif')}}">
+                                LEWIS <b>HAMILTON</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/mercedes/russell.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/mercedes/russell.avif')}}">
+                                GEORGE <b>RUSSELL</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/astonMartin/alonso.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/astonMartin/alonso.avif')}}">
+                                FERNANDO <b>ALONSO</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/astonMartin/stroll.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/astonMartin/stroll.avif')}}">
+                                LANCE <b>STROLL</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/visaRB/ricciardo.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/visaRB/ricciardo.avif')}}">
+                                DANIEL <b>RICCIARDO</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/visaRB/tsunoda.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/visaRB/tsunoda.avif')}}">
+                                YUKI <b>TSUNODA</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/hass/hulkenberg.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/hass/hulkenberg.avif')}}">
+                                NICO <b>HULKENBERG</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/hass/magnussen.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/hass/magnussen.avif')}}">
+                                KEVIN <b>MAGNUSSEN</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/williams/albon.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/williams/albon.avif')}}">
+                                ALEX <b>ALBON</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/williams/sargeant.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/williams/sargeant.avif')}}">
+                                LOGAN <b>SARGEANT</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/stake/bottas.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/stake/bottas.avif')}}">
+                                VALTTERI <b>BOTTAS</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/stake/guanyu.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/stake/guanyu.avif')}}">
+                                ZHOU <b>GUANYU</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/alpine/gasly.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/alpine/gasly.avif')}}">
+                                PIERRE <b>GASLY</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="{{asset('img/pilotos/alpine/ocon.avif')}}" alt="piloto"
+                                     srcset="{{asset('img/pilotos/alpine/ocon.avif')}}">
+                                ESTEBAN <b>OCON</b>
+                                <button class="pilotoElegir">+</button>
+
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

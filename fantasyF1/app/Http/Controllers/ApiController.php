@@ -73,16 +73,18 @@ class ApiController extends Controller
 
     public function constructoresCoches(): JsonResponse
     {
-        // pluck() para solo quedarme con los coches
-        // doble orderByDesc para corregir orden de imgs
+        // Obtener todos los constructores
         $constructores = Constructor::orderByDesc('puntosRealizados')
             ->orderByDesc('nombre')
-            ->pluck('coche') // pluck() para solo quedarte con los coches
-            ->values();
+            ->get();
 
-        return response()->json($constructores);
+        // Decodificar cada imagen y almacenarla en un nuevo array
+        $imagenesDecodificadas = $constructores->pluck('coche')->map(function ($imagenBase64) {
+            return base64_decode($imagenBase64);
+        });
+
+        return response()->json($imagenesDecodificadas);
     }
-
 
     public function pilotosGroupByTeam(Request $request, $equipo): JsonResponse
     {
@@ -95,4 +97,21 @@ class ApiController extends Controller
         $piloto = Piloto::all();
         return response()->json($piloto);
     }
+    
+    public function imgPilotos(): JsonResponse
+    {
+        // Obtener todos los pilotos excluyendo a Oliver Bearman
+        $pilotos = Piloto::where('nombre', '!=', 'Oliver Bearman')
+            ->orderByDesc('nombre')
+            ->orderByDesc('puntosRealizados')
+            ->get(['nombre', 'puntosRealizados', 'valorMercado', 'imgPiloto']);
+
+        // Decodificar cada imagen y almacenarla en un nuevo array
+        $imagenesDecodificadas = $pilotos->pluck('imgPiloto')->map(function ($imagenBase64) {
+            return base64_decode($imagenBase64);
+        });
+
+        return response()->json($imagenesDecodificadas);
+    }
+
 }

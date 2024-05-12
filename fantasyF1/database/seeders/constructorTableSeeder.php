@@ -34,7 +34,7 @@ class constructorTableSeeder extends Seeder
             $constructor->valorMercado = $constructorData['valorMercado'];
             $constructor->nacionalidad = $constructorData['nacionalidad'];
             $constructor->puntosRealizados = $constructorData['puntosRealizados'];
-            $constructor->coche = $constructorData['coche'];
+            $constructor->coche = base64_encode($constructorData['coche']);
 
             $constructor->save();
         }

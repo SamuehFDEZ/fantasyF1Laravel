@@ -152,7 +152,6 @@
                         cursor: pointer;
 
 
-
                         &#drivers::after {
                             content: '';
                             border: 1px solid black;
@@ -186,8 +185,52 @@
                 }
             }
         }
+
+        #cuerpoDePilotos {
+            #ordenarPor {
+                background-color: #d9d9d9;
+                border-radius: 5px;
+                height: 30px;
+                margin-bottom: 15px;
+            }
+
+            #listaDePilotos {
+                height: 340px; /* Ajusta este valor según lo que necesites */
+                overflow-y: scroll;
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        div {
+                            img {
+                                width: 8%;
+                            }
+
+                            button {
+                                width: 5%;
+                                font-size: 25px;
+                                border-radius: 5px;
+                                background-color: #1e1d1d;
+                                border: 1px solid white;
+                                color: white;
+                                float: right;
+                                margin-right: 10px;
+
+                                &:hover {
+                                    background-color: white;
+                                    color: #1e1d1d;
+                                    border: 1px solid #1e1d1d;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
 a {
     color: inherit;
     text-decoration: none;

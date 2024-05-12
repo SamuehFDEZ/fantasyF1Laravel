@@ -494,6 +494,37 @@ footer .row .col-md #iconos {
   cursor: pointer;
   fill: black;
 }
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #ordenarPor {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos {
+  height: 340px; /* Ajusta este valor según lo que necesites */
+  overflow-y: scroll;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul {
+  list-style: none;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li div img {
+  width: 8%;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li div button {
+  width: 5%;
+  font-size: 25px;
+  border-radius: 5px;
+  background-color: #1e1d1d;
+  border: 1px solid white;
+  color: white;
+  float: right;
+  margin-right: 10px;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li div button:hover {
+  background-color: white;
+  color: #1e1d1d;
+  border: 1px solid #1e1d1d;
+}
 
 a {
   color: inherit;
