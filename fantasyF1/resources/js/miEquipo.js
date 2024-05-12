@@ -1,4 +1,4 @@
-window.onload = () => {
+window.onload = async () => {
     // Obtener el valor del label y convertirlo a número
     let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
 

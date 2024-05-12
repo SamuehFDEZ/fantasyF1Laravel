@@ -97,21 +97,30 @@ class ApiController extends Controller
         $piloto = Piloto::all();
         return response()->json($piloto);
     }
-    
-    public function imgPilotos(): JsonResponse
+
+   public function imgPilotos(): JsonResponse
     {
         // Obtener todos los pilotos excluyendo a Oliver Bearman
-        $pilotos = Piloto::where('nombre', '!=', 'Oliver Bearman')
-            ->orderByDesc('nombre')
-            ->orderByDesc('puntosRealizados')
-            ->get(['nombre', 'puntosRealizados', 'valorMercado', 'imgPiloto']);
+        $query = Piloto::where('nombre', '!=', 'Oliver Bearman')
+            ->orderByDesc('puntosRealizados');
+
+        // Obtener la consulta SQL generada y mostrarla
+        $sql = $query->toSql();
+        //dd($sql);
+
+        // Ejecutar la consulta
+        $pilotos = $query->get(['imgPiloto', 'nombre', 'puntosRealizados', 'valorMercado']);
 
         // Decodificar cada imagen y almacenarla en un nuevo array
-        $imagenesDecodificadas = $pilotos->pluck('imgPiloto')->map(function ($imagenBase64) {
-            return base64_decode($imagenBase64);
+        $imagenesDecodificadas = $pilotos->map(function ($piloto) {
+            return [
+                'imgPiloto' => base64_decode($piloto->imgPiloto),
+                'nombre' => $piloto->nombre,
+                'puntosRealizados' => $piloto->puntosRealizados,
+                'valorMercado' => $piloto->valorMercado,
+            ];
         });
 
         return response()->json($imagenesDecodificadas);
     }
-
 }
