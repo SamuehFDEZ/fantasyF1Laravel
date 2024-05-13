@@ -500,6 +500,16 @@ footer .row .col-md #iconos {
   height: 30px;
   margin-bottom: 15px;
 }
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #ordenarPor button {
+  position: relative;
+  left: 21%;
+  background-color: #d9d9d9;
+  border: none;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #ordenarPor span {
+  margin-left: 20px;
+  margin-right: 6em;
+}
 #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos {
   height: 340px; /* Ajusta este valor según lo que necesites */
   overflow-y: scroll;
@@ -507,23 +517,43 @@ footer .row .col-md #iconos {
 #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul {
   list-style: none;
 }
-#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li div img {
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Alinea los elementos alrededor del espacio disponible */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li img {
   width: 8%;
 }
-#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li div button {
-  width: 5%;
-  font-size: 25px;
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li .nombrePiloto {
+  width: 40%; /* Ancho fijo para el nombre del piloto */
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li .puntosPiloto {
+  width: 40%; /* Ancho fijo para los puntos del piloto */
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li .valorPiloto {
+  width: 40%; /* Ancho fijo para el valor del mercado del piloto */
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li button {
+  width: 9%;
+  height: 45px;
+  font-size: 22px;
   border-radius: 5px;
   background-color: #1e1d1d;
   border: 1px solid white;
   color: white;
-  float: right;
   margin-right: 10px;
 }
-#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li div button:hover {
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li button:hover {
   background-color: white;
   color: #1e1d1d;
   border: 1px solid #1e1d1d;
+}
+#eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos #mensajeNoEncontrado {
+  display: none;
+  text-align: center;
+  font-size: 30px;
 }
 
 a {
@@ -533,6 +563,10 @@ a {
 
 .activo {
   color: red;
+}
+
+.oculto {
+  display: none;
 }
 
 /*# sourceMappingURL=miEquipo.css.map */
