@@ -417,6 +417,13 @@ footer .row .col-md #iconos {
 #eleccionDeEquipo #costesYContinuar label {
   font-weight: bold;
 }
+#eleccionDeEquipo #costesYContinuar button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: #fff;
+  border: 1px solid #ccc;
+}
 #eleccionDeEquipo #costesYContinuar section.row .piloto {
   height: 100px;
 }
@@ -444,8 +451,34 @@ footer .row .col-md #iconos {
   text-decoration-thickness: 3px;
   font-weight: bold;
 }
-#eleccionDeEquipo #eleccion {
+#eleccionDeEquipo #costesYContinuar section.row .coche {
+  height: 100px;
+}
+#eleccionDeEquipo #costesYContinuar section.row .coche .campoCoche #mas {
+  width: 15%;
   border: 1px solid red;
+  background-color: red;
+  color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+  left: 42%;
+}
+#eleccionDeEquipo #costesYContinuar section.row .coche .campoCoche #mas:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid red;
+}
+#eleccionDeEquipo #costesYContinuar section.row .coche .campoCoche .anyadirCoche {
+  text-decoration-line: underline;
+  text-decoration-color: red; /* Cambia el color del subrayado a azul */
+  /* Aplica  al texto */
+  text-decoration-thickness: 3px;
+  font-weight: bold;
+}
+#eleccionDeEquipo #eleccion {
   margin-right: 15px;
   margin-left: 15px;
   font-family: F1, serif;
@@ -559,6 +592,14 @@ footer .row .col-md #iconos {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.imgPiloto {
+  border: 1px solid #f1f0ec;
+  border-radius: 5px;
+  background-color: #f1f0ec;
+  width: 30%;
+  height: auto;
 }
 
 .activo {

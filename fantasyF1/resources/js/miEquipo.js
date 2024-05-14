@@ -1,9 +1,145 @@
+let ordenPuntosAsc = true;
+let ordenValorAsc = true;
+const ordenarPorPuntos = document.getElementById('ordenarPorPuntos');
+const ordenarPorValor = document.getElementById('ordenarPorValor');
+
 window.onload = async () => {
     progresoDeCartera();
     addClassActive();
     await obtenerInfoPilotos();
     filtrarPilotos();
+    ordenarPorPuntosyValorMercado();
+    elegirPiloto();
+}
 
+function crearCampoPiloto() {
+    // Crea el contenedor principal <div class="campoPiloto">
+    const campoPiloto = document.createElement('div');
+    campoPiloto.classList.add('campoPiloto');
+
+    // Crea el elemento de signo más <p id="mas">&plus;</p>
+    const mas = document.createElement('p');
+    mas.id = 'mas';
+    mas.textContent = '+';
+
+    // Crea el elemento de texto "Añadir piloto" <p class="anyadirPiloto">Añadir piloto</p>
+    const anyadirPiloto = document.createElement('p');
+    anyadirPiloto.classList.add('anyadirPiloto');
+    anyadirPiloto.textContent = 'Añadir piloto';
+
+    // Adjunta los elementos al contenedor principal
+    campoPiloto.appendChild(mas);
+    campoPiloto.appendChild(anyadirPiloto);
+
+    // Devuelve el contenedor principal con todos sus elementos hijos
+    return campoPiloto;
+}
+
+
+function eliminarPiloto() {
+    const huecosPiloto = document.querySelectorAll('.piloto .campoPiloto img');
+    for (let img of huecosPiloto) {
+        img.addEventListener("dblclick", () => {
+            //El método closest() de la interfaz Element recorre el elemento y sus padres
+            // (dirigiéndose hacia la raiz del documento) hasta encontrar un nodo que coincida con el CSS
+            // selector especificado.
+            const contenedor = img.closest('.campoPiloto'); // Encuentra el contenedor específico de campo piloto
+            img.remove(); // Elimina la imagen cuando se hace clic
+            const nuevoCampoPiloto = crearCampoPiloto(); // Crea un nuevo campo piloto
+            // Limpia el contenido del contenedor
+            contenedor.innerHTML = '';
+            // Agrega el nuevo campo piloto al contenedor
+            contenedor.appendChild(nuevoCampoPiloto);
+        });
+    }
+}
+
+
+function elegirPiloto() {
+    const botonesElegir = document.querySelectorAll('.pilotoElegir');
+    botonesElegir.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const filaPiloto = boton.closest('li');
+            const imgPiloto = filaPiloto.querySelector('img');
+            const imgPilotoSrc = imgPiloto.src;
+
+            // Verificar si la imagen del piloto ya está en un hueco
+            const huecosPiloto = document.querySelectorAll('.piloto .campoPiloto img');
+            for (let img of huecosPiloto) {
+                if (img.src === imgPilotoSrc) {
+                    return;
+                }
+            }
+            // Si no está, se añade al primer hueco disponible
+            const nuevoImgPiloto = imgPiloto.cloneNode(true);
+            nuevoImgPiloto.classList.add("imgPiloto");
+
+            const campoHuecosPiloto = document.querySelectorAll('.piloto .campoPiloto');
+            for (let hueco of campoHuecosPiloto) {
+                if (!hueco.querySelector('img')) {
+                    hueco.innerHTML = '';  // Limpiar el contenido del hueco
+                    hueco.appendChild(nuevoImgPiloto);
+                    // Añadir el listener de click para eliminar la imagen
+                    nuevoImgPiloto.addEventListener("click", eliminarPiloto);
+                    break;
+                }
+            }
+        });
+    });
+}
+
+function ordenarPorPuntosyValorMercado() {
+    ordenarPorPuntos.addEventListener('click', () => {
+        ordenarPor('puntosRealizados', ordenPuntosAsc);
+        /*Primera vez que se hace clic en el botón:
+            Supongamos que ordenValorAsc es inicialmente true.
+            Se llama a la función ordenarPor('valorMercado', ordenValorAsc), que ordena de manera ascendente porque ordenValorAsc es true.
+            Luego, ordenValorAsc = !ordenValorAsc; cambia ordenValorAsc a false.
+
+        Segunda vez que se hace clic en el botón:
+            Ahora, ordenValorAsc es false.
+            Se llama a la función ordenarPor('valorMercado', ordenValorAsc), que ordena de manera descendente porque ordenValorAsc es false.
+            Luego, ordenValorAsc = !ordenValorAsc; cambia ordenValorAsc de nuevo a true.*/
+        ordenPuntosAsc = !ordenPuntosAsc;
+    });
+
+    ordenarPorValor.addEventListener('click', () => {
+        ordenarPor('valorMercado', ordenValorAsc);
+        ordenValorAsc = !ordenValorAsc;
+    });
+}
+
+// ordena por campo y por orden de < o >
+function ordenarPor(campo, ascendente) {
+    // obtiene los valores (o bien los puntos o el valorMercado)
+    let listaPilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
+    // guarda como array el contenido de las listas de li
+    let pilotos = Array.from(listaPilotos.getElementsByTagName('li'));
+    // ordena el array dependiendo de si es ascendente o no
+    pilotos.sort((a, b) => {
+        let valorA = obtenerValorCampo(a, campo);
+        let valorB = obtenerValorCampo(b, campo);
+
+        if (ascendente) {
+            return valorA - valorB;
+        } else {
+            return valorB - valorA;
+        }
+    });
+
+    listaPilotos.innerHTML = '';
+    pilotos.forEach(piloto => listaPilotos.appendChild(piloto));
+}
+
+// funcion que devuelve un numero (el valor de los puntos o del valor de mercado)
+function obtenerValorCampo(elemento, campo) {
+    // si es puntosRealizados devuelve el numero de ese campo
+    if (campo === 'puntosRealizados') {
+        return parseInt(elemento.getElementsByClassName('puntosPiloto')[0].textContent);
+        // lo mismo para el valor
+    } else if (campo === 'valorMercado') {
+        return parseFloat(elemento.getElementsByClassName('valorPiloto')[0].textContent.replace('M$', ''));
+    }
 }
 
 function progresoDeCartera() {

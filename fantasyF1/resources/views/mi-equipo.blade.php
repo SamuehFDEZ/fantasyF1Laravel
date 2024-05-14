@@ -101,9 +101,9 @@
             <div id="costesYContinuar">
                 <section>
                     <h4>Límite de coste</h4>
-                    <label for="cartera">50.0M$</label>
+                    <label for="cartera">100.0M$</label>
                     <progress id="cartera" value="0" max="100"></progress>
-                    <button type="button">Continuar</button>
+                    <button type="button" disabled>Continuar</button>
                 </section>
                 <hr>
                 <section class="row">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm col text-center">
+                    <div class="col-md-4 col-sm col text-center">
                         <div class="piloto col-md col-sm col text-center">
                             <div class="campoPiloto">
                                 <p id="mas">&plus;</p>
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md col-sm col text-center">
+                    <div class="col-md-4 col-sm col text-center">
                         <div class="piloto col-md col-sm col text-center">
                             <div class="campoPiloto">
                                 <p id="mas">&plus;</p>
@@ -149,18 +149,18 @@
                 <hr>
                 <section class="row align-items-center justify-content-center">
                     <div class="col-md-6 col-sm col text-center">
-                        <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto">
+                        <div class="coche col-md col-sm col text-center">
+                            <div class="campoCoche">
                                 <p id="mas">&plus;</p>
-                                <p class="anyadirPiloto">Añadir Constructor</p>
+                                <p class="anyadirCoche">Añadir Constructor</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm col text-center">
-                        <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto">
+                        <div class="coche col-md col-sm col text-center">
+                            <div class="campoCoche">
                                 <p id="mas">&plus;</p>
-                                <p class="anyadirPiloto">Añadir Constructor</p>
+                                <p class="anyadirCoche">Añadir Constructor</p>
                             </div>
                         </div>
                     </div>
@@ -188,9 +188,9 @@
             </div>
             <div id="cuerpoDePilotos">
                 <div id="ordenarPor">Ordenar Por:
-                    <button>Puntos</button>
+                    <button id="ordenarPorPuntos">Puntos</button>
                     <span id="separador"></span>
-                    <button>Valor de mercado</button>
+                    <button id="ordenarPorValor">Valor de mercado</button>
                 </div>
                 <div id="listaDePilotos">
                     <ul></ul>

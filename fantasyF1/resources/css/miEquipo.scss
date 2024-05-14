@@ -87,10 +87,17 @@
             font-weight: bold;
         }
 
+        button:disabled {
+            background-color: gray; // Cambia el color de fondo
+            cursor: not-allowed; // Cambia el cursor para indicar que no se puede hacer clic
+            opacity: 0.5; // Hacer que el botón parezca desactivado
+            color: #fff; // Cambiar el color del texto si es necesario
+            border: 1px solid #ccc; // Cambiar el borde si es necesario
+        }
+
         section.row {
             .piloto {
                 height: 100px;
-
                 .campoPiloto {
                     #mas {
                         width: 15%;
@@ -118,14 +125,45 @@
                         text-decoration-thickness: 3px;
                         font-weight: bold;
                     }
+                }
+            }
 
+            .coche {
+                height: 100px;
+
+                .campoCoche {
+                    #mas {
+                        width: 15%;
+                        border: 1px solid red;
+                        background-color: red;
+                        color: white;
+                        margin-top: 10px;
+                        border-radius: 5px;
+                        font-size: 25px;
+                        cursor: pointer;
+                        position: relative;
+                        left: 42%;
+
+                        &:hover {
+                            color: black;
+                            background-color: white;
+                            border: 2px solid red;
+                        }
+                    }
+
+                    .anyadirCoche {
+                        text-decoration-line: underline;
+                        text-decoration-color: red; /* Cambia el color del subrayado a azul */
+                        /* Aplica  al texto */
+                        text-decoration-thickness: 3px;
+                        font-weight: bold;
+                    }
                 }
             }
         }
     }
 
     #eleccion {
-        border: 1px solid red;
         margin-right: 15px;
         margin-left: 15px;
         font-family: F1, serif;
@@ -268,6 +306,14 @@
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.imgPiloto {
+    border: 1px solid #f1f0ec;
+    border-radius: 5px;
+    background-color: #f1f0ec;
+    width: 30%;
+    height: auto;
 }
 
 .activo {
