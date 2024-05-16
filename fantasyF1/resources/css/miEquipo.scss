@@ -98,6 +98,7 @@
         section.row {
             .piloto {
                 height: 100px;
+
                 .campoPiloto {
                     #mas {
                         width: 15%;
@@ -168,7 +169,7 @@
         margin-left: 15px;
         font-family: F1, serif;
 
-        #cabeceraDePilotos {
+        #cabecera {
             ul {
                 list-style-type: none; /* Quita el decorado de la lista */
                 padding: 0;
@@ -300,6 +301,84 @@
                 }
             }
         }
+
+        #cuerpoDeCoches {
+            #ordenarPorC {
+                background-color: #d9d9d9;
+                border-radius: 5px;
+                height: 30px;
+                margin-bottom: 15px;
+
+                button {
+                    position: relative;
+                    left: 26%;
+                    background-color: #d9d9d9;
+                    border: none;
+                }
+
+                span {
+                    margin-left: 20px;
+                    margin-right: 6em;
+                }
+            }
+
+            #listaDeCoches {
+                height: 340px; /* Ajusta este valor según lo que necesites */
+                overflow-y: scroll;
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between; /* Alinea los elementos alrededor del espacio disponible */
+                        align-items: center; /* Alinea los elementos verticalmente */
+
+                        img {
+                            width: 20%;
+                            margin-left: -30px;
+                        }
+
+                        .nombreCoche {
+                            width: 40%; /* Ancho fijo para el nombre del piloto */
+                        }
+
+                        .puntosCoche {
+                            width: 40%; /* Ancho fijo para los puntos del piloto */
+                        }
+
+                        .valorCoche {
+                            width: 40%; /* Ancho fijo para el valor del mercado del piloto */
+                        }
+
+                        button {
+                            width: 9%;
+                            height: 45px;
+                            font-size: 22px;
+                            border-radius: 5px;
+                            background-color: #1e1d1d;
+                            border: 1px solid white;
+                            color: white;
+                            margin-right: 10px;
+
+                            &:hover {
+                                background-color: white;
+                                color: #1e1d1d;
+                                border: 1px solid #1e1d1d;
+                            }
+                        }
+                    }
+                }
+
+
+                #mensajeNoEncontradoC {
+                    display: none;
+                    text-align: center;
+                    font-size: 30px;
+                }
+            }
+        }
     }
 }
 
@@ -313,6 +392,14 @@ a {
     border-radius: 5px;
     background-color: #f1f0ec;
     width: 30%;
+    height: auto;
+}
+
+.imgConstructor {
+    border: 1px solid #f1f0ec;
+    border-radius: 5px;
+    background-color: #f1f0ec;
+    width: 60%;
     height: auto;
 }
 

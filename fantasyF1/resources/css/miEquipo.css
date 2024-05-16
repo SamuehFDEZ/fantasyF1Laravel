@@ -483,18 +483,18 @@ footer .row .col-md #iconos {
   margin-left: 15px;
   font-family: F1, serif;
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos ul {
+#eleccionDeEquipo #eleccion #cabecera ul {
   list-style-type: none; /* Quita el decorado de la lista */
   padding: 0;
   text-align: center; /* Centra los elementos de la lista */
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos ul li {
+#eleccionDeEquipo #eleccion #cabecera ul li {
   display: inline-block; /* Para que los elementos de la lista estén en línea */
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos ul li:not(:last-child) a {
+#eleccionDeEquipo #eleccion #cabecera ul li:not(:last-child) a {
   margin-right: 15em; /* Aumenta el margen derecho para separar los elementos */
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos ul li a {
+#eleccionDeEquipo #eleccion #cabecera ul li a {
   position: relative;
   text-decoration: none; /* Quita el subrayado del enlace */
   font-size: 1.4em; /* Aumenta el tamaño de la letra */
@@ -502,28 +502,28 @@ footer .row .col-md #iconos {
   margin: 20px 10px; /* Añade margen horizontal para separar los elementos */
   cursor: pointer;
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos ul li a#drivers::after {
+#eleccionDeEquipo #eleccion #cabecera ul li a#drivers::after {
   content: "";
   border: 1px solid black;
   position: absolute;
   left: 12em;
   height: 50px;
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos #filtrar {
+#eleccionDeEquipo #eleccion #cabecera #filtrar {
   width: 100%;
   border-radius: 5px;
   border-color: black;
   background-color: #e7e7e7;
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos #filtrar::-webkit-search-cancel-button {
+#eleccionDeEquipo #eleccion #cabecera #filtrar::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos svg {
+#eleccionDeEquipo #eleccion #cabecera svg {
   position: absolute;
   right: 2em;
   top: 25.4em;
 }
-#eleccionDeEquipo #eleccion #cabeceraDePilotos svg:hover {
+#eleccionDeEquipo #eleccion #cabecera svg:hover {
   cursor: pointer;
   fill: black;
 }
@@ -588,6 +588,68 @@ footer .row .col-md #iconos {
   text-align: center;
   font-size: 30px;
 }
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC button {
+  position: relative;
+  left: 26%;
+  background-color: #d9d9d9;
+  border: none;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC span {
+  margin-left: 20px;
+  margin-right: 6em;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches {
+  height: 340px; /* Ajusta este valor según lo que necesites */
+  overflow-y: scroll;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul {
+  list-style: none;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Alinea los elementos alrededor del espacio disponible */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li img {
+  width: 20%;
+  margin-left: -30px;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li .nombreCoche {
+  width: 40%; /* Ancho fijo para el nombre del piloto */
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li .puntosCoche {
+  width: 40%; /* Ancho fijo para los puntos del piloto */
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li .valorCoche {
+  width: 40%; /* Ancho fijo para el valor del mercado del piloto */
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li button {
+  width: 9%;
+  height: 45px;
+  font-size: 22px;
+  border-radius: 5px;
+  background-color: #1e1d1d;
+  border: 1px solid white;
+  color: white;
+  margin-right: 10px;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li button:hover {
+  background-color: white;
+  color: #1e1d1d;
+  border: 1px solid #1e1d1d;
+}
+#eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches #mensajeNoEncontradoC {
+  display: none;
+  text-align: center;
+  font-size: 30px;
+}
 
 a {
   color: inherit;
@@ -599,6 +661,14 @@ a {
   border-radius: 5px;
   background-color: #f1f0ec;
   width: 30%;
+  height: auto;
+}
+
+.imgConstructor {
+  border: 1px solid #f1f0ec;
+  border-radius: 5px;
+  background-color: #f1f0ec;
+  width: 60%;
   height: auto;
 }
 

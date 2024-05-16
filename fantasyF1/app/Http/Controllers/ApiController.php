@@ -119,4 +119,22 @@ class ApiController extends Controller
 
         return response()->json($imagenesDecodificadas);
     }
+    public function imgCoches(): JsonResponse
+    {
+        // Obtener todos los registros y ordenarlos por 'puntosRealizados' en orden descendente
+        $constructores = Constructor::all()->sortByDesc('puntosRealizados');
+
+        // Mapear la colección para decodificar las imágenes y extraer los datos necesarios
+        $imagenesDecodificadas = $constructores->map(function ($constructor) {
+            return [
+                'coche' => base64_decode($constructor->coche),
+                'nombre' => $constructor->nombre,
+                'puntosRealizados' => $constructor->puntosRealizados,
+                'valorMercado' => $constructor->valorMercado,
+            ];
+        });
+
+        // Devolver los datos en formato JSON
+        return response()->json($imagenesDecodificadas);
+    }
 }

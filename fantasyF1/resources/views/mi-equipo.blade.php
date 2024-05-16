@@ -168,7 +168,7 @@
             </div>
         </div>
         <div id="eleccion" class="col-xl col-md col-sm col">
-            <div id="cabeceraDePilotos">
+            <div id="cabecera">
                 <ul>
                     <li>
                         <a id="drivers">Pilotos</a>
@@ -178,7 +178,7 @@
                     </li>
                 </ul>
                 <hr>
-                <input type="search" name="filtrar" id="filtrar" placeholder="Buscar pilotos">
+                <input type="search" name="filtrar" id="filtrar" placeholder="Buscar">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50"
                      style="fill:#FA5252;">
                     <path
@@ -189,13 +189,26 @@
             <div id="cuerpoDePilotos">
                 <div id="ordenarPor">Ordenar Por:
                     <button id="ordenarPorPuntos">Puntos</button>
-                    <span id="separador"></span>
+                    <span></span>
                     <button id="ordenarPorValor">Valor de mercado</button>
                 </div>
                 <div id="listaDePilotos">
                     <ul></ul>
                     <div id="mensajeNoEncontrado" class="oculto">
                         <p>No se ha encontrado ningún piloto</p>
+                    </div>
+                </div>
+            </div>
+            <div id="cuerpoDeCoches" class="oculto">
+                <div id="ordenarPorC">Ordenar Por:
+                    <button id="ordenarPorPuntosC">Puntos</button>
+                    <span></span>
+                    <button id="ordenarPorValorC">Valor de mercado</button>
+                </div>
+                <div id="listaDeCoches">
+                    <ul></ul>
+                    <div id="mensajeNoEncontradoC" class="oculto">
+                        <p>No se ha encontrado ningún coche</p>
                     </div>
                 </div>
             </div>

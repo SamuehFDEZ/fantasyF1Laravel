@@ -26,6 +26,7 @@ Route::get("/constructor/puntos", [ApiController::class, 'constructoresPorPuntos
 Route::get("/constructor/coches", [ApiController::class, 'constructoresCoches'])->name('constructoresCoches');
 Route::get("/circuitos", [ApiController::class, 'circuitos'])->name('circuitos');
 Route::get("/circuitos/{ronda}", [ApiController::class, 'circuitosPorRonda'])->name('circuitosPorRonda');
+Route::get("/constructor/info", [ApiController::class, 'imgCoches'])->name('imgCoches');
 
 
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
