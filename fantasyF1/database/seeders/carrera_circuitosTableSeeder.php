@@ -121,6 +121,28 @@ class carrera_circuitosTableSeeder extends Seeder
             ['num_piloto' => 3, 'ronda' => 5, 'tiempo' => 'DNF', 'posicion' => 18, 'vueltas_hechas' => 33],
             ['num_piloto' => 22, 'ronda' => 5, 'tiempo' => 'DNF', 'posicion' => 19, 'vueltas_hechas' => 26],
             ['num_piloto' => 77, 'ronda' => 5, 'tiempo' => 'DNF', 'posicion' => 20, 'vueltas_hechas' => 19],
+
+            // Ronda 6
+            ['num_piloto' => 4, 'ronda' => 6, 'tiempo' => '1:30.498', 'posicion' => 1, 'vueltas_hechas' => 57],
+            ['num_piloto' => 1, 'ronda' => 6, 'tiempo' => '+7.612s', 'posicion' => 2, 'vueltas_hechas' => 57],
+            ['num_piloto' => 16, 'ronda' => 6, 'tiempo' => '+9.920s', 'posicion' => 3, 'vueltas_hechas' => 57],
+            ['num_piloto' => 11, 'ronda' => 6, 'tiempo' => '+14.650s', 'posicion' => 4, 'vueltas_hechas' => 57],
+            ['num_piloto' => 55, 'ronda' => 6, 'tiempo' => '+16.407s', 'posicion' => 5, 'vueltas_hechas' => 57],
+            ['num_piloto' => 44, 'ronda' => 6, 'tiempo' => '+16.585s', 'posicion' => 6, 'vueltas_hechas' => 57],
+            ['num_piloto' => 22, 'ronda' => 6, 'tiempo' => '+26.185s', 'posicion' => 7, 'vueltas_hechas' => 57],
+            ['num_piloto' => 63, 'ronda' => 6, 'tiempo' => '+34.789s', 'posicion' => 8, 'vueltas_hechas' => 57],
+            ['num_piloto' => 14, 'ronda' => 6, 'tiempo' => '+37.107s', 'posicion' => 9, 'vueltas_hechas' => 57],
+            ['num_piloto' => 31, 'ronda' => 6, 'tiempo' => '+39.746s', 'posicion' => 10, 'vueltas_hechas' => 57],
+            ['num_piloto' => 27, 'ronda' => 6, 'tiempo' => '+40.789s', 'posicion' => 11, 'vueltas_hechas' => 57],
+            ['num_piloto' => 10, 'ronda' => 6, 'tiempo' => '+44.958s', 'posicion' => 12, 'vueltas_hechas' => 57],
+            ['num_piloto' => 81, 'ronda' => 6, 'tiempo' => '+49.756s', 'posicion' => 13, 'vueltas_hechas' => 57],
+            ['num_piloto' => 24, 'ronda' => 6, 'tiempo' => '+49.979s', 'posicion' => 14, 'vueltas_hechas' => 57],
+            ['num_piloto' => 3, 'ronda' => 6, 'tiempo' => '+50.956s', 'posicion' => 15, 'vueltas_hechas' => 57],
+            ['num_piloto' => 77, 'ronda' => 6, 'tiempo' => '+52.356s', 'posicion' => 16, 'vueltas_hechas' => 57],
+            ['num_piloto' => 18, 'ronda' => 6, 'tiempo' => '+55.173s', 'posicion' => 17, 'vueltas_hechas' => 57],
+            ['num_piloto' => 23, 'ronda' => 6, 'tiempo' => '+76.091s', 'posicion' => 18, 'vueltas_hechas' => 57],
+            ['num_piloto' => 20, 'ronda' => 6, 'tiempo' => '+84.683s', 'posicion' => 19, 'vueltas_hechas' => 57],
+            ['num_piloto' => 2, 'ronda' => 6, 'tiempo' => 'DNF', 'posicion' => 20, 'vueltas_hechas' => 27],
         ];
 
         foreach ($carreraCircuitos as $carreraCircuitoData) {

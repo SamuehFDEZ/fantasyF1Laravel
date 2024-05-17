@@ -15,7 +15,9 @@ class sprintsTableSeeder extends Seeder
     public function run(): void
     {
         $sprints = [
-            ['sprintID' => 1, 'fecha'=> '2024-4-19', 'vueltaRapida'=> '1:32.608', 'ronda' => 5]
+            ['sprintID' => 1, 'fecha'=> '2024-4-19', 'vueltaRapida'=> '1:32.608', 'ronda' => 5],
+            ['sprintID' => 2, 'fecha'=> '2024-5-3', 'vueltaRapida'=> '1:30.415', 'ronda' => 6]
+
         ];
 
         foreach ($sprints as $sprint) {

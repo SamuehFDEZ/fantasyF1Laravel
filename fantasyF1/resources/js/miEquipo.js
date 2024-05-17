@@ -48,6 +48,7 @@ function eliminarPiloto() {
             const nuevoCampoPiloto = crearCampoPiloto();
             contenedor.innerHTML = '';
             contenedor.appendChild(nuevoCampoPiloto);
+            verificarSeleccionPilotos();
             actualizarCoste(-valorPiloto);
         });
     }
@@ -79,6 +80,7 @@ function elegirPiloto() {
                     hueco.innerHTML = '';
                     hueco.appendChild(nuevoImgPiloto);
                     nuevoImgPiloto.addEventListener("dblclick", eliminarPiloto);
+                    verificarSeleccionPilotos();
                     actualizarCoste(valorPiloto);
                     break;
                 }
@@ -86,6 +88,7 @@ function elegirPiloto() {
         });
     });
 }
+
 
 function ordenarPorPuntosyValorMercado() {
     ordenarPorPuntos.addEventListener('click', () => {
@@ -182,10 +185,10 @@ function actualizarDisponibilidadPilotos(valorDisponible) {
 
         if (valorPiloto > valorDisponible) {
             piloto.style.opacity = '0.5';
-            boton.disabled = true;
+            boton.disabled = true; // Asegúrate de que el botón esté deshabilitado
         } else {
             piloto.style.opacity = '1';
-            boton.disabled = false;
+            boton.disabled = false; // Asegúrate de que el botón esté habilitado
         }
     });
 }
@@ -222,7 +225,7 @@ function filtrarPilotos() {
                 piloto.style.display = 'block';
                 piloto.style = ' display: flex;\n' +
                     '    flex-direction: row;\n' +
-                    '    justify-content: space-between; /* Alinea los elementos alrededor del espacio disponible */\n' +
+                    '    justify-content: space-between; /!* Alinea los elementos alrededor del espacio disponible *!/\n' +
                     '    align-items: center;';
                 encontradaCoincidencia = true;
             } else {
@@ -385,7 +388,7 @@ function filtrarConstructores() {
                 constructor.style.display = 'block';
                 constructor.style = ' display: flex;\n' +
                     '    flex-direction: row;\n' +
-                    '    justify-content: space-between; /* Alinea los elementos alrededor del espacio disponible */\n' +
+                    '    justify-content: space-between; /!* Alinea los elementos alrededor del espacio disponible *!/\n' +
                     '    align-items: center;';
                 encontradaCoincidencia = true;
             } else {
@@ -426,8 +429,8 @@ function elegirConstructor() {
                     hueco.innerHTML = '';
                     hueco.appendChild(nuevoImgConstructor);
                     nuevoImgConstructor.addEventListener("dblclick", eliminarConstructor);
-                    actualizarCoste(valorConstructor);
                     verificarSeleccionCoches(); // Llama a la función aquí
+                    actualizarCoste(valorConstructor);
                     break;
                 }
             }
@@ -445,8 +448,10 @@ function eliminarConstructor() {
             const nuevoCampoCoche = crearCampoConstructor();
             contenedor.innerHTML = '';
             contenedor.appendChild(nuevoCampoCoche);
-            actualizarCoste(-valorConstructor);
+            // si no es en este orden no se hace correctamente
+            //primero comprobar luego actualizar
             verificarSeleccionCoches(); // Llama a la función aquí
+            actualizarCoste(-valorConstructor);
         });
     }
 }
@@ -505,269 +510,28 @@ function verificarSeleccionCoches() {
     }
 }
 
-/*
-let ordenPuntosAsc = true;
-let ordenValorAsc = true;
-let ordenPuntosAscC = true;
-let ordenValorAscC = true;
+function verificarSeleccionPilotos() {
+    const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
+    const listaDePilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
+    let seleccionados = 0;
 
-const ordenarPorPuntos = document.getElementById('ordenarPorPuntos');
-const ordenarPorValor = document.getElementById('ordenarPorValor');
-const ordenarPorPuntosC = document.getElementById('ordenarPorPuntosC');
-const ordenarPorValorC = document.getElementById('ordenarPorValorC');
-
-window.onload = async () => {
-    progresoDeCartera();
-    addClassActive();
-    await obtenerInfo('piloto');
-    await obtenerInfo('constructor');
-    filtrarElementos('piloto');
-    filtrarElementos('constructor');
-    ordenarPorEventos();
-    elegirElemento('piloto');
-    elegirElemento('constructor');
-}
-
-function crearCampoElemento(tipo) {
-    const campoElemento = document.createElement('div');
-    campoElemento.classList.add(`campo${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-
-    const mas = document.createElement('p');
-    mas.id = 'mas';
-    mas.textContent = '+';
-
-    const anyadirElemento = document.createElement('p');
-    anyadirElemento.classList.add(`anyadir${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-    anyadirElemento.textContent = `Añadir ${tipo}`;
-
-    campoElemento.appendChild(mas);
-    campoElemento.appendChild(anyadirElemento);
-
-    return campoElemento;
-}
-
-function eliminarElemento(tipo) {
-    const huecosElemento = document.querySelectorAll(`.${tipo} .campo${tipo.charAt(0).toUpperCase() + tipo.slice(1)} img`);
-    for (let img of huecosElemento) {
-        img.addEventListener("dblclick", () => {
-            const contenedor = img.closest(`.campo${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-            const valorElemento = parseFloat(img.getAttribute('data-valor'));
-            img.remove();
-            const nuevoCampoElemento = crearCampoElemento(tipo);
-            contenedor.innerHTML = '';
-            contenedor.appendChild(nuevoCampoElemento);
-            actualizarCoste(-valorElemento);
-        });
-    }
-}
-
-function elegirElemento(tipo) {
-    const botonesElegir = document.querySelectorAll(`.${tipo}Elegir`);
-    botonesElegir.forEach(boton => {
-        boton.addEventListener('click', () => {
-            const filaElemento = boton.closest('li');
-            const imgElemento = filaElemento.querySelector('img');
-            const imgElementoSrc = imgElemento.src;
-            const valorElemento = parseFloat(filaElemento.querySelector(`.valor${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`).textContent.replace('M$', ''));
-
-            const huecosElemento = document.querySelectorAll(`.${tipo} .campo${tipo.charAt(0).toUpperCase() + tipo.slice(1)} img`);
-            for (let img of huecosElemento) {
-                if (img.src === imgElementoSrc) {
-                    return;
-                }
-            }
-
-            const nuevoImgElemento = imgElemento.cloneNode(true);
-            nuevoImgElemento.classList.add(`img${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-            nuevoImgElemento.setAttribute('data-valor', valorElemento);
-
-            const campoHuecosElemento = document.querySelectorAll(`.${tipo} .campo${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-            for (let hueco of campoHuecosElemento) {
-                if (!hueco.querySelector('img')) {
-                    hueco.innerHTML = '';
-                    hueco.appendChild(nuevoImgElemento);
-                    nuevoImgElemento.addEventListener("dblclick", () => eliminarElemento(tipo));
-                    actualizarCoste(valorElemento);
-                    break;
-                }
-            }
-        });
-    });
-}
-
-function ordenarPorEventos() {
-    ordenarPorPuntos.addEventListener('click', () => {
-        ordenarPor('piloto', 'puntosRealizados', ordenPuntosAsc);
-        ordenPuntosAsc = !ordenPuntosAsc;
-    });
-
-    ordenarPorValor.addEventListener('click', () => {
-        ordenarPor('piloto', 'valorMercado', ordenValorAsc);
-        ordenValorAsc = !ordenValorAsc;
-    });
-
-    ordenarPorPuntosC.addEventListener('click', () => {
-        ordenarPor('constructor', 'puntosRealizados', ordenPuntosAscC);
-        ordenPuntosAscC = !ordenPuntosAscC;
-    });
-
-    ordenarPorValorC.addEventListener('click', () => {
-        ordenarPor('constructor', 'valorMercado', ordenValorAscC);
-        ordenValorAscC = !ordenValorAscC;
-    });
-}
-
-function ordenarPor(tipo, campo, ascendente) {
-    let listaElementos = document.getElementById(`listaDe${tipo.charAt(0).toUpperCase() + tipo.slice(1)}s`).getElementsByTagName('ul')[0];
-    let elementos = Array.from(listaElementos.getElementsByTagName('li'));
-    elementos.sort((a, b) => {
-        let valorA = obtenerValorCampo(a, campo, tipo);
-        let valorB = obtenerValorCampo(b, campo, tipo);
-
-        if (ascendente) {
-            return valorA - valorB;
-        } else {
-            return valorB - valorA;
+    huecosPilotos.forEach(img => {
+        if (img) {
+            seleccionados++;
         }
     });
 
-    listaElementos.innerHTML = '';
-    elementos.forEach(elemento => listaElementos.appendChild(elemento));
-}
-
-function obtenerValorCampo(elemento, campo, tipo) {
-    if (campo === 'puntosRealizados') {
-        return parseInt(elemento.getElementsByClassName(`puntos${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`)[0].textContent);
-    } else if (campo === 'valorMercado') {
-        return parseFloat(elemento.getElementsByClassName(`valor${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`)[0].textContent.replace('M$', ''));
+    if (seleccionados >= 5) {
+        listaDePilotos.style.opacity = '0.5';
+        const botones = listaDePilotos.querySelectorAll('button.pilotoElegir');
+        botones.forEach(boton => boton.disabled = true);
+    } else {
+        listaDePilotos.style.opacity = '1';
+        const botones = listaDePilotos.querySelectorAll('button.pilotoElegir');
+        botones.forEach(boton => boton.disabled = false);
     }
 }
 
-function progresoDeCartera() {
-    let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
-    let progress = document.getElementById('cartera');
-    progress.value = valorLabel;
-    progress.max = 100;
-}
-
-function actualizarCoste(valor) {
-    let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
-    let nuevoValor = valorLabel - valor;
-    document.querySelector('label[for="cartera"]').textContent = `${nuevoValor.toFixed(1)}M$`;
-
-    let progress = document.getElementById('cartera');
-    progress.value = nuevoValor;
-
-    let botonContinuar = document.querySelector('button[type="button"]');
-    botonContinuar.disabled = nuevoValor < 0;
-
-    actualizarDisponibilidad('piloto', nuevoValor);
-    actualizarDisponibilidad('constructor', nuevoValor);
-}
-
-function actualizarDisponibilidad(tipo, valorDisponible) {
-    const elementos = document.querySelectorAll(`#listaDe${tipo.charAt(0).toUpperCase() + tipo.slice(1)}s ul li`);
-
-    elementos.forEach(elemento => {
-        const valorElemento = parseFloat(elemento.querySelector(`.valor${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`).textContent.replace('M$', ''));
-        const boton = elemento.querySelector(`.${tipo}Elegir`);
-
-        if (valorElemento > valorDisponible) {
-            elemento.style.opacity = '0.5';
-            boton.disabled = true;
-        } else {
-            elemento.style.opacity = '1';
-            boton.disabled = false;
-        }
-    });
-}
-
-function filtrarElementos(tipo) {
-    const inputFiltrar = document.getElementById('filtrar');
-
-    inputFiltrar.addEventListener("input", function () {
-        const filtro = inputFiltrar.value.toLowerCase();
-        const elementos = document.querySelectorAll(`#listaDe${tipo.charAt(0).toUpperCase() + tipo.slice(1)}s ul li`);
-        let encontradaCoincidencia = false;
-
-        elementos.forEach(elemento => {
-            const textoElemento = elemento.textContent.toLowerCase();
-
-            if (textoElemento.includes(filtro)) {
-                elemento.style.display = 'block';
-                elemento.style = ' display: flex;\n' +
-                    '    flex-direction: row;\n' +
-                    '    justify-content: space-between; /!* Alinea los elementos alrededor del espacio disponible *!/\n' +
-                    '    align-items: center;';
-                encontradaCoincidencia = true;
-            } else {
-                elemento.style.display = 'none';
-            }
-        });
-
-        const mensajeNoEncontrado = document.getElementById(`mensajeNoEncontrado${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-        mensajeNoEncontrado.style.display = encontradaCoincidencia ? 'none' : 'block';
-    });
-}
-
-async function obtenerInfo(tipo) {
-    let url = `http://127.0.0.1:8000/api/${tipo}/info`;
-    await fetch(url).then(data => data.json()).then(async info => {
-        await cargarInfo(info, tipo);
-    });
-}
-
-function cargarInfo(info, tipo) {
-    const listaElementos = document.getElementById(`listaDe${tipo.charAt(0).toUpperCase() + tipo.slice(1)}s`).getElementsByTagName('ul')[0];
-    const elementos = Object.values(info);
-
-    elementos.forEach(elemento => {
-        const liElemento = document.createElement('li');
-        const imgElemento = document.createElement('img');
-        imgElemento.src = elemento.imagen;
-        imgElemento.alt = elemento.nombre;
-
-        const nombreElemento = document.createElement('p');
-        nombreElemento.textContent = elemento.nombre;
-
-        const puntosElemento = document.createElement('p');
-        puntosElemento.classList.add(`puntos${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-        puntosElemento.textContent = elemento.puntos;
-
-        const valorElemento = document.createElement('p');
-        valorElemento.classList.add(`valor${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-        valorElemento.textContent = `${elemento.valor}M$`;
-
-        const botonElegir = document.createElement('button');
-        botonElegir.classList.add(`${tipo}Elegir`);
-        botonElegir.textContent = 'Elegir';
-
-        liElemento.appendChild(imgElemento);
-        liElemento.appendChild(nombreElemento);
-        liElemento.appendChild(puntosElemento);
-        liElemento.appendChild(valorElemento);
-        liElemento.appendChild(botonElegir);
-
-        listaElementos.appendChild(liElemento);
-    });
-
-    const mensajeNoEncontrado = document.createElement('p');
-    mensajeNoEncontrado.id = `mensajeNoEncontrado${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`;
-    mensajeNoEncontrado.textContent = `No se encontraron ${tipo}s.`;
-    mensajeNoEncontrado.style.display = 'none';
-    listaElementos.parentElement.appendChild(mensajeNoEncontrado);
-}
-
-function addClassActive() {
-    const botones = document.querySelectorAll('button');
-    botones.forEach(boton => {
-        boton.addEventListener('click', () => {
-            botones.forEach(b => b.classList.remove('active'));
-            boton.classList.add('active');
-        });
-    });
-}
-*/
 
 
 

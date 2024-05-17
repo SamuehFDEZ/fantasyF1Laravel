@@ -103,7 +103,7 @@
                     <h4>Límite de coste</h4>
                     <label for="cartera">100.0M$</label>
                     <progress id="cartera" value="0" max="100"></progress>
-                    <button type="button" disabled>Continuar</button>
+                    <button id="guardarEquipo" type="button" disabled>Guardar Equipo</button>
                 </section>
                 <hr>
                 <section class="row">
