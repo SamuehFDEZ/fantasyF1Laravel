@@ -10,10 +10,7 @@
             <a class="nav-link" href="#">Ligas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Pilotos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('constructor') }}">Constructores</a>
+            <a class="nav-link" href="{{ route('constructor') }}">Pilotos y Constructores</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Circuitos</a>

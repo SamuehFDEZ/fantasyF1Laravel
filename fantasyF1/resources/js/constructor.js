@@ -6,7 +6,6 @@ async function obtenerConstructores() {
     let url = 'http://127.0.0.1:8000/api/constructor';
 
     await fetch(url).then(data => data.json()).then(async info => {
-        //console.table(info[0]['coche']);
         await cargarNombres(info);
     });
 
@@ -24,7 +23,7 @@ async function obtenerConstructores() {
     });
 }
 
-function cargarImgs(info) {
+async function cargarImgs(info) {
     const imgContainers = document.querySelectorAll('.imgCoche'); // Asumiendo que tus divs tienen la clase 'imgCoche'
 
     info.forEach((url, index) => {
@@ -35,14 +34,11 @@ function cargarImgs(info) {
         // Encuentra el div correspondiente utilizando su índice
         let imgContainer = imgContainers[index];
 
-        // Si se encontró el div, agrega la imagen
-        if (imgContainer) {
-            imgContainer.appendChild(img);
-        }
+        imgContainer.appendChild(img);
     });
 }
 
-function cargarNombres(info) {
+async function cargarNombres(info) {
     const nombres = document.querySelectorAll('.nombre');
     nombres[0].innerText = info[6]['nombre']
     nombres[1].innerText = info[2]['nombre']
@@ -56,7 +52,7 @@ function cargarNombres(info) {
     nombres[9].innerText = info[0]['nombre']
 }
 
-function cargarPuntos(info) {
+async function cargarPuntos(info) {
     // Obtener todos los elementos con el id "puntos"
     const puntosSpans = document.querySelectorAll("#puntos");
     // Iterar sobre los datos obtenidos

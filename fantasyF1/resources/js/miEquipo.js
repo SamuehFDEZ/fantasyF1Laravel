@@ -8,6 +8,8 @@ const ordenarPorPuntosC = document.getElementById('ordenarPorPuntosC');
 const ordenarPorValorC = document.getElementById('ordenarPorValorC');
 
 window.onload = async () => {
+    const botonGuardar = document.getElementById('guardarEquipo');
+    botonGuardar.disabled = true;
     progresoDeCartera();
     addClassActive();
     await obtenerInfoPilotos();
@@ -18,7 +20,21 @@ window.onload = async () => {
     filtrarConstructores();
     ordenarPorPuntosYValorMercadoConstructores();
     elegirConstructor();
+
 }
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*INICIO FUNCIONES DE LOS PILOTOS*/
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+async function obtenerInfoPilotos() {
+    let url = 'http://127.0.0.1:8000/api/piloto/info';
+    await fetch(url).then(data => data.json()).then(async info => {
+        await cargarInfoPilotos(info);
+    });
+}
+
 
 function crearCampoPiloto() {
     const campoPiloto = document.createElement('div');
@@ -49,7 +65,9 @@ function eliminarPiloto() {
             contenedor.innerHTML = '';
             contenedor.appendChild(nuevoCampoPiloto);
             verificarSeleccionPilotos();
+            verificarHuecosLlenos();
             actualizarCoste(-valorPiloto);
+
         });
     }
 }
@@ -81,7 +99,9 @@ function elegirPiloto() {
                     hueco.appendChild(nuevoImgPiloto);
                     nuevoImgPiloto.addEventListener("dblclick", eliminarPiloto);
                     verificarSeleccionPilotos();
+                    verificarHuecosLlenos();
                     actualizarCoste(valorPiloto);
+                    // Llama a la función aquí
                     break;
                 }
             }
@@ -90,18 +110,7 @@ function elegirPiloto() {
 }
 
 
-function ordenarPorPuntosyValorMercado() {
-    ordenarPorPuntos.addEventListener('click', () => {
-        ordenarPor('puntosRealizados', ordenPuntosAsc);
-        ordenPuntosAsc = !ordenPuntosAsc;
-    });
-
-    ordenarPorValor.addEventListener('click', () => {
-        ordenarPor('valorMercado', ordenValorAsc);
-        ordenValorAsc = !ordenValorAsc;
-    });
-}
-
+// ORDENAR LOS PILOTOS
 function ordenarPor(campo, ascendente) {
     let listaPilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
     let pilotos = Array.from(listaPilotos.getElementsByTagName('li'));
@@ -120,60 +129,13 @@ function ordenarPor(campo, ascendente) {
     pilotos.forEach(piloto => listaPilotos.appendChild(piloto));
 }
 
-function ordenarPorCoches(campo, ascendente) {
-    let listaCoches = document.getElementById('listaDeCoches').getElementsByTagName('ul')[0];
-    let coches = Array.from(listaCoches.getElementsByTagName('li'));
-    coches.sort((a, b) => {
-        let valorA = obtenerValorCampoCoche(a, campo);
-        let valorB = obtenerValorCampoCoche(b, campo);
-
-        if (ascendente) {
-            return valorA - valorB;
-        } else {
-            return valorB - valorA;
-        }
-    });
-
-    listaCoches.innerHTML = '';
-    coches.forEach(coche => listaCoches.appendChild(coche));
-}
-
+// VALOR DE LOS PILOTOS
 function obtenerValorCampo(elemento, campo) {
     if (campo === 'puntosRealizados') {
         return parseInt(elemento.getElementsByClassName('puntosPiloto')[0].textContent);
     } else if (campo === 'valorMercado') {
         return parseFloat(elemento.getElementsByClassName('valorPiloto')[0].textContent.replace('M$', ''));
     }
-}
-
-function obtenerValorCampoCoche(elemento, campo) {
-    if (campo === 'puntosRealizados') {
-        return parseInt(elemento.getElementsByClassName('puntosCoche')[0].textContent);
-    } else if (campo === 'valorMercado') {
-        return parseFloat(elemento.getElementsByClassName('valorCoche')[0].textContent.replace('M$', ''));
-    }
-}
-
-function progresoDeCartera() {
-    let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
-    let progress = document.getElementById('cartera');
-    progress.value = valorLabel;
-    progress.max = 100;
-}
-
-function actualizarCoste(valor) {
-    let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
-    let nuevoValor = valorLabel - valor;
-    document.querySelector('label[for="cartera"]').textContent = `${nuevoValor.toFixed(1)}M$`;
-
-    let progress = document.getElementById('cartera');
-    progress.value = nuevoValor;
-
-    let botonContinuar = document.querySelector('button[type="button"]');
-    botonContinuar.disabled = nuevoValor < 0;
-
-    actualizarDisponibilidadPilotos(nuevoValor);
-    actualizarDisponibilidadCoches(nuevoValor);
 }
 
 function actualizarDisponibilidadPilotos(valorDisponible) {
@@ -189,23 +151,6 @@ function actualizarDisponibilidadPilotos(valorDisponible) {
         } else {
             piloto.style.opacity = '1';
             boton.disabled = false; // Asegúrate de que el botón esté habilitado
-        }
-    });
-}
-
-function actualizarDisponibilidadCoches(valorDisponible) {
-    const coches = document.querySelectorAll('#listaDeCoches ul li');
-
-    coches.forEach(coche => {
-        const valorCoche = parseFloat(coche.querySelector('.valorCoche').textContent.replace('M$', ''));
-        const boton = coche.querySelector('.cocheElegir');
-
-        if (valorCoche > valorDisponible) {
-            coche.style.opacity = '0.5';
-            boton.disabled = true;
-        } else {
-            coche.style.opacity = '1';
-            boton.disabled = false;
         }
     });
 }
@@ -238,17 +183,128 @@ function filtrarPilotos() {
     });
 }
 
-async function obtenerInfoPilotos() {
-    let url = 'http://127.0.0.1:8000/api/piloto/info';
-    await fetch(url).then(data => data.json()).then(async info => {
-        await cargarInfoPilotos(info);
+function cargarInfoPilotos(info) {
+    const listaPilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
+
+    info.forEach(piloto => {
+        const li = document.createElement('li');
+
+        const divNombre = document.createElement('div');
+        divNombre.classList.add("nombrePiloto");
+
+        const divPuntos = document.createElement('div');
+        divPuntos.classList.add("puntosPiloto");
+
+        const divValorMercado = document.createElement('div');
+        divValorMercado.classList.add("valorPiloto");
+
+        const img = document.createElement('img');
+        img.src = piloto.imgPiloto;
+        img.alt = 'piloto';
+
+        const nombrePiloto = document.createTextNode(piloto.nombre);
+
+        const puntosPiloto = document.createTextNode(piloto.puntosRealizados);
+
+        const valorMercadoPiloto = document.createTextNode(`${piloto.valorMercado}M$`);
+
+        const boton = document.createElement('button');
+        boton.className = 'pilotoElegir';
+        boton.textContent = '+';
+
+        divNombre.appendChild(nombrePiloto);
+        divPuntos.appendChild(puntosPiloto);
+        divValorMercado.appendChild(valorMercadoPiloto);
+
+        li.appendChild(img);
+        li.appendChild(divNombre);
+        li.appendChild(divPuntos);
+        li.appendChild(divValorMercado);
+        li.appendChild(boton);
+
+        listaPilotos.appendChild(li);
     });
 }
+
+function verificarSeleccionPilotos() {
+    const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
+    const listaDePilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
+    let seleccionados = 0;
+
+    huecosPilotos.forEach(img => {
+        if (img) {
+            seleccionados++;
+        }
+    });
+
+    if (seleccionados >= 5) {
+        listaDePilotos.style.opacity = '0.5';
+        const botones = listaDePilotos.querySelectorAll('button.pilotoElegir');
+        botones.forEach(boton => boton.disabled = true);
+    } else {
+        listaDePilotos.style.opacity = '1';
+        const botones = listaDePilotos.querySelectorAll('button.pilotoElegir');
+        botones.forEach(boton => boton.disabled = false);
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*FIN FUNCIONES DE LOS PILOTOS*/
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*INICIO FUNCIONES DE LOS CONSTRUCTORES*/
+
+/*---------------------------------------------------------------------------------------------------------------------*/
 
 async function obtenerInfoCoches() {
     let url = 'http://127.0.0.1:8000/api/constructor/info';
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarInfoConstructores(info);
+    });
+}
+
+function ordenarPorCoches(campo, ascendente) {
+    let listaCoches = document.getElementById('listaDeCoches').getElementsByTagName('ul')[0];
+    let coches = Array.from(listaCoches.getElementsByTagName('li'));
+    coches.sort((a, b) => {
+        let valorA = obtenerValorCampoCoche(a, campo);
+        let valorB = obtenerValorCampoCoche(b, campo);
+
+        if (ascendente) {
+            return valorA - valorB;
+        } else {
+            return valorB - valorA;
+        }
+    });
+
+    listaCoches.innerHTML = '';
+    coches.forEach(coche => listaCoches.appendChild(coche));
+}
+
+function obtenerValorCampoCoche(elemento, campo) {
+    if (campo === 'puntosRealizados') {
+        return parseInt(elemento.getElementsByClassName('puntosCoche')[0].textContent);
+    } else if (campo === 'valorMercado') {
+        return parseFloat(elemento.getElementsByClassName('valorCoche')[0].textContent.replace('M$', ''));
+    }
+}
+
+function actualizarDisponibilidadCoches(valorDisponible) {
+    const coches = document.querySelectorAll('#listaDeCoches ul li');
+
+    coches.forEach(coche => {
+        const valorCoche = parseFloat(coche.querySelector('.valorCoche').textContent.replace('M$', ''));
+        const boton = coche.querySelector('.cocheElegir');
+
+        if (valorCoche > valorDisponible) {
+            coche.style.opacity = '0.5';
+            boton.disabled = true;
+        } else {
+            coche.style.opacity = '1';
+            boton.disabled = false;
+        }
     });
 }
 
@@ -296,82 +352,6 @@ function cargarInfoConstructores(info) {
     });
 }
 
-
-function cargarInfoPilotos(info) {
-    const listaPilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
-
-    info.forEach(piloto => {
-        const li = document.createElement('li');
-
-        const divNombre = document.createElement('div');
-        divNombre.classList.add("nombrePiloto");
-
-        const divPuntos = document.createElement('div');
-        divPuntos.classList.add("puntosPiloto");
-
-        const divValorMercado = document.createElement('div');
-        divValorMercado.classList.add("valorPiloto");
-
-        const img = document.createElement('img');
-        img.src = piloto.imgPiloto;
-        img.alt = 'piloto';
-
-        const nombrePiloto = document.createTextNode(piloto.nombre);
-
-        const puntosPiloto = document.createTextNode(piloto.puntosRealizados);
-
-        const valorMercadoPiloto = document.createTextNode(`${piloto.valorMercado}M$`);
-
-        const boton = document.createElement('button');
-        boton.className = 'pilotoElegir';
-        boton.textContent = '+';
-
-        divNombre.appendChild(nombrePiloto);
-        divPuntos.appendChild(puntosPiloto);
-        divValorMercado.appendChild(valorMercadoPiloto);
-
-        li.appendChild(img);
-        li.appendChild(divNombre);
-        li.appendChild(divPuntos);
-        li.appendChild(divValorMercado);
-        li.appendChild(boton);
-
-        listaPilotos.appendChild(li);
-    });
-}
-
-function addClassActive() {
-    const anchors = document.querySelectorAll("#cabecera a");
-
-    anchors.forEach(function (anchor) {
-        anchor.addEventListener("click", () => {
-            anchor.classList.add("activo");
-
-            anchors.forEach(function (otherAnchor) {
-                if (otherAnchor !== anchor) {
-                    otherAnchor.classList.remove("activo");
-                }
-            });
-            console.log(anchor.id);
-            toggleSections(anchor.id);
-
-        });
-    });
-}
-
-function toggleSections(selectedSection) {
-    const seccionPilotos = document.getElementById('cuerpoDePilotos');
-    const seccionConstructores = document.getElementById('cuerpoDeCoches');
-
-    if (selectedSection === 'drivers') {
-        seccionPilotos.classList.remove('oculto');
-        seccionConstructores.classList.add('oculto');
-    } else if (selectedSection === 'constructors') {
-        seccionPilotos.classList.add('oculto');
-        seccionConstructores.classList.remove('oculto');
-    }
-}
-
 // Función para filtrar los constructores
 function filtrarConstructores() {
     const inputFiltrar = document.getElementById('filtrar');
@@ -401,7 +381,6 @@ function filtrarConstructores() {
     });
 }
 
-
 // Función para elegir un constructor
 function elegirConstructor() {
     const botonesElegir = document.querySelectorAll('.cocheElegir');
@@ -430,13 +409,17 @@ function elegirConstructor() {
                     hueco.appendChild(nuevoImgConstructor);
                     nuevoImgConstructor.addEventListener("dblclick", eliminarConstructor);
                     verificarSeleccionCoches(); // Llama a la función aquí
+                    verificarHuecosLlenos(); // Llama a la función aquí
                     actualizarCoste(valorConstructor);
+
+
                     break;
                 }
             }
         });
     });
 }
+
 
 function eliminarConstructor() {
     const huecosConstructor = document.querySelectorAll('.coche .campoCoche img');
@@ -451,11 +434,13 @@ function eliminarConstructor() {
             // si no es en este orden no se hace correctamente
             //primero comprobar luego actualizar
             verificarSeleccionCoches(); // Llama a la función aquí
+            verificarHuecosLlenos(); // Llama a la función aquí
             actualizarCoste(-valorConstructor);
+
+
         });
     }
 }
-
 
 function crearCampoConstructor() {
     const campoCoche = document.createElement('div');
@@ -510,28 +495,113 @@ function verificarSeleccionCoches() {
     }
 }
 
-function verificarSeleccionPilotos() {
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*FIN FUNCIONES DE LOS CONSTRUCTORES*/
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*INICIO FUNCIONES GENERALES*/
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+// Función para verificar si todos los huecos están llenos y actualizar el estado del botón de guardar equipo
+/*function verificarHuecosLlenos() {
     const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
-    const listaDePilotos = document.getElementById('listaDePilotos').getElementsByTagName('ul')[0];
-    let seleccionados = 0;
+    const huecosConstructores = document.querySelectorAll('.coche .campoCoche img');
+
+    let pilotosLlenos = false;
+    let constructoresLlenos = false;
 
     huecosPilotos.forEach(img => {
-        if (img) {
-            seleccionados++;
-        }
+        //if simplificado
+        pilotosLlenos = img;
     });
 
-    if (seleccionados >= 5) {
-        listaDePilotos.style.opacity = '0.5';
-        const botones = listaDePilotos.querySelectorAll('button.pilotoElegir');
-        botones.forEach(boton => boton.disabled = true);
-    } else {
-        listaDePilotos.style.opacity = '1';
-        const botones = listaDePilotos.querySelectorAll('button.pilotoElegir');
-        botones.forEach(boton => boton.disabled = false);
+    huecosConstructores.forEach(img => {
+        //if simplificado
+        constructoresLlenos = img;
+    });
+
+
+    const botonGuardar = document.getElementById('guardarEquipo');
+    botonGuardar.disabled = !(pilotosLlenos && constructoresLlenos);
+}*/
+
+function verificarHuecosLlenos() {
+    const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
+    const huecosConstructores = document.querySelectorAll('.coche .campoCoche img');
+
+    const totalSeleccionados = huecosPilotos.length + huecosConstructores.length;
+
+    const botonGuardar = document.getElementById('guardarEquipo');
+    botonGuardar.disabled = totalSeleccionados < 7;
+}
+
+function toggleSections(selectedSection) {
+    const seccionPilotos = document.getElementById('cuerpoDePilotos');
+    const seccionConstructores = document.getElementById('cuerpoDeCoches');
+
+    if (selectedSection === 'drivers') {
+        seccionPilotos.classList.remove('oculto');
+        seccionConstructores.classList.add('oculto');
+    } else if (selectedSection === 'constructors') {
+        seccionPilotos.classList.add('oculto');
+        seccionConstructores.classList.remove('oculto');
     }
 }
 
+function ordenarPorPuntosyValorMercado() {
+    ordenarPorPuntos.addEventListener('click', () => {
+        ordenarPor('puntosRealizados', ordenPuntosAsc);
+        ordenPuntosAsc = !ordenPuntosAsc;
+    });
 
+    ordenarPorValor.addEventListener('click', () => {
+        ordenarPor('valorMercado', ordenValorAsc);
+        ordenValorAsc = !ordenValorAsc;
+    });
+}
 
+function progresoDeCartera() {
+    let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
+    let progress = document.getElementById('cartera');
+    progress.value = valorLabel;
+    progress.max = 100;
+}
 
+function actualizarCoste(valor) {
+    let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
+    let nuevoValor = valorLabel - valor;
+    document.querySelector('label[for="cartera"]').textContent = `${nuevoValor.toFixed(1)}M$`;
+
+    let progress = document.getElementById('cartera');
+    progress.value = nuevoValor;
+
+    let botonContinuar = document.querySelector('button[type="button"]');
+    botonContinuar.disabled = nuevoValor < 0;
+
+    actualizarDisponibilidadPilotos(nuevoValor);
+    actualizarDisponibilidadCoches(nuevoValor);
+}
+
+function addClassActive() {
+    const anchors = document.querySelectorAll("#cabecera a");
+
+    anchors.forEach(function (anchor) {
+        anchor.addEventListener("click", () => {
+            anchor.classList.add("activo");
+
+            anchors.forEach(function (otherAnchor) {
+                if (otherAnchor !== anchor) {
+                    otherAnchor.classList.remove("activo");
+                }
+            });
+            console.log(anchor.id);
+            toggleSections(anchor.id);
+
+        });
+    });
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*FIN FUNCIONES GENERALES*/
+/*---------------------------------------------------------------------------------------------------------------------*/
