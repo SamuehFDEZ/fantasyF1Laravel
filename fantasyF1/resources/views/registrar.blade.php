@@ -26,7 +26,13 @@
         <header class="col-md col-sm col">
             <a href="{{route('index')}}"><img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoHeader"
                                               class="img-fluid"></a>
-            <form id="formCerrarSesion" action="views/login" method="post">
+            <form id="formEliminarUsuario" action="{{route('registro')}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" name="eliminarUser" id="eliminarUser" value="Eliminar mi usuario">
+            </form>
+            <form id="formCerrarSesion" action="{{ route('logout') }}" method="POST">
+                @csrf
                 <input type="submit" name="cerrarSes" id="cerrarSes" value="Cerrar Sesión">
             </form>
         </header>

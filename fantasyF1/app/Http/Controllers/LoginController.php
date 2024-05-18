@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -51,9 +52,11 @@ class LoginController extends Controller
             ]);
         }
         session(['nombreDeUsuario' => $usuario->nombre]);
-
+        session(['idDeUsuario' => $usuario->userID]);
+        // Crear una cookie con el nombre de usuario
+        $cookie = Cookie::make('nombreDeUsuario', $usuario->nombre, 60); // La cookie durará 60 minutos
         // Si la autenticación tiene éxito, redirecciona al usuario
-        return redirect()->route('index');
+        return redirect()->route('index')->withCookie($cookie);
     }
 
     /**
@@ -72,6 +75,23 @@ class LoginController extends Controller
 
         return redirect()->route('index');
     }
+
+    public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
+    {
+        try {
+            $userID = session('idDeUsuario'); // Obtener el ID del usuario de la sesión
+            $user = Usuario::findOrFail($userID);
+            if ($user) {
+                $user->delete(); // Eliminar el usuario
+                return back()->with('mensaje', 'Usuario eliminado correctamente');
+            } else {
+                return back()->with('mensaje', 'No se ha encontrado el usuario a eliminar');
+            }
+        } catch (\Exception $e) {
+            return back()->with('mensaje', 'Error al eliminar el usuario');
+        }
+    }
+
 
 
     /**

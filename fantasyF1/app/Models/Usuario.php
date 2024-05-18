@@ -14,6 +14,8 @@ class Usuario extends Model
 
 
     protected $table = "usuarios";
+    //necesario especificar la primaryKey para eliminar el usuario
+    protected $primaryKey = 'userID';
 
    /* protected $fillable = [
         'nombre',
@@ -28,6 +30,7 @@ class Usuario extends Model
      * @var array
      */
     protected $fillable = [
+        'userID',
         'nombre',
         'email',
         'contrasenya',

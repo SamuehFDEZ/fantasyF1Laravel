@@ -1,7 +1,28 @@
-window.onload = () => {
+window.onload = async () => {
     mostrarContrasenyaLogIn();
     mostrarContrasenyaReg();
+    /*  const formEliminarUsuario = document.getElementById("formEliminarUsuario");
+      formEliminarUsuario.addEventListener("submit", eliminarUsuario);*/
+
 }
+
+/*async function eliminarUsuario(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    let url = "http://127.0.0.1:8000/api/usuario/1";
+    await fetch(url, {method: "DELETE"}).then(data => data.json()).then(info => {
+
+    });
+
+    /!* const response = await fetch(url, {
+         method: "DELETE",
+         headers: {
+             "Content-Type": "application/json",
+             "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+         }
+     });*!/
+
+
+}*/
 
 function mostrarContrasenyaLogIn() {
     const ojoLog = document.getElementById("ojoLog");

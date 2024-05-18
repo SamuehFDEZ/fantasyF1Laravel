@@ -17,6 +17,22 @@
   margin-bottom: 30px !important;
   margin-left: 10px !important;
 }
+.row header #eliminarUser {
+  background-color: hsl(240, 18%, 10%);
+  position: absolute;
+  left: 80%;
+  top: 8.9%;
+  margin-top: -55px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+.row header #eliminarUser:hover {
+  background-color: white;
+  color: hsl(240, 18%, 10%);
+}
 .row header #cerrarSes {
   background-color: hsl(240, 18%, 10%);
   float: right;

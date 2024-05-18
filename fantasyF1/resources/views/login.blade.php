@@ -26,6 +26,11 @@
         <header class="col-md col-sm col">
             <a href="{{route('index')}}"><img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoHeader"
                                               class="img-fluid"></a>
+            <form id="formEliminarUsuario" action="{{route('login')}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" name="eliminarUser" id="eliminarUser" value="Eliminar mi usuario">
+            </form>
             <form id="formCerrarSesion" action="{{ route('logout') }}" method="POST">
                 @csrf
                 <input type="submit" name="cerrarSes" id="cerrarSes" value="Cerrar Sesión">
@@ -69,14 +74,9 @@
                     <p class="text-danger">{{ $error }}</p>
                 @endforeach
             @endif
-            {{--            @if($errors->any())--}}
-            {{--                @error('nombre')--}}
-            {{--                <p class="text-danger">{{ $message }}</p>--}}
-            {{--                @enderror--}}
-            {{--                @error('contrasenya')--}}
-            {{--                <p class="text-danger">{{ $message }}</p>--}}
-            {{--                @enderror--}}
-            {{--            @endif--}}
+            @if(session('mensaje'))
+                <p class="text-success">{{ session('mensaje') }}</p>
+            @endif
             <label for="sinCuenta">¿Aún no tienes una cuenta?</label>
             <button id="sinCuenta" type="button" onclick="window.location='{{ route('registro') }}'">Registrarte con
                 F1
@@ -120,9 +120,11 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <a href="views/index"><img src="{{asset('img/logoF1Blanco.png')}}" alt="logoF1"
-                                                       id="logoModal" srcset="{{asset('img/logoF1Blanco.png')}}"></a>
+                                                       id="logoModal"
+                                                       srcset="{{asset('img/logoF1Blanco.png')}}"></a>
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Soporte de F1</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <p>Ponte en contacto con el equipo pulsando el botón</p>

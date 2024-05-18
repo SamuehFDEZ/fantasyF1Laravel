@@ -43,10 +43,12 @@ Route::get('/constructor', function () {
 Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::delete("/login", [LoginController::class, 'eliminarUsuario'])->name('eliminarUsuario');
 
 
 Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
 Route::post('/registrar', [RegisterController::class, 'register']);
+Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->name('eliminarUsuario');
 
 
 Route::middleware('guest')->group(function () {

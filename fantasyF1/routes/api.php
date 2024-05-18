@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::post("/login", [AuthController::class, 'login'])->name('login');*/
 });
 
+
 Route::get("/constructor", [ApiController::class, 'constructores'])->name('constructores');
 Route::post("/constructor/{nombre}", [ApiController::class, 'constructoresPorNombre'])->name('constructoresPorNombre');
 Route::get("/constructor/puntos", [ApiController::class, 'constructoresPorPuntos'])->name('constructoresPorPuntos');
@@ -32,4 +33,5 @@ Route::get("/constructor/info", [ApiController::class, 'imgCoches'])->name('imgC
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
 Route::post("/piloto", [ApiController::class, 'pilotos'])->name('pilotos');
 Route::get("/piloto/info", [ApiController::class, 'imgPilotos'])->name('imgPilotos');
+Route::put('/actualiza-pilotos', [ApiController::class, 'actualizarPilotos']);
 
