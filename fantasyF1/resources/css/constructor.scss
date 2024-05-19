@@ -81,17 +81,17 @@ $colores: (
                     margin-left: 10px; /* Margen añadido para separar el nombre de la barra */
                 }
 
-                #logo {
+                .logo {
                     margin-left: auto; /* Mueve el logo al extremo derecho */
                     img {
                         float: right;
-                        width: 30%;
+                        width: 60%;
                         height: auto;
                     }
                 }
             }
 
-            #pilotosEnEq {
+            .pilotosEnEq {
                 display: flex; /* Usa flexbox */
                 justify-content: space-between; /* Distribuye los elementos de manera uniforme */
                 width: 100%;

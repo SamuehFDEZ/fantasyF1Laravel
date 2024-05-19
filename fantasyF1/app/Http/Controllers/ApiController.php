@@ -7,6 +7,7 @@ use App\Models\Constructor;
 use App\Models\Piloto;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
@@ -51,7 +52,7 @@ class ApiController extends Controller
 
     public function constructores(): JsonResponse
     {
-        $constructor = Constructor::all()->sortByDesc('puntosRealizados');
+        $constructor = Constructor::all()->sortByDesc('puntosRealizados')->pluck('nombre');
 
         return response()->json($constructor);
     }
@@ -98,7 +99,7 @@ class ApiController extends Controller
         return response()->json($piloto);
     }
 
-   public function imgPilotos(): JsonResponse
+    public function imgPilotosNombrePuntosYMerc(): JsonResponse
     {
         $query = Piloto::where('nombre', '!=', 'Oliver Bearman')
             ->orderByDesc('puntosRealizados');
@@ -119,6 +120,49 @@ class ApiController extends Controller
 
         return response()->json($imagenesDecodificadas);
     }
+
+    public function imgPilotosYNombre(): JsonResponse
+    {
+        // con esto obtenemos a los pilotos agrupados por su equipo ordenados por los puntos del constructor
+        /*Ejemplo
+            verst perez
+            leclerc sainz
+            etc etc
+        */
+        $query = DB::table('pilotos as p')
+            ->join('constructor as c', 'p.nombre_constructor', '=', 'c.nombre')
+            ->select('c.nombre as equipo', 'p.nombre', 'p.imgPiloto')
+            ->where('p.nombre', '!=', 'Oliver Bearman')
+            ->orderByDesc('c.puntosRealizados');
+
+        $pilotos = $query->get();
+
+        /*Explicación:
+            Consulta modificada: Se selecciona también el nombre del equipo (c.nombre as equipo).
+
+            Agrupamiento: Se itera sobre los pilotos y se agrupan por el equipo, creando un array multidimensional
+            donde cada equipo contiene su lista de pilotos.
+
+            Estructura final: array_values($equiposAgrupados) convierte el array asociativo a un array
+            indexado numéricamente, que se ajusta a la estructura deseada.
+        */
+
+        $equiposAgrupados = [];
+
+        foreach ($pilotos as $piloto) {
+            $equiposAgrupados[$piloto->equipo][] = [
+                'nombre' => $piloto->nombre,
+                'imgPiloto' => base64_decode($piloto->imgPiloto),
+            ];
+        }
+
+        $resultadoFinal = array_values($equiposAgrupados);
+
+        return response()->json($resultadoFinal);
+    }
+
+
+
     public function imgCoches(): JsonResponse
     {
         // Obtener todos los registros y ordenarlos por 'puntosRealizados' en orden descendente
@@ -128,11 +172,31 @@ class ApiController extends Controller
         $imagenesDecodificadas = $constructores->map(function ($constructor) {
             return [
                 'coche' => base64_decode($constructor->coche),
+                'logo' => base64_decode($constructor->logo),
                 'nombre' => $constructor->nombre,
                 'puntosRealizados' => $constructor->puntosRealizados,
                 'valorMercado' => $constructor->valorMercado,
             ];
         });
+
+        // Devolver los datos en formato JSON
+        return response()->json($imagenesDecodificadas);
+    }
+
+    public function logosCoches(): JsonResponse
+    {
+        // Obtener todos los registros y ordenarlos por 'puntosRealizados' en orden descendente
+        $constructores = Constructor::all()->sortByDesc('puntosRealizados');
+
+        // Mapear la colección para decodificar las imágenes y extraer los datos necesarios
+        $imagenesDecodificadas = $constructores->map(function ($constructor) {
+            return [
+                'logo' => base64_decode($constructor->logo),
+            ];
+        });
+
+        // Convertir la colección a array y reindexar
+        $imagenesDecodificadas = $imagenesDecodificadas->values()->all();
 
         // Devolver los datos en formato JSON
         return response()->json($imagenesDecodificadas);

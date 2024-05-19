@@ -450,20 +450,20 @@ footer .row .col-md #iconos {
   font-size: 30px;
   margin-left: 10px; /* Margen añadido para separar el nombre de la barra */
 }
-#constructores .row .col-md-6 #infoEquipo #logo {
+#constructores .row .col-md-6 #infoEquipo .logo {
   margin-left: auto; /* Mueve el logo al extremo derecho */
 }
-#constructores .row .col-md-6 #infoEquipo #logo img {
+#constructores .row .col-md-6 #infoEquipo .logo img {
   float: right;
-  width: 30%;
+  width: 60%;
   height: auto;
 }
-#constructores .row .col-md-6 #pilotosEnEq {
+#constructores .row .col-md-6 .pilotosEnEq {
   display: flex; /* Usa flexbox */
   justify-content: space-between; /* Distribuye los elementos de manera uniforme */
   width: 100%;
 }
-#constructores .row .col-md-6 #pilotosEnEq .piloto {
+#constructores .row .col-md-6 .pilotosEnEq .piloto {
   width: 45%; /* Reducido para dejar espacio entre los elementos */
   text-align: left; /* Centra el texto horizontalmente */
   border: none;
@@ -472,10 +472,10 @@ footer .row .col-md #iconos {
   border-bottom-right-radius: 5px;
   margin-top: 5px;
 }
-#constructores .row .col-md-6 #pilotosEnEq .piloto span {
+#constructores .row .col-md-6 .pilotosEnEq .piloto span {
   margin-top: 20px;
 }
-#constructores .row .col-md-6 #pilotosEnEq .piloto img {
+#constructores .row .col-md-6 .pilotosEnEq .piloto img {
   width: 20%;
   float: right;
 }

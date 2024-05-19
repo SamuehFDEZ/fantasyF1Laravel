@@ -17,7 +17,8 @@ class Constructor extends Model
         'valorMercado',
         'nacionalidad',
         'puntosRealizados',
-        'coche'
+        'coche',
+        'logo'
     ];
 
 

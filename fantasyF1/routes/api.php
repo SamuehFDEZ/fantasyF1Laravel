@@ -28,10 +28,13 @@ Route::get("/constructor/coches", [ApiController::class, 'constructoresCoches'])
 Route::get("/circuitos", [ApiController::class, 'circuitos'])->name('circuitos');
 Route::get("/circuitos/{ronda}", [ApiController::class, 'circuitosPorRonda'])->name('circuitosPorRonda');
 Route::get("/constructor/info", [ApiController::class, 'imgCoches'])->name('imgCoches');
+Route::get("/constructor/logos", [ApiController::class, 'logosCoches'])->name('logosCoches');
 
 
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
 Route::post("/piloto", [ApiController::class, 'pilotos'])->name('pilotos');
-Route::get("/piloto/info", [ApiController::class, 'imgPilotos'])->name('imgPilotos');
+Route::get("/piloto/info", [ApiController::class, 'imgPilotosNombrePuntosYMerc'])->name('imgPilotosNombrePuntosYMerc');
+Route::get("/piloto/imgYNombre", [ApiController::class, 'imgPilotosYNombre'])->name('imgPilotosYNombre');
+
 Route::put('/actualiza-pilotos', [ApiController::class, 'actualizarPilotos']);
 
