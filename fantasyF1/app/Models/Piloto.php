@@ -23,12 +23,6 @@ class Piloto extends Model
     ];
 
 
-    //Uno o muchos pilotos pertenecen a un usuario (1:N)
-    public function usuario()
-    {
-        return $this->belongsTo(Usuario::class);
-    }
-
     //Uno o muchos pilotos pertenecen a un constructor (1:N)
     public function constructor()
     {

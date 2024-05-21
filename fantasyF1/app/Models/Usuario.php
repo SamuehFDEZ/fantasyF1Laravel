@@ -17,13 +17,6 @@ class Usuario extends Model
     //necesario especificar la primaryKey para eliminar el usuario
     protected $primaryKey = 'userID';
 
-   /* protected $fillable = [
-        'nombre',
-        'contrasenya',
-        'email',
-        'remember_token'
-    ];*/
-
     /**
      * The attributes that are mass assignable.
      *
@@ -33,6 +26,7 @@ class Usuario extends Model
         'userID',
         'nombre',
         'email',
+        'puntosRealizadosTotales',
         'contrasenya',
         'remember_token'
     ];
