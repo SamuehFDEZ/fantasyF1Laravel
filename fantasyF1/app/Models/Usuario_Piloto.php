@@ -30,8 +30,8 @@ class Usuario_Piloto extends Model
         return $this->belongsTo(Usuario::class);
     }
     // Una carrera pertenece a muchos pilotos
-    public function constructor(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function piloto(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Constructor::class);
+        return $this->belongsTo(Piloto::class);
     }
 }

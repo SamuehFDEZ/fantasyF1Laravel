@@ -103,19 +103,31 @@
                     <h4>Límite de coste</h4>
                     <label for="cartera">100.0M$</label>
                     <progress id="cartera" value="0" max="100"></progress>
-                    <button id="guardarEquipo" type="button">Guardar Equipo</button>
+                    <form id="formGuardarEquipo" action="{{ route('mi-equipo')}}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <input type="submit" name="guardarEquipo" id="guardarEquipo" value="Guardar Equipo">
+                    </form>
+                    @if($errors->any())
+                        @foreach($errors->all() as $error)
+                            <p class="text-danger">{{ $error }}</p>
+                        @endforeach
+                    @endif
+                    @if(session('mensaje'))
+                        <p class="text-danger">{{ session('mensaje') }}</p>
+                    @endif
                 </section>
                 <hr>
                 <section class="row">
                     <div class="piloto col-md col-sm col text-center">
-                        <div class="campoPiloto">
+                        <div class="campoPiloto" data-num-piloto="1">
                             <p id="mas">&plus;</p>
                             <p class="anyadirPiloto">Añadir piloto</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm col text-center">
                         <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto">
+                            <div class="campoPiloto" data-num-piloto="2">
                                 <p id="mas">&plus;</p>
                                 <p class="anyadirPiloto">Añadir piloto</p>
                             </div>
@@ -123,7 +135,7 @@
                     </div>
                     <div class="col-md-4 col-sm col text-center">
                         <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto">
+                            <div class="campoPiloto" data-num-piloto="3">
                                 <p id="mas">&plus;</p>
                                 <p class="anyadirPiloto">Añadir piloto</p>
                             </div>
@@ -131,7 +143,7 @@
                     </div>
                     <div class="col-md-4 col-sm col text-center">
                         <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto">
+                            <div class="campoPiloto" data-num-piloto="4">
                                 <p id="mas">&plus;</p>
                                 <p class="anyadirPiloto">Añadir piloto</p>
                             </div>
@@ -139,7 +151,7 @@
                     </div>
                     <div class="col-md-4 col-sm col text-center">
                         <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto">
+                            <div class="campoPiloto" data-num-piloto="4">
                                 <p id="mas">&plus;</p>
                                 <p class="anyadirPiloto">Añadir piloto</p>
                             </div>
@@ -150,7 +162,7 @@
                 <section class="row align-items-center justify-content-center">
                     <div class="col-md-6 col-sm col text-center">
                         <div class="coche col-md col-sm col text-center">
-                            <div class="campoCoche">
+                            <div class="campoCoche" data-nombre-constructor="1">
                                 <p id="mas">&plus;</p>
                                 <p class="anyadirCoche">Añadir Constructor</p>
                             </div>
@@ -158,7 +170,7 @@
                     </div>
                     <div class="col-md-6 col-sm col text-center">
                         <div class="coche col-md col-sm col text-center">
-                            <div class="campoCoche">
+                            <div class="campoCoche" data-nombre-constructor="2">
                                 <p id="mas">&plus;</p>
                                 <p class="anyadirCoche">Añadir Constructor</p>
                             </div>

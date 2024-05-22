@@ -12,7 +12,7 @@ class Carrera_Cuali extends Model
     protected $table = "carrera_cualis"; //tabla fruto de la relacion N:M de sprints y pilotos
 
     protected $fillable = [
-        'num_piloto',
+        'nombre_piloto',
         'cualID',
         'posicion',
         'tiempo_q1',

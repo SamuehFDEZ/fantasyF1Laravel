@@ -36,5 +36,5 @@ Route::post("/piloto", [ApiController::class, 'pilotos'])->name('pilotos');
 Route::get("/piloto/info", [ApiController::class, 'imgPilotosNombrePuntosYMerc'])->name('imgPilotosNombrePuntosYMerc');
 Route::get("/piloto/imgYNombre", [ApiController::class, 'imgPilotosYNombre'])->name('imgPilotosYNombre');
 
-Route::put('/actualiza-pilotos', [ApiController::class, 'actualizarPilotos']);
+//Route::put('/actualiza-pilotos', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
 

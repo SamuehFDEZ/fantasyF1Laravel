@@ -20,8 +20,55 @@ window.onload = async () => {
     filtrarConstructores();
     ordenarPorPuntosYValorMercadoConstructores();
     elegirConstructor();
+    botonGuardar.addEventListener('click', await guardarEquipo);
 
 }
+
+async function guardarEquipo() {
+    let url = 'http://127.0.0.1:8000/api/actualiza-pilotos';
+
+    await fetch(url).then(data => data.json()).then(async info => {
+        await insertarOActualizarEquipo(info);
+    });
+}
+
+async function insertarOActualizarEquipo(info) {
+    const userID = 1; // Cambia esto según sea necesario
+    const pilotos = getSelectedPilots();
+    const constructores = getSelectedConstructors();
+
+    const payload = {
+        userID: userID,
+        pilotos: pilotos,
+        constructores: constructores
+    };
+}
+
+
+function getSelectedPilots() {
+    const selectedPilots = [];
+    const pilotos = document.querySelectorAll('.piloto .campoPiloto img');
+    pilotos.forEach(piloto => {
+        selectedPilots.push({
+            num_piloto: parseInt(piloto.getAttribute('data-num-piloto')),
+            puntosRealizados: parseInt(piloto.getAttribute('data-puntos'))
+        });
+    });
+    return selectedPilots;
+}
+
+function getSelectedConstructors() {
+    const selectedConstructors = [];
+    const constructores = document.querySelectorAll('.coche .campoCoche img');
+    constructores.forEach(constructor => {
+        selectedConstructors.push({
+            nombre_constructor: constructor.getAttribute('data-nombre-constructor'),
+            puntosRealizados: parseInt(constructor.getAttribute('data-puntos'))
+        });
+    });
+    return selectedConstructors;
+}
+
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 /*INICIO FUNCIONES DE LOS PILOTOS*/

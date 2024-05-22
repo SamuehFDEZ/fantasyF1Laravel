@@ -14,14 +14,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrera_cualis', function (Blueprint $table) {
-            $table->unsignedInteger('num_piloto')->index();
+            $table->string('nombre_piloto', '255')->index();
             $table->unsignedBigInteger('cualID')->index();
             $table->unsignedInteger('posicion');
             $table->string('tiempo_q1', 10)->default('');
             $table->string('tiempo_q2', 10)->default('');
             $table->string('tiempo_q3', 10)->default('');
-            $table->primary(['num_piloto', 'cualID']);
-            $table->foreign('num_piloto')->references('num_piloto')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
+            $table->primary(['nombre_piloto', 'cualID']);
+            $table->foreign('nombre_piloto')->references('nombre')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('cualID')->references('cualID')->on('cualis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('usuario_pilotos', function (Blueprint $table) {
             $table->unsignedInteger('userID'); // Esto crea un campo 'userID' autoincremental que servirá como clave primaria
-            $table->unsignedInteger('num_piloto'); // Definir 'nombre' como clave primaria y VARCHAR(200)
+            $table->string('nombre_piloto', '255'); // Definir 'nombre' como clave primaria y VARCHAR(200)
             $table->unsignedInteger('puntosRealizados')->nullable(false);
-            $table->primary(['userID', 'num_piloto']);
+            $table->primary(['userID', 'nombre_piloto']);
             $table->foreign('userID')->references('userID')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('num_piloto')->references('num_piloto')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('nombre_piloto')->references('nombre')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

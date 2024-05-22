@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre', 255)->unique(); // Campo nombre VARCHAR(255) NOT NULL
             $table->string('contrasenya', 255); // Campo contrasenya VARCHAR(255) NOT NULL
             $table->string('email', 255)->unique(); // Campo email VARCHAR(255) NOT NULL y único
-            $table->unsignedInteger('puntosRealizadosTotales'); // Campo email VARCHAR(255) NOT NULL y único
+            $table->unsignedInteger('puntosRealizadosTotales')->default(0); // Campo email VARCHAR(255) NOT NULL y único
             $table->timestamps(); // Esto creará automáticamente los campos 'created_at' y 'updated_at' para el control de fechas de creación y actualización
             $table->rememberToken();
 

@@ -60,7 +60,7 @@
                     border-radius: 10px;
                 }
 
-                button {
+                #guardarEquipo {
                     position: relative;
                     float: right;
                     background-color: red;
@@ -68,7 +68,7 @@
                     border: none;
                     width: 20%;
                     border-radius: 5px;
-                    bottom: 20px;
+                    bottom: 2em;
 
                     &:hover {
                         color: black;
@@ -87,7 +87,7 @@
             font-weight: bold;
         }
 
-        button:disabled {
+        #guardarEquipo:disabled {
             background-color: gray; // Cambia el color de fondo
             cursor: not-allowed; // Cambia el cursor para indicar que no se puede hacer clic
             opacity: 0.5; // Hacer que el botón parezca desactivado

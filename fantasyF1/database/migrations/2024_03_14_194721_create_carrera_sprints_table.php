@@ -14,13 +14,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrera_sprints', function (Blueprint $table) {
-            $table->unsignedInteger('num_piloto')->index();
+            $table->string('nombre_piloto', '255')->index();
             $table->unsignedBigInteger('sprintID')->index();
             $table->string('tiempo', 10);
             $table->unsignedInteger('posicion');
             $table->unsignedInteger('vueltas_hechas');
-            $table->primary(['num_piloto', 'sprintID']);
-            $table->foreign('num_piloto')->references('num_piloto')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
+            $table->primary(['nombre_piloto', 'sprintID']);
+            $table->foreign('nombre_piloto')->references('nombre')->on('pilotos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('sprintID')->references('sprintID')->on('sprints')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
