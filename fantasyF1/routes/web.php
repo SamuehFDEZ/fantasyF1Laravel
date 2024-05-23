@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::get('/liga', function () {
+    return view('liga');
+})->name('liga');
 
 Route::get('/mi-equipo', function () {
     return view('mi-equipo');
@@ -50,7 +53,7 @@ Route::delete("/login", [LoginController::class, 'eliminarUsuario'])->name('elim
 Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
 Route::post('/registrar', [RegisterController::class, 'register']);
 Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->name('eliminarUsuario');
-Route::put("/mi-equipo", [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
+Route::post("/mi-equipo", [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
 
 
 Route::middleware('guest')->group(function () {

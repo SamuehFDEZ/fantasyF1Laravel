@@ -20,29 +20,118 @@ window.onload = async () => {
     filtrarConstructores();
     ordenarPorPuntosYValorMercadoConstructores();
     elegirConstructor();
-    botonGuardar.addEventListener('click', await guardarEquipo);
-
+    botonGuardar.addEventListener('click', guardarEquipo);
 }
 
-async function guardarEquipo() {
-    let url = 'http://127.0.0.1:8000/api/actualiza-pilotos';
+// async function guardarEquipo() {
+//     const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
+//     const pilotos = getSelectedPilots();
+//     const constructores = getSelectedConstructors();
+//
+//     const payload = {
+//         pilotos: pilotos,
+//         constructores: constructores
+//     };
+//
+//     await fetch(url).then(data => data.json()).then(info => {
+//         console.log(info);
+//     });
+// }
+/*const constructores = [
+    {"nombre_constructor": "Alpine", "puntosRealizados": 1},
+    {"nombre_constructor": "Aston Martin", "puntosRealizados": 42}
+];
 
-    await fetch(url).then(data => data.json()).then(async info => {
-        await insertarOActualizarEquipo(info);
-    });
-}
+const pilotos = [
+    {"nombre_piloto": "Alex Albon", "puntosRealizados": 0},
+    {"nombre_piloto": "Logan Sargeant", "puntosRealizados": 0},
+    {"nombre_piloto": "Valteri Bottas", "puntosRealizados": 0},
+    {"nombre_piloto": "Zhou Guanyu", "puntosRealizados": 0},
+    {"nombre_piloto": "Esteban Ocon", "puntosRealizados": 1}
+];*/
 
-async function insertarOActualizarEquipo(info) {
-    const userID = 1; // Cambia esto según sea necesario
-    const pilotos = getSelectedPilots();
-    const constructores = getSelectedConstructors();
+async function guardarEquipo(event) {
+    event.preventDefault(); // Evita el comportamiento predeterminado del formulario
+
+    const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
+    const pilotos = [
+        {"nombre_piloto": "Alex Albon", "puntosRealizados": 0},
+        {"nombre_piloto": "Logan Sargeant", "puntosRealizados": 0},
+        {"nombre_piloto": "Valteri Bottas", "puntosRealizados": 0},
+        {"nombre_piloto": "Zhou Guanyu", "puntosRealizados": 0},
+        {"nombre_piloto": "Esteban Ocon", "puntosRealizados": 1}
+    ];
+    const constructores = [
+        {"nombre_constructor": "Alpine", "puntosRealizados": 1},
+        {"nombre_constructor": "Aston Martin", "puntosRealizados": 42}
+    ];
 
     const payload = {
-        userID: userID,
         pilotos: pilotos,
         constructores: constructores
     };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+
+        const data = await response.json();
+        console.log('Success:', data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
+
+
+/*async function guardarEquipo(event) {
+    event.preventDefault(); // Evita el comportamiento predeterminado del formulario
+
+    const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
+    const pilotos = [
+        {"nombre_piloto": "Alex Albon", "puntosRealizados": 0},
+        {"nombre_piloto": "Logan Sargeant", "puntosRealizados": 0},
+        {"nombre_piloto": "Valteri Bottas", "puntosRealizados": 0},
+        {"nombre_piloto": "Zhou Guanyu", "puntosRealizados": 0},
+        {"nombre_piloto": "Esteban Ocon", "puntosRealizados": 1}
+    ];
+    const constructores = [
+        {"nombre_constructor": "Alpine", "puntosRealizados": 1},
+        {"nombre_constructor": "Aston Martin", "puntosRealizados": 42}
+    ];
+
+    const payload = {
+        pilotos: pilotos,
+        constructores: constructores
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+
+        const data = await response.json();
+        console.log('Success:', data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}*/
 
 
 function getSelectedPilots() {
@@ -50,10 +139,12 @@ function getSelectedPilots() {
     const pilotos = document.querySelectorAll('.piloto .campoPiloto img');
     pilotos.forEach(piloto => {
         selectedPilots.push({
-            num_piloto: parseInt(piloto.getAttribute('data-num-piloto')),
-            puntosRealizados: parseInt(piloto.getAttribute('data-puntos'))
+            nombre_piloto: piloto.getAttribute('data-nombre-piloto'),
+            puntosRealizados: parseInt(piloto.getAttribute('data-puntos-piloto')),
+
         });
     });
+    console.log(selectedPilots)
     return selectedPilots;
 }
 
@@ -63,9 +154,10 @@ function getSelectedConstructors() {
     constructores.forEach(constructor => {
         selectedConstructors.push({
             nombre_constructor: constructor.getAttribute('data-nombre-constructor'),
-            puntosRealizados: parseInt(constructor.getAttribute('data-puntos'))
+            puntosRealizados: parseInt(constructor.getAttribute('data-puntos-constructor')),
         });
     });
+    console.log(selectedConstructors)
     return selectedConstructors;
 }
 
@@ -137,7 +229,7 @@ function elegirPiloto() {
 
             const nuevoImgPiloto = imgPiloto.cloneNode(true);
             nuevoImgPiloto.classList.add("imgPiloto");
-            nuevoImgPiloto.setAttribute('data-valor', valorPiloto);
+            //nuevoImgPiloto.setAttribute('data-valor', valorPiloto);
 
             const campoHuecosPiloto = document.querySelectorAll('.piloto .campoPiloto');
             for (let hueco of campoHuecosPiloto) {
@@ -238,16 +330,21 @@ function cargarInfoPilotos(info) {
 
         const divNombre = document.createElement('div');
         divNombre.classList.add("nombrePiloto");
+        divNombre.setAttribute('data-nombre-piloto', piloto.nombre); // Añadir atributo
 
         const divPuntos = document.createElement('div');
         divPuntos.classList.add("puntosPiloto");
+        divPuntos.setAttribute('data-puntos-piloto', piloto.puntosRealizados); // Añadir atributo
 
         const divValorMercado = document.createElement('div');
         divValorMercado.classList.add("valorPiloto");
+        divValorMercado.setAttribute('data-valor', piloto.valorMercado); // Añadir atributo
 
         const img = document.createElement('img');
         img.src = piloto.imgPiloto;
         img.alt = 'piloto';
+        img.setAttribute('data-nombre-piloto', piloto.nombre); // Añadir atributo
+        img.setAttribute('data-puntos-piloto', piloto.puntosRealizados); // Añadir atributo
 
         const nombrePiloto = document.createTextNode(piloto.nombre);
 
@@ -272,6 +369,7 @@ function cargarInfoPilotos(info) {
         listaPilotos.appendChild(li);
     });
 }
+
 
 function verificarSeleccionPilotos() {
     const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
@@ -355,7 +453,7 @@ function actualizarDisponibilidadCoches(valorDisponible) {
     });
 }
 
-function cargarInfoConstructores(info) {
+/*function cargarInfoConstructores(info) {
     const listaDeCoches = document.getElementById('listaDeCoches').getElementsByTagName('ul')[0];
 
     // Convertir el objeto en un array de objetos
@@ -378,7 +476,63 @@ function cargarInfoConstructores(info) {
         img.alt = 'coche';
 
         const nombreCoche = document.createTextNode(constructor.nombre);
+        nombreCoche.setAttribute('data-nombre-constructor');
+
         const puntosCoche = document.createTextNode(constructor.puntosRealizados);
+        puntosCoche.setAttribute('data-puntos-constructor');
+
+        const valorMercadoCoche = document.createTextNode(`${constructor.valorMercado}M$`);
+        valorMercadoCoche.setAttribute('data-valor-constructor');
+
+
+        const boton = document.createElement('button');
+        boton.className = 'cocheElegir';
+        boton.textContent = '+';
+
+        divNombre.appendChild(nombreCoche);
+        divPuntos.appendChild(puntosCoche);
+        divValorMercado.appendChild(valorMercadoCoche);
+
+        li.appendChild(img);
+        li.appendChild(divNombre);
+        li.appendChild(divPuntos);
+        li.appendChild(divValorMercado);
+        li.appendChild(boton);
+
+        listaDeCoches.appendChild(li);
+    });
+}*/
+
+function cargarInfoConstructores(info) {
+    const listaDeCoches = document.getElementById('listaDeCoches').getElementsByTagName('ul')[0];
+
+    const constructores = Object.values(info);
+
+    constructores.forEach(constructor => {
+        const li = document.createElement('li');
+
+        const divNombre = document.createElement('div');
+        divNombre.classList.add("nombreCoche");
+        divNombre.setAttribute('data-nombre-constructor', constructor.nombre); // Añadir atributo
+
+        const divPuntos = document.createElement('div');
+        divPuntos.classList.add("puntosCoche");
+        divPuntos.setAttribute('data-puntos-constructor', constructor.puntosRealizados); // Añadir atributo
+
+        const divValorMercado = document.createElement('div');
+        divValorMercado.classList.add("valorCoche");
+        divValorMercado.setAttribute('data-valor', constructor.valorMercado); // Añadir atributo
+
+        const img = document.createElement('img');
+        img.src = constructor.coche;
+        img.alt = 'coche';
+        img.setAttribute('data-nombre-constructor', constructor.nombre); // Añadir atributo
+        img.setAttribute('data-puntos-constructor', constructor.puntosRealizados); // Añadir atributo
+
+        const nombreCoche = document.createTextNode(constructor.nombre);
+
+        const puntosCoche = document.createTextNode(constructor.puntosRealizados);
+
         const valorMercadoCoche = document.createTextNode(`${constructor.valorMercado}M$`);
 
         const boton = document.createElement('button');
@@ -398,6 +552,7 @@ function cargarInfoConstructores(info) {
         listaDeCoches.appendChild(li);
     });
 }
+
 
 // Función para filtrar los constructores
 function filtrarConstructores() {
@@ -447,7 +602,7 @@ function elegirConstructor() {
 
             const nuevoImgConstructor = imgConstructor.cloneNode(true);
             nuevoImgConstructor.classList.add("imgConstructor");
-            nuevoImgConstructor.setAttribute('data-valor', valorConstructor);
+            //nuevoImgConstructor.setAttribute('data-valor', valorConstructor);
 
             const campoHuecosConstructor = document.querySelectorAll('.coche .campoCoche');
             for (let hueco of campoHuecosConstructor) {

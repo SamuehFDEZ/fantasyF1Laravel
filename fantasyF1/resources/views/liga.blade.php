@@ -15,7 +15,7 @@
             crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-    @vite(['resources/css/miEquipo.scss', 'resources/js/miEquipo.js'])
+    @vite(['resources/css/liga.scss', 'resources/js/liga.js'])
 </head>
 <body>
 <header>
@@ -34,37 +34,6 @@
     </button>
     <button id="suscribete" class="buttonHeaderSub" type="button">Suscribete</button>
 </header>
-
-@if(empty(session('nombreDeUsuario')))
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            const myModal = bootstrap.Modal.getOrCreateInstance('#loginModal');
-            myModal.show();
-        });
-    </script>
-@endif
-<div class="modal show" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="loginModalLabel">Es necesario iniciar sesión para jugar</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <button type="button" id="cancelar" class="btn" data-bs-dismiss="modal"
-                        aria-label="Close">Cancelar
-                </button>
-                <button type="button" id="modalInicSes" class="btn"
-                        onclick="window.location='{{ route('login') }}'">Iniciar
-                    Sesión
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <main>
     <div id="panel" class="oculto">
         <h1>SUSCRIBETE</h1>
@@ -96,136 +65,16 @@
         </nav>
     </div>
 
-    <div id="eleccionDeEquipo" class="row-xl row-md row-sm row">
-        <div id="equipo" class="col-xl-6 col-md col-sm col">
-            <div id="costesYContinuar">
-                <section>
-                    <h4>Límite de coste</h4>
-                    <label for="cartera">100.0M$</label>
-                    <progress id="cartera" value="0" max="100"></progress>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl col-md col-sm col">
+                <div id="vistaDeJugadores">
 
-                    <form id="formGuardarEquipo" action="{{ route('mi-equipo')}}" method="POST">
-                        @csrf
-                        <input type="submit" name="guardarEquipo" id="guardarEquipo" value="Guardar Equipo">
-                    </form>
-                    @if($errors->any())
-                        @foreach($errors->all() as $error)
-                            <p class="text-danger">{{ $error }}</p>
-                        @endforeach
-                    @endif
-                    @if(session('mensaje'))
-                        <p class="text-danger">{{ session('mensaje') }}</p>
-                    @endif
-                </section>
-                <hr>
-                <section class="row">
-                    <div class="piloto col-md col-sm col text-center">
-                        <div class="campoPiloto" data-num-piloto="1">
-                            <p id="mas">&plus;</p>
-                            <p class="anyadirPiloto">Añadir piloto</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm col text-center">
-                        <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto" data-num-piloto="2">
-                                <p id="mas">&plus;</p>
-                                <p class="anyadirPiloto">Añadir piloto</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm col text-center">
-                        <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto" data-num-piloto="3">
-                                <p id="mas">&plus;</p>
-                                <p class="anyadirPiloto">Añadir piloto</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm col text-center">
-                        <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto" data-num-piloto="4">
-                                <p id="mas">&plus;</p>
-                                <p class="anyadirPiloto">Añadir piloto</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm col text-center">
-                        <div class="piloto col-md col-sm col text-center">
-                            <div class="campoPiloto" data-num-piloto="4">
-                                <p id="mas">&plus;</p>
-                                <p class="anyadirPiloto">Añadir piloto</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr>
-                <section class="row align-items-center justify-content-center">
-                    <div class="col-md-6 col-sm col text-center">
-                        <div class="coche col-md col-sm col text-center">
-                            <div class="campoCoche" data-nombre-constructor="1">
-                                <p id="mas">&plus;</p>
-                                <p class="anyadirCoche">Añadir Constructor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm col text-center">
-                        <div class="coche col-md col-sm col text-center">
-                            <div class="campoCoche" data-nombre-constructor="2">
-                                <p id="mas">&plus;</p>
-                                <p class="anyadirCoche">Añadir Constructor</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <div id="eleccion" class="col-xl col-md col-sm col">
-            <div id="cabecera">
-                <ul>
-                    <li>
-                        <a id="drivers">Pilotos</a>
-                    </li>
-                    <li>
-                        <a id="constructors">Constructores</a>
-                    </li>
-                </ul>
-                <hr>
-                <input type="search" name="filtrar" id="filtrar" placeholder="Buscar">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50"
-                     style="fill:#FA5252;">
-                    <path
-                        d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
-                </svg>
-                <hr>
-            </div>
-            <div id="cuerpoDePilotos">
-                <div id="ordenarPor">Ordenar Por:
-                    <button id="ordenarPorPuntos">Puntos</button>
-                    <span></span>
-                    <button id="ordenarPorValor">Valor de mercado</button>
-                </div>
-                <div id="listaDePilotos">
-                    <ul></ul>
-                    <div id="mensajeNoEncontrado" class="oculto">
-                        <p>No se ha encontrado ningún piloto</p>
-                    </div>
-                </div>
-            </div>
-            <div id="cuerpoDeCoches" class="oculto">
-                <div id="ordenarPorC">Ordenar Por:
-                    <button id="ordenarPorPuntosC">Puntos</button>
-                    <span></span>
-                    <button id="ordenarPorValorC">Valor de mercado</button>
-                </div>
-                <div id="listaDeCoches">
-                    <ul></ul>
-                    <div id="mensajeNoEncontradoC" class="oculto">
-                        <p>No se ha encontrado ningún coche</p>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 </main>
 

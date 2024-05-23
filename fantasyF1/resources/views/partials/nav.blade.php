@@ -7,7 +7,7 @@
             <a class="nav-link" href="{{ route('mi-equipo') }}">Mi Equipo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Ligas</a>
+            <a class="nav-link" href="{{ route('liga') }}">Liga</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('constructor') }}">Pilotos y Constructores</a>

@@ -202,42 +202,84 @@ class ApiController extends Controller
         return response()->json($imagenesDecodificadas);
     }
 
-    public function actualizarPilotosYConstructores(Request $request): JsonResponse
+    public function actualizarPilotosYConstructores(Request $request): \Illuminate\Http\RedirectResponse
     {
         // Obtener el userID de la sesión
         $userID = session('idDeUsuario');
-
         // Verificar que el userID exista en la sesión
         if (!$userID) {
-            return response()->json(['mensaje' => 'Usuario no autenticado'], 401);
+            return back()->with('mensaje', 'Usuario no autenticado');
         }
 
         // Obtener los pilotos y constructores del request
         $pilotos = $request->input('pilotos', []);
         $constructores = $request->input('constructores', []);
-
+        //dd($pilotos);
 
         // Guardar pilotos
         foreach ($pilotos as $piloto) {
-            DB::table('usuario_pilotos')->insert([
+            DB::table('usuario_pilotos')->updateOrInsert([
                 'userID' => $userID,
                 'nombre_piloto' => $piloto['nombre_piloto'],
-                'puntosRealizados' => $piloto['puntosRealizados']
+                'puntosRealizados' => $piloto['puntosRealizados'],
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
         }
 
         // Guardar constructores
         foreach ($constructores as $constructor) {
-            DB::table('usuario_constructor')->insert([
+            DB::table('usuario_constructor')->updateOrInsert([
                 'userID' => $userID,
                 'nombre_constructor' => $constructor['nombre_constructor'],
-                'puntosRealizados' => $constructor['puntosRealizados']
+                'puntosRealizados' => $constructor['puntosRealizados'],
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
         }
+        return back()->with('mensaje', 'Equipo guardado');
+    }
 
-        // Confirmar transacción
+    public function obtenerPilotos(Request $request): JsonResponse
+    {
+        $pilotos = DB::table('usuarios as u')
+            ->join('usuario_pilotos as p', 'u.userID', '=', 'p.userID')
+            ->join('pilotos as pil', 'pil.nombre', '=', 'p.nombre_piloto')
+            ->select('u.userID', 'u.nombre', DB::raw('CONVERT(pil.imgPiloto USING utf8) AS imgPiloto'), 'u.puntosRealizadosTotales')
+            ->distinct()
+            ->get();
 
-        return response()->json(['mensaje' => 'Equipo guardado correctamente'], 200);
+        $pilotosDecodificados = $pilotos->map(function ($piloto) {
+            return [
+                'userID' => $piloto->userID,
+                'nombre' => $piloto->nombre,
+                'imgPiloto' => base64_decode($piloto->imgPiloto),
+                'puntosRealizadosTotales' => $piloto->puntosRealizadosTotales,
+            ];
+        });
+
+        return response()->json($pilotosDecodificados);
+    }
+
+    public function obtenerConstructores(Request $request): JsonResponse
+    {
+        $constructores = DB::table('usuarios as u')
+            ->join('usuario_constructor as co', 'u.userID', '=', 'co.userID')
+            ->join('constructor as c', 'c.nombre', '=', 'co.nombre_constructor')
+            ->select('u.userID', 'u.nombre', DB::raw('CONVERT(c.coche USING utf8) AS coche'), 'u.puntosRealizadosTotales')
+            ->distinct()
+            ->get();
+
+        $constructoresDecodificados = $constructores->map(function ($constructor) {
+            return [
+                'userID' => $constructor->userID,
+                'nombre' => $constructor->nombre,
+                'coche' => base64_decode($constructor->coche),
+                'puntosRealizadosTotales' => $constructor->puntosRealizadosTotales,
+            ];
+        });
+
+        return response()->json($constructoresDecodificados);
     }
 
 }

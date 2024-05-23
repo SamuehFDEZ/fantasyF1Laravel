@@ -1,0 +1,25 @@
+@import 'app';
+
+#vistaDeJugadores {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+
+    .nombre {
+        border: 1px solid yellow;
+        font-family: F1, serif;
+    }
+    .jugador-info {
+        display: inline-block;
+        width: 10%;
+
+        img {
+            width: 50%;
+        }
+
+        .constructor {
+            width: 100%;
+        }
+    }
+}

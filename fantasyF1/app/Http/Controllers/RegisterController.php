@@ -37,20 +37,6 @@ class RegisterController extends Controller
         return back()->with('mensaje', 'Usuario creado correctamente');
     }
 
-  /*  public function eliminarUsuario(): JsonResponse
-    {
-        try {
-            $user = session('nombreDeUsuario'); // Obtener el usuario autenticado
-            $user->delete(); // Eliminar el usuario
-            //$user->delete(); // Eliminar el usuario
-            /*  $usuario = Usuario::findOrFail($id);
-              $usuario->delete();
-
-            return response()->json(['message' => 'Usuario eliminado correctamente'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Error al eliminar el usuario', 'error' => $e->getMessage()], 500);
-        }
-    }*/
     public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
     {
         try {
