@@ -1,25 +1,39 @@
 @import 'app';
 
+
 #vistaDeJugadores {
     position: relative;
     width: 100%;
-    height: auto;
-    border: 1px solid black;
+    height: 100em; /* Ajustamos la altura */
+    font-family: F1, serif;
 
-    .nombre {
-        border: 1px solid yellow;
-        font-family: F1, serif;
-    }
-    .jugador-info {
-        display: inline-block;
-        width: 10%;
+    .usuario-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
 
-        img {
-            width: 50%;
+        .jugador-nombre {
+            width: 10%;
+            display: flex;
+            align-items: center;
         }
 
-        .constructor {
-            width: 100%;
+        .jugador-elementos {
+            width: 80%;
+            display: flex;
+            align-items: center; /* Centramos verticalmente */
+            flex-wrap: wrap; /* Permitimos que los elementos se envuelvan en varias líneas */
+            justify-content: space-between;
+
+            .elemento-img {
+                width: 10%; /* Modificamos el tamaño de las imágenes */
+            }
+        }
+
+        .jugador-puntos {
+            width: 10%;
+            display: flex;
+            justify-content: center;
         }
     }
 }

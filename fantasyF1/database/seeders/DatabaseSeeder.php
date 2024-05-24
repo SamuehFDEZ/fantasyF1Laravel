@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Usuario;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-           usuariosTableSeeder::class,
+           /*usuariosTableSeeder::class,*/
            constructorTableSeeder::class,
            pilotosTableSeeder::class,
            circuitosTableSeeder::class,
@@ -31,8 +32,8 @@ class DatabaseSeeder extends Seeder
            sprintsTableSeeder::class,
            carrera_sprintsTableSeeder::class
         ]);
-       /* Usuario::factory(20)->create();
-        Circuito::factory(24)->create();
+        Usuario::factory(20)->create();
+        /*Circuito::factory(24)->create();
         Constructor::factory(10)->create();
         Piloto::factory(20)->create();
         Sprint::factory(2)->create();

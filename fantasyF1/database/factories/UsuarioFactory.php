@@ -23,6 +23,7 @@ class UsuarioFactory extends Factory
             'nombre' => $this->faker->userName(),
             'contrasenya' => $this->faker->password(),
             'email' => $this->faker->safeEmail(),
+            'puntosRealizadosTotales' => $this->faker->randomNumber(2),
             'remember_token' => $rememberToken
         ];
     }

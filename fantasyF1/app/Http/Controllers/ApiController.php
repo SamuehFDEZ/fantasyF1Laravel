@@ -258,7 +258,10 @@ class ApiController extends Controller
             ];
         });
 
-        return response()->json($pilotosDecodificados);
+        $pilotosEnvueltos = ['pilotos' => $pilotosDecodificados];
+
+
+        return response()->json($pilotosEnvueltos);
     }
 
     public function obtenerConstructores(Request $request): JsonResponse
@@ -279,7 +282,11 @@ class ApiController extends Controller
             ];
         });
 
-        return response()->json($constructoresDecodificados);
+        // Envuelve los constructores en un array asociativo con la clave "constructores"
+        $constructoresEnvueltos = ['constructores' => $constructoresDecodificados];
+
+        return response()->json($constructoresEnvueltos);
     }
+
 
 }
