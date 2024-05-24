@@ -67,8 +67,23 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl col-md col-sm col">
+            <div class="columna col-xl col-md col-sm col">
                 <div id="vistaDeJugadores">
+                    <div id="labels">
+                        <div id="jugador">
+                            <span>Jugador</span>
+                        </div>
+                        <div id="pilotos">
+                            <span>Pilotos</span>
+                        </div>
+                        <div id="constructores">
+                            <span>Constructores</span>
+                        </div>
+                        <div id="puntos">
+                            <span>Puntos</span>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>

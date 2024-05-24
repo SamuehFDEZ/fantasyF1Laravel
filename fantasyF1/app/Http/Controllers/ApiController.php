@@ -202,43 +202,49 @@ class ApiController extends Controller
         return response()->json($imagenesDecodificadas);
     }
 
-    public function actualizarPilotosYConstructores(Request $request): \Illuminate\Http\RedirectResponse
+
+
+    public function actualizarPilotosYConstructores(Request $request): JsonResponse
     {
-        // Obtener el userID de la sesión
-        $userID = session('idDeUsuario');
-        // Verificar que el userID exista en la sesión
-        if (!$userID) {
-            return back()->with('mensaje', 'Usuario no autenticado');
+        // Verificar si el usuario está autenticado
+        if (!auth()->check()) {
+            return response()->json(['mensaje' => 'Usuario no autenticado'], 401);
         }
 
-        // Obtener los pilotos y constructores del request
+        $userID = auth()->id();
+
         $pilotos = $request->input('pilotos', []);
         $constructores = $request->input('constructores', []);
-        //dd($pilotos);
 
-        // Guardar pilotos
         foreach ($pilotos as $piloto) {
-            DB::table('usuario_pilotos')->updateOrInsert([
-                'userID' => $userID,
-                'nombre_piloto' => $piloto['nombre_piloto'],
-                'puntosRealizados' => $piloto['puntosRealizados'],
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
+            DB::table('usuario_pilotos')->updateOrInsert(
+                [
+                    'userID' => $userID,
+                    'nombre_piloto' => $piloto['nombre_piloto']
+                ],
+                [
+                    'puntosRealizados' => $piloto['puntosRealizados'],
+                    'updated_at' => now()
+                ]
+            );
         }
 
-        // Guardar constructores
         foreach ($constructores as $constructor) {
-            DB::table('usuario_constructor')->updateOrInsert([
-                'userID' => $userID,
-                'nombre_constructor' => $constructor['nombre_constructor'],
-                'puntosRealizados' => $constructor['puntosRealizados'],
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
+            DB::table('usuario_constructor')->updateOrInsert(
+                [
+                    'userID' => $userID,
+                    'nombre_constructor' => $constructor['nombre_constructor']
+                ],
+                [
+                    'puntosRealizados' => $constructor['puntosRealizados'],
+                    'updated_at' => now()
+                ]
+            );
         }
-        return back()->with('mensaje', 'Equipo guardado');
+
+        return response()->json(['mensaje' => 'Equipo guardado']);
     }
+
 
     public function obtenerPilotos(Request $request): JsonResponse
     {

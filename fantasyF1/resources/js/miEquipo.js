@@ -20,119 +20,75 @@ window.onload = async () => {
     filtrarConstructores();
     ordenarPorPuntosYValorMercadoConstructores();
     elegirConstructor();
-    botonGuardar.addEventListener('click', guardarEquipo);
-}
-
-// async function guardarEquipo() {
-//     const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
-//     const pilotos = getSelectedPilots();
-//     const constructores = getSelectedConstructors();
-//
-//     const payload = {
-//         pilotos: pilotos,
-//         constructores: constructores
-//     };
-//
-//     await fetch(url).then(data => data.json()).then(info => {
-//         console.log(info);
-//     });
-// }
-/*const constructores = [
-    {"nombre_constructor": "Alpine", "puntosRealizados": 1},
-    {"nombre_constructor": "Aston Martin", "puntosRealizados": 42}
-];
-
-const pilotos = [
-    {"nombre_piloto": "Alex Albon", "puntosRealizados": 0},
-    {"nombre_piloto": "Logan Sargeant", "puntosRealizados": 0},
-    {"nombre_piloto": "Valteri Bottas", "puntosRealizados": 0},
-    {"nombre_piloto": "Zhou Guanyu", "puntosRealizados": 0},
-    {"nombre_piloto": "Esteban Ocon", "puntosRealizados": 1}
-];*/
-
-async function guardarEquipo(event) {
-    event.preventDefault(); // Evita el comportamiento predeterminado del formulario
-
-    const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
-    const pilotos = [
-        {"nombre_piloto": "Alex Albon", "puntosRealizados": 0},
-        {"nombre_piloto": "Logan Sargeant", "puntosRealizados": 0},
-        {"nombre_piloto": "Valteri Bottas", "puntosRealizados": 0},
-        {"nombre_piloto": "Zhou Guanyu", "puntosRealizados": 0},
-        {"nombre_piloto": "Esteban Ocon", "puntosRealizados": 1}
-    ];
-    const constructores = [
-        {"nombre_constructor": "Alpine", "puntosRealizados": 1},
-        {"nombre_constructor": "Aston Martin", "puntosRealizados": 42}
-    ];
-
-    const payload = {
-        pilotos: pilotos,
-        constructores: constructores
-    };
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-
-        const data = await response.json();
-        console.log('Success:', data);
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    //botonGuardar.addEventListener('click', guardarEquipo);
 }
 
 
-/*async function guardarEquipo(event) {
-    event.preventDefault(); // Evita el comportamiento predeterminado del formulario
+document.addEventListener('DOMContentLoaded', function () {
+    const configElement = document.getElementById('config');
+    const actualizarPilotosYConstructoresUrl = configElement.getAttribute('data-url-actualizar');
+    const csrfToken = configElement.getAttribute('data-csrf-token');
 
-    const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
-    const pilotos = [
-        {"nombre_piloto": "Alex Albon", "puntosRealizados": 0},
-        {"nombre_piloto": "Logan Sargeant", "puntosRealizados": 0},
-        {"nombre_piloto": "Valteri Bottas", "puntosRealizados": 0},
-        {"nombre_piloto": "Zhou Guanyu", "puntosRealizados": 0},
-        {"nombre_piloto": "Esteban Ocon", "puntosRealizados": 1}
-    ];
-    const constructores = [
-        {"nombre_constructor": "Alpine", "puntosRealizados": 1},
-        {"nombre_constructor": "Aston Martin", "puntosRealizados": 42}
-    ];
+    async function guardarEquipo() {
+        const pilotos = getSelectedPilots();
+        const constructores = getSelectedConstructors();
 
-    const payload = {
-        pilotos: pilotos,
-        constructores: constructores
-    };
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
+        fetch(actualizarPilotosYConstructoresUrl, {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": csrfToken,
+                "X-Requested-With": "XMLHttpRequest" // Añadir este encabezado para asegurar que Laravel trate la petición como AJAX
             },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({
+                pilotos: pilotos,
+                constructores: constructores
+            }),
+            credentials: 'same-origin' // Asegúrate de que las cookies se envíen con la solicitud
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        }).then(info => {
+            console.log(info.mensaje);
+        }).catch(error => {
+            console.error('Error:', error);
         });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-
-        const data = await response.json();
-        console.log('Success:', data);
-    } catch (error) {
-        console.error('Error:', error);
     }
+
+    document.getElementById('guardarEquipo').addEventListener('click', guardarEquipo);
+});
+
+
+/*async function guardarEquipo() {
+    const configElement = document.getElementById('config');
+    const actualizarPilotosYConstructoresUrl = configElement.getAttribute('data-url-actualizar');
+    const csrfToken = configElement.getAttribute('data-csrf-token');
+    const pilotos = getSelectedPilots();
+    const constructores = getSelectedConstructors();
+
+    fetch(actualizarPilotosYConstructoresUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": csrfToken
+        },
+        body: JSON.stringify({
+            pilotos: pilotos,
+            constructores: constructores
+        })
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    }).then(info => {
+        console.log(info.mensaje);
+    }).catch(error => {
+        console.error('Error:', error);
+    });
 }*/
-
 
 function getSelectedPilots() {
     const selectedPilots = [];

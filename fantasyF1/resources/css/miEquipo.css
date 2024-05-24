@@ -406,8 +406,10 @@ footer .row .col-md #iconos {
   color: white;
   border: none;
   width: 20%;
+  height: auto;
   border-radius: 5px;
   bottom: 2em;
+  font-size: 15px;
 }
 #eleccionDeEquipo #equipo #costesYContinuar section #guardarEquipo:hover {
   color: black;

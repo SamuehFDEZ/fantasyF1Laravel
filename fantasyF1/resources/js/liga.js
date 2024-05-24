@@ -61,7 +61,6 @@ async function cargarDatosDeConstructores(info) {
 
 function actualizarInterfazDeUsuario() {
     const container = document.getElementById('vistaDeJugadores');
-    container.innerHTML = '';
 
     // Recorremos la estructura de datos de usuarios y actualizamos la interfaz de usuario
     Object.values(usuarios).forEach(user => {

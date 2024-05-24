@@ -1,39 +1,81 @@
 @import 'app';
 
 
-#vistaDeJugadores {
-    position: relative;
-    width: 100%;
-    height: 100em; /* Ajustamos la altura */
-    font-family: F1, serif;
+.container-fluid {
+    .row {
+        .columna {
+            #vistaDeJugadores {
+                position: relative;
+                width: 100%;
+                height: 100em;
 
-    .usuario-container {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+                font-family: F1, serif;
 
-        .jugador-nombre {
-            width: 10%;
-            display: flex;
-            align-items: center;
-        }
+                #labels {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: space-evenly;
+                    border-bottom: 1px solid black;
+                    margin: 10px 10px 10px 10px;
 
-        .jugador-elementos {
-            width: 80%;
-            display: flex;
-            align-items: center; /* Centramos verticalmente */
-            flex-wrap: wrap; /* Permitimos que los elementos se envuelvan en varias líneas */
-            justify-content: space-between;
+                    #jugador {
+                        position: relative;
+                        right: 15%;
+                    }
 
-            .elemento-img {
-                width: 10%; /* Modificamos el tamaño de las imágenes */
+                    #pilotos {
+                        position: relative;
+                        right: 1%;
+                    }
+
+                    #constructores {
+                        position: relative;
+                        left: 20%;
+                    }
+
+                    #puntos {
+                        position: relative;
+                        left: 13%;
+                    }
+
+                }
+
+
+                .usuario-container {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+
+                    .jugador-nombre {
+                        width: 10%;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .jugador-elementos {
+                        width: 80%;
+                        display: flex;
+                        align-items: center; /* Centramos verticalmente */
+                        flex-wrap: wrap; /* Permitimos que los elementos se envuelvan en varias líneas */
+                        justify-content: space-between;
+
+                        .elemento-img {
+                            width: 7%; /* Modificamos el tamaño de las imágenes */
+                            background-color: #f1f0ec;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .jugador-puntos {
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
             }
-        }
-
-        .jugador-puntos {
-            width: 10%;
-            display: flex;
-            justify-content: center;
         }
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ApiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -53,7 +52,6 @@ Route::delete("/login", [LoginController::class, 'eliminarUsuario'])->name('elim
 Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
 Route::post('/registrar', [RegisterController::class, 'register']);
 Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->name('eliminarUsuario');
-Route::post("/mi-equipo", [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
 
 
 Route::middleware('guest')->group(function () {

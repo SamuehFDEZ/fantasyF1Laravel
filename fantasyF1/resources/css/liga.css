@@ -349,33 +349,61 @@ footer .row .col-md #iconos {
   display: none;
 }
 
-#vistaDeJugadores {
+.container-fluid .row .columna #vistaDeJugadores {
   position: relative;
   width: 100%;
-  height: 100em; /* Ajustamos la altura */
+  height: 100em;
   font-family: F1, serif;
 }
-#vistaDeJugadores .usuario-container {
+.container-fluid .row .columna #vistaDeJugadores #labels {
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+  margin: 10px 10px 10px 10px;
 }
-#vistaDeJugadores .usuario-container .jugador-nombre {
+.container-fluid .row .columna #vistaDeJugadores #labels #jugador {
+  position: relative;
+  right: 15%;
+}
+.container-fluid .row .columna #vistaDeJugadores #labels #pilotos {
+  position: relative;
+  right: 1%;
+}
+.container-fluid .row .columna #vistaDeJugadores #labels #constructores {
+  position: relative;
+  left: 20%;
+}
+.container-fluid .row .columna #vistaDeJugadores #labels #puntos {
+  position: relative;
+  left: 13%;
+}
+.container-fluid .row .columna #vistaDeJugadores .usuario-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.container-fluid .row .columna #vistaDeJugadores .usuario-container .jugador-nombre {
   width: 10%;
   display: flex;
   align-items: center;
 }
-#vistaDeJugadores .usuario-container .jugador-elementos {
+.container-fluid .row .columna #vistaDeJugadores .usuario-container .jugador-elementos {
   width: 80%;
   display: flex;
   align-items: center; /* Centramos verticalmente */
   flex-wrap: wrap; /* Permitimos que los elementos se envuelvan en varias líneas */
   justify-content: space-between;
 }
-#vistaDeJugadores .usuario-container .jugador-elementos .elemento-img {
-  width: 10%; /* Modificamos el tamaño de las imágenes */
+.container-fluid .row .columna #vistaDeJugadores .usuario-container .jugador-elementos .elemento-img {
+  width: 7%; /* Modificamos el tamaño de las imágenes */
+  background-color: #f1f0ec;
+  border-radius: 5px;
 }
-#vistaDeJugadores .usuario-container .jugador-puntos {
+.container-fluid .row .columna #vistaDeJugadores .usuario-container .jugador-puntos {
   width: 10%;
   display: flex;
   justify-content: center;
