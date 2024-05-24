@@ -20,75 +20,38 @@ window.onload = async () => {
     filtrarConstructores();
     ordenarPorPuntosYValorMercadoConstructores();
     elegirConstructor();
-    //botonGuardar.addEventListener('click', guardarEquipo);
+    botonGuardar.addEventListener("click", guardarEquipo);
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const configElement = document.getElementById('config');
-    const actualizarPilotosYConstructoresUrl = configElement.getAttribute('data-url-actualizar');
-    const csrfToken = configElement.getAttribute('data-csrf-token');
-
-    async function guardarEquipo() {
-        const pilotos = getSelectedPilots();
-        const constructores = getSelectedConstructors();
-
-        fetch(actualizarPilotosYConstructoresUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": csrfToken,
-                "X-Requested-With": "XMLHttpRequest" // Añadir este encabezado para asegurar que Laravel trate la petición como AJAX
-            },
-            body: JSON.stringify({
-                pilotos: pilotos,
-                constructores: constructores
-            }),
-            credentials: 'same-origin' // Asegúrate de que las cookies se envíen con la solicitud
-        }).then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        }).then(info => {
-            console.log(info.mensaje);
-        }).catch(error => {
-            console.error('Error:', error);
-        });
-    }
-
-    document.getElementById('guardarEquipo').addEventListener('click', guardarEquipo);
-});
-
-
-/*async function guardarEquipo() {
+async function guardarEquipo() {
     const configElement = document.getElementById('config');
     const actualizarPilotosYConstructoresUrl = configElement.getAttribute('data-url-actualizar');
     const csrfToken = configElement.getAttribute('data-csrf-token');
     const pilotos = getSelectedPilots();
     const constructores = getSelectedConstructors();
+    const formData = new FormData();
+
+    formData.append('userID', userID);
+
+    pilotos.forEach(piloto => {
+
+        formData.append('pilotos[]', piloto.nombre_piloto);
+        formData.append('puntosPilotos[]', piloto.puntosRealizados);
+    });
+
+    constructores.forEach(constructor => {
+        formData.append('constructores[]', constructor.nombre_constructor);
+        formData.append('puntosConstructores[]', constructor.puntosRealizados);
+    });
+    console.log(actualizarPilotosYConstructoresUrl);
 
     fetch(actualizarPilotosYConstructoresUrl, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-TOKEN": csrfToken
-        },
-        body: JSON.stringify({
-            pilotos: pilotos,
-            constructores: constructores
-        })
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    }).then(info => {
+        body: formData,
+    }).then(data => data.json()).then(info => {
         console.log(info.mensaje);
-    }).catch(error => {
-        console.error('Error:', error);
-    });
-}*/
+    })
+}
 
 function getSelectedPilots() {
     const selectedPilots = [];

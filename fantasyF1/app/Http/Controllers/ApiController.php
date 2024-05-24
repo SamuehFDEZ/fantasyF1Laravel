@@ -204,28 +204,28 @@ class ApiController extends Controller
 
 
 
-    public function actualizarPilotosYConstructores(Request $request): JsonResponse
+    public function actualizarPilotosYConstructores(Request $request): \Illuminate\Http\RedirectResponse
     {
         // Verificar si el usuario está autenticado
         if (!auth()->check()) {
-            return response()->json(['mensaje' => 'Usuario no autenticado'], 401);
+            return back()->with(['mensaje' => 'Usuario no autenticado']);
         }
 
         $userID = auth()->id();
 
         $pilotos = $request->input('pilotos', []);
         $constructores = $request->input('constructores', []);
+        dd($pilotos);
 
         foreach ($pilotos as $piloto) {
-            DB::table('usuario_pilotos')->updateOrInsert(
+            DB::table('usuario_pilotos')->insert(
                 [
                     'userID' => $userID,
-                    'nombre_piloto' => $piloto['nombre_piloto']
-                ],
-                [
+                    'nombre_piloto' => $piloto['nombre_piloto'],
                     'puntosRealizados' => $piloto['puntosRealizados'],
                     'updated_at' => now()
-                ]
+                ],
+
             );
         }
 
@@ -233,16 +233,14 @@ class ApiController extends Controller
             DB::table('usuario_constructor')->updateOrInsert(
                 [
                     'userID' => $userID,
-                    'nombre_constructor' => $constructor['nombre_constructor']
-                ],
-                [
+                    'nombre_constructor' => $constructor['nombre_constructor'],
                     'puntosRealizados' => $constructor['puntosRealizados'],
                     'updated_at' => now()
-                ]
+                ],
             );
         }
 
-        return response()->json(['mensaje' => 'Equipo guardado']);
+        return back()->with(['mensaje' => 'Equipo guardado']);
     }
 
 

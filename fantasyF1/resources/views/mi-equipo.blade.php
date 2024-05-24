@@ -114,6 +114,9 @@
                         @csrf
                         <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar Equipo</button>
                     </form>
+                    <script>
+                        const userID = `{{ session('idDeUsuario') }}`;
+                    </script>
                     @if($errors->any())
                         @foreach($errors->all() as $error)
                             <p class="text-danger">{{ $error }}</p>
