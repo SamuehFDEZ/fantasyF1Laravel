@@ -41,4 +41,3 @@ Route::get('/obtener-pilotos', [ApiController::class, 'obtenerPilotos'])->name('
 Route::get('/obtener-constructores', [ApiController::class, 'obtenerConstructores'])->name('obtenerConstructores');
 
 
-//Route::post('/actualiza-equipo', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');

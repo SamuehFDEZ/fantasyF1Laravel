@@ -123,7 +123,7 @@
                         @endforeach
                     @endif
                     @if(session('mensaje'))
-                        <p class="text-danger">{{ session('mensaje') }}</p>
+                        <p class="text-success">{{ session('mensaje') }}</p>
                     @endif
                 </section>
                 <hr>

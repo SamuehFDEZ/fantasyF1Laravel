@@ -55,9 +55,7 @@ async function guardarEquipo() {
         return response.json();
     }).then(function (responseJson) {
         console.log(responseJson);
-    }).catch(function (error) {
-        console.log(error);
-    });
+    })
 }
 
 
