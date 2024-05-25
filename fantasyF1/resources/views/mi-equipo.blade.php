@@ -115,7 +115,7 @@
                         <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar Equipo</button>
                     </form>
                     <script>
-                        const userID = `{{ session('idDeUsuario') }}`;
+                        const sesionDeUsuario = `{{ session('idDeUsuario') }}`;
                     </script>
                     @if($errors->any())
                         @foreach($errors->all() as $error)

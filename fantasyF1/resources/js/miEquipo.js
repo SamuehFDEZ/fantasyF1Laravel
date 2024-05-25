@@ -29,29 +29,37 @@ async function guardarEquipo() {
     const csrfToken = configElement.getAttribute('data-csrf-token');
     const pilotos = getSelectedPilots();
     const constructores = getSelectedConstructors();
-    const formData = new FormData();
+    console.log(csrfToken)
+    const data = {
+        userID: sesionDeUsuario,
+        pilotos: pilotos.map(piloto => ({
+            nombre_piloto: piloto.nombre_piloto,
+            puntosRealizados: piloto.puntosRealizados
+        })),
+        constructores: constructores.map(constructor => ({
+            nombre_constructor: constructor.nombre_constructor,
+            puntosRealizados: constructor.puntosRealizados
+        }))
+    };
 
-    formData.append('userID', userID);
-
-    pilotos.forEach(piloto => {
-
-        formData.append('pilotos[]', piloto.nombre_piloto);
-        formData.append('puntosPilotos[]', piloto.puntosRealizados);
-    });
-
-    constructores.forEach(constructor => {
-        formData.append('constructores[]', constructor.nombre_constructor);
-        formData.append('puntosConstructores[]', constructor.puntosRealizados);
-    });
-    console.log(actualizarPilotosYConstructoresUrl);
+    console.log(data)
 
     fetch(actualizarPilotosYConstructoresUrl, {
         method: "POST",
-        body: formData,
-    }).then(data => data.json()).then(info => {
-        console.log(info.mensaje);
-    })
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        },
+    }).then(function (response) {
+        return response.json();
+    }).then(function (responseJson) {
+        console.log(responseJson);
+    }).catch(function (error) {
+        console.log(error);
+    });
 }
+
 
 function getSelectedPilots() {
     const selectedPilots = [];

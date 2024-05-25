@@ -8,6 +8,7 @@ use App\Models\Piloto;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ApiController extends Controller
 {
@@ -204,43 +205,57 @@ class ApiController extends Controller
 
 
 
-    public function actualizarPilotosYConstructores(Request $request): \Illuminate\Http\RedirectResponse
+    public function actualizarPilotosYConstructores(Request $request): JsonResponse
     {
-        // Verificar si el usuario está autenticado
-        if (!auth()->check()) {
-            return back()->with(['mensaje' => 'Usuario no autenticado']);
-        }
+        try {
+            // Verificar si el userID está en la sesión
+            if (!session()->has('idDeUsuario')) {
+                return response()->json(['mensaje' => 'Usuario no autenticado'], 401);
+            }
 
-        $userID = auth()->id();
+            $userID = session('idDeUsuario');
 
-        $pilotos = $request->input('pilotos', []);
-        $constructores = $request->input('constructores', []);
-        dd($pilotos);
+            // Validar los datos entrantes
+            $request->validate([
+                'pilotos' => 'required|array',
+                'constructores' => 'required|array',
+                'pilotos.*.nombre_piloto' => 'required|string',
+                'pilotos.*.puntosRealizados' => 'required|integer',
+                'constructores.*.nombre_constructor' => 'required|string',
+                'constructores.*.puntosRealizados' => 'required|integer',
+            ]);
 
-        foreach ($pilotos as $piloto) {
-            DB::table('usuario_pilotos')->insert(
-                [
+            $pilotos = $request->input('pilotos', []);
+            $constructores = $request->input('constructores', []);
+
+            foreach ($pilotos as $piloto) {
+                DB::table('usuario_pilotos')->insert([
                     'userID' => $userID,
                     'nombre_piloto' => $piloto['nombre_piloto'],
                     'puntosRealizados' => $piloto['puntosRealizados'],
                     'updated_at' => now()
-                ],
+                ]);
+            }
 
-            );
+            foreach ($constructores as $constructor) {
+                DB::table('usuario_constructores')->updateOrInsert(
+                    [
+                        'userID' => $userID,
+                        'nombre_constructor' => $constructor['nombre_constructor']
+                    ],
+                    [
+                        'puntosRealizados' => $constructor['puntosRealizados'],
+                        'updated_at' => now()
+                    ]
+                );
+            }
+
+            return response()->json(['mensaje' => 'Equipo guardado']);
+        } catch (\Exception $e) {
+            // Log the error
+            Log::error('Error actualizando pilotos y constructores: '.$e->getMessage());
+            return response()->json(['mensaje' => 'Error interno del servidor'], 500);
         }
-
-        foreach ($constructores as $constructor) {
-            DB::table('usuario_constructor')->updateOrInsert(
-                [
-                    'userID' => $userID,
-                    'nombre_constructor' => $constructor['nombre_constructor'],
-                    'puntosRealizados' => $constructor['puntosRealizados'],
-                    'updated_at' => now()
-                ],
-            );
-        }
-
-        return back()->with(['mensaje' => 'Equipo guardado']);
     }
 
 
