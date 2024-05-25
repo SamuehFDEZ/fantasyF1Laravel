@@ -206,67 +206,57 @@ class ApiController extends Controller
 
     public function actualizarPilotosYConstructores(Request $request): \Illuminate\Http\RedirectResponse
     {
-       /* try {*/
-            // Verificar si el userID está en la sesión
-            if (!session()->has('idDeUsuario')) {
-                return back()->with('Usuario no autenticado');
-            }
+        // Verificar si el userID está en la sesión
+        if (!session()->has('idDeUsuario')) {
+            return back()->with('Usuario no autenticado');
+        }
 
-            $userID = session('idDeUsuario');
+        $userID = session('idDeUsuario');
 
-            // Validar los datos entrantes
-            $request->validate([
-                'pilotos' => 'required|array',
-                'constructores' => 'required|array',
-                'pilotos.*.nombre_piloto' => 'required|string',
-                'pilotos.*.puntosRealizados' => 'required|integer',
-                'constructores.*.nombre_constructor' => 'required|string',
-                'constructores.*.puntosRealizados' => 'required|integer',
-            ]);
+        // Validar los datos entrantes
+        $request->validate([
+            'pilotos' => 'required|array',
+            'constructores' => 'required|array',
+            'pilotos.*.nombre_piloto' => 'required|string',
+            'pilotos.*.puntosRealizados' => 'required|integer',
+            'constructores.*.nombre_constructor' => 'required|string',
+            'constructores.*.puntosRealizados' => 'required|integer',
+        ]);
 
-            $pilotos = $request->input('pilotos', []);
-            $constructores = $request->input('constructores', []);
+        $pilotos = $request->input('pilotos', []);
+        $constructores = $request->input('constructores', []);
 
-            foreach ($pilotos as $piloto) {
-                DB::table('usuario_pilotos')->updateOrInsert([
+        foreach ($pilotos as $piloto) {
+            DB::table('usuario_pilotos')->updateOrInsert(
+                [
                     'userID' => $userID,
                     'nombre_piloto' => $piloto['nombre_piloto'],
+                ],
+                [
                     'puntosRealizados' => $piloto['puntosRealizados'],
                     'created_at' => now(),
                     'updated_at' => now()
-                ],
-               /* [
-                    'userID' => $userID,
-                    'nombre_piloto' => $piloto['nombre_piloto'],
-                    'puntosRealizados' => $piloto['puntosRealizados'],
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]*/);
-            }
+                ]
+            );
+        }
 
-            foreach ($constructores as $constructor) {
-                DB::table('usuario_constructor')->updateOrInsert([
+        foreach ($constructores as $constructor) {
+            DB::table('usuario_constructor')->updateOrInsert(
+                [
                     'userID' => $userID,
                     'nombre_constructor' => $constructor['nombre_constructor'],
+                ],
+                [
                     'puntosRealizados' => $constructor['puntosRealizados'],
                     'created_at' => now(),
                     'updated_at' => now()
-                ],
-               /* [
-                    'userID' => $userID,
-                    'nombre_constructor' => $constructor['nombre_constructor'],
-                    'puntosRealizados' => $constructor['puntosRealizados'],
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]*/);
-            }
+                ]
+            );
+        }
 
-        /*} catch (\Exception $e) {
-            // Log the error
-            Log::error('Error actualizando pilotos y constructores: '.$e->getMessage());
-        }*/
         return back()->with(['mensaje' => 'Equipo guardado']);
     }
+
 
 
     public function obtenerPilotos(Request $request): JsonResponse

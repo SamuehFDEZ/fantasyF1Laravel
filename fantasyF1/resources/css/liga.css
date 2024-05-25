@@ -352,7 +352,8 @@ footer .row .col-md #iconos {
 .container-fluid .row .columna #vistaDeJugadores {
   position: relative;
   width: 100%;
-  height: 100em;
+  height: auto;
+  padding-bottom: 100px;
   font-family: F1, serif;
 }
 .container-fluid .row .columna #vistaDeJugadores #labels {
@@ -404,9 +405,10 @@ footer .row .col-md #iconos {
   border-radius: 5px;
 }
 .container-fluid .row .columna #vistaDeJugadores .usuario-container .jugador-puntos {
-  width: 10%;
+  position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  left: 5%;
 }
 
 /*# sourceMappingURL=liga.css.map */

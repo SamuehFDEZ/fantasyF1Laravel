@@ -25,13 +25,12 @@ window.onload = async () => {
 
 async function guardarEquipo() {
     const configElement = document.getElementById('config');
-    const actualizarPilotosYConstructoresUrl = configElement.getAttribute('data-url-actualizar');
+    const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
     const csrfToken = configElement.getAttribute('data-csrf-token');
     const pilotos = getSelectedPilots();
     const constructores = getSelectedConstructors();
-    console.log(csrfToken)
+
     const data = {
-        userID: sesionDeUsuario,
         pilotos: pilotos.map(piloto => ({
             nombre_piloto: piloto.nombre_piloto,
             puntosRealizados: piloto.puntosRealizados
@@ -42,20 +41,18 @@ async function guardarEquipo() {
         }))
     };
 
-    console.log(data)
-
-    fetch(actualizarPilotosYConstructoresUrl, {
-        method: "POST",
+    fetch(url, {
+        method: "PUT",
         body: JSON.stringify(data),
         headers: {
-            'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken
         },
-    }).then(function (response) {
-        return response.json();
-    }).then(function (responseJson) {
-        console.log(responseJson);
-    })
+    }).then(data => data.json())
+        .then(info => {
+            console.log(info);
+        }).catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 

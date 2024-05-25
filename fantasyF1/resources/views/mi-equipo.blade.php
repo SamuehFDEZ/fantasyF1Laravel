@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div id="config"
-         data-url-actualizar="{{ route('actualizarPilotosYConstructores') }}"
          data-csrf-token="{{ csrf_token() }}"></div>
     <title>F1 FANTASY</title>
     <!-- Estilos -->
@@ -110,12 +109,16 @@
 
                     {{--No necesitas especificar la acción si vas a usar
                     JavaScript para enviar la solicitud.--}}
-                    <form id="formGuardarEquipo" method="POST">
+                    <form id="formGuardarEquipo" method="POST"
+                          data-csrf-token="{{ csrf_token() }}">
                         @csrf
-                        <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar Equipo</button>
+                        @method('PUT')
+                        <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar
+                            Equipo
+                        </button>
                     </form>
                     <script>
-                        const sesionDeUsuario = `{{ session('idDeUsuario') }}`;
+                        const sesionDeUsuario = {{ session('idDeUsuario') }};
                     </script>
                     @if($errors->any())
                         @foreach($errors->all() as $error)

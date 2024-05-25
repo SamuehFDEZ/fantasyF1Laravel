@@ -55,7 +55,7 @@ Route::post('/registrar', [RegisterController::class, 'register']);
 Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->name('eliminarUsuario');
 
 
-Route::post('/api/actualiza-equipo', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
+Route::put('/api/actualiza-equipo', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
 
 
 Route::middleware('guest')->group(function () {
