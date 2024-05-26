@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="user-id" content="{{ session('idDeUsuario') }}">
     <div id="config"
          data-csrf-token="{{ csrf_token() }}"></div>
     <title>F1 FANTASY</title>
@@ -109,25 +110,29 @@
 
                     {{--No necesitas especificar la acción si vas a usar
                     JavaScript para enviar la solicitud.--}}
-                    <form id="formGuardarEquipo" method="POST"
-                          data-csrf-token="{{ csrf_token() }}">
+                    <form id="formGuardarEquipo"
+                          {{--pasamos como parametro el userID--}}
+                          action="{{ route('actualizarPilotosYConstructores', ['userID' => session('idDeUsuario')]) }}"
+                          method="POST" data-csrf-token="{{ csrf_token() }}">
                         @csrf
-                        @method('PUT')
-                        <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar
-                            Equipo
-                        </button>
+                        <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar Equipo</button>
                     </form>
+
+                    @if(isset($_POST['guardarEquipo']))
+                        @if($errors->any())
+                            @foreach($errors->all() as $error)
+                                <p class="text-danger">{{ $error }}</p>
+                            @endforeach
+                        @endif
+                        @if(session('mensaje'))
+                            <p class="text-success">{{ session('mensaje') }}</p>
+                        @endif
+                    @endif
+
                     <script>
                         const sesionDeUsuario = {{ session('idDeUsuario') }};
                     </script>
-                    @if($errors->any())
-                        @foreach($errors->all() as $error)
-                            <p class="text-danger">{{ $error }}</p>
-                        @endforeach
-                    @endif
-                    @if(session('mensaje'))
-                        <p class="text-success">{{ session('mensaje') }}</p>
-                    @endif
+
                 </section>
                 <hr>
                 <section class="row">

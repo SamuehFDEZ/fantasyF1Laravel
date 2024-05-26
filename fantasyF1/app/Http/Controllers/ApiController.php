@@ -204,55 +204,57 @@ class ApiController extends Controller
 
 
 
-    public function actualizarPilotosYConstructores(Request $request): \Illuminate\Http\RedirectResponse
+    public function actualizarPilotosYConstructores(Request $request, $userID): \Illuminate\Http\RedirectResponse
     {
-        // Verificar si el userID está en la sesión
-        if (!session()->has('idDeUsuario')) {
+        if ($userID != session('idDeUsuario')) {
             return back()->with('Usuario no autenticado');
         }
 
-        $userID = session('idDeUsuario');
-
-        // Validar los datos entrantes
         $request->validate([
-            'pilotos' => 'required|array',
-            'constructores' => 'required|array',
-            'pilotos.*.nombre_piloto' => 'required|string',
-            'pilotos.*.puntosRealizados' => 'required|integer',
-            'constructores.*.nombre_constructor' => 'required|string',
-            'constructores.*.puntosRealizados' => 'required|integer',
+            'pilotos' => 'array',
+            'constructores' => 'array',
+            'pilotos.*.nombre_piloto' => 'string',
+            'pilotos.*.puntosRealizados' => 'integer',
+            'constructores.*.nombre_constructor' => 'string',
+            'constructores.*.puntosRealizados' => 'integer',
         ]);
 
         $pilotos = $request->input('pilotos', []);
         $constructores = $request->input('constructores', []);
 
-        foreach ($pilotos as $piloto) {
-            DB::table('usuario_pilotos')->updateOrInsert(
-                [
-                    'userID' => $userID,
-                    'nombre_piloto' => $piloto['nombre_piloto'],
-                ],
-                [
-                    'puntosRealizados' => $piloto['puntosRealizados'],
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]
-            );
-        }
+        /*La transaccion nos permite ejecutar varias cosas al mismo tiempo, a la vez
+        eliminamos los registros que tenga el usuario en ambas tablas y lo actualizamos
+        insertando un nuevo registro a las tablas
+        aunque el usuario mantenga por ejemplo 4 pilotos y solo cambie uno, no es un problema
+        porque borra los anteriores para añadir aunque sea uno nuevo*/
+        DB::transaction(function () use ($userID, $pilotos, $constructores) {
+            DB::table('usuario_pilotos')->where('userID', $userID)->delete();
+            DB::table('usuario_constructor')->where('userID', $userID)->delete();
 
-        foreach ($constructores as $constructor) {
-            DB::table('usuario_constructor')->updateOrInsert(
-                [
-                    'userID' => $userID,
-                    'nombre_constructor' => $constructor['nombre_constructor'],
-                ],
-                [
-                    'puntosRealizados' => $constructor['puntosRealizados'],
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]
-            );
-        }
+            if (!empty($pilotos)) {
+                foreach ($pilotos as $piloto) {
+                    DB::table('usuario_pilotos')->insert([
+                        'userID' => $userID,
+                        'nombre_piloto' => $piloto['nombre_piloto'],
+                        'puntosRealizados' => $piloto['puntosRealizados'],
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]);
+                }
+            }
+
+            if (!empty($constructores)) {
+                foreach ($constructores as $constructor) {
+                    DB::table('usuario_constructor')->insert([
+                        'userID' => $userID,
+                        'nombre_constructor' => $constructor['nombre_constructor'],
+                        'puntosRealizados' => $constructor['puntosRealizados'],
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]);
+                }
+            }
+        });
 
         return back()->with(['mensaje' => 'Equipo guardado']);
     }

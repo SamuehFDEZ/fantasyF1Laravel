@@ -24,9 +24,8 @@ window.onload = async () => {
 }
 
 async function guardarEquipo() {
-    const configElement = document.getElementById('config');
-    const url = 'http://127.0.0.1:8000/api/actualiza-equipo';
-    const csrfToken = configElement.getAttribute('data-csrf-token');
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const sesionDeUsuario = document.querySelector('meta[name="user-id"]').getAttribute('content');
     const pilotos = getSelectedPilots();
     const constructores = getSelectedConstructors();
 
@@ -41,18 +40,21 @@ async function guardarEquipo() {
         }))
     };
 
-    fetch(url, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-            'X-CSRF-TOKEN': csrfToken
-        },
-    }).then(data => data.json())
-        .then(info => {
+    try {
+        const url = `http://127.0.0.1:8000/api/actualiza/${sesionDeUsuario}`;
+        await fetch(url, {
+            'method': "POST",
+            'headers': {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            'body': JSON.stringify(data)
+        }).then(data => data.json()).then(info => {
             console.log(info);
-        }).catch(error => {
+        });
+    } catch (error) {
         console.error('Error:', error);
-    });
+    }
 }
 
 
@@ -151,7 +153,7 @@ function elegirPiloto() {
 
             const nuevoImgPiloto = imgPiloto.cloneNode(true);
             nuevoImgPiloto.classList.add("imgPiloto");
-            //nuevoImgPiloto.setAttribute('data-valor', valorPiloto);
+            nuevoImgPiloto.setAttribute('data-valor', valorPiloto);
 
             const campoHuecosPiloto = document.querySelectorAll('.piloto .campoPiloto');
             for (let hueco of campoHuecosPiloto) {
@@ -375,56 +377,6 @@ function actualizarDisponibilidadCoches(valorDisponible) {
     });
 }
 
-/*function cargarInfoConstructores(info) {
-    const listaDeCoches = document.getElementById('listaDeCoches').getElementsByTagName('ul')[0];
-
-    // Convertir el objeto en un array de objetos
-    const constructores = Object.values(info);
-
-    constructores.forEach(constructor => {
-        const li = document.createElement('li');
-
-        const divNombre = document.createElement('div');
-        divNombre.classList.add("nombreCoche");
-
-        const divPuntos = document.createElement('div');
-        divPuntos.classList.add("puntosCoche");
-
-        const divValorMercado = document.createElement('div');
-        divValorMercado.classList.add("valorCoche");
-
-        const img = document.createElement('img');
-        img.src = constructor.coche;
-        img.alt = 'coche';
-
-        const nombreCoche = document.createTextNode(constructor.nombre);
-        nombreCoche.setAttribute('data-nombre-constructor');
-
-        const puntosCoche = document.createTextNode(constructor.puntosRealizados);
-        puntosCoche.setAttribute('data-puntos-constructor');
-
-        const valorMercadoCoche = document.createTextNode(`${constructor.valorMercado}M$`);
-        valorMercadoCoche.setAttribute('data-valor-constructor');
-
-
-        const boton = document.createElement('button');
-        boton.className = 'cocheElegir';
-        boton.textContent = '+';
-
-        divNombre.appendChild(nombreCoche);
-        divPuntos.appendChild(puntosCoche);
-        divValorMercado.appendChild(valorMercadoCoche);
-
-        li.appendChild(img);
-        li.appendChild(divNombre);
-        li.appendChild(divPuntos);
-        li.appendChild(divValorMercado);
-        li.appendChild(boton);
-
-        listaDeCoches.appendChild(li);
-    });
-}*/
-
 function cargarInfoConstructores(info) {
     const listaDeCoches = document.getElementById('listaDeCoches').getElementsByTagName('ul')[0];
 
@@ -524,7 +476,7 @@ function elegirConstructor() {
 
             const nuevoImgConstructor = imgConstructor.cloneNode(true);
             nuevoImgConstructor.classList.add("imgConstructor");
-            //nuevoImgConstructor.setAttribute('data-valor', valorConstructor);
+            nuevoImgConstructor.setAttribute('data-valor', valorConstructor);
 
             const campoHuecosConstructor = document.querySelectorAll('.coche .campoCoche');
             for (let hueco of campoHuecosConstructor) {
@@ -560,8 +512,6 @@ function eliminarConstructor() {
             verificarSeleccionCoches(); // Llama a la función aquí
             verificarHuecosLlenos(); // Llama a la función aquí
             actualizarCoste(-valorConstructor);
-
-
         });
     }
 }
@@ -625,30 +575,8 @@ function verificarSeleccionCoches() {
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 /*INICIO FUNCIONES GENERALES*/
+
 /*---------------------------------------------------------------------------------------------------------------------*/
-
-// Función para verificar si todos los huecos están llenos y actualizar el estado del botón de guardar equipo
-/*function verificarHuecosLlenos() {
-    const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
-    const huecosConstructores = document.querySelectorAll('.coche .campoCoche img');
-
-    let pilotosLlenos = false;
-    let constructoresLlenos = false;
-
-    huecosPilotos.forEach(img => {
-        //if simplificado
-        pilotosLlenos = img;
-    });
-
-    huecosConstructores.forEach(img => {
-        //if simplificado
-        constructoresLlenos = img;
-    });
-
-
-    const botonGuardar = document.getElementById('guardarEquipo');
-    botonGuardar.disabled = !(pilotosLlenos && constructoresLlenos);
-}*/
 
 function verificarHuecosLlenos() {
     const huecosPilotos = document.querySelectorAll('.piloto .campoPiloto img');
@@ -695,17 +623,23 @@ function progresoDeCartera() {
 function actualizarCoste(valor) {
     let valorLabel = parseFloat(document.querySelector('label[for="cartera"]').textContent);
     let nuevoValor = valorLabel - valor;
-    document.querySelector('label[for="cartera"]').textContent = `${nuevoValor.toFixed(1)}M$`;
 
-    let progress = document.getElementById('cartera');
-    progress.value = nuevoValor;
+    // Verificar si nuevoValor es un número finito
+    if (isFinite(nuevoValor)) {
+        document.querySelector('label[for="cartera"]').textContent = `${nuevoValor.toFixed(1)}M$`;
+        let progress = document.getElementById('cartera');
+        progress.value = nuevoValor;
 
-    let botonContinuar = document.querySelector('button[type="button"]');
-    botonContinuar.disabled = nuevoValor < 0;
+        let botonContinuar = document.querySelector('button[type="button"]');
+        botonContinuar.disabled = nuevoValor < 0;
 
-    actualizarDisponibilidadPilotos(nuevoValor);
-    actualizarDisponibilidadCoches(nuevoValor);
+        actualizarDisponibilidadPilotos(nuevoValor);
+        actualizarDisponibilidadCoches(nuevoValor);
+    } else {
+        console.error('El nuevo valor no es un número finito:', nuevoValor);
+    }
 }
+
 
 function addClassActive() {
     const anchors = document.querySelectorAll("#cabecera a");
