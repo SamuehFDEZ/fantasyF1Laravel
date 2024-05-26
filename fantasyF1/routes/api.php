@@ -29,6 +29,7 @@ Route::get("/circuitos", [ApiController::class, 'circuitos'])->name('circuitos')
 Route::get("/circuitos/{ronda}", [ApiController::class, 'circuitosPorRonda'])->name('circuitosPorRonda');
 Route::get("/constructor/info", [ApiController::class, 'imgCoches'])->name('imgCoches');
 Route::get("/constructor/logos", [ApiController::class, 'logosCoches'])->name('logosCoches');
+Route::get("/constructor/colores", [ApiController::class, 'coloresCoches'])->name('coloresCoches');
 
 
 Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');

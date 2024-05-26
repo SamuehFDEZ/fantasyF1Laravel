@@ -35,6 +35,34 @@ async function obtenerConstructores() {
 
         await cargarImgYNombresPilotos(info);
     });
+
+    let url6 = 'http://127.0.0.1:8000/api/constructor/colores';
+
+    await fetch(url6).then(data => data.json()).then(async info => {
+
+        await cargarColores(info);
+    });
+}
+
+async function cargarColores(info) {
+    const coches = document.querySelectorAll('.coche');
+    const barras = document.querySelectorAll('.barra');
+
+    // Iterar sobre el array info
+    info.forEach((color, index) => {
+        console.log(color);
+        console.log(index)
+        coches[index].addEventListener('mouseover', () => {
+            coches[index].style.borderTopColor = color;
+            coches[index].style.borderRightColor = color;
+        });
+        coches[index].addEventListener('mouseleave', () => {
+            coches[index].style.borderTopColor = '';
+            coches[index].style.borderRightColor = '';
+        });
+
+        barras[index].style.backgroundColor = color;
+    });
 }
 
 async function cargarImgYNombresPilotos(info) {
@@ -115,3 +143,4 @@ async function cargarPuntos(info) {
         puntosSpan.textContent = `${equipo} PTS`;
     });
 }
+

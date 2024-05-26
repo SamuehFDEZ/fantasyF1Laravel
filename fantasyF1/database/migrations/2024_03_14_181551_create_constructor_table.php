@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('coche')->nullable(false); // Agregar columna 'nacionalidad' como VARCHAR(50) NOT NULL
             $table->text('logo')->nullable(false); // Agregar columna 'nacionalidad' como VARCHAR(50) NOT NULL
             $table->unsignedInteger('puntosRealizados')->nullable(false);
+            $table->string('colorEquipo', 7)->nullable(false); // Almacenar el código hexadecimal de color
             $table->timestamps(); // Agregar los campos de control de tiempo (created_at, updated_at)
         });
     }

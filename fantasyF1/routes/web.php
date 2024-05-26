@@ -54,8 +54,10 @@ Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
 Route::post('/registrar', [RegisterController::class, 'register']);
 Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->name('eliminarUsuario');
 
-
-Route::post('/api/actualiza/{userID}', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
+/*el ? significa parametro no obligatorio, si no se pone
+salta un error de missing argument y la pagina no carga correctamente
+la funcionalidad no se pierde en ningun momento*/
+Route::post('/api/actualiza/{userID?}', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
 
 
 Route::middleware('guest')->group(function () {

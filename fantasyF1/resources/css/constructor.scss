@@ -67,12 +67,9 @@ $colores: (
                 height: 60px;
                 border: none;
 
-                @each $num, $color in $colores {
-                    .barra-#{$num} {
-                        background-color: $color;
-                        width: 5px;
-                        height: 30px;
-                    }
+                .barra {
+                    width: 5px;
+                    height: 30px;
                 }
 
                 .nombre {
@@ -124,11 +121,11 @@ $colores: (
             }
         }
 
-        @each $num, $color in $colores {
-            .coche-#{$num}:hover {
-                border-top-color: $color;
-                border-right-color: $color;
-            }
-        }
+        ///@each $num, $color in $colores {
+           // .coche-#{$num}:hover {
+             //   border-top-color: $color;
+               // border-right-color: $color;
+            //}
+        //}*/
     }
 }

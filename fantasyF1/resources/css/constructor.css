@@ -395,53 +395,7 @@ footer .row .col-md #iconos {
   height: 60px;
   border: none;
 }
-#constructores .row .col-md-6 #infoEquipo .barra-1 {
-  background-color: #3671C6;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-2 {
-  background-color: #E80020;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-3 {
-  background-color: #FF8000;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-4 {
-  background-color: #27F4D2;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-5 {
-  background-color: #229971;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-6 {
-  background-color: #6692FF;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-7 {
-  background-color: #B6BABD;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-8 {
-  background-color: #64C4FF;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-9 {
-  background-color: #52e252;
-  width: 5px;
-  height: 30px;
-}
-#constructores .row .col-md-6 #infoEquipo .barra-10 {
-  background-color: #0093CC;
+#constructores .row .col-md-6 #infoEquipo .barra {
   width: 5px;
   height: 30px;
 }
@@ -484,46 +438,6 @@ footer .row .col-md #iconos {
   display: flex;
   align-items: center;
   left: 15%;
-}
-#constructores .row .coche-1:hover {
-  border-top-color: #3671C6;
-  border-right-color: #3671C6;
-}
-#constructores .row .coche-2:hover {
-  border-top-color: #E80020;
-  border-right-color: #E80020;
-}
-#constructores .row .coche-3:hover {
-  border-top-color: #FF8000;
-  border-right-color: #FF8000;
-}
-#constructores .row .coche-4:hover {
-  border-top-color: #27F4D2;
-  border-right-color: #27F4D2;
-}
-#constructores .row .coche-5:hover {
-  border-top-color: #229971;
-  border-right-color: #229971;
-}
-#constructores .row .coche-6:hover {
-  border-top-color: #6692FF;
-  border-right-color: #6692FF;
-}
-#constructores .row .coche-7:hover {
-  border-top-color: #B6BABD;
-  border-right-color: #B6BABD;
-}
-#constructores .row .coche-8:hover {
-  border-top-color: #64C4FF;
-  border-right-color: #64C4FF;
-}
-#constructores .row .coche-9:hover {
-  border-top-color: #52e252;
-  border-right-color: #52e252;
-}
-#constructores .row .coche-10:hover {
-  border-top-color: #0093CC;
-  border-right-color: #0093CC;
 }
 
 /*# sourceMappingURL=constructor.css.map */

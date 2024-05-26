@@ -117,7 +117,6 @@
                         @csrf
                         <button type="button" name="guardarEquipo" id="guardarEquipo">Guardar Equipo</button>
                     </form>
-
                     @if(isset($_POST['guardarEquipo']))
                         @if($errors->any())
                             @foreach($errors->all() as $error)

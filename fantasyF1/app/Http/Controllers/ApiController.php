@@ -203,6 +203,13 @@ class ApiController extends Controller
     }
 
 
+    public function coloresCoches(): JsonResponse
+    {
+        $constructor = Constructor::all()->sortByDesc('puntosRealizados')->pluck('colorEquipo');
+
+        return response()->json($constructor);
+    }
+
 
     public function actualizarPilotosYConstructores(Request $request, $userID): \Illuminate\Http\RedirectResponse
     {

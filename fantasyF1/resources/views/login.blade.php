@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="row">
         <header class="col-md col-sm col">
-            <a href="{{route('index')}}"><img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoHeader"
+            <a href="{{route('index')}}"><img src="{{asset("img/logoBueno.jpg")}}" alt="logoF1" id="logoHeader"
                                               class="img-fluid"></a>
             <form id="formEliminarUsuario" action="{{route('login')}}" method="POST">
                 @csrf

@@ -18,7 +18,8 @@ class Constructor extends Model
         'nacionalidad',
         'puntosRealizados',
         'coche',
-        'logo'
+        'logo',
+        'colorEquipo'
     ];
 
 
