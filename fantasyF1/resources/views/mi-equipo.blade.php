@@ -127,11 +127,6 @@
                             <p class="text-success">{{ session('mensaje') }}</p>
                         @endif
                     @endif
-
-                    <script>
-                        const sesionDeUsuario = {{ session('idDeUsuario') }};
-                    </script>
-
                 </section>
                 <hr>
                 <section class="row">

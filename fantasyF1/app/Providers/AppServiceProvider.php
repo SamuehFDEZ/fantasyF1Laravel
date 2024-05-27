@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Observers\UsuarioObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        app()->useLangPath(base_path('lang'));
+
+        // or app()->useLangPath(app()->basePath('lang'));
     }
 }

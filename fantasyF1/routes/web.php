@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\LangController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,9 @@ Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->nam
 salta un error de missing argument y la pagina no carga correctamente
 la funcionalidad no se pierde en ningun momento*/
 Route::post('/api/actualiza/{userID?}', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
+
+
+Route::get('locale/{lange}', [LangController::class, 'setLang']);
 
 
 Route::middleware('guest')->group(function () {
