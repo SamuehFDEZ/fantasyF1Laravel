@@ -142,9 +142,14 @@ main #banner #containerNav ul li:last-child {
 }
 main #banner #containerNav ul li a {
   color: black;
+  text-decoration: none;
 }
 main #banner #containerNav ul li a:hover {
   color: red;
+}
+main #banner #containerNav ul li a img {
+  width: 20%;
+  height: auto;
 }
 main #siguienteGP {
   margin-left: auto;

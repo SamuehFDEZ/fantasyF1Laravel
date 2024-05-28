@@ -56,9 +56,9 @@ function actualizarContador() {
 
     document.getElementById('contador').innerHTML = `
         <ul>
-            <li>${dias} <span>Días</span></li>
-            <li>${horas} <span>Horas</span></li>
-            <li>${minutos} <span>Minutos</span></li>
+            <li>${dias} <span>${Days}</span></li>
+            <li>${horas} <span>${Hours}</span></li>
+            <li>${minutos} <span>${Seconds}</span></li>
         </ul>
   `;
 

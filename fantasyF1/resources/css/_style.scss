@@ -167,9 +167,15 @@ main {
 
                     a {
                         color: black;
+                        text-decoration: none;
 
                         &:hover {
                             color: red;
+                        }
+
+                        img {
+                            width: 20%;
+                            height: auto;
                         }
 
                     }

@@ -27,8 +27,8 @@
                 @lang('messages.languages')
             </a>
             <ul class="dropdown-menu">
-                <li><a href="locale/es">Español</a></li>
-                <li><a href="locale/en">Inglés</a></li>
+                <li><a href="locale/es">@lang('messages.es') <img src="{{asset('img/lang/es.png')}}" alt="es"></a></li>
+                <li><a href="locale/en">@lang('messages.en') <img src="{{asset('img/lang/en.png')}}" alt="en"></a></li>
             </ul>
         </li>
     </ul>
