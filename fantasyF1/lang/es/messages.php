@@ -58,5 +58,15 @@ return [
     'secPrize' => 'ndo',
     'thiPrize' => 'er',
     'thiPrizeText' => 'entradas para un gran premio de 2025',
-
+    'restricMyTeam' => 'Es necesario iniciar sesión para jugar',
+    'cancel' => 'Cancelar',
+    'costCap' => 'Límite de coste',
+    'saveTeam' => 'Guardar Equipo',
+    'addDriver' => 'Añadir Piloto',
+    'addConst' => 'Añadir Constructor',
+    'constructors' => 'Constructores',
+    'orderBy' => 'Ordenar Por:',
+    'marketValue' => 'Valor de mercado',
+    'notFound' => 'No se ha encontrado ningún piloto',
+    'find' => 'Buscar'
 ];

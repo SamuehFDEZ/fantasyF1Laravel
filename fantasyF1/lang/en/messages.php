@@ -58,5 +58,16 @@ return [
     'secPrize' => 'nd',
     'thiPrize' => 'rd',
     'thiPrizeText' => 'tickets for a 2025 grand prix',
+    'restricMyTeam' => 'Must Log In to choose your team',
+    'cancel' => 'Cancel',
+    'costCap' => 'Cost Cap',
+    'saveTeam' => 'Save Team',
+    'addDriver' => 'Add Driver',
+    'addConst' => 'Add Constructor',
+    'constructors' => 'Constructor',
+    'orderBy' => 'Sort By:',
+    'marketValue' => 'Market Value',
+    'notFound' => "Could'nt find any driver",
+    'find' => 'Find'
 
 ];
