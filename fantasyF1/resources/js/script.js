@@ -18,26 +18,25 @@ async function datosCircuito() {
 function cargarDatosCircuito(info) {
     document.getElementById("datosCircuito").innerHTML = `
         <ul>
-            <li>Ronda<span>${info[0]['ronda']}</span></li>
+            <li>${ronda}<span>${info[0]['ronda']}</span></li>
             <hr>
-            <li>Longitud<span>${info[0]['km']}</span></li>
+            <li>${longitud}<span>${info[0]['km']}</span></li>
             <hr>
-            <li>Fecha<span>${info[0]['fecha']}</span></li>
+            <li>${datecirc}<span>${info[0]['fecha']}</span></li>
             <hr>
-            <li>Nombre<span>${info[0]['nombre']}</span></li>
+            <li>${nameCirc}<span>${info[0]['nombre']}</span></li>
             <hr>
-            <li>Nº Vueltas<span>${info[0]['num_vueltas']}</span></li>
+            <li>${laps}<span>${info[0]['num_vueltas']}</span></li>
             <hr>
-            <li>Nº Curvas<span>${info[0]['num_curvas']}</span></li>
+            <li>${turns}<span>${info[0]['num_curvas']}</span></li>
             <hr>
-            <li>Record del circuito<span>${info[0]['autor_RecordCircuito']}</span></li>
+            <li>${scoreCirc}<span>${info[0]['autor_RecordCircuito']}</span></li>
             <hr>
-            <li>Tiempo del circuito<span>${info[0]['tiempo_RecordCircuito']}</span></li>
+            <li>${scoreTime}<span>${info[0]['tiempo_RecordCircuito']}</span></li>
             <hr>
-            <li>Año del record<span>${info[0]['anyo_RecordCircuito']}</span></li>
+            <li>${scoreYear}<span>${info[0]['anyo_RecordCircuito']}</span></li>
         </ul>
     `;
-    console.table(info);
 }
 
 // Establecer la fecha del evento

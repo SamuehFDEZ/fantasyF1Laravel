@@ -68,5 +68,14 @@ return [
     'orderBy' => 'Ordenar Por:',
     'marketValue' => 'Valor de mercado',
     'notFound' => 'No se ha encontrado ningún piloto',
-    'find' => 'Buscar'
+    'find' => 'Buscar',
+     'round' => 'Ronda',
+    'length' => 'Longitud',
+    'date' => 'Fecha',
+    'nameCirc' => 'Nombre',
+    'laps' => 'Vueltas',
+    'turns' => 'Curvas',
+    'scoreCirc' => 'Record del circuito',
+    'scoreTime' => 'Record de la vuelta rápida',
+    'scoreYear' => 'Año del record',
 ];

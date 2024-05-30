@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: F1;
   src: url(../fonts/Formula1-Regular-1.ttf);
@@ -7,50 +6,29 @@
   font-family: F1;
 }
 
-.row header {
+header {
   background-color: hsl(240, 18%, 10%);
 }
-.row header #logoHeader {
-  width: 7%;
+header #logoHeader {
+  width: 30%;
   height: auto;
   margin-top: 20px !important;
   margin-bottom: 30px !important;
-  margin-left: 10px !important;
 }
-.row header #eliminarUser {
+header #eliminarUser, header #cerrarSes {
   background-color: hsl(240, 18%, 10%);
-  position: absolute;
-  left: 80%;
-  top: 13%;
-  margin-top: -55px;
-  margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #808080;
   color: white;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
 }
-.row header #eliminarUser:hover {
-  background-color: white;
-  color: hsl(240, 18%, 10%);
-}
-.row header #cerrarSes {
-  background-color: hsl(240, 18%, 10%);
-  float: right;
-  margin-top: -70px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 1px solid #808080;
-  color: white;
-  padding: 10px 10px 10px 10px;
-}
-.row header #cerrarSes:hover {
+header #eliminarUser:hover, header #cerrarSes:hover {
   background-color: white;
   color: hsl(240, 18%, 10%);
 }
 
 nav#navbar {
   background-color: #403c3c;
-  height: 50px;
 }
 nav#navbar #botones {
   display: flex;
@@ -59,28 +37,17 @@ nav#navbar #botones {
 }
 nav#navbar #botones .boton {
   font-family: F1;
-  bottom: 0;
   border-style: none;
   background-color: #403c3c;
   color: white;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
+  text-decoration: none;
 }
 nav#navbar #botones .boton:hover {
-  border-top: none;
-  border-left: none;
-  border-right: none;
   border-bottom: 3px solid white;
 }
-nav#navbar #botones .boton:focus, nav#navbar #botones .boton:active {
-  border-top: none;
-  border-left: none;
-  border-right: none;
+nav#navbar #botones .boton:focus, nav#navbar #botones .boton:active, nav#navbar #botones .boton.active {
   border-bottom: 3px solid red;
-}
-nav#navbar #botones .boton.active {
-  border-bottom: 3px solid red; /* Estilo aplicado al botón activo */
 }
 
 main {
@@ -90,47 +57,35 @@ main {
 main #formLog {
   margin-top: 20px;
   font-weight: bold;
-  width: 50%;
-  height: 150%;
+  width: 100%;
+  max-width: 600px;
 }
 main #formLog h1 {
   text-align: left;
 }
-main #formLog input[type=text] {
+main #formLog input[type=text], main #formLog input[type=password] {
   width: 100%;
   border-radius: 5px;
   height: 50px;
 }
-main #formLog input[type=text]::placeholder {
-  font-size: 15px;
-}
-main #formLog input[type=password] {
-  width: 100%;
-  border-radius: 5px;
-  height: 50px;
-}
-main #formLog input[type=password]::placeholder {
+main #formLog input[type=text]::placeholder, main #formLog input[type=password]::placeholder {
   font-size: 15px;
 }
 main #formLog .field-icon {
-  float: right;
-  margin-top: -37px;
-  margin-right: 20px;
-  position: relative;
-  z-index: 2;
   cursor: pointer;
 }
-main #formLog .field-icon #ojoLog {
+main #formLog .field-icon img {
   width: 30px;
 }
-main #formLog #forgetPass {
-  margin-left: 20px;
+main #formLog #forgetPass, main #formLog #sinCuenta {
   border-style: none;
   background-color: white;
-  float: right;
+  padding: 0;
   border-bottom: 2px solid red;
+  text-decoration: none;
+  color: black;
 }
-main #formLog #forgetPass:hover {
+main #formLog #forgetPass:hover, main #formLog #sinCuenta:hover {
   color: red;
 }
 main #formLog #iniciarSes {
@@ -138,83 +93,118 @@ main #formLog #iniciarSes {
   border-style: none;
   color: white;
   border-radius: 5px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 5px 10px;
 }
 main #formLog #iniciarSes:hover {
   border: 2px solid red;
   background-color: white;
   color: black;
 }
-main #formLog #sinCuenta {
-  margin-left: 20px;
-  border-style: none;
-  background-color: white;
-  border-bottom: 2px solid red;
-}
-main #formLog #sinCuenta:hover {
-  color: red;
-}
 
-.row footer {
+footer {
   position: absolute;
-  border: 10px solid #333333;
-  bottom: 45px;
-  border-top-right-radius: 20px;
-  border-bottom: none;
-  border-left: none;
-  margin-left: 10px;
+  bottom: 40px;
   width: 96%;
   height: 150px;
+  border: 10px solid hsl(240, 18%, 10%);
+  border-bottom: none;
+  border-left: none;
+  background-color: white;
+  border-top-right-radius: 20px;
 }
-.row footer #navFooter #logoFooter {
-  margin-top: 30px;
-  margin-left: 20px;
+footer #navFooter #logoFooter {
+  margin: 30px 0 0 20px;
   width: 130px;
   height: 30px;
-  margin-right: 60em;
 }
-.row footer #navFooter a {
+footer #navFooter a {
   text-decoration: none;
   color: black;
   font-size: 13px;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin: 0 8px;
 }
-.row footer #parrFooter {
+footer #parrFooter {
   font-size: 15px;
   float: right;
   margin-right: 10px;
 }
-.row footer #botonApoyo {
+footer #botonApoyo {
   background-color: red;
   color: white;
   border-radius: 25px;
 }
-.row footer #botonApoyo svg {
+footer #botonApoyo svg {
   fill: white;
 }
-.row footer .modal-header {
+footer .modal-header {
   background-color: red;
 }
-.row footer .modal-header #logoModal {
+footer .modal-header #logoModal {
   width: 80px;
   height: 20px;
   margin-right: 20px;
 }
-.row footer .modal-body {
+footer .modal-body {
   background-color: hsl(0, 0%, 95%);
-  margin: 5px 5px 5px 5px;
+  margin: 5px;
   border-radius: 10px;
 }
-.row footer .modal-body .btn {
+footer .modal-body .btn {
   background-color: red;
   color: white;
 }
 
 .oculto {
   display: none;
+}
+
+@font-face {
+  font-family: F1;
+  src: url(../fonts/Formula1-Regular-1.ttf);
+}
+* {
+  font-family: F1;
+}
+
+header {
+  background-color: hsl(240, 18%, 10%);
+}
+header #logoHeader {
+  width: 30%;
+  height: auto;
+}
+header #eliminarUser, header #cerrarSes {
+  background-color: hsl(240, 18%, 10%);
+  border-radius: 5px;
+  border: 1px solid #808080;
+  color: white;
+  padding: 10px;
+}
+header #eliminarUser:hover, header #cerrarSes:hover {
+  background-color: white;
+  color: hsl(240, 18%, 10%);
+}
+
+nav#navbar {
+  background-color: #403c3c;
+}
+nav#navbar #botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+nav#navbar #botones .boton {
+  font-family: F1;
+  border-style: none;
+  background-color: #403c3c;
+  color: white;
+  margin: 10px;
+}
+nav#navbar #botones .boton:hover {
+  border-bottom: 3px solid white;
+}
+nav#navbar #botones .boton:focus, nav#navbar #botones .boton:active, nav#navbar #botones .boton.active {
+  border-bottom: 3px solid red;
 }
 
 main {
@@ -224,56 +214,97 @@ main {
 main #formReg {
   margin-top: 20px;
   font-weight: bold;
-  width: 50%;
-  height: 150%;
+  width: 100%;
+  max-width: 600px;
   border: 1px solid black;
   border-radius: 10px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
 }
 main #formReg h1 {
   text-align: left;
 }
-main #formReg input[type=text] {
+main #formReg input[type=text], main #formReg input[type=email], main #formReg input[type=password] {
   width: 100%;
   border-radius: 5px;
   height: 50px;
 }
-main #formReg input[type=text]::placeholder {
-  font-size: 15px;
-}
-main #formReg input[type=password] {
-  width: 100%;
-  border-radius: 5px;
-  height: 50px;
-}
-main #formReg input[type=password]::placeholder {
+main #formReg input[type=text]::placeholder, main #formReg input[type=email]::placeholder, main #formReg input[type=password]::placeholder {
   font-size: 15px;
 }
 main #formReg .field-icon {
-  float: right;
-  margin-top: -37px;
-  margin-right: 20px;
-  position: relative;
-  z-index: 2;
   cursor: pointer;
 }
-main #formReg .field-icon #ojoReg {
+main #formReg .field-icon img {
   width: 30px;
-}
-main #formReg input[type=checkbox] {
-  accent-color: red;
 }
 main #formReg #crearCuentaReg {
   background-color: red;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
 main #formReg #crearCuentaReg:hover {
   border: 2px solid red;
   background-color: white;
   color: black;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 96%;
+  height: 150px;
+  border: 10px solid hsl(240, 18%, 10%);
+  border-bottom: none;
+  border-left: none;
+  border-top-right-radius: 20px;
+  background-color: white;
+}
+footer #navFooter #logoFooter {
+  margin: 30px 0 0 20px;
+  width: 130px;
+  height: 30px;
+}
+footer #navFooter a {
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  margin: 0 8px;
+}
+footer #parrFooter {
+  font-size: 15px;
+  float: right;
+  margin-right: 10px;
+}
+footer #botonApoyo {
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+}
+footer #botonApoyo svg {
+  fill: white;
+}
+footer .modal-header {
+  background-color: red;
+}
+footer .modal-header #logoModal {
+  width: 80px;
+  height: 20px;
+  margin-right: 20px;
+}
+footer .modal-body {
+  background-color: hsl(0, 0%, 95%);
+  margin: 5px;
+  border-radius: 10px;
+}
+footer .modal-body .btn {
+  background-color: red;
+  color: white;
+}
+
+.oculto {
+  display: none;
 }
 
 /*# sourceMappingURL=registrar.css.map */

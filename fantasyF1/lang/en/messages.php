@@ -27,7 +27,7 @@ return [
     'mailPlaceHold' => 'E-Mail here',
     'user' => 'User',
     'password' => 'Password',
-    'forgPassword' => 'Forgot? Password',
+    'forgPassword' => 'Forgot Password?',
     'withoutAcc' => "Don't have an account yet?" ,
     'registerF1' => 'Register with F1',
     'keyPlaceHolder' => 'Password here',
@@ -68,6 +68,14 @@ return [
     'orderBy' => 'Sort By:',
     'marketValue' => 'Market Value',
     'notFound' => "Could'nt find any driver",
-    'find' => 'Find'
-
+    'find' => 'Find',
+    'round' => 'Round',
+    'length' => 'Length',
+    'date' => 'Date',
+    'nameCirc' => 'Name',
+    'laps' => 'Laps',
+    'turns' => 'Turns',
+    'scoreCirc' => 'Circuit record',
+    'scoreTime' => 'Fastest Lap ',
+    'scoreYear' => 'Record year',
 ];

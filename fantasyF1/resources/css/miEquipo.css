@@ -1,5 +1,33 @@
 @charset "UTF-8";
 @import url("https://fonts.bunny.net/css?family=Nunito");
+/* Agregamos una media query para pantallas pequeñas */
+@media screen and (max-width: 576px) {
+  header .buttonHeaderUser {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  #banner #containerNav {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+  #siguienteGP .row #infoPais section button #circuito {
+    margin-left: 0 !important;
+  }
+  #siguienteGP .row #cuentaAtrasYelegir {
+    width: 100%;
+    margin-top: 20px;
+  }
+  #siguienteGP .row #cuentaAtrasYelegir section {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #siguienteGP .row #cuentaAtrasYelegir section #contador {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @font-face {
   font-family: F1;
   src: url(../fonts/Formula1-Regular-1.ttf);

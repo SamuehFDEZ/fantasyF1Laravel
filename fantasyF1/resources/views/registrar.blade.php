@@ -23,70 +23,70 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <header class="col-md col-sm col">
-            <a href="{{route('index')}}"><img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoHeader"
-                                              class="img-fluid"></a>
-            <form id="formEliminarUsuario" action="{{route('registro')}}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input type="submit" name="eliminarUser" id="eliminarUser" value="{{__('messages.deleteUser')}}">
-            </form>
-            <form id="formCerrarSesion" action="{{ route('logout') }}" method="POST">
-                @csrf
-                <input type="submit" name="cerrarSes" id="cerrarSes" value="{{__('messages.closeSession')}}">
-            </form>
-        </header>
+        @include('partials/headerLoginReg')
     </div>
     <div class="row">
-        <nav id="navbar" class="col-xl col-md col-sm col">
-            <div id="botones">
-                <button id="iniciar" onclick="window.location='{{route('login')}}'" class="boton" type="button">
+        <nav id="navbar" class="col-12 bg-dark text-white py-2">
+            <div id="botones" class="d-flex justify-content-center">
+                <button id="iniciar" onclick="window.location='{{route('login')}}'"
+                        class="boton btn btn-link text-white" type="button">
                     <span>@lang('messages.login')</span>
                 </button>
-                <button id="crear" onclick="window.location='{{route('registro')}}'" class="boton" type="button">
+                <button id="crear" onclick="window.location='{{route('registro')}}'"
+                        class="boton btn btn-link text-white" type="button">
                     @lang('messages.register')
                 </button>
             </div>
         </nav>
     </div>
-    <main>
-        <form id="formReg" action="{{route('registro')}}" method="POST">
+    <main class="d-flex justify-content-center">
+        <form id="formReg" action="{{route('registro')}}" method="POST" class="w-50 mt-4">
             @csrf
-            <h1>
+            <h1 class="text-left">
                 @lang('messages.registerUPPER')
             </h1>
             <hr>
-            <label for="nombreReg">
-                @lang('messages.name')
-            </label><br>
-            <input type="text" name="nombre" id="nombreReg" placeholder="{{__('messages.userNamePlaceHold')}}"><br><br>
-            <label for="email"> @lang('messages.mail')</label><br>
-            <input type="text" name="email" id="email" placeholder="{{__('messages.mailPlaceHold')}}"><br><br>
-            <label for="contrasenyaReg">@lang('messages.password')</label><br>
-            <input type="password" name="contrasenya" id="contrasenyaReg"
-                   placeholder="{{__('messages.keyPlaceHolder')}}">
-            <span toggle="#contrasenyaReg" class="field-icon">
-                <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo"
-                     srcset="{{asset('img/eye.png')}}">
-            </span>
-            <br><br>
+            <div class="mb-3">
+                <label for="nombreReg" class="form-label">@lang('messages.name')</label>
+                <input type="text" name="nombre" id="nombreReg" placeholder="{{__('messages.userNamePlaceHold')}}"
+                       class="form-control @error('nombre') is-invalid @enderror">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">@lang('messages.mail')</label>
+                <input type="email" name="email" id="email" placeholder="{{__('messages.mailPlaceHold')}}"
+                       class="form-control @error('email') is-invalid @enderror">
+            </div>
+            <div class="mb-3 position-relative">
+                <label for="contrasenyaReg" class="form-label">@lang('messages.password')</label>
+                <input type="password" name="contrasenya" id="contrasenyaReg"
+                       placeholder="{{__('messages.keyPlaceHolder')}}"
+                       class="form-control @error('contrasenya') is-invalid @enderror">
+                <span toggle="#contrasenyaReg" class="field-icon position-absolute"
+                      style="top: 70%; right: 10px; transform: translateY(-50%); cursor: pointer;">
+                    <img src="{{asset('img/eye.png')}}" id="ojoReg" alt="ojo" style="width: 30px;">
+                </span>
+            </div>
             @if($errors->any())
-                @foreach($errors->all() as $error)
-                    <p class="text-danger">{{ $error }}</p>
-                @endforeach
+                <div class="mb-3">
+                    @foreach($errors->all() as $error)
+                        <p class="text-danger">{{ $error }}</p>
+                    @endforeach
+                </div>
             @endif
             @if(session('mensaje'))
-                <p class="text-success">{{ session('mensaje') }}</p>
+                <div class="mb-3">
+                    <p class="text-success">{{ session('mensaje') }}</p>
+                </div>
             @endif
-            <input type="submit" name="crearCuenta" id="crearCuentaReg" value="{{__('messages.register')}}"><br><br>
+            <div class="mb-3">
+                <input type="submit" name="crearCuenta" id="crearCuentaReg" value="{{__('messages.register')}}"
+                       class="btn btn-danger w-100">
+            </div>
         </form>
     </main>
-
     <div class="row">
         @include('partials/footerLogin')
     </div>
-
-
 </div>
 </body>
 </html>

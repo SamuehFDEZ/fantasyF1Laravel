@@ -170,9 +170,9 @@ return [
             'exists' => ' Name does not exists'
         ],
         'email' => [
-            'required' => 'e-mail is required',
-            'email' => 'wrong e-mailDirección',
-            'unique' => 'e-mail already exists',
+            'required' => 'E-mail is required',
+            'email' => 'wrong E-mail',
+            'unique' => 'E-mail already exists',
         ],
         'contrasenya' => [
             'required' => 'Password required',

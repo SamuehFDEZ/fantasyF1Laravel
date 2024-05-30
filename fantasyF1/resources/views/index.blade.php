@@ -55,7 +55,7 @@
         <img src=" {{asset("img/f1-fantasy-white-logo.svg")}} " id="logoEnBanner" alt="logoBanner"
              srcset=" {{asset("img/f1-fantasy-white-logo.svg")}} ">
         <img src=" {{asset("img/hp-masthead-thumb-web.png")}} " id="pilotos" alt=""
-             srcset=" {{asset("img/hp-masthead-thumb-web.png")}} ">
+             srcset=" {{asset("img/hp-masthead-thumb-web.png")}} " class="img-fluid">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div id="containerNav" class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -111,7 +111,20 @@
                                 <img src="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}" alt="circuitoMasInfo"
                                      srcset="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}">
                                 <hr>
-                                <div id="datosCircuito"></div>
+                                <div id="datosCircuito">
+                                    <script>
+                                        const ronda = "@lang('messages.round')";
+                                        const longitud = "@lang('messages.length')";
+                                        const datecirc = "@lang('messages.date')";
+                                        const nameCirc = "@lang('messages.nameCirc')";
+                                        const laps = "@lang('messages.laps')";
+                                        const turns = "@lang('messages.turns')";
+                                        const scoreCirc = "@lang('messages.scoreCirc')";
+                                        const scoreTime = "@lang('messages.scoreTime')";
+                                        const scoreYear = "@lang('messages.scoreYear')";
+
+                                    </script>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -125,7 +138,6 @@
                             const Days = "@lang('messages.days')";
                             const Hours = "@lang('messages.hours')";
                             const Seconds = "@lang('messages.seconds')";
-
                         </script>
                     </div>
                 </section>
