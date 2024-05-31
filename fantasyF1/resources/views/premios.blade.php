@@ -19,34 +19,10 @@
 </head>
 
 <body>
-<header>
-    <img src="{{ asset('img/logoF1Blanco.png' )}}" alt="logoF1" id="logoHeader"
-         srcset="{{ asset('img/logoF1Blanco.png') }}">
-    <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser" type="button">
-        <svg id="userIcon" class="feather feather-user" fill="none" height="24" stroke="currentColor"
-             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
-             xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span id="nomUser">{{ session('nombreDeUsuario') ? session('nombreDeUsuario') : __('messages.login') }}</span>
-    </button>
-    <button id="suscribete" class="buttonHeaderSub" type="button">
-        @lang('messages.subscribe')
-    </button>
-</header>
+@include('partials/header')
 <main>
-    <div id="panel" class="oculto">
-        <h1>
-            @lang('messages.subscribeUPPER')
-        </h1>
-        <hr>
-        <div id="botones">
-            <button type="button" class="opcioneSubscribe">26,99/@lang('messages.year')</button>
-            <button type="button" class="opcioneSubscribe">2.99/@lang('messages.month')</button>
-        </div>
-        <button id="quitarSubs" type="button">X</button>
-    </div>
+    @include('partials/panelSubscribe')
+
     <div id="banner">
         <img src=" {{asset("img/hp-masthead-filler-web.svg")}} " alt=""
              srcset=" {{asset("img/hp-masthead-filler-web.svg")}} ">

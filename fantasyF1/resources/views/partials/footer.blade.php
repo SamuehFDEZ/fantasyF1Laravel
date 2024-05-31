@@ -2,7 +2,8 @@
     <hr>
     <div class="row">
         <div id="logoFooter1" class="col-md-4">
-            <img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoFooter2" srcset="{{asset("img/logoF1.png")}}">
+            <img src="{{asset("img/logoF1.png")}}" alt="logoF1" id="logoFooter2" srcset="{{asset("img/logoF1.png")}}"
+                 class="img-fluid">
         </div>
         <div id="parrFooter" class="col-md">
             &copy; 2024 FANTASY F1 <sub>@lang('messages.copy')</sub>

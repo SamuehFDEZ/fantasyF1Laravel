@@ -1,0 +1,91 @@
+@import "media";
+@import "variables";
+
+header {
+    background-color: red;
+    height: 7em;
+
+    #logoHeader {
+        width: 15%;
+    }
+
+    .buttonHeaderUser, .buttonHeaderSub {
+        font-family: F1, serif;
+        width: auto;
+        height: 50px;
+        background-color: hsl(240, 18%, 10%);
+        border: 1px solid white;
+        border-radius: 5%;
+        color: white;
+        text-align: center;
+
+        &:hover {
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+        }
+    }
+
+    .buttonHeaderSub {
+        width: 120px; // Width for subscribe button
+        &:hover {
+            border: 1px solid black;
+            background-color: white;
+            color: red;
+        }
+    }
+
+    // Responsive adjustments
+    @include responsive($small) {
+        display: flex;
+        flex-direction: row; // Change to row to keep elements in a line
+        align-items: center;
+        justify-content: space-between;
+
+        #logoHeader {
+            width: 30%;
+            height: auto;
+        }
+
+        .buttonHeaderUser {
+            width: auto;
+            margin-bottom: 0;
+        }
+        .buttonHeaderSub {
+            width: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    @include responsive($medium) {
+        display: flex;
+        flex-direction: row; // Change to row to keep elements in a line
+        align-items: center;
+        justify-content: space-between;
+
+        #logoHeader {
+            width: 25%;
+            height: auto;
+        }
+
+        .buttonHeaderUser, .buttonHeaderSub {
+            width: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    @include responsive($large) {
+        display: flex;
+        flex-direction: row; // Ensure elements stay in a line
+        align-items: center;
+        justify-content: space-between;
+
+        #logoHeader {
+            width: 20%;
+        }
+
+        .buttonHeaderUser, .buttonHeaderSub {
+            width: auto;
+        }
+    }
+}

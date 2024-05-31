@@ -1,7 +1,31 @@
-// Body
-$body-bg: #f8fafc;
+$headerBgColor: red;
+$primaryColor: white;
+$secondaryColor: black;
+$headerBgColor: hsl(240, 18%, 10%);
+$navBgColor: #403c3c;
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extralarge: 1200px;
+
+$dorado: hsla(46, 65%, 52%, 1);
+$plata: hsla(240, 2%, 55%, 1);
+$bronce: hsla(30, 61%, 50%, 1);
+
+
+
+
+$colores: (
+    1: #3671C6, // Red Bull
+    2: #E80020, // Ferrari
+    3: #FF8000, // McLaren
+    4: #27F4D2, // Mercedes
+    5: #229971, // Aston Martin
+    6: #6692FF, // Visa RB
+    7: #B6BABD, // Haas
+    8: #64C4FF, // Williams
+    9: #52e252, // Sauber
+    10: #0093CC // Alpine
+);

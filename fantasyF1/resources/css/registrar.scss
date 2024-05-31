@@ -1,12 +1,6 @@
 @import "login";
-
-$headerBgColor: hsl(240, 18%, 10%);
-$navBgColor: #403c3c;
-
-@font-face {
-    font-family: F1;
-    src: url(../fonts/Formula1-Regular-1.ttf);
-}
+@import "variables";
+@import "font";
 
 * {
     font-family: F1;

@@ -1,69 +1,8 @@
-$headerBgColor: red;
-$primaryColor: white;
-$secondaryColor: black;
-// Responsive breakpoints
-$sm: 576px;
-$md: 768px;
+@import "media";
+@import "variables";
+@import "header";
+@import "font";
 
-$headerBgColor: red;
-$primaryColor: white;
-$secondaryColor: black;
-
-/* Agregamos una media query para pantallas pequeñas */
-@media screen and (max-width: $sm) {
-    header {
-        .buttonHeaderUser {
-            margin-left: 0 !important;
-            margin-top: 0 !important;
-        }
-    }
-
-    #banner {
-        #containerNav {
-            margin-left: 0 !important;
-            text-align: center;
-        }
-    }
-
-    #siguienteGP {
-        .row {
-            #infoPais {
-                section {
-                    button {
-                        #circuito {
-                            margin-left: 0 !important;
-                        }
-                    }
-                }
-            }
-
-            #cuentaAtrasYelegir {
-                width: 100%;
-                margin-top: 20px;
-
-                section {
-                    width: 90%;
-                    margin-left: auto;
-                    margin-right: auto;
-
-                    #contador {
-                        width: 100%;
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-$headerBgColor: red;
-
-@font-face {
-    font-family: F1;
-    src: url(../fonts/Formula1-Regular-1.ttf);
-}
 
 body {
     &::-webkit-scrollbar {
@@ -76,53 +15,6 @@ body {
 
     &::-webkit-scrollbar-thumb {
         background: red;
-    }
-}
-
-header {
-    background-color: $headerBgColor;
-
-    #logoHeader {
-        width: 200px;
-        height: 50px;
-        margin-top: 20px !important;
-        margin-bottom: 30px !important;
-        margin-left: 10px !important;
-    }
-
-    .buttonHeaderUser {
-        margin-top: 35px !important;
-        margin-left: 90em !important;
-        width: 140px;
-        height: 50px;
-        background-color: hsl(240, 18%, 10%);
-        border: 1px solid white;
-        border-radius: 5%;
-        color: white;
-
-        &:hover {
-            border: 1px solid black;
-            background-color: white;
-            color: black;
-        }
-    }
-
-    .buttonHeaderSub {
-        float: right;
-        margin-top: 35px !important;
-        margin-right: 5px !important;
-        width: 100px;
-        height: 50px;
-        background-color: hsl(240, 18%, 10%);
-        color: white;
-        border: 1px solid white;
-        border-radius: 5%;
-
-        &:hover {
-            border: 1px solid black;
-            background-color: white;
-            color: red;
-        }
     }
 }
 
@@ -187,61 +79,134 @@ main {
             border: 1px solid white;
             border-radius: 5px;
         }
+
+        @include responsive(small) {
+            width: 80%;
+            height: auto;
+        }
+
+        @include responsive(medium) {
+            width: 60%;
+            height: auto;
+        }
     }
 
-    #banner {
-        width: 100%;
-        background-color: #630e0e;
-
-        #logoEnBanner {
-            width: 20%;
-            height: 20%;
-            margin-bottom: 35px;
-        }
-
-        #pilotos {
-            float: right;
-            margin-top: -12px;
-        }
-
-        #containerNav {
-            font-family: F1;
+    #sectionBann {
+        #banner {
             width: 100%;
-            margin-top: -4.8em;
-            margin-left: 20em;
-            text-align: center;
+            background-color: #630e0e;
 
-            ul {
-                li {
-                    padding: 10px 10px 10px 10px;
+            #imgEnBannerIzq {
+                position: relative;
+                left: -6.4em;
+            }
 
-                    &:first-child {
-                        border-top-left-radius: 5px;
-                    }
+            #logoEnBanner {
+                width: 25%;
+                height: 20%;
+                margin-bottom: 35px;
+            }
 
-                    &:last-child {
-                        border-top-right-radius: 5px;
-                    }
+            #pilotos {
+                float: right;
+                margin-top: -12px;
+            }
 
-                    background-color: white;
+            #containerNav {
+                font-family: F1;
+                width: 100%;
+                margin-top: -4.8em;
+                margin-left: 20em;
+                text-align: center;
 
-                    a {
-                        color: black;
-                        text-decoration: none;
+                ul {
+                    li {
+                        padding: 10px 10px 10px 10px;
 
-                        &:hover {
-                            color: red;
+                        &:first-child {
+                            border-top-left-radius: 5px;
                         }
 
-                        img {
-                            width: 20%;
-                            height: auto;
+                        &:last-child {
+                            border-top-right-radius: 5px;
                         }
 
+                        background-color: white;
+
+                        a {
+                            color: black;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: red;
+                            }
+
+                            img {
+                                width: 20%;
+                                height: auto;
+                            }
+                        }
                     }
                 }
             }
         }
+
+        @include responsive('extrasmall') {
+            #banner {
+                #imgEnBannerIzq,
+                #pilotos {
+                    display: none;
+                }
+
+                #logoEnBanner {
+                    position: relative;
+                    width: 15em;
+                    top: 20px;
+                }
+
+                #containerNav {
+                    width: 50%;
+                    margin-left: 4em;
+                    border-radius: 25%;
+
+                    .navbar-toggler {
+                        position: fixed;
+                        left: 1%;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        @include responsive('large') {
+            #banner {
+                #imgEnBannerIzq,
+                #pilotos {
+                    display: none;
+                }
+
+                #logoEnBanner {
+                    width: 25em;
+                    top: 20px;
+                }
+
+                #containerNav {
+                    width: 50%;
+                    margin-left: 4em;
+                    border-radius: 25%;
+
+                    .navbar-toggler {
+                        position: fixed;
+                        left: 1%;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-toggler {
+        background-color: white;
     }
 
     #siguienteGP {
@@ -285,7 +250,6 @@ main {
                             font-size: 27px;
                             font-weight: bold;
                             margin-left: -40px;
-
                         }
                     }
 
@@ -304,6 +268,12 @@ main {
                             width: 33%;
                             height: 90px;
                             cursor: pointer;
+                        }
+
+                        @include responsive(small) {
+                            #circuito {
+                                margin-left: 0;
+                            }
                         }
                     }
                 }
@@ -345,7 +315,6 @@ main {
                                         span {
                                             float: right;
                                             margin-right: 10px;
-
                                         }
                                     }
 
@@ -359,7 +328,6 @@ main {
                     }
                 }
             }
-
 
             #cuentaAtrasYelegir {
                 width: 25%;
@@ -421,12 +389,10 @@ main {
                                     font-size: 16px;
                                     font-weight: bold;
                                 }
-
                             }
                         }
                     }
                 }
-
 
                 #escogeEquipo {
                     background-color: red;
@@ -446,6 +412,10 @@ main {
                     }
                 }
             }
+        }
+
+        @include responsive(small) {
+            width: 100%;
         }
     }
 }

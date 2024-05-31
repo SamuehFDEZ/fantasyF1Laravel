@@ -1,17 +1,7 @@
 @import 'app';
-
-$colores: (
-    1: #3671C6, // Red Bull
-    2: #E80020, // Ferrari
-    3: #FF8000, // McLaren
-    4: #27F4D2, // Mercedes
-    5: #229971, // Aston Martin
-    6: #6692FF, // Visa RB
-    7: #B6BABD, // Haas
-    8: #64C4FF, // Williams
-    9: #52e252, // Sauber
-    10: #0093CC // Alpine
-);
+@import "header";
+@import "variables";
+@import "font";
 
 
 #constructores {

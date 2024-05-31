@@ -1,26 +1,25 @@
-$small: 576px;
-$medium: 768px;
-$large: 992px;
-$extralarge: 1200px;
+@import "variables";
 
-
-@mixin responsive($media){
-    @if $media == $small{
+@mixin responsive($media) {
+    @if $media == $small {
+        @media (max-width: $small) {
+            @content;
+        }
+    } @else if $media == $medium {
         @media (min-width: $small) and (max-width: $medium) {
             @content;
         }
-        
-    } @else if $media == $medium{
+    } @else if $media == $large {
         @media (min-width: $medium) and (max-width: $large) {
             @content;
         }
-    } @else if $media == $large{
+    } @else if $media == $extralarge {
         @media (min-width: $large) and (max-width: $extralarge) {
             @content;
         }
-    } @else if $media == $extralarge{
-        @media (min-width: $extralarge) {
+    } @else if $media == 'extrasmall' {
+        @media (max-width: $small) {
             @content;
         }
-    } 
+    }
 }

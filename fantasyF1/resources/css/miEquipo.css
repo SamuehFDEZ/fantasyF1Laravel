@@ -1,33 +1,86 @@
 @charset "UTF-8";
 @import url("https://fonts.bunny.net/css?family=Nunito");
-/* Agregamos una media query para pantallas pequeñas */
-@media screen and (max-width: 576px) {
+header {
+  background-color: red;
+  height: 7em;
+}
+header #logoHeader {
+  width: 15%;
+}
+header .buttonHeaderUser, header .buttonHeaderSub {
+  font-family: F1, serif;
+  width: auto;
+  height: 50px;
+  background-color: hsl(240, 18%, 10%);
+  border: 1px solid white;
+  border-radius: 5%;
+  color: white;
+  text-align: center;
+}
+header .buttonHeaderUser:hover, header .buttonHeaderSub:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+header .buttonHeaderSub {
+  width: 120px;
+}
+header .buttonHeaderSub:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: red;
+}
+@media (max-width: 576px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header #logoHeader {
+    width: 30%;
+    height: auto;
+  }
   header .buttonHeaderUser {
-    margin-left: 0 !important;
-    margin-top: 0 !important;
+    width: auto;
+    margin-bottom: 0;
   }
-  #banner #containerNav {
-    margin-left: 0 !important;
-    text-align: center;
-  }
-  #siguienteGP .row #infoPais section button #circuito {
-    margin-left: 0 !important;
-  }
-  #siguienteGP .row #cuentaAtrasYelegir {
-    width: 100%;
-    margin-top: 20px;
-  }
-  #siguienteGP .row #cuentaAtrasYelegir section {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #siguienteGP .row #cuentaAtrasYelegir section #contador {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  header .buttonHeaderSub {
+    width: auto;
+    margin-bottom: 0;
   }
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header #logoHeader {
+    width: 25%;
+    height: auto;
+  }
+  header .buttonHeaderUser, header .buttonHeaderSub {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header #logoHeader {
+    width: 20%;
+  }
+  header .buttonHeaderUser, header .buttonHeaderSub {
+    width: auto;
+  }
+}
+
 @font-face {
   font-family: F1;
   src: url(../fonts/Formula1-Regular-1.ttf);
@@ -40,48 +93,6 @@ body::-webkit-scrollbar-track {
 }
 body::-webkit-scrollbar-thumb {
   background: red;
-}
-
-header {
-  background-color: red;
-}
-header #logoHeader {
-  width: 200px;
-  height: 50px;
-  margin-top: 20px !important;
-  margin-bottom: 30px !important;
-  margin-left: 10px !important;
-}
-header .buttonHeaderUser {
-  margin-top: 35px !important;
-  margin-left: 90em !important;
-  width: 140px;
-  height: 50px;
-  background-color: hsl(240, 18%, 10%);
-  border: 1px solid white;
-  border-radius: 5%;
-  color: white;
-}
-header .buttonHeaderUser:hover {
-  border: 1px solid black;
-  background-color: white;
-  color: black;
-}
-header .buttonHeaderSub {
-  float: right;
-  margin-top: 35px !important;
-  margin-right: 5px !important;
-  width: 100px;
-  height: 50px;
-  background-color: hsl(240, 18%, 10%);
-  color: white;
-  border: 1px solid white;
-  border-radius: 5%;
-}
-header .buttonHeaderSub:hover {
-  border: 1px solid black;
-  background-color: white;
-  color: red;
 }
 
 main #panel {
@@ -138,46 +149,74 @@ main #panel #quitarSubs {
   border: 1px solid white;
   border-radius: 5px;
 }
-main #banner {
+main #sectionBann #banner {
   width: 100%;
   background-color: #630e0e;
 }
-main #banner #logoEnBanner {
-  width: 20%;
+main #sectionBann #banner #imgEnBannerIzq {
+  position: relative;
+  left: -6.4em;
+}
+main #sectionBann #banner #logoEnBanner {
+  width: 25%;
   height: 20%;
   margin-bottom: 35px;
 }
-main #banner #pilotos {
+main #sectionBann #banner #pilotos {
   float: right;
   margin-top: -12px;
 }
-main #banner #containerNav {
+main #sectionBann #banner #containerNav {
   font-family: F1;
   width: 100%;
   margin-top: -4.8em;
   margin-left: 20em;
   text-align: center;
 }
-main #banner #containerNav ul li {
+main #sectionBann #banner #containerNav ul li {
   padding: 10px 10px 10px 10px;
   background-color: white;
 }
-main #banner #containerNav ul li:first-child {
+main #sectionBann #banner #containerNav ul li:first-child {
   border-top-left-radius: 5px;
 }
-main #banner #containerNav ul li:last-child {
+main #sectionBann #banner #containerNav ul li:last-child {
   border-top-right-radius: 5px;
 }
-main #banner #containerNav ul li a {
+main #sectionBann #banner #containerNav ul li a {
   color: black;
   text-decoration: none;
 }
-main #banner #containerNav ul li a:hover {
+main #sectionBann #banner #containerNav ul li a:hover {
   color: red;
 }
-main #banner #containerNav ul li a img {
+main #sectionBann #banner #containerNav ul li a img {
   width: 20%;
   height: auto;
+}
+@media (max-width: 576px) {
+  main #sectionBann #banner #imgEnBannerIzq,
+  main #sectionBann #banner #pilotos {
+    display: none;
+  }
+  main #sectionBann #banner #logoEnBanner {
+    position: relative;
+    width: 15em;
+    top: 20px;
+  }
+  main #sectionBann #banner #containerNav {
+    width: 50%;
+    margin-left: 4em;
+    border-radius: 25%;
+  }
+  main #sectionBann #banner #containerNav .navbar-toggler {
+    position: fixed;
+    left: 1%;
+    margin-bottom: 10px;
+  }
+}
+main .navbar-toggler {
+  background-color: white;
 }
 main #siguienteGP {
   margin-left: auto;
@@ -382,6 +421,91 @@ footer .row .col-md #iconos {
   display: none;
 }
 
+header {
+  background-color: red;
+  height: 7em;
+}
+header #logoHeader {
+  width: 15%;
+}
+header .buttonHeaderUser, header .buttonHeaderSub {
+  font-family: F1, serif;
+  width: auto;
+  height: 50px;
+  background-color: hsl(240, 18%, 10%);
+  border: 1px solid white;
+  border-radius: 5%;
+  color: white;
+  text-align: center;
+}
+header .buttonHeaderUser:hover, header .buttonHeaderSub:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+header .buttonHeaderSub {
+  width: 120px;
+}
+header .buttonHeaderSub:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: red;
+}
+@media (max-width: 576px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header #logoHeader {
+    width: 30%;
+    height: auto;
+  }
+  header .buttonHeaderUser {
+    width: auto;
+    margin-bottom: 0;
+  }
+  header .buttonHeaderSub {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header #logoHeader {
+    width: 25%;
+    height: auto;
+  }
+  header .buttonHeaderUser, header .buttonHeaderSub {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header #logoHeader {
+    width: 20%;
+  }
+  header .buttonHeaderUser, header .buttonHeaderSub {
+    width: auto;
+  }
+}
+
+@font-face {
+  font-family: F1;
+  src: url(../fonts/Formula1-Regular-1.ttf);
+}
 .modal-header h4 {
   font-family: F1, serif;
 }
