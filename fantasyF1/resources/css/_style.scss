@@ -194,7 +194,7 @@ main {
         }
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: 576px) {
         #sectionBann {
             #banner {
                 #imgEnBannerIzq,
@@ -214,9 +214,9 @@ main {
                     border-radius: 25%;
 
                     .navbar-toggler {
-                        position: sticky;
-                        left: 35%;
+                        position: relative;
                         margin-bottom: 10px;
+                        left: -39%;
                     }
                 }
             }

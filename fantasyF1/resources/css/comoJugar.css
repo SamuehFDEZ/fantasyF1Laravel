@@ -180,7 +180,7 @@ main #sectionBann #banner #containerNav ul li a img {
     left: 190%;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   main #sectionBann #banner #imgEnBannerIzq,
   main #sectionBann #banner #pilotos {
     display: none;
@@ -196,9 +196,9 @@ main #sectionBann #banner #containerNav ul li a img {
     border-radius: 25%;
   }
   main #sectionBann #banner #containerNav .navbar-toggler {
-    position: sticky;
-    left: 35%;
+    position: relative;
     margin-bottom: 10px;
+    left: -39%;
   }
 }
 main .navbar-toggler {
