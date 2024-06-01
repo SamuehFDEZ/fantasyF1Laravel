@@ -1,6 +1,6 @@
 <header class="d-flex align-items-center justify-content-between p-3 container-fluid">
-    <img src="{{ asset('img/logoF1Blanco.png' )}}" alt="logoF1" id="logoHeader"
-         srcset="{{ asset('img/logoF1Blanco.png') }}">
+    <img src="{{ asset('img/logoficialfantasyBlanco.png' )}}" alt="logoF1" id="logoHeader"
+         srcset="{{ asset('img/logoficialfantasyBlanco.png') }}">
     <div class="d-flex align-items-center">
         <button id="botonUser" onclick="window.location='{{ route('login') }}'" class="buttonHeaderUser mx-2"
                 type="button">

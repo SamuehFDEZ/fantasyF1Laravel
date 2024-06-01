@@ -1,6 +1,6 @@
 <header class="col-12 d-flex justify-content-between align-items-center p-3">
     <a href="{{route('index')}}">
-        <img src="{{ asset("img/logoBueno.jpg")}}" alt="logoF1" id="logoHeader" class="img-fluid">
+        <img src="{{ asset("img/logoficialfantasy.png")}}" alt="logoF1" id="logoHeader" class="img-fluid">
     </a>
     <div>
         <form id="formEliminarUsuario" action="{{route('login')}}" method="POST" class="d-inline-block me-2">

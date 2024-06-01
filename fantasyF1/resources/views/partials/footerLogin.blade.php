@@ -1,7 +1,7 @@
 <footer class="col-xl-11 col-md-11 col-sm col">
     <nav id="navFooter">
-        <a href="{{route('index')}}"><img src="{{asset('img/logoF1.png')}}" alt="logoF1" id="logoFooter"
-                                          srcset="{{asset('img/logoF1.png')}}"></a>
+        <a href="{{route('index')}}"><img src="{{asset('img/logoficialfantasy.png')}}" alt="logoF1" id="logoFooter"
+                                          srcset="{{asset('img/logoficialfantasy.png')}}"></a>
         <a href="#">@lang('messages.privacyPolicy')</a>
         <a href="#">@lang('messages.subs')</a>
         <a href="#">@lang('messages.usage') </a>
