@@ -1,24 +1,24 @@
 @import "variables";
 
 @mixin responsive($media) {
-    @if $media == $small {
-        @media (max-width: $small) {
+    @if $media == 'extrasmall' {
+        @media (max-width: $small - 1) {
             @content;
         }
-    } @else if $media == $medium {
-        @media (min-width: $small) and (max-width: $medium) {
+    } @else if $media == 'small' {
+        @media (min-width: $small) and (max-width: $medium - 1) {
             @content;
         }
-    } @else if $media == $large {
-        @media (min-width: $medium) and (max-width: $large) {
+    } @else if $media == 'medium' {
+        @media (min-width: $medium) and (max-width: $large - 1) {
             @content;
         }
-    } @else if $media == $extralarge {
-        @media (min-width: $large) and (max-width: $extralarge) {
+    } @else if $media == 'large' {
+        @media (min-width: $large) and (max-width: $extralarge - 1) {
             @content;
         }
-    } @else if $media == 'extrasmall' {
-        @media (max-width: $small) {
+    } @else if $media == 'extralarge' {
+        @media (min-width: $extralarge) {
             @content;
         }
     }

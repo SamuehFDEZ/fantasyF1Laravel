@@ -30,56 +30,6 @@ header .buttonHeaderSub:hover {
   background-color: white;
   color: red;
 }
-@media (max-width: 576px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header #logoHeader {
-    width: 30%;
-    height: auto;
-  }
-  header .buttonHeaderUser {
-    width: auto;
-    margin-bottom: 0;
-  }
-  header .buttonHeaderSub {
-    width: auto;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 576px) and (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header #logoHeader {
-    width: 25%;
-    height: auto;
-  }
-  header .buttonHeaderUser, header .buttonHeaderSub {
-    width: auto;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header #logoHeader {
-    width: 20%;
-  }
-  header .buttonHeaderUser, header .buttonHeaderSub {
-    width: auto;
-  }
-}
 
 @font-face {
   font-family: F1;
@@ -149,17 +99,29 @@ main #panel #quitarSubs {
   border: 1px solid white;
   border-radius: 5px;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  main #panel {
+    width: 80%;
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  main #panel {
+    width: 60%;
+    height: auto;
+  }
+}
 main #sectionBann #banner {
   width: 100%;
   background-color: #630e0e;
 }
 main #sectionBann #banner #imgEnBannerIzq {
   position: relative;
-  left: -6.4em;
+  left: -8.8em;
 }
 main #sectionBann #banner #logoEnBanner {
-  width: 25%;
-  height: 20%;
+  width: 20%;
+  height: auto;
   margin-bottom: 35px;
 }
 main #sectionBann #banner #pilotos {
@@ -194,7 +156,31 @@ main #sectionBann #banner #containerNav ul li a img {
   width: 20%;
   height: auto;
 }
-@media (max-width: 576px) {
+@media (min-width: 576px) and (max-width: 992px) {
+  main #sectionBann #banner #imgEnBannerIzq {
+    position: relative;
+    left: -1.2em;
+  }
+  main #sectionBann #banner #logoEnBanner {
+    width: 22em;
+  }
+  main #sectionBann #banner #containerNav {
+    width: 30%;
+    margin-left: 4em;
+    border-radius: 25%;
+    left: 50%;
+  }
+  main #sectionBann #banner #containerNav .navbar-toggler {
+    position: relative;
+    left: 280%;
+    margin-bottom: 10px;
+  }
+  main #sectionBann #banner #containerNav #navbarNavDropdown nav {
+    position: relative;
+    left: 190%;
+  }
+}
+@media (max-width: 575px) {
   main #sectionBann #banner #imgEnBannerIzq,
   main #sectionBann #banner #pilotos {
     display: none;
@@ -210,8 +196,8 @@ main #sectionBann #banner #containerNav ul li a img {
     border-radius: 25%;
   }
   main #sectionBann #banner #containerNav .navbar-toggler {
-    position: fixed;
-    left: 1%;
+    position: sticky;
+    left: 35%;
     margin-bottom: 10px;
   }
 }
@@ -271,6 +257,11 @@ main #siguienteGP .row #infoPais section button #circuito {
   width: 33%;
   height: 90px;
   cursor: pointer;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  main #siguienteGP .row #infoPais section button #circuito {
+    margin-left: 0;
+  }
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header img {
   width: 15%;
@@ -381,6 +372,11 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
   background-color: white;
   color: black;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  main #siguienteGP {
+    width: 100%;
+  }
+}
 
 footer {
   position: fixed; /* Cambiamos a posición fija */
@@ -450,56 +446,6 @@ header .buttonHeaderSub:hover {
   border: 1px solid black;
   background-color: white;
   color: red;
-}
-@media (max-width: 576px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header #logoHeader {
-    width: 30%;
-    height: auto;
-  }
-  header .buttonHeaderUser {
-    width: auto;
-    margin-bottom: 0;
-  }
-  header .buttonHeaderSub {
-    width: auto;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 576px) and (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header #logoHeader {
-    width: 25%;
-    height: auto;
-  }
-  header .buttonHeaderUser, header .buttonHeaderSub {
-    width: auto;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header #logoHeader {
-    width: 20%;
-  }
-  header .buttonHeaderUser, header .buttonHeaderSub {
-    width: auto;
-  }
 }
 
 @font-face {
