@@ -23,12 +23,12 @@
     @include('partials/panelSubscribe')
     <section id="sectionBann">
         <div id="banner" class="text-center">
-            <img src=" {{asset('img/hp-masthead-filler-web.svg')}} " id="imgEnBannerIzq" alt=""
-                 srcset=" {{asset('img/hp-masthead-filler-web.svg')}}" class="img-fluid">
-            <img src=" {{asset('img/logoEnBannerOficial.png')}} " id="logoEnBanner" alt="logoBanner"
-                 srcset=" {{asset('img/logoEnBannerOficial.png')}}" class="img-fluid img-logo">
-            <img src=" {{asset('img/hp-masthead-thumb-web.png')}} " id="pilotos" alt=""
-                 srcset=" {{asset('img/hp-masthead-thumb-web.png')}}" class="img-fluid d-none d-lg-block">
+            <img src="{{asset('img/hp-masthead-filler-web.svg')}}" id="imgEnBannerIzq" alt=""
+                 srcset="{{asset('img/hp-masthead-filler-web.svg')}}" class="img-fluid">
+            <img src="{{asset('img/logoEnBannerOficial.png')}}" id="logoEnBanner" alt="logoBanner"
+                 srcset="{{asset('img/logoEnBannerOficial.png')}}" class="img-fluid img-logo">
+            <img src="{{asset('img/hp-masthead-thumb-web.png')}}" id="pilotos" alt=""
+                 srcset="{{asset('img/hp-masthead-thumb-web.png')}}" class="img-fluid d-none d-lg-block">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div id="containerNav" class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -49,13 +49,13 @@
             <div class="row">
                 <div class="col-md-3">
                     <img src="{{asset('img/circuitos/Imola.jpg')}}" id="circuitoImg" alt="circuitoImg"
-                         srcset="{{asset('img/circuitos/Imola.jpg')}}">
+                         srcset="{{asset('img/circuitos/Imola.jpg')}}" class="img- d-lg-block d-md-none d-block">
                 </div>
                 <div id="infoPais" class="col-md-6 text-center">
                     <section>
                         <h1 class="d-flex align-items-center justify-content-center">
                             <img src="{{asset('img/banderas/Italy.svg')}}" id="bandera" alt="bandera"
-                                 srcset="{{asset('img/banderas/Italy.svg')}}">
+                                 srcset="{{asset('img/banderas/Italy.svg')}}" class="img-fluid">
                             <span id="pais" class="ms-2">ITALIA</span>
                         </h1>
                         <p>FORMULA 1 GRAND PRIX IMOLA 2024</p>
@@ -63,7 +63,7 @@
                         <button type="button" id="botonModal" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">
                             <img src="{{asset('img/circuitos_shape/Imola.svg')}}" id="circuito" alt="formaCircuito"
-                                 srcset="{{asset('img/circuitos_shape/Imola.svg')}}">
+                                 srcset="{{asset('img/circuitos_shape/Imola.svg')}}" class="img-fluid">
                         </button>
                     </section>
 
@@ -123,8 +123,8 @@
             </div>
         </div>
     </section>
-
 </main>
+
 
 @include('partials/footer')
 

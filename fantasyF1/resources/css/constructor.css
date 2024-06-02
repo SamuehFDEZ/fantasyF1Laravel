@@ -162,7 +162,7 @@ main #sectionBann #banner #containerNav ul li a img {
     left: -1.2em;
   }
   main #sectionBann #banner #logoEnBanner {
-    width: 22em;
+    width: 22em; /* Ajuste el tamaño de la imagen según tus necesidades */
   }
   main #sectionBann #banner #containerNav {
     width: 30%;
@@ -210,18 +210,18 @@ main #siguienteGP {
   margin-top: 20px;
   background-color: #f3f3f5;
   width: 70%;
-  height: 200px;
+  height: auto;
 }
 main #siguienteGP .row #circuitoImg {
   width: 90%;
-  height: 150px;
+  height: auto;
   margin-top: 20px;
   margin-left: 20px;
   border-radius: 10px;
 }
 main #siguienteGP .row #infoPais {
   margin-top: 20px;
-  height: 150px;
+  height: auto;
 }
 main #siguienteGP .row #infoPais section {
   border: 2px solid black;
@@ -230,21 +230,23 @@ main #siguienteGP .row #infoPais section {
   border-bottom-right-radius: 5px;
 }
 main #siguienteGP .row #infoPais section h1 {
-  float: left;
+  float: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 main #siguienteGP .row #infoPais section h1 #bandera {
-  width: 40%;
-  height: 25px;
-  margin-left: -52px;
+  width: 40px;
+  height: auto;
 }
 main #siguienteGP .row #infoPais section h1 #pais {
   font-family: F1, serif;
   font-size: 27px;
   font-weight: bold;
-  margin-left: -40px;
+  margin-left: 10px;
 }
 main #siguienteGP .row #infoPais section p {
-  margin-top: 20px;
+  margin-top: 10px;
   font-family: F1, serif;
   font-size: 15px;
 }
@@ -253,18 +255,13 @@ main #siguienteGP .row #infoPais section button {
   border: none;
 }
 main #siguienteGP .row #infoPais section button #circuito {
-  margin-left: 200px;
-  width: 33%;
-  height: 90px;
+  margin-top: 10px;
+  width: 60%;
+  height: auto;
   cursor: pointer;
 }
-@media (min-width: 576px) and (max-width: 767px) {
-  main #siguienteGP .row #infoPais section button #circuito {
-    margin-left: 0;
-  }
-}
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header img {
-  width: 15%;
+  width: 40px;
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header span {
   font-family: F1, serif;
@@ -272,7 +269,7 @@ main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header spa
   font-weight: bold;
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body {
-  height: 750px;
+  height: auto;
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body img {
   width: 100%;
@@ -280,39 +277,23 @@ main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body img {
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito {
   background-color: #d7d6d6;
   border-radius: 5px;
-  height: 350px;
-}
-main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul {
-  list-style: none;
-  margin-left: -20px;
-}
-main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul li {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul li span {
-  float: right;
-  margin-right: 10px;
-}
-main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body #datosCircuito ul hr {
-  margin-top: -5px;
-  margin-bottom: -5px;
+  height: auto;
 }
 main #siguienteGP .row #cuentaAtrasYelegir {
   width: 25%;
-  height: 200px;
+  height: auto;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section {
-  width: 50%;
-  height: 100px;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section h2 {
   position: relative;
-  width: 4em;
-  height: 80px;
+  width: auto;
+  height: auto;
   background-color: #363333;
   border-radius: 10px;
   top: 15%;
@@ -379,32 +360,49 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
 }
 
 footer {
-  position: fixed; /* Cambiamos a posición fija */
+  position: fixed; /* Mantener posición fija */
   bottom: 0;
   width: 100%;
-  height: 80px;
   background-color: hsl(240, 18%, 10%);
   z-index: 9999; /* Aseguramos que esté encima del contenido */
+  padding: 10px 0; /* Añadimos padding para mejor espaciado */
+  text-align: center; /* Centrar el texto y los elementos */
 }
 footer hr {
   border-top: 3px solid red;
+  margin: 10px 0;
 }
 footer .row {
-  margin-bottom: 30px;
+  margin: 0; /* Eliminar margen inferior */
+  align-items: center; /* Alinear elementos verticalmente al centro */
+}
+footer .row #logoFooter1 {
+  text-align: center; /* Centrar el logo */
+  margin-bottom: 10px; /* Espaciado inferior en móviles */
 }
 footer .row #logoFooter1 #logoFooter2 {
   width: 90px;
-  height: 20px;
-  bottom: 0;
+  height: auto; /* Mantener proporción del logo */
 }
 footer .row #parrFooter {
   color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Espaciado inferior en móviles */
 }
 footer .row .col-md #iconos {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Cambiar a center para móviles */
+  gap: 10px; /* Añadir espacio entre los iconos */
+}
+footer .row .col-md #iconos a {
+  display: flex;
+  align-items: center;
+}
+footer .row .col-md #iconos a svg {
+  width: 50px; /* Ajustar tamaño de los iconos */
+  height: auto;
 }
 
 #userIcon {
@@ -417,6 +415,182 @@ footer .row .col-md #iconos {
   display: none;
 }
 
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  main {
+    height: 80em; /* Más espacio para el footer en móviles */
+  }
+  footer {
+    position: sticky; /* Cambiar a relative en móviles */
+    text-align: center;
+  }
+  footer .row {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    text-align: center;
+  }
+  footer .row #logoFooter1,
+  footer .row #parrFooter,
+  footer .row .col-md {
+    margin-bottom: 15px; /* Añadir espaciado inferior */
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  main #siguienteGP {
+    width: 100%;
+  }
+  main #siguienteGP .row #infoPais {
+    width: 100%;
+  }
+  main #siguienteGP .row #infoPais section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  main #siguienteGP .row #infoPais section h1 {
+    margin-left: 1em;
+  }
+  main #siguienteGP .row #infoPais section p {
+    margin-left: 5em;
+  }
+  main #siguienteGP .row #infoPais section button #circuito {
+    width: 40%;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir {
+    margin-top: 10px;
+    position: relative; /* Añadir posición relativa */
+    right: 25%;
+    width: 80%;
+    height: auto;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section h2 {
+    padding-bottom: 10px;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador {
+    background-color: #151414;
+    width: 60%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(35, 34, 35, 0.96);
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50%;
+    margin-left: 25em;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
+    border: 2px solid red;
+    background-color: white;
+    color: black;
+  }
+}
+@media (max-width: 576px) {
+  main #siguienteGP {
+    width: 100%;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir {
+    margin-top: 10px;
+    position: relative; /* Añadir posición relativa */
+    right: 25%;
+    width: 80%;
+    height: auto;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section h2 {
+    width: auto;
+    height: auto;
+    background-color: #363333;
+    border-radius: 10px;
+    padding-bottom: 10px;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section h2 span {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-top: 8px;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador {
+    background-color: #151414;
+    width: 120%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(35, 34, 35, 0.96);
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
+    margin-left: 8.5em;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+  }
+  main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
+    border: 2px solid red;
+    background-color: white;
+    color: black;
+  }
+}
 header {
   background-color: red;
   height: 7em;
