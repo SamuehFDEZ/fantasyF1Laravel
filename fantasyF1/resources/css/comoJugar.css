@@ -527,6 +527,9 @@ footer .row .col-md #iconos a svg {
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
+  main {
+    height: 75em;
+  }
   main #siguienteGP {
     width: 100%;
   }

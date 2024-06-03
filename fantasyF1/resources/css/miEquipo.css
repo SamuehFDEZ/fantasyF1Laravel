@@ -527,6 +527,9 @@ footer .row .col-md #iconos a svg {
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
+  main {
+    height: 75em;
+  }
   main #siguienteGP {
     width: 100%;
   }
@@ -1021,6 +1024,18 @@ header .buttonHeaderSub:hover {
   font-size: 30px;
 }
 
+@media (max-width: 576px) {
+  #eleccionDeEquipo #equipo #costesYContinuar section #formGuardarEquipo button {
+    margin-top: 10px;
+    width: 50%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar hr {
+    width: 100%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .piloto {
+    width: 100%;
+  }
+}
 a {
   color: inherit;
   text-decoration: none;

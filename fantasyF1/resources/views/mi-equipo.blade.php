@@ -95,6 +95,9 @@
                           action="{{ route('actualizarPilotosYConstructores', ['userID' => session('idDeUsuario')]) }}"
                           method="POST" data-csrf-token="{{ csrf_token() }}">
                         @csrf
+                        <div class="d-md-none"> <!-- Se muestra solo en dispositivos móviles -->
+                            <br> <!-- Salto de línea solo para móviles -->
+                        </div>
                         <button type="button" name="guardarEquipo"
                                 id="guardarEquipo">@lang('messages.saveTeam')</button>
                     </form>

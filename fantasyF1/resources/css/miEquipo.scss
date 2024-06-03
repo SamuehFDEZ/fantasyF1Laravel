@@ -2,6 +2,7 @@
 @import "header";
 @import "variables";
 @import "font";
+
 .modal-header {
     h4 {
         font-family: F1, serif;
@@ -379,6 +380,31 @@
                     display: none;
                     text-align: center;
                     font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    #eleccionDeEquipo {
+        #equipo {
+            #costesYContinuar {
+                section {
+                    #formGuardarEquipo {
+                        button {
+                            margin-top: 10px;
+                            width: 50%;
+                        }
+                    }
+                }
+                hr{
+                    width: 100%;
+                }
+                section{
+                    .piloto{
+                        width: 100%;
+                    }
                 }
             }
         }
