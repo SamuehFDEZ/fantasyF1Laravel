@@ -81,8 +81,6 @@
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <h3>Circuito</h3>
-                                    <hr>
                                     <img src="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}" alt="circuitoMasInfo"
                                          srcset="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}">
                                     <hr>
