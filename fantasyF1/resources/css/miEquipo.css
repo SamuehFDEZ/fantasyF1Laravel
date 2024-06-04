@@ -1024,6 +1024,19 @@ header .buttonHeaderSub:hover {
   font-size: 30px;
 }
 
+@media (min-width: 576px) and (max-width: 992px) {
+  main {
+    height: 82em;
+  }
+  main #eleccionDeEquipo #equipo #costesYContinuar section #formGuardarEquipo button {
+    margin-top: 10px;
+    width: 30%;
+  }
+  main #eleccionDeEquipo #eleccion #cabecera svg {
+    position: absolute;
+    top: 85.5%;
+  }
+}
 @media (max-width: 576px) {
   #eleccionDeEquipo #equipo #costesYContinuar section #formGuardarEquipo button {
     margin-top: 10px;
@@ -1034,6 +1047,73 @@ header .buttonHeaderSub:hover {
   }
   #eleccionDeEquipo #equipo #costesYContinuar section .piloto {
     width: 100%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .piloto .campoPiloto {
+    width: 100%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .piloto .campoPiloto img {
+    width: 140%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .piloto .campoPiloto #mas {
+    width: 75%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .piloto .campoPiloto .anyadirPiloto {
+    width: 160%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .coche {
+    width: 100%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .coche .campoCoche {
+    width: 100%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .coche .campoCoche img {
+    width: 100%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .coche .campoCoche #mas {
+    width: 35%;
+  }
+  #eleccionDeEquipo #equipo #costesYContinuar section .coche .campoCoche .anyadirCoche {
+    width: 110%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDePilotos #ordenarPor {
+    height: 2em;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDePilotos #ordenarPor #ordenarPorPuntos {
+    position: absolute;
+    left: 40%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDePilotos #ordenarPor #ordenarPorValor {
+    position: absolute;
+    left: 75%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul {
+    padding: 0;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li img {
+    width: 17%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li .pilotoElegir {
+    width: 20%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC {
+    height: 2em;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC #ordenarPorPuntosC {
+    position: relative;
+    left: 10%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC #ordenarPorValorC {
+    position: absolute;
+    left: 70%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul {
+    padding: 0;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li img {
+    width: 25%;
+  }
+  #eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li .cocheElegir {
+    width: 20%;
   }
 }
 a {

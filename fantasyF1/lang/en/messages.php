@@ -66,7 +66,7 @@ return [
     'addConst' => 'Add Constructor',
     'constructors' => 'Constructor',
     'orderBy' => 'Sort By:',
-    'marketValue' => 'Market Value',
+    'marketValue' => 'Value',
     'notFound' => "Could'nt find any driver",
     'find' => 'Find',
     'round' => 'Round',

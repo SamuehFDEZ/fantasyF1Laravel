@@ -66,7 +66,7 @@ return [
     'addConst' => 'Añadir Constructor',
     'constructors' => 'Constructores',
     'orderBy' => 'Ordenar Por:',
-    'marketValue' => 'Valor de mercado',
+    'marketValue' => 'Valor',
     'notFound' => 'No se ha encontrado ningún piloto',
     'find' => 'Buscar',
      'round' => 'Ronda',

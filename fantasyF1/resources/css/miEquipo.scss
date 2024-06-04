@@ -386,6 +386,38 @@
     }
 }
 
+@media (min-width: 576px) and (max-width: 992px) {
+    main {
+        height: 82em;
+
+        #eleccionDeEquipo {
+            #equipo {
+                #costesYContinuar {
+                    section {
+                        #formGuardarEquipo {
+                            button {
+                                margin-top: 10px;
+                                width: 30%;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+            #eleccion {
+                #cabecera {
+                    svg {
+                        position: absolute;
+                        top: 85.5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 576px) {
     #eleccionDeEquipo {
         #equipo {
@@ -398,12 +430,118 @@
                         }
                     }
                 }
-                hr{
+
+                hr {
                     width: 100%;
                 }
-                section{
-                    .piloto{
+
+                section {
+                    .piloto {
                         width: 100%;
+
+                        .campoPiloto {
+                            width: 100%;
+
+                            img {
+                                width: 140%;
+                            }
+
+                            #mas {
+                                width: 75%;
+                            }
+
+                            .anyadirPiloto {
+                                width: 160%;
+                            }
+                        }
+                    }
+                }
+
+                section {
+                    .coche {
+                        width: 100%;
+
+                        .campoCoche {
+                            width: 100%;
+
+                            img {
+                                width: 100%;
+                            }
+
+                            #mas {
+                                width: 35%;
+                            }
+
+                            .anyadirCoche {
+                                width: 110%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #eleccion {
+            #cuerpoDePilotos {
+                #ordenarPor {
+                    height: 2em;
+
+                    #ordenarPorPuntos {
+                        position: absolute;
+                        left: 40%;
+                    }
+
+                    #ordenarPorValor {
+                        position: absolute;
+                        left: 75%;
+                    }
+                }
+
+                #listaDePilotos {
+                    ul {
+                        padding: 0;
+
+                        li {
+                            img {
+                                width: 17%;
+                            }
+
+                            .pilotoElegir {
+                                width: 20%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #cuerpoDeCoches {
+                #ordenarPorC {
+                    height: 2em;
+
+                    #ordenarPorPuntosC {
+                        position: relative;
+                        left: 10%;
+                    }
+
+                    #ordenarPorValorC {
+                        position: absolute;
+                        left: 70%;
+                    }
+                }
+
+                #listaDeCoches {
+                    ul {
+                        padding: 0;
+
+                        li {
+                            img {
+                                width: 25%;
+                            }
+
+                            .cocheElegir {
+                                width: 20%;
+                            }
+                        }
                     }
                 }
             }

@@ -113,14 +113,18 @@
                     @endif
                 </section>
                 <hr>
-                <section class="row">
-                    <div class="piloto col-md col-sm col text-center">
-                        <div class="campoPiloto" data-num-piloto="1">
-                            <p id="mas">&plus;</p>
-                            <p class="anyadirPiloto">@lang('messages.addDriver')</p>
+                <section class="row w-100">
+                    <div
+                        class="col-md-4 col-sm col-3 text-center offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-0">
+                        <div class="piloto col-md-12 col-sm col text-center">
+                            <div class="campoPiloto" data-num-piloto="1">
+                                <p id="mas">&plus;</p>
+                                <p class="anyadirPiloto">@lang('messages.addDriver')</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm col text-center">
+                    <div
+                        class="col-md-4 col-sm col-3 text-center offset-1 offset-sm-0 offset-md-4 offset-lg-0 offset-xl-0">
                         <div class="piloto col-md col-sm col text-center">
                             <div class="campoPiloto" data-num-piloto="2">
                                 <p id="mas">&plus;</p>
@@ -128,7 +132,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm col text-center">
+                    <div
+                        class="col-md-4 col-sm col-3 text-center offset-1 offset-md-0 offset-sm-0 offset-lg-0 offset-xl-0">
                         <div class="piloto col-md col-sm col text-center">
                             <div class="campoPiloto" data-num-piloto="3">
                                 <p id="mas">&plus;</p>
@@ -136,7 +141,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm col text-center">
+                    <div
+                        class="col-md-4 col-sm col-3 text-center offset-1 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-0">
                         <div class="piloto col-md col-sm col text-center">
                             <div class="campoPiloto" data-num-piloto="4">
                                 <p id="mas">&plus;</p>
@@ -144,7 +150,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm col text-center">
+                    <div
+                        class="col-md-4 col-sm col-3 text-center offset-2 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-0">
                         <div class="piloto col-md col-sm col text-center">
                             <div class="campoPiloto" data-num-piloto="4">
                                 <p id="mas">&plus;</p>
@@ -174,6 +181,7 @@
                 </section>
             </div>
         </div>
+        <hr class="mt-3 d-block d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none">
         <div id="eleccion" class="col-xl col-md col-sm col">
             <div id="cabecera">
                 <ul>
@@ -186,7 +194,9 @@
                 </ul>
                 <hr>
                 <input type="search" name="filtrar" id="filtrar" placeholder="{{__('messages.find')}}">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50"
+                <svg class="d-none d-sm-block d-md-none d-lg-block d-xl-block d-xxl-block"
+                     xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                     viewBox="0 0 50 50"
                      style="fill:#FA5252;">
                     <path
                         d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
