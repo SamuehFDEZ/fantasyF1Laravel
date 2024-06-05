@@ -13,7 +13,7 @@ return [
     'TeamLocked' => 'Team locks in',
     'days' => 'Days',
     'hours' => 'Hours',
-    'seconds' => 'Seconds',
+    'minutes' => 'Minutes',
     'pickTeam' => 'Pick your team',
     'subscribe' => 'Subscribe',
     'subscribeUPPER' => 'SUBSCRIBE',

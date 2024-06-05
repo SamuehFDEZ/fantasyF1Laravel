@@ -59,18 +59,14 @@
                         <div id="constructores">
                             <span>@lang('messages.teams')</span>
                         </div>
-                        <div id="puntos">
+                        <div id="puntos" class="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
                             <span>@lang('messages.points')</span>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
 </main>
 
 @include('partials/footer')

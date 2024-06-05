@@ -13,7 +13,7 @@ return [
     'TeamLocked' => 'Bloqueo de equipo',
     'days' => 'Días',
     'hours' => 'Horas',
-    'seconds' => 'Segundos',
+    'minutes' => 'Minutos',
     'pickTeam' => 'Escoge tu equipo',
     'subscribe' => 'Suscríbete',
     'subscribeUPPER' => 'SUSCRÍBETE',

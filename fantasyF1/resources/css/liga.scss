@@ -9,8 +9,8 @@
             #vistaDeJugadores {
                 position: relative;
                 width: 100%;
-                height: auto; // Usamos calc para sumar 200px a la altura automática
-                padding-bottom: 100px; // Añadimos padding para extender la altura visual
+                height: auto;
+                padding-bottom: 100px;
 
                 font-family: F1, serif;
 
@@ -22,28 +22,26 @@
                     border-bottom: 1px solid black;
                     margin: 10px 10px 10px 10px;
 
-                    #jugador {
+                    #jugador, #pilotos, #constructores, #puntos {
                         position: relative;
+                    }
+
+                    #jugador {
                         right: 15%;
                     }
 
                     #pilotos {
-                        position: relative;
                         right: 1%;
                     }
 
                     #constructores {
-                        position: relative;
-                        left: 20%;
+                        left: 15%;
                     }
 
                     #puntos {
-                        position: relative;
-                        left: 13%;
+                        left: 8%;
                     }
-
                 }
-
 
                 .usuario-container {
                     display: flex;
@@ -51,6 +49,7 @@
                     width: 100%;
                     margin-top: 20px;
                     margin-bottom: 20px;
+                    border-bottom: 1px solid black;
 
                     .jugador-nombre {
                         width: 10%;
@@ -61,22 +60,73 @@
                     .jugador-elementos {
                         width: 80%;
                         display: flex;
-                        align-items: center; /* Centramos verticalmente */
-                        flex-wrap: wrap; /* Permitimos que los elementos se envuelvan en varias líneas */
-                        justify-content: space-between;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
 
                         .elemento-img {
-                            width: 7%; /* Modificamos el tamaño de las imágenes */
+                            width: 7%;
                             background-color: #f1f0ec;
                             border-radius: 5px;
                         }
                     }
 
                     .jugador-puntos {
-                        position: relative;
                         display: flex;
                         align-items: center;
-                        left: 5%;
+                        left: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries para tabletas y móviles */
+@media (max-width: 768px) {
+    .container-fluid {
+        .row {
+            .columna {
+                #vistaDeJugadores {
+                    #labels {
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        #jugador, #pilotos, #constructores, #puntos {
+                            position: static;
+                            margin-bottom: 10px;
+                        }
+
+                        #constructores {
+                            position: relative;
+                            left: -7%;
+                        }
+                    }
+
+                    .usuario-container {
+                        flex-direction: column;
+                        align-items: center;
+                        border-bottom: 1px solid black;
+
+                        .jugador-nombre {
+                            width: 100%;
+                            text-align: center;
+                        }
+
+                        .jugador-puntos {
+                            width: 100%;
+                            text-align: center;
+                        }
+
+                        .jugador-elementos {
+                            width: 100%;
+                            justify-content: space-between;
+                            margin: 20px 0 20px 0;
+
+                            .elemento-img {
+                                width: 12%;
+                            }
+                        }
                     }
                 }
             }

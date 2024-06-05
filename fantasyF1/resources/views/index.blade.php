@@ -109,7 +109,7 @@
                             <script>
                                 const Days = "@lang('messages.days')";
                                 const Hours = "@lang('messages.hours')";
-                                const Seconds = "@lang('messages.seconds')";
+                                const Minutes = "@lang('messages.minutes')";
                             </script>
                         </div>
                     </section>

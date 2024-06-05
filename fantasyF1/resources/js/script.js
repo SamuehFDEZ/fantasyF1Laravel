@@ -40,7 +40,7 @@ function cargarDatosCircuito(info) {
 }
 
 // Establecer la fecha del evento
-const fechaEvento = new Date('2024-05-18T16:00:00');
+const fechaEvento = new Date('2024-06-05T16:00:00');
 
 function actualizarContador() {
     const ahora = new Date();
@@ -57,7 +57,7 @@ function actualizarContador() {
         <ul>
             <li>${dias} <span>${Days}</span></li>
             <li>${horas} <span>${Hours}</span></li>
-            <li>${minutos} <span>${Seconds}</span></li>
+            <li>${minutos} <span>${Minutes}</span></li>
         </ul>
   `;
 
