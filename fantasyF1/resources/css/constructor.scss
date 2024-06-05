@@ -112,3 +112,96 @@
         }
     }
 }
+
+
+@media (max-width: 576px) {
+    main {
+        height: 230em;
+
+        #constructores {
+            margin-left: 0;
+            margin-right: 0;
+
+            .row {
+                width: 145%;
+
+                .coche {
+                    #infoEquipo {
+                        .nombre {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .pilotosEnEq {
+                        img {
+                            display: none;
+                        }
+                    }
+
+                    .imgCoche {
+                        img {
+                            position: relative;
+                            right: 31%;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    main {
+
+        #constructores {
+            margin-left: 0;
+            margin-right: 0;
+
+            .row {
+                width: 150%;
+
+                .coche {
+                    #infoEquipo {
+                        .nombre {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .pilotosEnEq {
+                        .piloto {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .imgCoche {
+                        img {
+                            width: 110%;
+                            position: relative;
+                            right: 15%;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1450px) {
+    main {
+        #constructores {
+            .row {
+                .coche {
+                    .imgCoche {
+                        img {
+                            position: relative;
+                            right: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
