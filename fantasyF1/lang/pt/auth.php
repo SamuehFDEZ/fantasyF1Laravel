@@ -13,9 +13,11 @@ return [
     |
     */
 
-    'failed' => 'Credentials do not match our records',
-    'failedDelete' => 'Fail at deleting user',
-    'successDelete' => 'User deleted successfully',
-    'success' => 'User created successfully',
+    'failed' => '验证失败',
+    'failedDelete' => '删除用户失败',
+    'success' => '用户创建成功',
+    'successDelete' => '用户删除成功',
+    'notFound' => '未找到要删除的用户',
+
 
 ];

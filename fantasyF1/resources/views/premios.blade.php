@@ -49,19 +49,19 @@
         <h2>@lang('messages.prizes')</h2>
         <p>@lang('messages.prizesText')</p>
         <div id="premiosPodio" class="row">
-            <div class="bloquePremio col-md">
+            <div class="bloquePremio col col-sm col-md col-lg col-xl col-xxl">
                 <h3 class="primerPremio">1<sup>@lang('messages.firstPrize')</sup> @lang('messages.prize')</h3>
                 <img src="{{asset('img/p5MasF1.webp')}}" class="imgPrimer" alt="primerPremio"
                      srcset="{{asset('img/p5MasF1.webp')}}">
                 <p>Pack PlayStation 5 + Formula 1 2023 </p>
             </div>
-            <div class="bloquePremio col-md">
+            <div class="bloquePremio col col-sm col-md col-lg col-xl col-xxl">
                 <h3 class="segundoPremio">2<sup>@lang('messages.secPrize')</sup> @lang('messages.prize')</h3>
                 <img src="{{asset('img/f123Juego.avif')}}" class="imgSec" alt="segundoPremio"
                      srcset="{{asset('img/f123Juego.avif')}}">
                 <p>Formula 1 2023</p>
             </div>
-            <div class="bloquePremio col-md">
+            <div class="bloquePremio col col-sm col-md col-lg col-xl col-xxl">
                 <h3 class="tercerPremio">3<sup>@lang('messages.thiPrize')</sup> @lang('messages.prize')</h3>
                 <img src="{{asset('img/premio3.jpg')}}" class="imgTerc" alt="tercerPremio"
                      srcset="{{asset('img/premio3.jpg')}}">

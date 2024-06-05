@@ -45,7 +45,7 @@
         </div>
     </section>
     <div id="constructores" class="container">
-        <h1>@lang('2024 F1 TEAMS')</h1>
+        <h1>@lang('messages.F1Teams')</h1>
         @include('partials/coches')
     </div>
 

@@ -13,9 +13,11 @@ return [
     |
     */
 
-    'failed' => 'Credentials do not match our records',
-    'failedDelete' => 'Fail at deleting user',
-    'successDelete' => 'User deleted successfully',
-    'success' => 'User created successfully',
+    'failed' => 'Falsche Anmeldedaten',
+    'failedDelete' => 'Fehler beim Löschen des Benutzers',
+    'success' => 'Benutzer erfolgreich erstellt',
+    'successDelete' => 'Benutzer erfolgreich gelöscht',
+    'notFound' => 'Zu löschender Benutzer nicht gefunden',
+
 
 ];

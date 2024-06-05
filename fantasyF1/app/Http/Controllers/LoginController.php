@@ -40,7 +40,8 @@ class LoginController extends Controller
         if (!$usuario) {
             // Si el usuario no existe, redirecciona con un mensaje de error
             throw ValidationException::withMessages([
-                'loginError' => 'El usuario no existe'
+                'loginError' => __('auth.failed')
+
             ]);
         }
 
@@ -48,7 +49,7 @@ class LoginController extends Controller
         if (!Hash::check($credentials['contrasenya'], $usuario->contrasenya)) {
             // Si la autenticación falla, redirecciona con un mensaje de error
             throw ValidationException::withMessages([
-                'loginError' => 'Credenciales incorrectas'
+                'loginError' => __('auth.failed')
             ]);
         }
         session(['nombreDeUsuario' => $usuario->nombre]);
@@ -83,12 +84,12 @@ class LoginController extends Controller
             $user = Usuario::findOrFail($userID);
             if ($user) {
                 $user->delete(); // Eliminar el usuario
-                return back()->with('mensaje', 'Usuario eliminado correctamente');
+                return back()->with('mensaje',  __('auth.successDelete'));
             } else {
-                return back()->with('mensaje', 'No se ha encontrado el usuario a eliminar');
+                return back()->with('mensaje',   __('auth.notFound'));
             }
         } catch (\Exception $e) {
-            return back()->with('mensaje', 'Error al eliminar el usuario');
+            return back()->with('mensaje',  __('auth.failedDelete'));
         }
     }
 

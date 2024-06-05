@@ -34,7 +34,7 @@ class RegisterController extends Controller
             'remember_token' => Str::random(60), // Generar el remember_token aquí
         ]);
 
-        return back()->with('mensaje', 'Usuario creado correctamente');
+        return back()->with('mensaje', __('auth.success'));
     }
 
     public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
@@ -44,12 +44,12 @@ class RegisterController extends Controller
             $user = Usuario::findOrFail($userID); // Obtener el usuario utilizando el ID
             if ($user) {
                 $user->delete(); // Eliminar el usuario
-                return back()->with('mensaje', 'Usuario eliminado correctamente');
+                return back()->with('mensaje', __('auth.successDelete'));
             } else {
-                return back()->with('mensaje', 'No se ha encontrado el usuario a eliminar');
+                return back()->with('mensaje', __('auth.notFound'));
             }
         } catch (\Exception $e) {
-            return back()->with('mensaje', 'Error al eliminar el usuario');
+            return back()->with('mensaje', __('auth.failedDelete'));
         }
     }
 

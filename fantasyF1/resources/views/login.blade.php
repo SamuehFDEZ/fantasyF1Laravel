@@ -75,7 +75,7 @@
             @endif
             @if(session('mensaje'))
                 <div class="mb-3">
-                    <p class="text-success">{{ session('mensaje') }}</p>
+                    <p class="text-success">{{ session('locale') ? __('auth.failed') : __('auth.success')  }}</p>
                 </div>
             @endif
             <div class="mb-3">
