@@ -84,6 +84,23 @@ return [
     'scoreCirc' => 'Streckenrekord',
     'scoreTime' => 'Rundenrekord',
     'scoreYear' => 'Rekordjahr',
-
-
+    'subtitle' => 'Die Regeln sind sehr einfach: GEWINNEN!',
+    'introduction' => 'Fantasy F1 ist ein Strategiespiel, bei dem der Benutzer jederzeit sein Team entscheidet,
+    fünf Fahrer und zwei Konstrukteure warten auf dich. Im Laufe der Saison gibt es eine bestimmte Anzahl von Rennen,
+    bei denen der Benutzer, je nachdem wie gut die Fahrer und Konstrukteure abschneiden, mehr oder weniger Punkte erhält,
+    um am Ende der Saison Weltmeister in Fantasy F1 zu werden und attraktive Preise zu gewinnen.',
+    'body' => 'Es gibt auch Platz für diejenigen,
+    die lieber die Wettbewerbsfähigkeit beiseite lassen und sich auf Unterhaltung konzentrieren.
+    Aus Neugier oder Strategie werden Sie entscheiden, nach Informationen über jeden Fahrer und Konstrukteur zu suchen,
+    um deren Eigenschaften zu sehen, ob sie in Rennen gut sind, ob sie eine Niederlagen- oder Siegesserie haben,
+    ob die Teammoral gut ist, unter anderen Faktoren.',
+    'bodyTwo' => 'Es sollte beachtet werden, dass Fantasy F1 kostenlos ist,
+    obwohl wir den Benutzern eine Abonnementzahlungsmethode anbieten,
+    bei der sie ein einzigartiges Erlebnis genießen können, wie zum Beispiel die Verwendung von Boostern,
+    um mehr Punkte zu verdienen. Wenn du denkst, dieses Spiel ist "Pay to Win", liegst du sehr falsch;
+    wie ich bereits erwähnt habe, ist es ein Strategiespiel, das die analytischen und
+    logischen Denkfähigkeiten des Benutzers entfesselt, unabhängig davon, ob du Booster hast oder nicht.
+    Dein Verstand reicht aus, um dieses Spiel zu gewinnen. Jetzt geh raus und werde der beste Anführer,
+    den ein F1-Team haben kann!',
+    'retQuestion' => 'Akzeptierst du das Rennen?',
 ];

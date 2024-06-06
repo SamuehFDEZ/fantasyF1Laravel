@@ -46,60 +46,18 @@
     </section>
 
     <div id="explicacion">
-        <p>
-            F1 Fantasy es un juego virtual que te permite crear tu propio equipo de Fórmula 1 y competir contra otros
-            aficionados de todo el mundo. La esencia del juego radica en seleccionar cuidadosamente a tus pilotos y
-            equipos para maximizar tus puntos basados en su desempeño en eventos reales de Fórmula 1 a lo largo de la
-            temporada.
-        </p>
-        <p>
-            Aquí hay un desglose paso a paso de cómo empezar a jugar:
-        </p>
-        <p>
-
-            Registro en una plataforma de F1 Fantasy: Lo primero que necesitas hacer es registrarte en una plataforma de
-            F1 Fantasy. Hay varias opciones disponibles, incluyendo las oficiales de la Fórmula 1 y otras plataformas
-            independientes que ofrecen experiencias similares. Una vez que te registres, es posible que necesites crear
-            un perfil y proporcionar alguna información básica.
-        </p>
-        <p>
-
-            Entender las reglas del juego: Antes de comenzar a seleccionar tu equipo, es importante entender las reglas
-            del juego. Esto incluye conocer cómo se puntúa, las restricciones de presupuesto y cualquier otra regla
-            específica del juego. Las reglas pueden variar según la plataforma, así que asegúrate de leerlas
-            detenidamente.
-        </p>
-        <p>
-
-            Seleccionar tu equipo: Una vez que estés familiarizado con las reglas, es hora de seleccionar tu equipo. Por
-            lo general, tienes un presupuesto virtual limitado para gastar en la compra de pilotos y equipos. Cada
-            piloto y equipo tiene un valor asignado en función de su rendimiento esperado y su historial en carreras
-            anteriores. Debes equilibrar cuidadosamente tus selecciones para asegurarte de que se ajusten al presupuesto
-            y maximicen tus posibilidades de éxito.
-        </p>
-        <p>
-
-            Unirse o crear una liga: Después de seleccionar tu equipo, puedes unirte a una liga pública o crear tu
-            propia liga privada. Las ligas pueden tener diferentes configuraciones de reglas y restricciones, como
-            límites de presupuesto, selecciones únicas de pilotos, etc. Unirse a una liga te permite competir contra
-            otros aficionados y comparar tu desempeño con el de ellos.
-        </p>
-        <p>
-
-            Seguir el progreso y ajustar tu equipo: A lo largo de la temporada de Fórmula 1, puedes seguir el progreso
-            de tu equipo y realizar ajustes según sea necesario. Esto puede incluir realizar cambios en tu alineación de
-            pilotos y equipos, realizar transferencias para mejorar tu equipo y ajustar tu estrategia en función de los
-            resultados de las carreras anteriores.
-        </p>
-        <p>
-
-            Competir y disfrutar: Una vez que hayas configurado tu equipo y te hayas unido a una liga, estás listo para
-            competir y disfrutar del emocionante mundo del fantasy de Fórmula 1. Sigue de cerca el progreso de tus
-            selecciones durante las carreras reales y celebra tus éxitos a medida que acumulas puntos y te acercas a la
-            cima de la clasificación.
-        </p>
+        <h1>@lang('messages.howToPlay')</h1>
+        <p></p>
+        @lang('messages.subtitle')
+        <p></p>
+        @lang('messages.introduction')
+        <p></p>
+        @lang('messages.body')
+        <p></p>
+        @lang('messages.bodyTwo')
+        <p></p>
+        @lang('messages.retQuestion')
     </div>
-
 </main>
 
 @include('partials/footer')

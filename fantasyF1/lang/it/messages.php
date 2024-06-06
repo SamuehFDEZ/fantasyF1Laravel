@@ -84,5 +84,22 @@ return [
     'scoreCirc' => 'Record del circuito',
     'scoreTime' => 'Record del giro veloce',
     'scoreYear' => 'Anno del record',
-
+    'subtitle' => 'Le regole sono molto semplici: VINCERE!',
+    'introduction' => "Fantasy F1 è un gioco strategico in cui l'utente deciderà in ogni momento la sua squadra,
+    cinque piloti e due costruttori ti stanno aspettando, durante la stagione ci sarà un numero determinato di gare,
+    nelle quali, a seconda di quanto bene faranno i piloti e di conseguenza i costruttori,
+    l'utente otterrà più o meno punti per diventare campione del mondo in Fantasy F1 e vincere premi succulenti.",
+    'body' => "C'è anche spazio per coloro che preferiscono mettere da parte la competitività e concentrarsi
+    sull'intrattenimento. Per curiosità o strategia,
+    deciderai di cercare informazioni su ciascun pilota e costruttore per vedere le loro caratteristiche,
+    se sono bravi nelle gare, se hanno una serie di sconfitte o vittorie,
+    se il morale della squadra è buono, tra gli altri fattori.",
+    'bodyTwo' => "È importante notare che Fantasy F1 è gratuito,
+    anche se offriamo agli utenti un metodo di pagamento tramite abbonamento in cui possono godere
+    di un'esperienza unica, come l'uso di potenziatori per guadagnare più punti.
+    E se pensi che questo gioco non valga nulla, che sia 'Pay to Win', ti sbagli di grosso; come ho detto prima,
+    è un gioco di strategia che scatena l'analisi e il pensiero logico dell'utente,
+    indipendentemente dal fatto che tu abbia potenziatori o meno. Ti basta la tua mente per vincere questo gioco.
+    Ora esci e diventa il miglior leader che una squadra di F1 possa avere!",
+    'retQuestion' => 'Accetti la gara?',
 ];

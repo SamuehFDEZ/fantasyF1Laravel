@@ -84,3 +84,44 @@ footer {
     bottom: 0;
     left: 0;
 }
+
+@media (max-width: 576px) {
+    main {
+        height: 85em;
+
+        #premios {
+            #premiosPodio {
+                display: flex;
+                flex-direction: column; // Cambiar a columna para centrar verticalmente
+                align-items: center; // Centramos horizontalmente los elementos
+                justify-content: center;
+
+                .bloquePremio {
+                    width: 90%; // 100% puede causar problemas en algunos casos, ajustamos a 90%
+                    max-width: 500px; // Puedes ajustar según tu diseño
+                    margin: 10px 0; // Margen superior e inferior de 10px
+                    padding: 10px; // Opcional: añadir padding para mejor apariencia
+
+                    &:nth-child(3) {
+                        height: 20em; // Mantén la altura específica si es necesario
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 992px) {
+    main {
+        height: 51em;
+
+        #premios {
+            #premiosPodio {
+                .bloquePremio {
+                    width: 32.2%; // 100% puede causar problemas en algunos casos, ajustamos a 90%
+                }
+            }
+        }
+    }
+}

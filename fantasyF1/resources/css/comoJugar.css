@@ -727,9 +727,22 @@ main #explicacion {
   width: 50%;
   margin: 10px auto;
   height: 60em;
-}
-main #explicacion p {
   font-family: F1, serif;
+}
+
+@media (max-width: 576px) {
+  main {
+    height: auto;
+  }
+  footer {
+    position: relative;
+    top: 84em;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  main {
+    height: 100em;
+  }
 }
 
 /*# sourceMappingURL=comoJugar.css.map */

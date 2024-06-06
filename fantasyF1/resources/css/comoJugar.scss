@@ -2,6 +2,7 @@
 @import "header";
 @import "variables";
 @import "font";
+
 main {
     text-align: left;
 
@@ -9,9 +10,25 @@ main {
         width: 50%;
         margin: 10px auto;
         height: 60em;
+        font-family: F1, serif;
+    }
+}
 
-        p {
-            font-family: F1, serif;
-        }
+
+@media (max-width: 576px) {
+    main {
+        height: auto; // Permitir que el contenido determine la altura
+    }
+    footer {
+        position: relative;
+        top: 84em;
+    }
+
+}
+
+
+@media (min-width: 576px) and (max-width: 992px) {
+    main {
+        height: 100em;
     }
 }

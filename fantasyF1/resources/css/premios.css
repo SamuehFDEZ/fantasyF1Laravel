@@ -787,4 +787,33 @@ footer {
   left: 0;
 }
 
+@media (max-width: 576px) {
+  main {
+    height: 85em;
+  }
+  main #premios #premiosPodio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main #premios #premiosPodio .bloquePremio {
+    width: 90%;
+    max-width: 500px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  main #premios #premiosPodio .bloquePremio:nth-child(3) {
+    height: 20em;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  main {
+    height: 51em;
+  }
+  main #premios #premiosPodio .bloquePremio {
+    width: 32.2%;
+  }
+}
+
 /*# sourceMappingURL=premios.css.map */
