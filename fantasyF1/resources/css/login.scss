@@ -3,7 +3,6 @@
 @import "font";
 
 
-
 * {
     font-family: F1;
 }
@@ -79,7 +78,7 @@ main {
             height: 50px;
 
             &::placeholder {
-                font-size: 15px;
+                font-size: 100%;
             }
         }
 
@@ -141,13 +140,13 @@ footer {
         a {
             text-decoration: none;
             color: black;
-            font-size: 13px;
+            font-size: 100%;
             margin: 0 8px;
         }
     }
 
     #parrFooter {
-        font-size: 15px;
+        font-size: 100%;
         float: right;
         margin-right: 10px;
     }

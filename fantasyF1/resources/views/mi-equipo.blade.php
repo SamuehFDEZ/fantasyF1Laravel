@@ -7,7 +7,7 @@
     <meta name="user-id" content="{{ session('idDeUsuario') }}">
     <div id="config"
          data-csrf-token="{{ csrf_token() }}"></div>
-    <title>F1 FANTASY</title>
+    <title>@lang('messages.myTeam')</title>
     <!-- Estilos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Scripts -->

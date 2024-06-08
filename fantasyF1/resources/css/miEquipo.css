@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.bunny.net/css?family=Nunito");
 header {
   background-color: red;
   height: 7em;
@@ -244,14 +243,14 @@ main #siguienteGP .row #infoPais section h1 #bandera {
 }
 main #siguienteGP .row #infoPais section h1 #pais {
   font-family: F1, serif;
-  font-size: 27px;
+  font-size: 70%;
   font-weight: bold;
   margin-left: 10px;
 }
 main #siguienteGP .row #infoPais section p {
   margin-top: 10px;
   font-family: F1, serif;
-  font-size: 15px;
+  font-size: 110%;
 }
 main #siguienteGP .row #infoPais section button {
   width: 50%;
@@ -269,7 +268,7 @@ main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header img
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-header span {
   font-family: F1, serif;
-  font-size: 25px;
+  font-size: 120%;
   font-weight: bold;
 }
 main #siguienteGP .row #infoPais #staticBackdrop .modal-dialog .modal-body {
@@ -322,7 +321,7 @@ main #siguienteGP .row #cuentaAtrasYelegir section h2 {
   padding-bottom: 10px;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section h2 span {
-  font-size: 12px;
+  font-size: 40%;
   color: white;
   text-align: center;
   display: block;
@@ -347,14 +346,14 @@ main #siguienteGP .row #cuentaAtrasYelegir section #contador ul {
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
   color: white;
-  font-size: 24px;
+  font-size: 24%;
   font-weight: bold;
   margin-left: 5px;
   margin-right: 5px;
 }
 main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
   color: white;
-  font-size: 16px;
+  font-size: 16%;
   font-weight: bold;
 }
 main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
@@ -397,7 +396,7 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
     padding-bottom: 10px;
   }
   main #siguienteGP .row #cuentaAtrasYelegir section h2 span {
-    font-size: 12px;
+    font-size: 50%;
     color: white;
     text-align: center;
     display: block;
@@ -422,14 +421,14 @@ main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
   }
   main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
     color: white;
-    font-size: 24px;
+    font-size: 160%;
     font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
   }
   main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
     color: white;
-    font-size: 16px;
+    font-size: 60%;
     font-weight: bold;
   }
   main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
@@ -585,14 +584,14 @@ footer .row .col-md #iconos a svg {
   }
   main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
     color: white;
-    font-size: 24px;
+    font-size: 160%;
     font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
   }
   main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
     color: white;
-    font-size: 16px;
+    font-size: 60%;
     font-weight: bold;
   }
   main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
@@ -629,7 +628,7 @@ footer .row .col-md #iconos a svg {
     padding-bottom: 10px;
   }
   main #siguienteGP .row #cuentaAtrasYelegir section h2 span {
-    font-size: 12px;
+    font-size: 50%;
     color: white;
     text-align: center;
     display: block;
@@ -660,14 +659,14 @@ footer .row .col-md #iconos a svg {
   }
   main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li {
     color: white;
-    font-size: 24px;
+    font-size: 160%;
     font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
   }
   main #siguienteGP .row #cuentaAtrasYelegir section #contador ul li span {
     color: white;
-    font-size: 16px;
+    font-size: 60%;
     font-weight: bold;
   }
   main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
@@ -780,7 +779,7 @@ header .buttonHeaderSub:hover {
   height: auto;
   border-radius: 5px;
   bottom: 2em;
-  font-size: 15px;
+  font-size: 100%;
 }
 #eleccionDeEquipo #equipo #costesYContinuar section #guardarEquipo:hover {
   color: black;
@@ -807,7 +806,7 @@ header .buttonHeaderSub:hover {
   color: white;
   margin-top: 10px;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 175%;
   cursor: pointer;
   position: relative;
   left: 42%;
@@ -834,7 +833,7 @@ header .buttonHeaderSub:hover {
   color: white;
   margin-top: 10px;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 175%;
   cursor: pointer;
   position: relative;
   left: 42%;
@@ -870,7 +869,7 @@ header .buttonHeaderSub:hover {
 #eleccionDeEquipo #eleccion #cabecera ul li a {
   position: relative;
   text-decoration: none; /* Quita el subrayado del enlace */
-  font-size: 1.4em; /* Aumenta el tamaño de la letra */
+  font-size: 150%; /* Aumenta el tamaño de la letra */
   font-weight: bold; /* Añade peso a la letra */
   margin: 20px 10px; /* Añade margen horizontal para separar los elementos */
   cursor: pointer;
@@ -944,7 +943,7 @@ header .buttonHeaderSub:hover {
 #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos ul li button {
   width: 9%;
   height: 45px;
-  font-size: 22px;
+  font-size: 150%;
   border-radius: 5px;
   background-color: #1e1d1d;
   border: 1px solid white;
@@ -959,7 +958,7 @@ header .buttonHeaderSub:hover {
 #eleccionDeEquipo #eleccion #cuerpoDePilotos #listaDePilotos #mensajeNoEncontrado {
   display: none;
   text-align: center;
-  font-size: 30px;
+  font-size: 220%;
 }
 #eleccionDeEquipo #eleccion #cuerpoDeCoches #ordenarPorC {
   background-color: #d9d9d9;
@@ -1006,7 +1005,7 @@ header .buttonHeaderSub:hover {
 #eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches ul li button {
   width: 9%;
   height: 45px;
-  font-size: 22px;
+  font-size: 175%;
   border-radius: 5px;
   background-color: #1e1d1d;
   border: 1px solid white;
@@ -1021,7 +1020,7 @@ header .buttonHeaderSub:hover {
 #eleccionDeEquipo #eleccion #cuerpoDeCoches #listaDeCoches #mensajeNoEncontradoC {
   display: none;
   text-align: center;
-  font-size: 30px;
+  font-size: 220%;
 }
 
 @media (min-width: 576px) and (max-width: 992px) {

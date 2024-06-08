@@ -39,13 +39,13 @@
 
                 #num {
                     float: left;
-                    font-size: 40px;
+                    font-size: 250%;
                     font-weight: bolder;
                 }
 
                 #puntos {
                     float: right;
-                    font-size: 30px;
+                    font-size: 200%;
 
                 }
             }
@@ -64,7 +64,7 @@
 
                 .nombre {
                     text-align: left;
-                    font-size: 30px;
+                    font-size: 200%;
                     margin-left: 10px; /* Margen añadido para separar el nombre de la barra */
                 }
 
@@ -128,7 +128,7 @@
                 .coche {
                     #infoEquipo {
                         .nombre {
-                            font-size: 20px;
+                            font-size: 200%;
                         }
                     }
 
@@ -155,8 +155,8 @@
     main {
 
         #constructores {
-            margin-left: 0;
-            margin-right: 0;
+            margin-left: 10px;
+            margin-right: 10px;
 
             .row {
                 width: 150%;
@@ -164,13 +164,13 @@
                 .coche {
                     #infoEquipo {
                         .nombre {
-                            font-size: 20px;
+                            font-size: 200%;
                         }
                     }
 
                     .pilotosEnEq {
                         .piloto {
-                            font-size: 12px;
+                            font-size: 100%;
                         }
                     }
 

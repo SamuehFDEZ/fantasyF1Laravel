@@ -69,7 +69,7 @@ main #formLog input[type=text], main #formLog input[type=password] {
   height: 50px;
 }
 main #formLog input[type=text]::placeholder, main #formLog input[type=password]::placeholder {
-  font-size: 15px;
+  font-size: 100%;
 }
 main #formLog .field-icon {
   cursor: pointer;
@@ -120,11 +120,11 @@ footer #navFooter #logoFooter {
 footer #navFooter a {
   text-decoration: none;
   color: black;
-  font-size: 13px;
+  font-size: 100%;
   margin: 0 8px;
 }
 footer #parrFooter {
-  font-size: 15px;
+  font-size: 100%;
   float: right;
   margin-right: 10px;
 }
@@ -229,7 +229,7 @@ main #formReg input[type=text], main #formReg input[type=email], main #formReg i
   height: 50px;
 }
 main #formReg input[type=text]::placeholder, main #formReg input[type=email]::placeholder, main #formReg input[type=password]::placeholder {
-  font-size: 15px;
+  font-size: 100%;
 }
 main #formReg .field-icon {
   cursor: pointer;
@@ -269,11 +269,11 @@ footer #navFooter #logoFooter {
 footer #navFooter a {
   text-decoration: none;
   color: black;
-  font-size: 13px;
+  font-size: 100%;
   margin: 0 8px;
 }
 footer #parrFooter {
-  font-size: 15px;
+  font-size: 100%;
   float: right;
   margin-right: 10px;
 }

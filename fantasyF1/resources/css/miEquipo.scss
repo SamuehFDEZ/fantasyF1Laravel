@@ -72,7 +72,7 @@
                     height: auto;
                     border-radius: 5px;
                     bottom: 2em;
-                    font-size: 15px;
+                    font-size: 100%;
 
                     &:hover {
                         color: black;
@@ -111,7 +111,7 @@
                         color: white;
                         margin-top: 10px;
                         border-radius: 5px;
-                        font-size: 25px;
+                        font-size: 175%;
                         cursor: pointer;
                         position: relative;
                         left: 42%;
@@ -144,7 +144,7 @@
                         color: white;
                         margin-top: 10px;
                         border-radius: 5px;
-                        font-size: 25px;
+                        font-size: 175%;
                         cursor: pointer;
                         position: relative;
                         left: 42%;
@@ -189,7 +189,7 @@
                     a {
                         position: relative;
                         text-decoration: none; /* Quita el subrayado del enlace */
-                        font-size: 1.4em; /* Aumenta el tamaño de la letra */
+                        font-size: 150%; /* Aumenta el tamaño de la letra */
                         font-weight: bold; /* Añade peso a la letra */
                         margin: 20px 10px; /* Añade margen horizontal para separar los elementos */
                         cursor: pointer;
@@ -281,7 +281,7 @@
                         button {
                             width: 9%;
                             height: 45px;
-                            font-size: 22px;
+                            font-size: 150%;
                             border-radius: 5px;
                             background-color: #1e1d1d;
                             border: 1px solid white;
@@ -301,7 +301,7 @@
                 #mensajeNoEncontrado {
                     display: none;
                     text-align: center;
-                    font-size: 30px;
+                    font-size: 220%;
                 }
             }
         }
@@ -359,7 +359,7 @@
                         button {
                             width: 9%;
                             height: 45px;
-                            font-size: 22px;
+                            font-size: 175%;
                             border-radius: 5px;
                             background-color: #1e1d1d;
                             border: 1px solid white;
@@ -379,7 +379,7 @@
                 #mensajeNoEncontradoC {
                     display: none;
                     text-align: center;
-                    font-size: 30px;
+                    font-size: 220%;
                 }
             }
         }
