@@ -8,6 +8,8 @@ const ordenarPorPuntosC = document.getElementById('ordenarPorPuntosC');
 const ordenarPorValorC = document.getElementById('ordenarPorValorC');
 
 window.onload = async () => {
+    suscribete.addEventListener("click", suscribirse);
+    quitarSubs.addEventListener("click", quitarPanel);
     const botonGuardar = document.getElementById('guardarEquipo');
     botonGuardar.disabled = true;
     progresoDeCartera();
@@ -23,36 +25,52 @@ window.onload = async () => {
     botonGuardar.addEventListener("click", guardarEquipo);
 }
 
+// Asynchronous function to save the user's team
 async function guardarEquipo() {
+    // Gets the token to prevent csrf attack
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // ID of the user in the blade template
     const sesionDeUsuario = document.querySelector('meta[name="user-id"]').getAttribute('content');
+
+    // Gets the drivers selected by the user with the function
     const pilotos = getSelectedPilots();
+
+    // Gets the teams selected by the user with the function
     const constructores = getSelectedConstructors();
 
+    // Creates an object with data that contains the drivers and teams selected
     const data = {
+        // Maps the drivers selected to include only the necessary fields
         pilotos: pilotos.map(piloto => ({
-            nombre_piloto: piloto.nombre_piloto,
-            puntosRealizados: piloto.puntosRealizados
+            nombre_piloto: piloto.nombre_piloto,  // Driver name
+            puntosRealizados: piloto.puntosRealizados  // Driver points
         })),
+        // Same for teams
         constructores: constructores.map(constructor => ({
-            nombre_constructor: constructor.nombre_constructor,
-            puntosRealizados: constructor.puntosRealizados
+            nombre_constructor: constructor.nombre_constructor,  // Team name
+            puntosRealizados: constructor.puntosRealizados  // Team points
         }))
     };
 
     try {
+        // URL of the API with the userID as the parameter
         const url = `http://127.0.0.1:8000/api/actualiza/${sesionDeUsuario}`;
+
+        // fetching url
         await fetch(url, {
-            'method': "POST",
+            'method': "POST",  // method use
             'headers': {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': csrfToken
+                'Content-Type': 'application/json',  // type of content of the request
+                'X-CSRF-TOKEN': csrfToken  // Token CSRF for security
             },
-            'body': JSON.stringify(data)
-        }).then(data => data.json()).then(info => {
-            console.log(info);
-        });
+            'body': JSON.stringify(data)  // request body as JSON
+        }).then(data => data.json())  // Response as JSON
+            .then(info => {
+                console.log(info);  // Prints the information of the API
+            });
     } catch (error) {
+        // logs the errors
         console.error('Error:', error);
     }
 }
@@ -659,6 +677,15 @@ function addClassActive() {
         });
     });
 }
+
+function suscribirse() {
+    panel.classList.remove("oculto");
+}
+
+function quitarPanel() {
+    panel.classList.add("oculto");
+}
+
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 /*FIN FUNCIONES GENERALES*/

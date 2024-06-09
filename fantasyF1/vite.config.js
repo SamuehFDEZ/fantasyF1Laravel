@@ -18,7 +18,8 @@ export default defineConfig({
                 'resources/js/login.js',
                 'resources/js/constructor.js',
                 'resources/js/miEquipo.js',
-                'resources/js/liga.js'
+                'resources/js/liga.js',
+                'resources/js/subscribe.js'
 
             ],
             refresh: true,

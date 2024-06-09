@@ -17,7 +17,7 @@ class UsuarioFactory extends Factory
      */
     public function definition(): array
     {
-        $rememberToken = Str::random(60); // Genera una cadena aleatoria de 60 caracteres
+        $rememberToken = Str::random(60); // Generates a string of 60 characters long
 
         return [
             'nombre' => $this->faker->userName(),

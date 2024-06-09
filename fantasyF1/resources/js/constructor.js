@@ -1,4 +1,6 @@
 window.onload = async () => {
+    suscribete.addEventListener("click", suscribirse);
+    quitarSubs.addEventListener("click", quitarPanel);
     await obtenerConstructores()
 }
 
@@ -144,3 +146,10 @@ async function cargarPuntos(info) {
     });
 }
 
+function suscribirse() {
+    panel.classList.remove("oculto");
+}
+
+function quitarPanel() {
+    panel.classList.add("oculto");
+}

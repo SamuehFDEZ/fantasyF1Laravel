@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\CircuitoController;
+use App\Http\Controllers\ConstructorController;
+use App\Http\Controllers\PilotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,24 +23,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get("/constructor", [ApiController::class, 'constructores'])->name('constructores');
-Route::post("/constructor/{nombre}", [ApiController::class, 'constructoresPorNombre'])->name('constructoresPorNombre');
-Route::get("/constructor/puntos", [ApiController::class, 'constructoresPorPuntos'])->name('constructoresPorPuntos');
-Route::get("/constructor/coches", [ApiController::class, 'constructoresCoches'])->name('constructoresCoches');
-Route::get("/circuitos", [ApiController::class, 'circuitos'])->name('circuitos');
-Route::get("/circuitos/{ronda}", [ApiController::class, 'circuitosPorRonda'])->name('circuitosPorRonda');
-Route::get("/constructor/info", [ApiController::class, 'imgCoches'])->name('imgCoches');
-Route::get("/constructor/logos", [ApiController::class, 'logosCoches'])->name('logosCoches');
-Route::get("/constructor/colores", [ApiController::class, 'coloresCoches'])->name('coloresCoches');
+Route::get("/constructor", [ConstructorController::class, 'constructores'])->name('constructores');
+Route::post("/constructor/{nombre}", [ConstructorController::class, 'constructoresPorNombre'])->name('constructoresPorNombre');
+Route::get("/constructor/puntos", [ConstructorController::class, 'constructoresPorPuntos'])->name('constructoresPorPuntos');
+Route::get("/constructor/coches", [ConstructorController::class, 'constructoresCoches'])->name('constructoresCoches');
+Route::get("/circuitos", [CircuitoController::class, 'circuitos'])->name('circuitos');
+Route::get("/circuitos/{ronda}", [CircuitoController::class, 'circuitosPorRonda'])->name('circuitosPorRonda');
+Route::get("/constructor/info", [ConstructorController::class, 'imgCoches'])->name('imgCoches');
+Route::get("/constructor/logos", [ConstructorController::class, 'logosCoches'])->name('logosCoches');
+Route::get("/constructor/colores", [ConstructorController::class, 'coloresCoches'])->name('coloresCoches');
 
 
-Route::post("/piloto/{equipo}", [ApiController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
-Route::post("/piloto", [ApiController::class, 'pilotos'])->name('pilotos');
-Route::get("/piloto/info", [ApiController::class, 'imgPilotosNombrePuntosYMerc'])->name('imgPilotosNombrePuntosYMerc');
-Route::get("/piloto/imgYNombre", [ApiController::class, 'imgPilotosYNombre'])->name('imgPilotosYNombre');
+Route::post("/piloto/{equipo}", [PilotoController::class, 'pilotosGroupByTeam'])->name('pilotosGroupByTeam');
+Route::post("/piloto", [PilotoController::class, 'pilotos'])->name('pilotos');
+Route::get("/piloto/info", [PilotoController::class, 'imgPilotosNombrePuntosYMerc'])->name('imgPilotosNombrePuntosYMerc');
+Route::get("/piloto/imgYNombre", [PilotoController::class, 'imgPilotosYNombre'])->name('imgPilotosYNombre');
 
 
-Route::get('/obtener-pilotos', [ApiController::class, 'obtenerPilotos'])->name('obtenerPilotos');
-Route::get('/obtener-constructores', [ApiController::class, 'obtenerConstructores'])->name('obtenerConstructores');
+Route::get('/obtener-pilotos', [PilotoController::class, 'obtenerPilotos'])->name('obtenerPilotos');
+Route::get('/obtener-constructores', [ConstructorController::class, 'obtenerConstructores'])->name('obtenerConstructores');
 
 

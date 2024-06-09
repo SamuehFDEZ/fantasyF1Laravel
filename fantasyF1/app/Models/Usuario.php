@@ -14,7 +14,7 @@ class Usuario extends Model
 
 
     protected $table = "usuarios";
-    //necesario especificar la primaryKey para eliminar el usuario
+    //need to specify the name of the table
     protected $primaryKey = 'userID';
 
     /**
@@ -41,7 +41,7 @@ class Usuario extends Model
         'remember_token',
     ];
 
-    //Un usuario tiene muchos pilotos (1:N)
+    //A user has many drivers
     public function piloto(): HasMany
     {
         return $this->hasMany(Piloto::class);

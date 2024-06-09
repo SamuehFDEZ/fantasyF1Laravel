@@ -18,7 +18,7 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"></script>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    <link id="favicon" rel="shortcut icon" href="{{ asset('favicon.png') }}">
     @vite(['resources/css/miEquipo.scss', 'resources/js/miEquipo.js'])
 </head>
 <body>
@@ -57,28 +57,8 @@
 <main>
     @include('partials/panelSubscribe')
 
-    <section id="sectionBann">
-        <div id="banner" class="text-center">
-            <img src=" {{asset('img/hp-masthead-filler-web.svg')}} " id="imgEnBannerIzq" alt=""
-                 srcset=" {{asset('img/hp-masthead-filler-web.svg')}}" class="img-fluid">
-            <img src=" {{asset('img/logoEnBannerOficial.png')}} " id="logoEnBanner" alt="logoBanner"
-                 srcset=" {{asset('img/logoEnBannerOficial.png')}}" class="img-fluid img-logo">
-            <img src=" {{asset('img/hp-masthead-thumb-web.png')}} " id="pilotos" alt=""
-                 srcset=" {{asset('img/hp-masthead-thumb-web.png')}}" class="img-fluid d-none d-lg-block">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div id="containerNav" class="container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        @include('partials/nav')
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </section>
+    @include('partials/banner')
+
 
     <div id="eleccionDeEquipo" class="row-xl row-md row-sm row">
         <div id="equipo" class="col-xl-6 col-md col-sm col">

@@ -58,7 +58,8 @@ Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->nam
 /*el ? significa parametro no obligatorio, si no se pone
 salta un error de missing argument y la pagina no carga correctamente
 la funcionalidad no se pierde en ningun momento*/
-Route::post('/api/actualiza/{userID?}', [ApiController::class, 'actualizarPilotosYConstructores'])->name('actualizarPilotosYConstructores');
+Route::post('/api/actualiza/{userID?}', [ApiController::class, 'actualizarPilotosYConstructores'])
+    ->name('actualizarPilotosYConstructores');
 
 
 Route::get('locale/{lange}', [LangController::class, 'setLang']);

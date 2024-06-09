@@ -1,6 +1,8 @@
 const usuarios = {};
 
 window.onload = async () => {
+    suscribete.addEventListener("click", suscribirse);
+    quitarSubs.addEventListener("click", quitarPanel);
     await cargarInfoPilotos();
     await cargarInfoConstructores();
     // Una vez cargada la información de pilotos y constructores, actualizamos la interfaz de usuario
@@ -101,4 +103,12 @@ function actualizarInterfazDeUsuario() {
 
         container.appendChild(userContainer);
     });
+}
+
+function suscribirse() {
+    panel.classList.remove("oculto");
+}
+
+function quitarPanel() {
+    panel.classList.add("oculto");
 }

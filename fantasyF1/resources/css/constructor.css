@@ -858,5 +858,8 @@ header .buttonHeaderSub:hover {
     right: 10%;
   }
 }
+.oculto {
+  display: none;
+}
 
 /*# sourceMappingURL=constructor.css.map */
