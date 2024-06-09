@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
-    public function actualizarPilotosYConstructores(Request $request, $userID): \Illuminate\Http\RedirectResponse
+    public function actualizarPilotosYConstructores(Request $request, $userID): \Illuminate\Http\JsonResponse
     {
         if ($userID != session('idDeUsuario')) {
             return back()->with('Usuario no autenticado');
@@ -59,6 +59,6 @@ class ApiController extends Controller
             }
         });
 
-        return back()->with(['mensaje' => 'Equipo guardado']);
+        return response()->json([ 'equipo_guardado' => 'Equipo guardado correctamente']);
     }
 }

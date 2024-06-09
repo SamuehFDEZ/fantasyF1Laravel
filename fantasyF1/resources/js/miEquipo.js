@@ -27,6 +27,7 @@ window.onload = async () => {
 
 // Asynchronous function to save the user's team
 async function guardarEquipo() {
+    console.log("pulsado")
     // Gets the token to prevent csrf attack
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -68,6 +69,10 @@ async function guardarEquipo() {
         }).then(data => data.json())  // Response as JSON
             .then(info => {
                 console.log(info);  // Prints the information of the API
+                let par = document.createElement("p");
+                par.classList.add("text-success");
+                par.textContent = "Equipo Guardado";
+                document.querySelector("#costesYContinuar > section").appendChild(par);
             });
     } catch (error) {
         // logs the errors

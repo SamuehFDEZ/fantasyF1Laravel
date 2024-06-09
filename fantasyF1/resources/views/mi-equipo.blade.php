@@ -81,16 +81,6 @@
                         <button type="button" name="guardarEquipo"
                                 id="guardarEquipo">@lang('messages.saveTeam')</button>
                     </form>
-                    @if(isset($_POST['guardarEquipo']))
-                        @if($errors->any())
-                            @foreach($errors->all() as $error)
-                                <p class="text-danger">{{ $error }}</p>
-                            @endforeach
-                        @endif
-                        @if(session('mensaje'))
-                            <p class="text-success">{{ session('mensaje') }}</p>
-                        @endif
-                    @endif
                 </section>
                 <hr>
                 <section class="row w-100">
