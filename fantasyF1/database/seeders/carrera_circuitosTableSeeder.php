@@ -186,8 +186,29 @@ class carrera_circuitosTableSeeder extends Seeder
             ['nombre_piloto' => 'Esteban Ocon', 'ronda' => 8, 'tiempo' => 'DNF', 'posicion' => 17, 'vueltas_hechas' => 0],
             ['nombre_piloto' => 'Sergio Pérez', 'ronda' => 8, 'tiempo' => 'DNF', 'posicion' => 18, 'vueltas_hechas' => 0],
             ['nombre_piloto' => 'Nico Hülkenberg', 'ronda' => 8, 'tiempo' => 'DNF', 'posicion' => 19, 'vueltas_hechas' => 0],
-            ['nombre_piloto' => 'Kevin Magnussen', 'ronda' => 8, 'tiempo' => 'DNF', 'posicion' => 20, 'vueltas_hechas' => 0]
+            ['nombre_piloto' => 'Kevin Magnussen', 'ronda' => 8, 'tiempo' => 'DNF', 'posicion' => 20, 'vueltas_hechas' => 0],
 
+            // Ronda 9
+            ['nombre_piloto' => 'Max Verstappen', 'ronda' => 9, 'tiempo' => '1:45.479', 'posicion' => 1, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Lando Norris ', 'ronda' => 9, 'tiempo' => '+3.879s', 'posicion' => 2, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'George Russell', 'ronda' => 9, 'tiempo' => '+4.317s', 'posicion' => 3, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Lewis Hamilton', 'ronda' => 9, 'tiempo' => '+4.915s', 'posicion' => 4, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Oscar Piastri', 'ronda' => 9, 'tiempo' => '+10.199s', 'posicion' => 5, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Fernando Alonso', 'ronda' => 9, 'tiempo' => '+17.510s', 'posicion' => 6, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Lance Stroll', 'ronda' => 9, 'tiempo' => '+23.625s', 'posicion' => 7, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Daniel Ricciardo ', 'ronda' => 9, 'tiempo' => '+28.672s', 'posicion' => 8, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Pierre Gasly', 'ronda' => 9, 'tiempo' => '+30.021s', 'posicion' => 9, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Esteban Ocon', 'ronda' => 9, 'tiempo' => '+30.313s', 'posicion' => 10, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Nico Hülkenberg', 'ronda' => 9, 'tiempo' => '+30.824s', 'posicion' => 11, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Kevin Magnussen', 'ronda' => 9, 'tiempo' => '+31.253s', 'posicion' => 12, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Valtteri Bottas', 'ronda' => 9, 'tiempo' => '+40.487s', 'posicion' => 13, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Yuki Tsunoda', 'ronda' => 9, 'tiempo' => '+52.694s', 'posicion' => 14, 'vueltas_hechas' => 70],
+            ['nombre_piloto' => 'Zhou Guanyu', 'ronda' => 9, 'tiempo' => '+1 lap', 'posicion' => 15, 'vueltas_hechas' => 69],
+            ['nombre_piloto' => 'Carlos Sainz', 'ronda' => 9, 'tiempo' => 'DNF', 'posicion' => 16, 'vueltas_hechas' => 52],
+            ['nombre_piloto' => 'Alex Albon', 'ronda' => 9, 'tiempo' => 'DNF', 'posicion' => 17, 'vueltas_hechas' => 52],
+            ['nombre_piloto' => 'Sergio Pérez', 'ronda' => 9, 'tiempo' => 'DNF', 'posicion' => 18, 'vueltas_hechas' => 51],
+            ['nombre_piloto' => 'Charles Leclerc', 'ronda' => 9, 'tiempo' => 'DNF', 'posicion' => 19, 'vueltas_hechas' => 40],
+            ['nombre_piloto' => 'Logan Sargeant', 'ronda' => 9, 'tiempo' => 'DNF', 'posicion' => 20, 'vueltas_hechas' => 23]
 
         ];
 

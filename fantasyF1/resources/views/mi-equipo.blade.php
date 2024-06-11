@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="{{session('locale')}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="user-id" content="{{ session('idDeUsuario') }}">
+    <meta name="description" content="User selects the team">
     <div id="config"
          data-csrf-token="{{ csrf_token() }}"></div>
     <title>@lang('messages.myTeam')</title>
@@ -156,10 +157,18 @@
             <div id="cabecera">
                 <ul>
                     <li>
-                        <a id="drivers">@lang('messages.drivers')</a>
+                        <a id="drivers">
+                            <button type="button">
+                                @lang('messages.drivers')
+                            </button>
+                        </a>
                     </li>
                     <li>
-                        <a id="constructors">@lang('messages.constructors')</a>
+                        <a id="constructors">
+                            <button type="button">
+                                @lang('messages.constructors')
+                            </button>
+                        </a>
                     </li>
                 </ul>
                 <hr>

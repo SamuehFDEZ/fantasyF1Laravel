@@ -8,7 +8,7 @@ window.onload = async () => {
 
 // function to get the info from the API endpoint
 async function datosCircuito() {
-    let url = `http://127.0.0.1:8000/api/circuitos/${7}`;
+    let url = `http://127.0.0.1:8000/api/circuitos/${10}`;
 
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarDatosCircuito(info);
@@ -42,7 +42,7 @@ function cargarDatosCircuito(info) {
 }
 
 // Event date
-const fechaEvento = new Date('2024-06-05T16:00:00');
+const fechaEvento = new Date('2024-06-22T16:00:00');
 
 //function to update each second the time remaining to the event date
 function actualizarContador() {

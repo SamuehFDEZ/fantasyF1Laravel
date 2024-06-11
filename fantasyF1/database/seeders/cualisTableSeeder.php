@@ -22,7 +22,9 @@ class cualisTableSeeder extends Seeder
             ['cualID' => 5, 'weather' => 'lluvia intensa', 'fecha'=> '2024-4-19', 'ronda'=> 5],
             ['cualID' => 6, 'weather' => 'soleado', 'fecha'=> '2024-5-3', 'ronda'=> 6],
             ['cualID' => 7, 'weather' => 'soleado', 'fecha'=> '2024-5-17', 'ronda'=> 7],
-            ['cualID' => 8, 'weather' => 'soleado', 'fecha'=> '2024-5-25', 'ronda'=> 8]
+            ['cualID' => 8, 'weather' => 'soleado', 'fecha'=> '2024-5-25', 'ronda'=> 8],
+            ['cualID' => 9, 'weather' => 'lluvia', 'fecha'=> '2024-6-8', 'ronda'=> 9]
+
         ];
 
         foreach ($cualis as $cuali) {

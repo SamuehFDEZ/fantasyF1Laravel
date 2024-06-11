@@ -202,6 +202,15 @@
                             left: 12em;
                             height: 50px;
                         }
+
+                        button {
+                            border: none;
+                            background-color: white;
+
+                            &:hover {
+                                color: red;
+                            }
+                        }
                     }
                 }
             }
@@ -410,7 +419,7 @@
                 #cabecera {
                     svg {
                         position: absolute;
-                        top: 85.5%;
+                        top: 85%;
                     }
                 }
             }

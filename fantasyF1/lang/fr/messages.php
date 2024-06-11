@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'spain' => 'ESPAGNE',
+    'textPrix' => "GRAND PRIX D'ESPAGNE DE FORMULE 1 2024",
     'home' => 'Accueil',
     'myTeam' => 'Mon équipe',
     'league' => 'Ligue',
@@ -104,4 +106,151 @@ return [
     Votre esprit suffit pour gagner ce jeu. Maintenant, sortez et devenez le meilleur leader
     qu'une équipe de F1 puisse avoir !",
     'retQuestion' => 'Acceptez-vous la course?',
+
+    'privacyPolicyBody' => "1. Fantasy F1 s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment
+ Nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez notre application Web Fantasy F1.<br><br>
+En accédant ou en utilisant l'Application, vous acceptez les termes de cette
+ Politique de confidentialité.<br><br>
+ 2. Informations que nous collectons
+ <br><br>
+ Nous pouvons collecter et stocker les informations suivantes vous concernant:
+ <br><br>
+ 2.1 Informations personnelles identifiables (PII):
+ <br><br>
+ nom
+ Adresse de courrier électronique
+ Information de contact
+ <br><br>
+ 2.2 Informations d'utilisation:
+ <br><br>
+Détails de votre activité dans l'Application
+ Utiliser le temps
+ Pages visitées
+ <br><br>
+ 2.3 Informations sur l'appareil:
+ <br><br>
+adresse IP
+ Type d'appareil
+ Navigateur Web utilisé
+ <br><br>
+ 3. Comment nous utilisons vos informations
+ <br><br>
+ Nous utilisons les informations collectées pour :
+ <br><br>
+ Fournir et améliorer les fonctionnalités de l’Application
+ Personnalisez votre expérience utilisateur
+ Envoyer des notifications et des mises à jour importantes
+ Répondez à vos commentaires et questions
+ Analyser l'utilisation et les tendances pour améliorer l'application
+ <br><br>
+ 4. Partagez vos informations
+ <br><br>
+ Nous ne vendons ni ne louons vos informations personnelles à des tiers. Nous pouvons partager vos informations avec :
+ <br><br>
+ Prestataires de services qui nous aident à exploiter l’Application
+ Autorités judiciaires, si la loi l'exige
+<br><br>
+5. Sécurité de vos informations
+<br><br>
+Nous prenons des mesures raisonnables pour protéger vos informations personnelles contre la perte, le vol et une utilisation inappropriée.
+autorisé. Cependant, nous ne pouvons garantir la sécurité absolue des informations transmises à
+ à travers l'Internet.
+ <br><br>
+ 6. Vos droits
+ <br><br>
+ Vous avez le droit de :
+ <br><br>
+ Accéder et mettre à jour vos informations personnelles
+ Demander la suppression de vos informations personnelles
+ Se désinscrire des communications marketing
+ Pour exercer ces droits, contactez-nous à [Adresse email de contact].
+ <br><br>
+ 7. Modifications de cette politique de confidentialité
+ <br><br>
+ Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous vous informerons de tout changement
+ en publiant la nouvelle politique de confidentialité sur cette page et en mettant à jour la Dernière actualisation",
+
+    'subsBody' => "Merci pour votre intérêt à vous abonner à notre service.<br> Vous trouverez ci-dessous des informations importantes sur nos options d'abonnement, les avantages qu'elles offrent et les termes et conditions associés.<br><br>
+                  Options d'abonnement :<br><br>
+                  Plan de base : Accès limité à du contenu exclusif, des newsletters et des promotions spéciales.<br><br>
+                  Plan Premium : Accès complet à tous nos services et contenus exclusifs, sans publicité, et support prioritaire.<br><br>
+                  Termes et conditions :<br><br>
+                  Les abonnements se renouvellent automatiquement à la fin de chaque période de facturation sauf annulation.<br><br>
+                  Vous pouvez annuler votre abonnement à tout moment depuis votre compte. L'annulation sera effective à la fin de la période de facturation en cours.<br><br>
+                  Aucun remboursement n'est effectué pour les périodes déjà facturées.<br><br>
+                  Nous nous réservons le droit de modifier les prix des abonnements. Vous serez informé à l'avance de tout changement de prix et aurez la possibilité d'annuler votre abonnement avant que le changement ne prenne effet.<br><br>
+                  Si vous avez des questions sur nos abonnements, veuillez contacter notre équipe de support.",
+    'usageBody' => "Bienvenue sur notre plateforme. En accédant et en utilisant nos services, vous acceptez de vous conformer aux conditions d'utilisation suivantes. Veuillez les lire attentivement.<br><br>
+                  Utilisation Acceptable:<br><br>
+                  Vous ne devez pas utiliser nos services pour toute activité illégale ou non autorisée.<br><br>
+                  Il est interdit d'utiliser la plateforme pour transmettre tout contenu diffamatoire, offensant ou portant atteinte aux droits de tiers.<br><br>
+                  Propriété Intellectuelle:<br><br>
+                  Tout le contenu, les marques et les matériaux disponibles sur la plateforme sont notre propriété ou celle de nos concédants et sont protégés par les lois sur la propriété intellectuelle.<br><br>
+                  Il est interdit de copier, distribuer ou modifier tout matériel sans notre autorisation écrite expresse.<br><br>
+                  Limitation de Responsabilité:<br><br>
+                  Nous ne serons pas responsables des dommages indirects, accessoires, spéciaux ou consécutifs résultant de l'utilisation ou de l'incapacité d'utiliser nos services.<br><br>
+                  Nous ne garantissons pas que la plateforme sera exempte d'erreurs ou d'interruptions.<br><br>
+                  Modifications des Conditions:<br><br>
+                  Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications seront effectives immédiatement après leur publication sur la plateforme.<br><br>
+                  Il est de votre responsabilité de consulter périodiquement les conditions d'utilisation pour être informé de toute modification.<br><br>
+                  Si vous avez des questions concernant ces conditions d'utilisation, veuillez nous contacter.",
+
+    'f&qBody' => "Foire aux questions (FAQ)
+ <br><br>
+ 1. Comment puis-je créer un compte ?
+ <br><br>
+ Pour créer un compte, cliquez sur le bouton « S'inscrire » dans le coin supérieur droit de la page.
+démarrez et suivez les instructions.
+ <br><br>
+2. Comment puis-je souscrire à votre service ?
+ <br><br>
+Vous pouvez souscrire à notre service en sélectionnant l'une des formules d'abonnement disponibles sur le
+ page d'abonnement et terminer le processus de paiement.
+ <br><br>
+ 3. Comment puis-je annuler mon abonnement ?
+ <br><br>
+ Vous pouvez résilier votre abonnement à tout moment depuis la rubrique « Mon compte ». L'annulation sera
+ en vigueur à la fin de la période de facturation en cours.
+ <br><br>
+4. Quels modes de paiement acceptez-vous ?
+ <br><br>
+Nous acceptons toutes les principales cartes de crédit et de débit, ainsi que les paiements via PayPal et Bizum.
+ <br><br>
+Pour d’autres questions, veuillez contacter notre équipe d’assistance.",
+
+    'prefCookiesBody' => "Préférences en matière de cookies
+ <br><br>
+ Nous utilisons des cookies pour améliorer votre expérience sur notre plateforme. Ensuite, nous expliquons le
+ différents types de cookies que nous utilisons et comment vous pouvez gérer vos préférences.
+ <br><br>
+ 1. Cookies essentiels:
+ <br><br>
+ Ces cookies sont nécessaires au fonctionnement du site Web et ne peuvent pas être désactivés dans notre
+ systèmes. Ils sont définis en réponse à vos actions, telles que la connexion ou le remplissage de formulaires.
+ <br><br>
+ 2. Cookies de performances:
+ <br><br>
+ Ces cookies nous permettent de compter les visites et les sources de trafic, afin de pouvoir mesurer et améliorer le
+ performances de notre site. Ils nous aident à savoir quelles pages sont les plus et les moins populaires.
+ <br><br>
+ 3. Cookies de fonctionnalité:
+ <br><br>
+ Ces cookies permettent au site Web d'offrir une meilleure fonctionnalité et personnalisation. Ils peuvent être
+ établis par nous ou par des prestataires externes dont nous avons ajouté les services à nos pages.
+ <br><br>
+4. Cookies publicitaires:
+ <br><br>
+Ces cookies peuvent être définis via notre site par nos partenaires publicitaires.
+Ils peuvent être utilisés par ces sociétés pour créer un profil de vos intérêts et vous montrer des publicités.
+pertinent ailleurs.
+ <br><br>
+Gérer vos préférences:
+ <br><br>
+Vous pouvez gérer vos préférences en matière de cookies à tout moment depuis la section paramètres de
+ cookies sur notre site Web. Vous pouvez également configurer votre navigateur pour qu'il bloque ou vous alerte
+ ces cookies, mais certaines parties du site peuvent ne pas fonctionner correctement.
+ <br><br>
+ Si vous avez des questions sur nos politiques en matière de cookies, veuillez nous contacter.",
+
+
 ];

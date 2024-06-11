@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="{{session('locale')}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User's first look at the page">
     <title>F1 FANTASY</title>
     <!-- Estilos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -27,22 +28,22 @@
         <div id="siguienteGP" class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="{{asset('img/circuitos/Imola.jpg')}}" id="circuitoImg" alt="circuitoImg"
-                         srcset="{{asset('img/circuitos/Imola.jpg')}}" class="img- d-lg-block d-md-none d-block">
+                    <img src="{{asset('img/circuitos/Barcelona.jpg')}}" id="circuitoImg" alt="circuitoImg"
+                         srcset="{{asset('img/circuitos/Barcelona.jpg')}}" class="img- d-lg-block d-md-none d-block">
                 </div>
                 <div id="infoPais" class="col-md-6 text-center">
                     <section>
                         <h1 class="d-flex align-items-center justify-content-center">
-                            <img src="{{asset('img/banderas/Italy.svg')}}" id="bandera" alt="bandera"
-                                 srcset="{{asset('img/banderas/Italy.svg')}}" class="img-fluid">
-                            <span id="pais" class="ms-2">ITALIA</span>
+                            <img src="{{asset('img/banderas/Spain.svg')}}" id="bandera" alt="bandera"
+                                 srcset="{{asset('img/banderas/Spain.svg')}}" class="img-fluid">
+                            <span id="pais" class="ms-2">@lang('messages.spain')</span>
                         </h1>
-                        <p>FORMULA 1 GRAND PRIX IMOLA 2024</p>
+                        <p>@lang('messages.textPrix')</p>
                         <!-- Scrollable modal -->
                         <button type="button" id="botonModal" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop">
-                            <img src="{{asset('img/circuitos_shape/Imola.svg')}}" id="circuito" alt="formaCircuito"
-                                 srcset="{{asset('img/circuitos_shape/Imola.svg')}}" class="img-fluid">
+                            <img src="{{asset('img/circuitos_shape/Barcelona.svg')}}" id="circuito" alt="formaCircuito"
+                                 srcset="{{asset('img/circuitos_shape/Barcelona.svg')}}" class="img-fluid">
                         </button>
                     </section>
 
@@ -53,15 +54,16 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                                        <img src="{{asset('img/banderas/Italy.svg')}}" id="bandera" alt="bandera"
-                                             srcset="{{asset('img/banderas/Italy.svg')}}">
-                                        <span id="pais">ITALIA</span></h1>
+                                        <img src="{{asset('img/banderas/Spain.svg')}}" id="bandera" alt="bandera"
+                                             srcset="{{asset('img/banderas/Spain.svg')}}">
+                                        <span id="pais">@lang('messages.spain')</span></h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}" alt="circuitoMasInfo"
-                                         srcset="{{asset('img/circuitos_shape/Imola_MasInfo.png')}}">
+                                    <img src="{{asset('img/circuitos_shape/Barcelona_MasInfo.png')}}"
+                                         alt="circuitoMasInfo"
+                                         srcset="{{asset('img/circuitos_shape/Barcelona_MasInfo.png')}}">
                                     <hr>
                                     <div id="datosCircuito">
                                         <script>
@@ -99,6 +101,10 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="fila2 row">
+        <img src="{{ asset('img/bannerCollab_F1S_CL.png') }}" alt="colaboración"
+             srcset="{{ asset('img/bannerCollab_F1S_CL.png') }}" class="img-fluid">
     </section>
 </main>
 

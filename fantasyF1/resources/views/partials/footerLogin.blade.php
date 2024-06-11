@@ -2,13 +2,23 @@
     <nav id="navFooter">
         <a href="{{route('index')}}"><img src="{{asset('img/logoficialfantasy.png')}}" alt="logoF1" id="logoFooter"
                                           srcset="{{asset('img/logoficialfantasy.png')}}"></a>
-        <a href="#">@lang('messages.privacyPolicy')</a>
-        <a href="#">@lang('messages.subs')</a>
-        <a href="#">@lang('messages.usage') </a>
-        <a href="#">@lang('messages.f&q')</a>
-        <a href="#">@lang('messages.prefCookies') </a>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal1">
+            @lang('messages.privacyPolicy')
+        </button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal2">
+            @lang('messages.subs')
+        </button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal3">
+            @lang('messages.usage')
+        </button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal4">
+            @lang('messages.f&q')
+        </button>
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal5">
+            @lang('messages.prefCookies')
+        </button>
     </nav>
-
+    @include('partials/modalPolitics')
     <hr>
 
     <div id="parrFooter" class="col-md">
@@ -30,9 +40,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <a href="views/index"><img src="{{asset('img/logoF1Blanco.png')}}" alt="logoF1"
-                                               id="logoModal"
-                                               srcset="{{asset('img/logoF1Blanco.png')}}"></a>
+                    <a href=""><img src="{{asset('img/logoF1Blanco.png')}}" alt="logoF1"
+                                    id="logoModal"
+                                    srcset="{{asset('img/logoF1Blanco.png')}}"></a>
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
                         @lang('messages.support2')
                     </h1>

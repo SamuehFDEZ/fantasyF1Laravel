@@ -188,6 +188,28 @@ class carrera_cualisTableSeeder extends Seeder
             ['nombre_piloto' => 'Sergio Perez', 'cualID' => 8, 'tiempo_q1' => '1:12.060', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 18],
             ['nombre_piloto' => 'Valtteri Bottas', 'cualID' => 8, 'tiempo_q1' => '1:12.512', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 19],
             ['nombre_piloto' => 'Zhou Guanyu', 'cualID' => 8, 'tiempo_q1' => '1:13.028', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 20],
+
+            //cuali montreal
+            ['nombre_piloto' => 'George Russell', 'cualID' => 9, 'tiempo_q1' => '1:13.013', 'tiempo_q2' => '1:11.742', 'tiempo_q3' => '1:12.000', 'posicion' => 1],
+            ['nombre_piloto' => 'Max Verstappen', 'cualID' => 9, 'tiempo_q1' => '1:12.360', 'tiempo_q2' => '1:12.549', 'tiempo_q3' => '1:12.000', 'posicion' => 2],
+            ['nombre_piloto' => 'Lando Norris', 'cualID' => 9, 'tiempo_q1' => '1:12.959', 'tiempo_q2' => '1:12.201', 'tiempo_q3' => '1:12.021', 'posicion' => 3],
+            ['nombre_piloto' => 'Oscar Piastri', 'cualID' => 9, 'tiempo_q1' => '1:12.907', 'tiempo_q2' => '1:12.462', 'tiempo_q3' => '1:12.103', 'posicion' => 4],
+            ['nombre_piloto' => 'Daniel Ricciardo', 'cualID' => 9, 'tiempo_q1' => '1:13.240', 'tiempo_q2' => '1:12.572', 'tiempo_q3' => '1:12.178', 'posicion' => 5],
+            ['nombre_piloto' => 'Fernando Alonso', 'cualID' => 9, 'tiempo_q1' => '1:13.117', 'tiempo_q2' => '1:12.635', 'tiempo_q3' => '1:12.228', 'posicion' => 6],
+            ['nombre_piloto' => 'Lewis Hamilton', 'cualID' => 9, 'tiempo_q1' => '1:12.851', 'tiempo_q2' => '1:11.979', 'tiempo_q3' => '1:12.280', 'posicion' => 7],
+            ['nombre_piloto' => 'Yuki Tsunoda', 'cualID' => 9, 'tiempo_q1' => '1:12.748', 'tiempo_q2' => '1:12.303', 'tiempo_q3' => '1:12.414', 'posicion' => 8],
+            ['nombre_piloto' => 'Lance Stroll', 'cualID' => 9, 'tiempo_q1' => '1:13.088', 'tiempo_q2' => '1:12.659', 'tiempo_q3' => '1:12.796	', 'posicion' => 9],
+            ['nombre_piloto' => 'Alex Albon', 'cualID' => 9, 'tiempo_q1' => '1:12.896', 'tiempo_q2' => '1:12.485', 'tiempo_q3' => '1:11.311', 'posicion' => 10],
+            ['nombre_piloto' => 'Charles Leclerc', 'cualID' => 9, 'tiempo_q1' => '1:13.107', 'tiempo_q2' => '1:12.691', 'tiempo_q3' => '', 'posicion' => 11],
+            ['nombre_piloto' => 'Carlos Sainz', 'cualID' => 9, 'tiempo_q1' => '1:13.038', 'tiempo_q2' => '1:12.728', 'tiempo_q3' => '', 'posicion' => 12],
+            ['nombre_piloto' => 'Logan Sargeant', 'cualID' => 9, 'tiempo_q1' => '1:13.063', 'tiempo_q2' => '1:12.736', 'tiempo_q3' => '', 'posicion' => 13],
+            ['nombre_piloto' => 'Kevin Magnussen', 'cualID' => 9, 'tiempo_q1' => '1:13.217', 'tiempo_q2' => '1:12.916', 'tiempo_q3' => '', 'posicion' => 14],
+            ['nombre_piloto' => 'Pierre Gasly', 'cualID' => 9, 'tiempo_q1' => '1:13.289', 'tiempo_q2' => '1:12.940', 'tiempo_q3' => '', 'posicion' => 15],
+            ['nombre_piloto' => 'Sergio Perez', 'cualID' => 9, 'tiempo_q1' => '1:13.326', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 16],
+            ['nombre_piloto' => 'Valtteri Bottas', 'cualID' => 9, 'tiempo_q1' => '1:13.366', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 17],
+            ['nombre_piloto' => 'Esteban Ocon', 'cualID' => 9, 'tiempo_q1' => '1:13.435', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 18],
+            ['nombre_piloto' => 'Nico Hulkenberg', 'cualID' => 9, 'tiempo_q1' => '1:13.978', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 19],
+            ['nombre_piloto' => 'Zhou Guanyu', 'cualID' => 9, 'tiempo_q1' => '1:14.292', 'tiempo_q2' => '', 'tiempo_q3' => '', 'posicion' => 20],
         ];
 
         foreach ($carreraCualis as $carreraCuali) {
