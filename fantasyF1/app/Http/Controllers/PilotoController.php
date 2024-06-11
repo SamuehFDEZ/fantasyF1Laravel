@@ -9,18 +9,19 @@ use Illuminate\Support\Facades\DB;
 
 class PilotoController extends Controller
 {
+    // gets the 2 drivers of each team
     public function pilotosGroupByTeam(Request $request, $equipo): JsonResponse
     {
         $piloto = Piloto::where('nombre_constructor', $equipo)->get();
         return response()->json($piloto);
     }
-
+    // gets all drivers
     public function pilotos(): JsonResponse
     {
         $piloto = Piloto::all();
         return response()->json($piloto);
     }
-
+    // gets all drivers except Oliver Bearman with the img, name, score and value
     public function imgPilotosNombrePuntosYMerc(): JsonResponse
     {
         $query = Piloto::where('nombre', '!=', 'Oliver Bearman')
@@ -45,8 +46,8 @@ class PilotoController extends Controller
 
     public function imgPilotosYNombre(): JsonResponse
     {
-        // con esto obtenemos a los pilotos agrupados por su equipo ordenados por los puntos del constructor
-        /*Ejemplo
+        // gets the drivers grouped by the team ordered by the score of the team
+        /*Example
             verst perez
             leclerc sainz
             etc etc
@@ -59,14 +60,12 @@ class PilotoController extends Controller
 
         $pilotos = $query->get();
 
-        /*Explicación:
-            Consulta modificada: Se selecciona también el nombre del equipo (c.nombre as equipo).
-
-            Agrupamiento: Se itera sobre los pilotos y se agrupan por el equipo, creando un array multidimensional
-            donde cada equipo contiene su lista de pilotos.
-
-            Estructura final: array_values($equiposAgrupados) convierte el array asociativo a un array
-            indexado numéricamente, que se ajusta a la estructura deseada.
+        /*Explanation:
+            Selects also the name of the team
+            We iterate over the drivers and they grouped by the team creating a bidimensional array where each team
+            contains its list of drivers
+           array_values($equiposAgrupados) converts the associative array in a indexed array by numbers, having the
+            wished structured
         */
 
         $equiposAgrupados = [];
@@ -82,7 +81,7 @@ class PilotoController extends Controller
 
         return response()->json($resultadoFinal);
     }
-
+    // as the teams, we get the selected drivers by the user to be printed in the page
     public function obtenerPilotos(Request $request): JsonResponse
     {
         $pilotos = DB::table('usuarios as u')

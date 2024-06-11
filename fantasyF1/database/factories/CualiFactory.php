@@ -28,7 +28,11 @@ class CualiFactory extends Factory
             'ronda' => $this->faker->randomElement($rondaCirc)
         ];
     }
-
+    /**
+     * returns a random lap time
+     *
+     * @return string
+     */
     public function tiempoVuelta(): string
     {
         $faker = Faker::create();

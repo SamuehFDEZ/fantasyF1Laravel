@@ -164,23 +164,24 @@ return [
 
     'custom' => [
         'nombre' => [
-            'required' => 'El nombre es requerido',
-            'unique' => 'El nombre ya existe',
-            'max' => 'El nombre no debe exceder los :max caracteres',
-            'exists' => 'El nombre no existe'
+            'required' => '姓名为必填项',
+            'unique' => '姓名已存在',
+            'max' => '姓名不得超过:max个字符',
+            'exists' => '姓名不存在'
         ],
         'email' => [
-            'required' => 'El email es requerido',
-            'email' => 'Dirección de email incorrecta',
-            'unique' => 'El email ya existe',
+            'required' => '邮箱为必填项',
+            'email' => '邮箱地址不正确',
+            'unique' => '邮箱已存在',
         ],
         'contrasenya' => [
-            'required' => 'La contraseña es requerida',
+            'required' => '密码为必填项',
             'min' => [
-                'string' => 'La contraseña tiene que tener al menos :min caracteres',
+                'string' => '密码至少需要:min个字符',
             ],
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------

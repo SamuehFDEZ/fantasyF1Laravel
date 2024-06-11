@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class ConstructorController extends Controller
 {
+    // gets the name of the teams ordered by the score
     public function constructores(): JsonResponse
     {
         $constructor = Constructor::all()->sortByDesc('puntosRealizados')->pluck('nombre');
 
         return response()->json($constructor);
     }
+    // gets the constrcutors with the name by parameter
 
     public function constructoresPorNombre(Request $request, $nombre): JsonResponse
     {
@@ -22,23 +24,23 @@ class ConstructorController extends Controller
 
         return response()->json($constructores);
     }
-
+    // gets the score of the teams ordered by the socre
     public function constructoresPorPuntos(): JsonResponse
     {
-        // pluck() para solo quedarme con los puntos
+        // pluck() only to obtain the wished field of the table
         $constructores = Constructor::all()->sortByDesc('puntosRealizados')->pluck('puntosRealizados')->values();
 
         return response()->json($constructores);
     }
-
+    // gets the image of the car
     public function constructoresCoches(): JsonResponse
     {
-        // Obtener todos los constructores
+
         $constructores = Constructor::orderByDesc('puntosRealizados')
             ->orderByDesc('nombre')
             ->get();
 
-        // Decodificar cada imagen y almacenarla en un nuevo array
+        // decodes the image
         $imagenesDecodificadas = $constructores->pluck('coche')->map(function ($imagenBase64) {
             return base64_decode($imagenBase64);
         });
@@ -84,14 +86,14 @@ class ConstructorController extends Controller
         // Devolver los datos en formato JSON
         return response()->json($imagenesDecodificadas);
     }
-
+    // gets the teams colors
     public function coloresCoches(): JsonResponse
     {
         $constructor = Constructor::all()->sortByDesc('puntosRealizados')->pluck('colorEquipo');
 
         return response()->json($constructor);
     }
-
+    // gets the teams selected by the user
     public function obtenerConstructores(Request $request): JsonResponse
     {
         $constructores = DB::table('usuarios as u')
@@ -110,7 +112,7 @@ class ConstructorController extends Controller
             ];
         });
 
-        // Envuelve los constructores en un array asociativo con la clave "constructores"
+        // gets the teams in an associative array
         $constructoresEnvueltos = ['constructores' => $constructoresDecodificados];
 
         return response()->json($constructoresEnvueltos);

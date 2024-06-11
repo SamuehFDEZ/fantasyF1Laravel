@@ -14,8 +14,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuario_constructor', function (Blueprint $table) {
-            $table->unsignedInteger('userID'); // Esto crea un campo 'userID' autoincremental que servirá como clave primaria
-            $table->string('nombre_constructor', 200); // Definir 'nombre' como clave primaria y VARCHAR(200)
+            $table->unsignedInteger('userID');
+            $table->string('nombre_constructor', 200);
             $table->unsignedInteger('puntosRealizados')->nullable(false);
             $table->primary(['userID', 'nombre_constructor']);
             $table->foreign('userID')->references('userID')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');

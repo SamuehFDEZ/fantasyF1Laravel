@@ -33,7 +33,11 @@ class Carrera_CualiFactory extends Factory
             'tiempo_q3' => $this->tiempoVuelta()
         ];
     }
-
+    /**
+     * returns a random lap time
+     *
+     * @return string
+     */
     public function tiempoVuelta(): string
     {
         $faker = Faker::create();

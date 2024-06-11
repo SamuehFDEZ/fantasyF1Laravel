@@ -164,20 +164,20 @@ return [
 
     'custom' => [
         'nombre' => [
-            'required' => 'El nombre es requerido',
-            'unique' => 'El nombre ya existe',
-            'max' => 'El nombre no debe exceder los :max caracteres',
-            'exists' => 'El nombre no existe'
+            'required' => 'Имя обязательно для заполнения',
+            'unique' => 'Имя уже существует',
+            'max' => 'Имя не должно превышать :max символов',
+            'exists' => 'Имя не существует'
         ],
         'email' => [
-            'required' => 'El email es requerido',
-            'email' => 'Dirección de email incorrecta',
-            'unique' => 'El email ya existe',
+            'required' => 'Электронная почта обязательна для заполнения',
+            'email' => 'Неверный адрес электронной почты',
+            'unique' => 'Электронная почта уже существует',
         ],
         'contrasenya' => [
-            'required' => 'La contraseña es requerida',
+            'required' => 'Пароль обязателен для заполнения',
             'min' => [
-                'string' => 'La contraseña tiene que tener al menos :min caracteres',
+                'string' => 'Пароль должен содержать как минимум :min символов',
             ],
         ],
     ],

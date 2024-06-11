@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Circuito;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Factory as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Circuito>
@@ -42,6 +41,11 @@ class CircuitoFactory extends Factory
         ];
 
     }
+    /**
+     * returns a random lap time
+     *
+     * @return string
+     */
     public function tiempoVuelta(): string
     {
         $faker = Faker::create();

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class CircuitoController extends Controller
 {
+    // gets the data of the circuit
     public function circuitos(): JsonResponse
     {
         $constructor = Circuito::all()->map(function ($circuito) {
@@ -26,7 +27,7 @@ class CircuitoController extends Controller
 
         return response()->json($constructor);
     }
-
+    // same endpoint but with the parameter round
     public function circuitosPorRonda(Request $request, $ronda): JsonResponse
     {
         $constructor = Circuito::where('ronda', $ronda)->get()->map(function ($circuito) {

@@ -56,7 +56,7 @@ class LoginController extends Controller
         session(['idDeUsuario' => $usuario->userID]);
         // Creates a cookie for the user logged
         $cookie = Cookie::make('nombreDeUsuario', $usuario->nombre, 60); // La cookie durará 60 minutos
-        // If its correct, sends the user to the main page
+        // If it's correct, sends the user to the main page
         return redirect()->route('index')->withCookie($cookie);
     }
 
@@ -66,6 +66,7 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
+    // cracks the session of the user
     public function logout(Request $request): \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
     {
         Auth::logout();
@@ -77,10 +78,15 @@ class LoginController extends Controller
         return redirect()->route('index');
     }
 
+    /**
+     * deletes the user of the application.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
     {
         try {
-            $userID = session('idDeUsuario'); 
+            $userID = session('idDeUsuario');
             $user = Usuario::findOrFail($userID);
             if ($user) {
                 $user->delete();

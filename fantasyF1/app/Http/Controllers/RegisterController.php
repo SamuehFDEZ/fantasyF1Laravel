@@ -36,7 +36,11 @@ class RegisterController extends Controller
 
         return back()->with('mensaje', __('auth.success'));
     }
-
+    /**
+     * Handle account delete request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
     {
         try {

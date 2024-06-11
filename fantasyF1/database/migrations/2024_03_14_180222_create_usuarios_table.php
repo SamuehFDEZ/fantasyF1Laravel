@@ -14,6 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
+            // unsignedInteger means positive number
             $table->unsignedInteger('userID')->autoIncrement();
             $table->string('nombre', 255)->unique();
             $table->string('contrasenya', 255);

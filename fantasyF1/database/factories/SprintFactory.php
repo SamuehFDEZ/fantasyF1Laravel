@@ -20,6 +20,11 @@ class SprintFactory extends Factory
             'ronda' => $this->faker->randomNumber(1), // Definir un valor para 'ronda' sin unique()
         ];
     }
+    /**
+     * returns a random lap time
+     *
+     * @return string
+     */
     public function tiempoVuelta(): string
     {
         $faker = Faker::create();

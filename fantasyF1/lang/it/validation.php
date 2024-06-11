@@ -164,20 +164,20 @@ return [
 
     'custom' => [
         'nombre' => [
-            'required' => 'El nombre es requerido',
-            'unique' => 'El nombre ya existe',
-            'max' => 'El nombre no debe exceder los :max caracteres',
-            'exists' => 'El nombre no existe'
+            'required' => 'Il nome è obbligatorio',
+            'unique' => 'Il nome esiste già',
+            'max' => 'Il nome non può superare :max caratteri',
+            'exists' => 'Il nome non esiste'
         ],
         'email' => [
-            'required' => 'El email es requerido',
-            'email' => 'Dirección de email incorrecta',
-            'unique' => 'El email ya existe',
+            'required' => 'L\'email è obbligatoria',
+            'email' => 'Indirizzo email non corretto',
+            'unique' => 'L\'email esiste già',
         ],
         'contrasenya' => [
-            'required' => 'La contraseña es requerida',
+            'required' => 'La password è obbligatoria',
             'min' => [
-                'string' => 'La contraseña tiene que tener al menos :min caracteres',
+                'string' => 'La password deve contenere almeno :min caratteri',
             ],
         ],
     ],

@@ -1,4 +1,5 @@
 <?php
+// returns an array with all the text of the application in french
 
 return [
     'spain' => 'ESPAGNE',

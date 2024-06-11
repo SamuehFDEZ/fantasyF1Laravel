@@ -1,5 +1,5 @@
 <?php
-
+// returns an array with all the text of the application in chinese
 return [
     'spain' => '西班牙',
     'textPrix' => '2024年一级方程式西班牙大奖赛',

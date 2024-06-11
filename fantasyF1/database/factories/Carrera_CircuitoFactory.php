@@ -2,8 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Circuito;
-use App\Models\Piloto;
 use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -26,7 +24,11 @@ class Carrera_CircuitoFactory extends Factory
             'posicion' =>$this->faker->numberBetween(1,20)
         ];
     }
-
+    /**
+     * returns a random lap time
+     *
+     * @return string
+     */
     public function tiempoVuelta(): string
     {
         $faker = Faker::create();

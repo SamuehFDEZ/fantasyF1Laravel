@@ -1,5 +1,5 @@
 @import "variables";
-
+// mediaquery mixin function
 @mixin responsive($media) {
     @if $media == 'extrasmall' {
         @media (max-width: $small - 1) {
