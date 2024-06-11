@@ -25,13 +25,13 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $validatedData = $request->validated(); // Obtener los datos validados
+        $validatedData = $request->validated(); // We get de data from the form
 
         Usuario::create([
             'nombre' => $validatedData['nombre'],
             'email' => $validatedData['email'],
             'contrasenya' => bcrypt($validatedData['contrasenya']),
-            'remember_token' => Str::random(60), // Generar el remember_token aquí
+            'remember_token' => Str::random(60), // generates the token
         ]);
 
         return back()->with('mensaje', __('auth.success'));
@@ -40,10 +40,10 @@ class RegisterController extends Controller
     public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
     {
         try {
-            $userID = session('idDeUsuario'); // Obtener el ID del usuario de la sesión
-            $user = Usuario::findOrFail($userID); // Obtener el usuario utilizando el ID
+            $userID = session('idDeUsuario'); // gets the id of the user logged
+            $user = Usuario::findOrFail($userID); // gets the user with the id
             if ($user) {
-                $user->delete(); // Eliminar el usuario
+                $user->delete(); // deletes the user
                 return back()->with('mensaje', __('auth.successDelete'));
             } else {
                 return back()->with('mensaje', __('auth.notFound'));

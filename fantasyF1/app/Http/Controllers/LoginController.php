@@ -34,29 +34,29 @@ class LoginController extends Controller
 
         $credentials = $request->only('nombre', 'contrasenya');
 
-        // Verificar si el usuario existe en la base de datos
+        // Verify if the user exists in database
         $usuario = Usuario::where('nombre', $credentials['nombre'])->first();
 
         if (!$usuario) {
-            // Si el usuario no existe, redirecciona con un mensaje de error
+            // If not exists redirects with failure message
             throw ValidationException::withMessages([
                 'loginError' => __('auth.failed')
 
             ]);
         }
 
-        // Verificar si la contraseña proporcionada coincide con el hash almacenado
+        // Verify if the provided password equals to the stored password
         if (!Hash::check($credentials['contrasenya'], $usuario->contrasenya)) {
-            // Si la autenticación falla, redirecciona con un mensaje de error
+            // If fails, error message
             throw ValidationException::withMessages([
                 'loginError' => __('auth.failed')
             ]);
         }
         session(['nombreDeUsuario' => $usuario->nombre]);
         session(['idDeUsuario' => $usuario->userID]);
-        // Crear una cookie con el nombre de usuario
+        // Creates a cookie for the user logged
         $cookie = Cookie::make('nombreDeUsuario', $usuario->nombre, 60); // La cookie durará 60 minutos
-        // Si la autenticación tiene éxito, redirecciona al usuario
+        // If its correct, sends the user to the main page
         return redirect()->route('index')->withCookie($cookie);
     }
 
@@ -80,10 +80,10 @@ class LoginController extends Controller
     public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
     {
         try {
-            $userID = session('idDeUsuario'); // Obtener el ID del usuario de la sesión
+            $userID = session('idDeUsuario'); 
             $user = Usuario::findOrFail($userID);
             if ($user) {
-                $user->delete(); // Eliminar el usuario
+                $user->delete();
                 return back()->with('mensaje',  __('auth.successDelete'));
             } else {
                 return back()->with('mensaje',   __('auth.notFound'));

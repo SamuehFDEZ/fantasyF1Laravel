@@ -13,9 +13,6 @@
             <a class="nav-link" href="{{ route('constructor') }}">@lang('messages.drivers&Const')</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">@lang('messages.circuits')</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="{{ route('premios') }}">@lang('messages.prizes')</a>
         </li>
         <li class="nav-item">

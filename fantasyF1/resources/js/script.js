@@ -1,11 +1,12 @@
 window.onload = async () => {
     suscribete.addEventListener("click", suscribirse);
     quitarSubs.addEventListener("click", quitarPanel);
-    // Actualizar el contador cada segundo
+    // Update the counter each second
     actualizarContador();
     await datosCircuito();
 }
 
+// function to get the info from the API endpoint
 async function datosCircuito() {
     let url = `http://127.0.0.1:8000/api/circuitos/${7}`;
 
@@ -15,6 +16,7 @@ async function datosCircuito() {
 
 }
 
+// function to get the info of the API and print it in the container of the blade template
 function cargarDatosCircuito(info) {
     document.getElementById("datosCircuito").innerHTML = `
         <ul>
@@ -39,9 +41,10 @@ function cargarDatosCircuito(info) {
     `;
 }
 
-// Establecer la fecha del evento
+// Event date
 const fechaEvento = new Date('2024-06-05T16:00:00');
 
+//function to update each second the time remaining to the event date
 function actualizarContador() {
     const ahora = new Date();
     const diferencia = fechaEvento - ahora;
@@ -67,7 +70,7 @@ function actualizarContador() {
     }
 }
 
-
+//Two functions for the subscribe modal to appear and desappear
 function suscribirse() {
     panel.classList.remove("oculto");
 }
