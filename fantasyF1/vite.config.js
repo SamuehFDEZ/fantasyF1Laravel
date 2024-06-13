@@ -19,7 +19,9 @@ export default defineConfig({
                 'resources/js/constructor.js',
                 'resources/js/miEquipo.js',
                 'resources/js/liga.js',
-                'resources/js/subscribe.js'
+                'resources/js/subscribe.js',
+                'resources/js/script.js',
+                'resources/css/registrar.scss'
 
             ],
             refresh: true,

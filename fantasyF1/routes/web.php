@@ -44,7 +44,7 @@ Route::get('/constructor', function () {
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
-
+// Routes managed by their respective controller
 Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -55,9 +55,8 @@ Route::get('/registrar', [RegisterController::class, 'view'])->name('registro');
 Route::post('/registrar', [RegisterController::class, 'register']);
 Route::delete("/registrar", [RegisterController::class, 'eliminarUsuario'])->name('eliminarUsuario');
 
-/*el ? significa parametro no obligatorio, si no se pone
-salta un error de missing argument y la pagina no carga correctamente
-la funcionalidad no se pierde en ningun momento*/
+/*the ? means parameter not compulsory, if there's no ? throws an error of missing argument
+and the page doesn't load correctly, functionality is not lost at any moment*/
 Route::post('/api/actualiza/{userID?}', [ApiController::class, 'actualizarPilotosYConstructores'])
     ->name('actualizarPilotosYConstructores');
 

@@ -57,7 +57,7 @@ async function guardarEquipo() {
 
     try {
         // URL of the API with the userID as the parameter
-        const url = `http://127.0.0.1:8000/api/actualiza/${sesionDeUsuario}`;
+        const url = `http://127.0.0.1:8085/api/actualiza/${sesionDeUsuario}`;
 
         // fetching url
         await fetch(url, {
@@ -121,7 +121,7 @@ function getSelectedConstructors() {
 // Asynchronous function to obtain the drivers data
 async function obtenerInfoPilotos() {
     // gets the drivers data with the API endpoint
-    let url = 'http://127.0.0.1:8000/api/piloto/info';
+    let url = 'http://localhost:8085/api/piloto/info';
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarInfoPilotos(info);
     });
@@ -443,7 +443,7 @@ function ordenarPorPuntosyValorMercado() {
 
 //Asynchronous function to obtain the teams data
 async function obtenerInfoCoches() {
-    let url = 'http://127.0.0.1:8000/api/constructor/info';
+    let url = 'http://127.0.0.1:8085/api/constructor/info';
     // gets the drivers data with the API endpoint
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarInfoConstructores(info);

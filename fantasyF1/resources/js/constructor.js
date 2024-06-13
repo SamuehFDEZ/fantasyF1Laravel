@@ -9,37 +9,37 @@ window.onload = async () => {
 // Function to fetch and load team data
 async function obtenerConstructores() {
     // Fetch team data from the API
-    let url = 'http://127.0.0.1:8000/api/constructor';
+    let url = 'http://127.0.0.1:8085/api/constructor';
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarNombres(info);
     });
 
     // Fetch team points data from the API
-    let url2 = 'http://127.0.0.1:8000/api/constructor/puntos';
+    let url2 = 'http://127.0.0.1:8085/api/constructor/puntos';
     await fetch(url2).then(data => data.json()).then(async info => {
         await cargarPuntos(info);
     });
 
     // Fetch team cars images from the API
-    let url3 = 'http://127.0.0.1:8000/api/constructor/coches';
+    let url3 = 'http://127.0.0.1:8085/api/constructor/coches';
     await fetch(url3).then(data => data.json()).then(async info => {
         await cargarImgsCoches(info);
     });
 
     // Fetch team logos from the API
-    let url4 = 'http://127.0.0.1:8000/api/constructor/logos';
+    let url4 = 'http://127.0.0.1:8085/api/constructor/logos';
     await fetch(url4).then(data => data.json()).then(async info => {
         await cargarLogosCoches(info);
     });
 
     // Fetch driver images and names from the API
-    let url5 = 'http://127.0.0.1:8000/api/piloto/imgYNombre';
+    let url5 = 'http://127.0.0.1:8085/api/piloto/imgYNombre';
     await fetch(url5).then(data => data.json()).then(async info => {
         await cargarImgYNombresPilotos(info);
     });
 
     // Fetch team colors from the API
-    let url6 = 'http://127.0.0.1:8000/api/constructor/colores';
+    let url6 = 'http://127.0.0.1:8085/api/constructor/colores';
     await fetch(url6).then(data => data.json()).then(async info => {
         await cargarColores(info);
     });
