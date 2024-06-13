@@ -10,11 +10,6 @@ class ApiController extends Controller
     // Function to update drivers and constructors for a user
     public function actualizarPilotosYConstructores(Request $request, $userID): \Illuminate\Http\JsonResponse
     {
-        // Check if the user is authenticated
-        if ($userID != session('idDeUsuario')) {
-            return response()->json(['error' => 'Usuario no autenticado']);
-        }
-
         // Validate the incoming request
         $request->validate([
             'pilotos' => 'array',
@@ -28,6 +23,13 @@ class ApiController extends Controller
         // Retrieve pilots and constructors from the request
         $pilotos = $request->input('pilotos', []);
         $constructores = $request->input('constructores', []);
+
+        // Generate random points for the user (between 1 and 200)
+        $puntosAleatorios = rand(1, 200);
+        // Update the user's total points
+        DB::table('usuarios')
+            ->where('userID', $userID)
+            ->update(['puntosRealizadosTotales' => $puntosAleatorios]);
 
         /*
         The transaction allows us to execute multiple operations at once.
@@ -64,6 +66,7 @@ class ApiController extends Controller
                     ]);
                 }
             }
+
         });
 
         // Return a JSON response indicating the team was saved successfully

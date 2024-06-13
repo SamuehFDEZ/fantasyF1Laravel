@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="user-id" content="{{ session('idDeUsuario') }}">
+    <meta name="idDeUsuario" content="{{ session('idDeUsuario') }}">
     <meta name="description" content="User selects the team">
     <div id="config"
          data-csrf-token="{{ csrf_token() }}"></div>
     <title>@lang('messages.myTeam')</title>
-    <!-- Estilos -->
+    <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -69,15 +69,14 @@
                     <label for="cartera">100.0M$</label>
                     <progress id="cartera" value="0" max="100"></progress>
 
-                    {{--No necesitas especificar la acción si vas a usar
-                    JavaScript para enviar la solicitud.--}}
+                    {{-- No need to especify the action if going to use JS to send the request.--}}
                     <form id="formGuardarEquipo"
-                          {{--pasamos como parametro el userID--}}
+                          {{--userID by parameter--}}
                           action="{{ route('actualizarPilotosYConstructores', ['userID' => session('idDeUsuario')]) }}"
                           method="POST" data-csrf-token="{{ csrf_token() }}">
                         @csrf
-                        <div class="d-md-none"> <!-- Se muestra solo en dispositivos móviles -->
-                            <br> <!-- Salto de línea solo para móviles -->
+                        <div class="d-md-none"> <!-- Only in movil devices -->
+                            <br>
                         </div>
                         <button type="button" name="guardarEquipo"
                                 id="guardarEquipo">@lang('messages.saveTeam')</button>

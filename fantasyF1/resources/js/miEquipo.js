@@ -29,11 +29,13 @@ window.onload = async () => {
 
 // Asynchronous function to save the user's team
 async function guardarEquipo() {
-    // Gets the token to prevent csrf attack
+    // Gets the token to prevent CSRF attack
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     // ID of the user in the blade template
-    const sesionDeUsuario = document.querySelector('meta[name="user-id"]').getAttribute('content');
+    const sesionDeUsuario = document.querySelector('meta[name="idDeUsuario"]').getAttribute('content');
+    console.log(csrfToken);
+    console.log(sesionDeUsuario);
 
     // Gets the drivers selected by the user with the function
     const pilotos = getSelectedPilots();
@@ -59,24 +61,24 @@ async function guardarEquipo() {
         // URL of the API with the userID as the parameter
         const url = `http://127.0.0.1:8085/api/actualiza/${sesionDeUsuario}`;
 
-        // fetching url
+        // Fetching the URL
         await fetch(url, {
-            'method': "POST",  // method use
+            'method': "POST",  // HTTP method
             'headers': {
-                'Content-Type': 'application/json',  // type of content of the request
-                'X-CSRF-TOKEN': csrfToken  // Token CSRF for security
+                'Content-Type': 'application/json',  // Request content type
+                "_token": csrfToken  // CSRF token for security
             },
-            'body': JSON.stringify(data)  // request body as JSON
-        }).then(data => data.json())  // Response as JSON
+            'body': JSON.stringify(data)  // Request body as JSON
+        }).then(response => response.json())  // Parse response as JSON
             .then(info => {
-                console.log(info);  // Prints the information of the API
+                console.log(info);  // Log API response information
                 let par = document.createElement("p");
                 par.classList.add("text-success");
-                par.textContent = "Equipo Guardado";
+                par.textContent = "Team Saved";
                 document.querySelector("#costesYContinuar > section").appendChild(par);
             });
     } catch (error) {
-        // logs the errors
+        // Log errors
         console.error('Error:', error);
     }
 }
@@ -121,7 +123,7 @@ function getSelectedConstructors() {
 // Asynchronous function to obtain the drivers data
 async function obtenerInfoPilotos() {
     // gets the drivers data with the API endpoint
-    let url = 'http://localhost:8085/api/piloto/info';
+    let url = 'http://127.0.0.1:8085/api/piloto/info';
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarInfoPilotos(info);
     });
