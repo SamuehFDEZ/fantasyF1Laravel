@@ -183,6 +183,16 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    main {
+        min-height: calc(75vh - 4em);
+    }
+    footer {
+        position: relative;
+        bottom: 20%;
+    }
+}
+
 .oculto {
     display: none;
 }

@@ -169,6 +169,16 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    main {
+        min-height: calc(75vh - 4em); /* Asegura que el contenido principal tenga al menos 4em menos que el alto de la ventana */
+    }
+    footer {
+        position: relative; /* Fija el footer en la parte inferior de la ventana */
+        bottom: 20%;
+    }
+}
+
 .oculto {
     display: none;
 }

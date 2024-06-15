@@ -72,10 +72,8 @@ async function guardarEquipo() {
         }).then(response => response.json())  // Parse response as JSON
             .then(info => {
                 console.log(info);  // Log API response information
-                let par = document.createElement("p");
-                par.classList.add("text-success");
-                par.textContent = "Team Saved";
-                document.querySelector("#costesYContinuar > section").appendChild(par);
+                let parrafo = document.getElementById("texto");
+                parrafo.textContent = "Equipo Guardado";
             });
     } catch (error) {
         // Log errors

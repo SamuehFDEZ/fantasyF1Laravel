@@ -80,6 +80,10 @@
                         </div>
                         <button type="button" name="guardarEquipo"
                                 id="guardarEquipo">@lang('messages.saveTeam')</button>
+                        <div id="eqGuard" class="text-success">
+                            <p id="texto"></p>
+                        </div>
+
                     </form>
                 </section>
                 <hr>
