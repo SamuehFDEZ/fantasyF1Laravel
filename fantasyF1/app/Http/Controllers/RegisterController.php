@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\Models\Usuario;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -36,19 +37,24 @@ class RegisterController extends Controller
 
         return back()->with('mensaje', __('auth.success'));
     }
+
     /**
      * Handle account delete request
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
+    public function eliminarUsuario(Request $request): \Illuminate\Http\RedirectResponse
     {
         try {
             $userID = session('idDeUsuario'); // gets the id of the user logged
             $user = Usuario::findOrFail($userID); // gets the user with the id
             if ($user) {
-                $user->delete(); // deletes the user
-                return back()->with('mensaje', __('auth.successDelete'));
+                $user->delete();
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+                return redirect()->route('index');
             } else {
                 return back()->with('mensaje', __('auth.notFound'));
             }

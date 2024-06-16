@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\Usuario;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -81,16 +82,20 @@ class LoginController extends Controller
     /**
      * deletes the user of the application.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function eliminarUsuario(): \Illuminate\Http\RedirectResponse
+    public function eliminarUsuario(Request $request): \Illuminate\Http\RedirectResponse
     {
         try {
             $userID = session('idDeUsuario');
             $user = Usuario::findOrFail($userID);
             if ($user) {
                 $user->delete();
-                return back()->with('mensaje',  __('auth.successDelete'));
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+                return redirect()->route('index');
             } else {
                 return back()->with('mensaje',   __('auth.notFound'));
             }
