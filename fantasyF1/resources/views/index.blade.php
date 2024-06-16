@@ -102,7 +102,7 @@
             </div>
         </div>
     </section>
-    <section class="fila2 row">
+    <section id="colaboración" class="fila2 row">
         <img src="{{ asset('img/bannerCollab_F1S_CL.png') }}" alt="colaboración"
              srcset="{{ asset('img/bannerCollab_F1S_CL.png') }}" class="img-fluid">
     </section>

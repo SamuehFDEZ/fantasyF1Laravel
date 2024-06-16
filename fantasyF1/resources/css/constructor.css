@@ -528,24 +528,23 @@ footer .row .col-md #iconos a svg {
   display: none;
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 767px) {
   main {
-    height: 80em; /* Más espacio para el footer en móviles */
+    height: 80em;
   }
   footer {
-    position: sticky; /* Cambiar a relative en móviles */
+    position: sticky;
     text-align: center;
   }
   footer .row {
     display: flex;
-    flex-direction: column; /* Apilar elementos verticalmente */
+    flex-direction: column;
     text-align: center;
   }
   footer .row #logoFooter1,
   footer .row #parrFooter,
   footer .row .col-md {
-    margin-bottom: 15px; /* Añadir espaciado inferior */
+    margin-bottom: 15px;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
@@ -618,18 +617,24 @@ footer .row .col-md #iconos a svg {
     font-weight: bold;
   }
   main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo {
+    position: absolute;
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px;
     width: 50%;
-    margin-left: 25em;
+    height: 2em;
+    top: 100%;
+    left: 72%;
   }
   main #siguienteGP .row #cuentaAtrasYelegir #escogeEquipo:hover {
     border: 2px solid red;
     background-color: white;
     color: black;
+  }
+  main #colaboración {
+    position: relative;
+    top: 5%;
   }
 }
 @media (max-width: 576px) {

@@ -525,24 +525,23 @@ footer {
     display: none;
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 767px) {
     main {
-        height: 80em; /* Más espacio para el footer en móviles */
+        height: 80em;
     }
     footer {
-        position: sticky; /* Cambiar a relative en móviles */
+        position: sticky;
         text-align: center;
 
         .row {
             display: flex;
-            flex-direction: column; /* Apilar elementos verticalmente */
+            flex-direction: column;
             text-align: center;
 
             #logoFooter1,
             #parrFooter,
             .col-md {
-                margin-bottom: 15px; /* Añadir espaciado inferior */
+                margin-bottom: 15px;
             }
         }
     }
@@ -634,13 +633,15 @@ footer {
                     }
 
                     #escogeEquipo {
+                        position: absolute;
                         background-color: red;
                         color: white;
                         border: none;
                         border-radius: 5px;
-                        padding: 5px;
                         width: 50%;
-                        margin-left: 25em;
+                        height: 2em;
+                        top: 100%;
+                        left: 72%;
 
                         &:hover {
                             border: 2px solid red;
@@ -650,6 +651,11 @@ footer {
                     }
                 }
             }
+        }
+
+        #colaboración {
+            position: relative;
+            top: 5%;
         }
     }
 }
