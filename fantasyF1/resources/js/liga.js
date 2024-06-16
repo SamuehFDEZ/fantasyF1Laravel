@@ -13,7 +13,7 @@ window.onload = async () => {
 
 //Asynchronous  function to obtain the drivers the user has selected
 async function cargarInfoPilotos() {
-    let url = 'http://localhost:8085/api/obtener-pilotos';
+    let url = 'http://3.71.52.87:80/api/obtener-pilotos';
 
     await fetch(url)
         .then(data => data.json())
@@ -24,7 +24,7 @@ async function cargarInfoPilotos() {
 
 // Asynchronous function to obtain the teams the user has selected
 async function cargarInfoConstructores() {
-    let url = 'http://localhost:8085/api/obtener-constructores';
+    let url = 'http://3.71.52.87:80/api/obtener-constructores';
 
     await fetch(url)
         .then(data => data.json())

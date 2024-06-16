@@ -8,7 +8,7 @@ window.onload = async () => {
 
 // function to get the info from the API endpoint
 async function datosCircuito() {
-    let url = `http://127.0.0.1:8085/api/circuitos/${10}`;
+    let url = `http://3.71.52.87:80/api/circuitos/${10}`;
 
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarDatosCircuito(info);
