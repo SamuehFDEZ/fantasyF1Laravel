@@ -2,6 +2,7 @@
 @import "variables";
 @import "header";
 @import "font";
+@import "subscribe";
 
 // styles for the index screen
 
@@ -21,77 +22,6 @@ body {
 
 
 main {
-    #panel {
-        font-family: F1;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-image: url("../../public/img/subscribebg.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: 1px solid black;
-        border-radius: 5px;
-        padding: 20px;
-        margin-top: 20px;
-        width: 40%;
-        height: 50%;
-        z-index: 200;
-
-        h1 {
-            margin-top: 0;
-            text-align: center;
-            color: white;
-            background: rgba(255, 0, 0, 0.7);
-        }
-
-        hr {
-            border: 1px solid red;
-        }
-
-        #botones {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-            .opcioneSubscribe {
-                color: white;
-                background-color: red;
-                margin: 6em 10px 10px 10px;
-                width: 35%;
-                height: 70px;
-                border: 1px solid white;
-                border-radius: 5px;
-
-                &:hover {
-                    background-color: white;
-                    color: red;
-                    border: 1px solid black;
-                }
-            }
-        }
-
-        #quitarSubs {
-            position: fixed;
-            right: 1%;
-            bottom: 1%;
-            color: white;
-            background-color: red;
-            border: 1px solid white;
-            border-radius: 5px;
-        }
-
-        @include responsive('small') {
-            width: 80%;
-            height: auto;
-        }
-
-        @include responsive('medium') {
-            width: 60%;
-            height: auto;
-        }
-    }
-
     #sectionBann {
         #banner {
             width: 100%;
