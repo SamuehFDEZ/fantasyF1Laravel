@@ -6,7 +6,8 @@ mix.js('resources/js/app.js', 'public/assets/js')
     .js('resources/js/miEquipo.js', 'public/assets/js')
     .js('resources/js/liga.js', 'public/assets/js')
     .js('resources/js/subscribe.js', 'public/assets/js')
-    .js('resources/js/script.js', 'public/assets/js');
+    .js('resources/js/script.js', 'public/assets/js')
+    .js('resources/js/ipConfig.js', 'public/assets/js');
 
 
 mix.sass('resources/css/app.scss', 'public/assets/css')

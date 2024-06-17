@@ -21,6 +21,7 @@ export default defineConfig({
                 'resources/js/liga.js',
                 'resources/js/subscribe.js',
                 'resources/js/script.js',
+                'resources/js/ipConfig.js',
                 'resources/css/registrar.scss'
 
             ],

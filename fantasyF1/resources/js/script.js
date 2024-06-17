@@ -1,3 +1,5 @@
+import {ip} from './ipConfig.js';
+
 window.onload = async () => {
     suscribete.addEventListener("click", suscribirse);
     quitarSubs.addEventListener("click", quitarPanel);
@@ -8,7 +10,7 @@ window.onload = async () => {
 
 // function to get the info from the API endpoint
 async function datosCircuito() {
-    let url = `http://3.71.52.87:80/api/circuitos/${10}`;
+    let url = `http://${ip}/api/circuitos/${10}`;
 
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarDatosCircuito(info);

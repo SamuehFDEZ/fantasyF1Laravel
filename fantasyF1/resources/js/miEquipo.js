@@ -1,3 +1,5 @@
+import {ip} from './ipConfig.js';
+
 //variables to specific functions
 let ordenPuntosAsc = true;
 let ordenValorAsc = true;
@@ -59,7 +61,7 @@ async function guardarEquipo() {
 
     try {
         // URL of the API with the userID as the parameter
-        const url = `http://3.71.52.87:80/api/actualiza/${sesionDeUsuario}`;
+        const url = `http://${ip}/api/actualiza/${sesionDeUsuario}`;
 
         // Fetching the URL
         await fetch(url, {
@@ -121,7 +123,7 @@ function getSelectedConstructors() {
 // Asynchronous function to obtain the drivers data
 async function obtenerInfoPilotos() {
     // gets the drivers data with the API endpoint
-    let url = 'http://3.71.52.87:80/api/piloto/info';
+    let url = `http://${ip}/api/piloto/info`;
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarInfoPilotos(info);
     });
@@ -443,7 +445,7 @@ function ordenarPorPuntosyValorMercado() {
 
 //Asynchronous function to obtain the teams data
 async function obtenerInfoCoches() {
-    let url = 'http://3.71.52.87:80/api/constructor/info';
+    let url = `http://${ip}/api/constructor/info`;
     // gets the drivers data with the API endpoint
     await fetch(url).then(data => data.json()).then(async info => {
         await cargarInfoConstructores(info);

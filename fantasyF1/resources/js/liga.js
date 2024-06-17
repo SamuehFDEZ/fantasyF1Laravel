@@ -1,3 +1,5 @@
+import {ip} from './ipConfig.js';
+
 // global object that will contain all the info of each user (username, drivers, teams, and points)
 const usuarios = {};
 
@@ -13,7 +15,7 @@ window.onload = async () => {
 
 //Asynchronous  function to obtain the drivers the user has selected
 async function cargarInfoPilotos() {
-    let url = 'http://3.71.52.87:80/api/obtener-pilotos';
+    let url = `http://${ip}/api/obtener-pilotos`;
 
     await fetch(url)
         .then(data => data.json())
