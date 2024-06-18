@@ -25,6 +25,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li><a href="locale/es">@lang('messages.es') <img src="{{asset('img/lang/es.png')}}" alt="es"></a></li>
+                <li><a href="locale/pt">@lang('messages.pt') <img src="{{asset('img/lang/pt.png')}}" alt="pt"></a></li>
                 <li><a href="locale/en">@lang('messages.en') <img src="{{asset('img/lang/en.png')}}" alt="en"></a></li>
                 <li><a href="locale/fr">@lang('messages.fr') <img src="{{asset('img/lang/fr.svg')}}" alt="fr"></a></li>
                 <li><a href="locale/de">@lang('messages.de') <img src="{{asset('img/lang/de.png')}}" alt="de"></a></li>
