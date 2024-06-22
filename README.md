@@ -13,20 +13,32 @@
 <h2>Technologies Used</h2>
 
 <h3>Backend</h3>
-<img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-
+<hr>
+<img src="https://static-00.iconduck.com/assets.00/laravel-icon-1990x2048-xawylrh0.png" width="10%" height="auto" alt="Laravel">
+<hr>
 <h3>Frontend</h3>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"><img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"><img src="https://img.shields.io/badge/Blade-E34F26?style=for-the-badge&logo=blade&logoColor=white" alt="Blade"><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"><img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass">
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="10%" height="auto" alt="JavaScript">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" width="10%" height="auto" alt="Vite">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://www.svgrepo.com/show/303672/laravel-1-logo.svg" width="10%" height="auto" alt="Blade">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png" width="10%" height="auto" alt="Bootstrap">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2560px-Sass_Logo_Color.svg.png" width="10%" height="auto" alt="Sass">
+<hr>
 <h3>Database</h3>
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-
+<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mysql_original_wordmark_logo_icon_146417.png" width="20%" height="auto" alt="MySQL">
+<hr>
 <h3>Deployment</h3>
-<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
-
+<img src="https://cdn.inspireuplift.com/uploads/images/seller_products/31661/1702633077_AWSlogoAmazonWebServiceslogo.png"  width="15%" height="auto" alt="AWS">
+<hr>
 <h3>Development Tools</h3>
-<img src="https://img.shields.io/badge/PhpStorm-000000?style=for-the-badge&logo=phpstorm&logoColor=white" alt="PHPStorm"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"><img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/PhpStorm_Icon.png" width="12%" height="auto" alt="PHPStorm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.icon-icons.com/icons2/2429/PNG/512/github_logo_icon_147285.png" width="12%" height="auto" alt="GitHub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.worldvectorlogo.com/logos/postman.svg" alt="Postman" width="12%" height="auto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png" width="45%" height="auto" alt="Docker">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hr>
 <h2>Features</h2>
   <ul>
     <li><strong>Team Management:</strong> Create and manage your Formula 1 teams 📊🏆.</li>
@@ -35,7 +47,7 @@
     <li><strong>User-Friendly Interface:</strong> Intuitive and responsive design with Bootstrap and Sass 🖥️📱🎨.</li>
     <li><strong>Web Accessibility:</strong> Enjoy the best accessibility features ♿️🧩🌈.</li>
   </ul>
-
+<hr>
 <h2>Installation</h2>
   <ol>
     <li>Clone the repository:
